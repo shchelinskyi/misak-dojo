@@ -1,0 +1,46 @@
+.wrapper {
+  width: 100vw;
+  height: 138px;
+  background-image: url("../../assets/images/footer.png");
+  background-position: center;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 138px;
+}
+
+.column {
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.textContent {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color:#ffffff;
+  margin: 0;
+}
+
+.iconBlock {
+  display: flex;
+  gap: 5px;
+  padding-left: 40px;
+}
+
+.visaIcon {
+  width: 50px;
+  height: 23px;
+}
+
+.masterCardIcon {
+  width: 40px;
+  height: 25px;
+}
+

@@ -1,0 +1,109 @@
+.slogan {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight:500;
+  line-height: 130%;
+}
+
+.dojo {
+  border:2px solid black;
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+.about {
+  position: relative;
+  width: 780px;
+  height: 710px;
+  padding: 70px 100px;
+  background-image: url("../../assets/images/bg-about.png");
+}
+
+.aboutTitle {
+  font-family: Gagalin, sans-serif;
+  font-size: 96px;
+  margin-bottom: 40px;
+}
+
+.mainText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 170%;
+}
+
+.starsImg {
+  position: absolute;
+  top:76px;
+  right: 40px;
+  width: 138px;
+}
+
+.aboutImg1 {
+  width: 380px;
+  height: 310px;
+}
+
+.aboutImg2 {
+  width: 380px;
+  height: 390px;
+}
+
+.totalBlock {
+  background-color: #F7F7F7;
+  height: 140px;
+  border-radius: 46px;
+}
+
+.totalNumber {
+  font-family: Gagalin, sans-serif;
+  font-size: 92px;
+  line-height: 138%;
+}
+
+.subTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.subMain {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.smilesIcon {
+  position:absolute;
+  width: 60px;
+  height: 45px;
+  bottom: 20px;
+  left: 50px;
+}
+
+.chimanoIcon {
+  position:absolute;
+  width: 46px;
+  bottom: 20px;
+  left: 25px;
+}
+
+.cupIcon {
+  position:absolute;
+  width: 35px;
+  bottom: 25px;
+  left: 25px;
+}
+
+.teamImage {
+  width: 1720px;
+  height: 966px;
+}
+
+.titleTeamImage {
+  width: 783px;
+  position:absolute;
+  bottom: -70px;
+  left:40%;
+}
