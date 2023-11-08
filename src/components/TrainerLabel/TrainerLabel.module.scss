@@ -1,0 +1,23 @@
+.itemWrapper {
+  width: 380px;
+  minWidth: 380px;
+  padding: 12px 0;
+  border:1px solid black;
+  border-radius: 44px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px
+}
+
+.lineIcon {
+  width: 3px;
+  height: 16px;
+}
+
+.itemText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  line-height: 170%;
+}

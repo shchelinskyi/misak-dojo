@@ -6,6 +6,7 @@ import TheFooter from "./components/TheFooter";
 import ContactsPage from "./pages/ContactsPage/ContactsPage.tsx";
 import NewsPage from "./pages/NewsPage";
 import TeamPage from "./pages/TeamPage";
+import GymsPage from "./pages/GymsPage";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
             <MainPage/>
             <AboutPage/>
             <TeamPage/>
+            <GymsPage/>
             <NewsPage/>
             <ContactsPage/>
             <TheFooter/>
