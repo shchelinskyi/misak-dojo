@@ -1,0 +1,73 @@
+.wrapper {
+  width: 100vw;
+  position:relative;
+  margin-bottom: 313px;
+}
+
+.container {
+  margin: 50px auto 0;
+  padding-top: 100px;
+  padding-bottom: 242px;
+  padding-left: 125px;
+  background-color: #EDEDED;
+  border-radius: 46px;
+  max-width: 1720px;
+}
+
+.block {
+  display: flex;
+}
+
+.girlImg {
+  width: 451px;
+  height: 468px;
+}
+
+.centerItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.centerItemTitle {
+  font-family: Gagalin, sans-serif;
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.centerItemDescription {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.boyImg {
+  width: 430px;
+  height: 449px;
+}
+
+.cloudLeftImg {
+  width: 1034px;
+  position: absolute;
+  z-index: 3;
+  bottom:-110px;
+  left: -20px;
+}
+
+.cloudRightTopImg {
+  width: 1335px;
+  position: absolute;
+  z-index: 2;
+  bottom:-110px;
+  right: -170px;
+}
+
+.cloudRightBottomImg {
+  width: 1071px;
+  position: absolute;
+  z-index: 3;
+  bottom:-160px;
+  right: -330px;
+}

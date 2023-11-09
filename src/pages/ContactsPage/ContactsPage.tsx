@@ -14,6 +14,8 @@ import CustomButton from "../../components/CustomButton";
 import cn from "classnames";
 import ua from "../../assets/images/ua.png";
 import roundWait from "../../assets/images/roundWait.png";
+import {useState} from "react";
+import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
 
 interface TypeValue {
     name: string;
@@ -23,14 +25,14 @@ interface TypeValue {
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required("Поле обов'язкове"),
-    phone: Yup.string().required("Поле обов'язкове").matches(/^\d{9}$/, "Введите 9 цифр"),
-    content: Yup.string().required("Поле обов'язкове"),
+    phone: Yup.string().required("Поле обов'язкове").matches(/^\d{9}$/, "Введіть 9 цифр"),
+    comment: Yup.string().required("Поле обов'язкове"),
 });
 
 const initialValues: TypeValue = {
     name: "",
     phone: "",
-    comment: ""
+    comment: "121"
 };
 
 const CustomTextarea = ({field, form, ...props}) => (
@@ -58,11 +60,15 @@ const CustomCheckbox = ({field, form, ...props}) => (
 
 
 const ContactsPage = () => {
-
+    const [isChecked, setIsChecked] = useState(false);
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
     const handleSubmit = (values: TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
         console.log(1);
         setSubmitting(false);
         console.log(values);
+        sendMessageToTelegram(values)
     };
 
     return (
@@ -70,8 +76,15 @@ const ContactsPage = () => {
             <Container className="position-relative">
                 <h3 className={s.contactsTitle}>НАШІ КОНТАКТИ</h3>
                 <div className={s.logoContainer}>
-                    <Image className={s.AppLogo} src={roundWait} />
-                    <Image src={ua} style={{ width: "49px", height: "49px", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
+                    <Image className={s.AppLogo} src={roundWait}/>
+                    <Image src={ua} style={{
+                        width: "49px",
+                        height: "49px",
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)"
+                    }}/>
                 </div>
                 <Row>
                     <Col>
@@ -171,6 +184,7 @@ const ContactsPage = () => {
                     <Col>
                         <Row>
                             <div className={s.formBlock}>
+
                                 <Formik
                                     initialValues={initialValues}
                                     validationSchema={validationSchema}
@@ -213,7 +227,7 @@ const ContactsPage = () => {
                                             {/*</BootstrapForm.Group>*/}
 
                                             <label>
-                                                <input type="checkbox" className={s.checkbox} name="agree"/>
+                                                <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} className={s.checkbox} name="agree"/>
                                                 <span className={s.box}></span>
                                                 <span className={s.checkboxLabel}>Я даю згоду на обробку моїх персональних даних згідно з політикою конфіденційності</span>
                                             </label>
@@ -225,10 +239,11 @@ const ContactsPage = () => {
                                             {/*    id="checkbox"*/}
                                             {/*    label="Я даю згоду на обробку моїх персональних даних згідно з політикою конфіденційності"*/}
                                             {/*/>*/}
-
-                                            <Button type="submit" className={s.btn} disabled={isSubmitting}>
-                                                надіслати
-                                            </Button>
+                                            <div className="d-flex justify-content-end">
+                                                <Button type="submit" className={s.btn} disabled={!isChecked || isSubmitting}>
+                                                    надіслати
+                                                </Button>
+                                            </div>
 
                                         </Form>
                                     )}

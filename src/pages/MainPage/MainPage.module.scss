@@ -1,3 +1,16 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  background-image: url("../../assets/images/main/bg-main.png");
+  background-size: cover;
+  overflow: hidden;
+  z-index: -7;
+}
+
+
+
+
 
 .logoContainer {
   position: absolute;

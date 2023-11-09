@@ -1,0 +1,41 @@
+.wrapper {
+  max-width: 1720px;
+  margin-top: 50px;
+  margin-bottom: 170px;
+  border-radius: 46px;
+  padding: 140px 270px;
+}
+
+.title {
+  font-family: Gagalin, sans-serif;
+  font-size: 96px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.link {
+  gap:10px;
+  padding:34px 50px;
+  border-radius: 77px;
+  border:2px solid black;
+}
+
+.linkTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.iconPlus {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.usefulIcon {
+  position:absolute;
+  bottom: -80px;
+  left: 50%;
+  width: 603px;
+  object-fit: cover;
+}
