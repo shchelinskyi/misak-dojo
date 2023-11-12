@@ -1,55 +1,115 @@
-import {FC} from "react"
-import {Container, Image, Nav, Navbar, Form} from "react-bootstrap";
-import logo from "../../assets/images/logo.svg";
-import bucket from "../../assets/images/bucket.png";
+import {FC, useState} from "react"
+import {Container, Image, Nav, Navbar, NavbarToggle} from "react-bootstrap";
+import logo from "../../assets/images/main/logo.png";
+import fistLogo from "../../assets/images/main/fistLogo.png";
+import bucket from "../../assets/images/main/bucket.png";
+import instagram from "../../assets/images/main/instagram.svg";
+import facebook from "../../assets/images/main/facebook.svg";
+import telegram from "../../assets/images/main/telegram.svg";
+import youtube from "../../assets/images/main/youtube.svg";
+import CustomSelect from "../CustomSelect";
 import CustomButton from "../CustomButton";
 import s from "./TheHeader.module.scss";
-interface TheHeaderProps {
+import CustomNavbarToggle from "../CustomNavbarToggle";
+import cn from "classnames";
+
+interface ITheHeaderProps {
     scrollActions: {
-        scrollAbout : () => void,
-        scrollTeam : () => void,
-        scrollGyms : () => void,
-        scrollGallery : () => void,
-        scrollShop : () => void,
-        scrollContacts : () => void,
+        scrollAbout: () => void,
+        scrollTeam: () => void,
+        scrollGyms: () => void,
+        scrollGallery: () => void,
+        scrollShop: () => void,
+        scrollContacts: () => void,
     }
 }
 
-const TheHeader:FC<TheHeaderProps> = ({scrollActions}) => {
+const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
+
+    const [activeLang, setActiveLang] = useState('UA');
+
+    const handleLangToggle = (lang) => {
+        setActiveLang(lang);
+        // Добавьте здесь код для изменения языка в вашем приложении
+    };
+
+    const handleClick = () => {
+        console.log('Кнопка была нажата1!');
+    };
+
     return (
-        <Navbar expand="lg" className="bg-transparent position-relative">
-            <Container>
-                <Navbar.Brand href="#">
-                    <Image src={logo} style={{width:"145px", height:"77px"}}/>
+        <Navbar expand="lg" className="bg-transparent position-relative" sticky="top">
+            <Container style={{minWidth: "335px"}}>
+                <Navbar.Brand>
+                    <Image className={s.logo} src={logo}/>
+                    <Image className={s.fistLogo} src={fistLogo} style={{width: "65px", height: "50px"}}/>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link onClick={() => scrollActions.scrollAbout()}>ПРО НАС</Nav.Link>
-                        <Nav.Link onClick={() => scrollActions.scrollTeam()}>КОМАНДА</Nav.Link>
-                        <Nav.Link onClick={() => scrollActions.scrollGyms()}>ЗАЛА</Nav.Link>
-                        <Nav.Link onClick={() => scrollActions.scrollGallery()}>ГАЛЕРЕЯ</Nav.Link>
-                        <Nav.Link onClick={() => scrollActions.scrollShop()}>МАГАЗИН</Nav.Link>
-                        <Nav.Link onClick={() => scrollActions.scrollContacts()}>КОНТАКТИ</Nav.Link>
+                <div className={s.btnWrapper}>
+                    <CustomButton onClick={handleClick}>записатися</CustomButton>
+                </div>
+                <Navbar.Toggle style={{border: "none"}}>
+
+                    <CustomNavbarToggle/>
+                </Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav" className={s.collapse}>
+                    <Nav className={cn(s.menu)}>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollAbout()}
+                                  style={{
+                                      fontFamily: "'Montserrat', sans-serif",
+                                      fontSize: "16px", color: "#000000"
+                                  }}>ПРО НАС</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollTeam()}
+                                  style={{
+                                      fontFamily: "'Montserrat', sans-serif",
+                                      fontSize: "16px", color: "#000000"
+                                  }}>КОМАНДА</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollGyms()}
+                                  style={{
+                                      fontFamily: "'Montserrat', sans-serif",
+                                      fontSize: "16px", color: "#000000"
+                                  }}>ЗАЛА</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollGallery()}
+                                  style={{
+                                      fontFamily: "'Montserrat', sans-serif",
+                                      fontSize: "16px", color: "#000000"
+                                  }}>ГАЛЕРЕЯ</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollShop()}
+                                  style={{
+                                      fontFamily: "'Montserrat', sans-serif",
+                                      fontSize: "16px", color: "#000000"
+                                  }}>МАГАЗИН</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollContacts()}
+                                  style={{
+                                      fontFamily: "'Montserrat', sans-serif",
+                                      fontSize: "16px", color: "#000000"
+                                  }}>КОНТАКТИ</Nav.Link>
+                        <div className={s.langToggle}>
+                            <span className={activeLang === 'UA' ? s.activeLang : s.notActiveLang}
+                                  onClick={() => handleLangToggle('UA')}>UA</span>
+                            <span className={activeLang === 'ENG' ? s.activeLang : s.notActiveLang}
+                                  onClick={() => handleLangToggle('ENG')}>ENG</span>
+                            <span className={activeLang === 'RU' ? s.activeLang : s.notActiveLang}
+                                  onClick={() => handleLangToggle('RU')}>RU</span>
+                        </div>
+                        <div className={s.socialLinks}>
+                            <Image className={s.socialIcon} src={instagram}/>
+                            <Image className={s.socialIcon} src={facebook}/>
+                            <Image className={s.socialIcon} src={youtube}/>
+                            <Image className={s.socialIcon} src={telegram}/>
+                        </div>
                     </Nav>
 
-                    <Form.Select className={s.formSelect} aria-label="Default select example" style={{width:"75px", marginRight:"20px"}}>
-                        <option value="1">UA</option>
-                        <option value="2">RU</option>
-                        <option value="3">ENG</option>
-                    </Form.Select>
-                    <div style={{zIndex:"15"}}>
-
-                        <CustomButton label="записатися" onClick={()=> console.log("Hi")}/>
-                    </div>
-
                 </Navbar.Collapse>
+                <div className={s.mediaWrapper}>
+                    <CustomSelect/>
+                </div>
+                <div className={s.mediaWrapper}>
+                    <CustomButton onClick={handleClick}>записатися</CustomButton>
+                </div>
             </Container>
-            <div className="position-relative bg-secondary rounded-circle position-absolute d-flex justify-content-center align-items-center"
-                 style={{width:"64px", height:"64px", right:"10px", top:"90px"}}>
+            <div className={s.bucketWrapper}>
                 <Image src={bucket} width={39}/>
-                <div className="position-absolute text-light" style={{top: "18px", right:"25px", fontSize:"12px"}}>2</div>
-
+                <div className={s.badge}>2</div>
             </div>
 
         </Navbar>

@@ -1,0 +1,30 @@
+.selectContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width:50px;
+
+  margin-right:20px;
+}
+
+.selectBox {
+  position: relative;
+  appearance: none;
+  background-color: transparent;
+  width: 100%;
+  display: block;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.iconContainer {
+  position: absolute;
+  right: 5px;
+}
+
+.selectIcon {
+  width: 8px;
+}

@@ -1,8 +1,150 @@
-.formSelect {
-  border-color:transparent;
-  background-color: transparent;
-  position: relative;
+.logo {
+  width: 145px;
+  height: 77px;
 
+  @media (max-width: 1200px) {
+    width: 90px;
+    height: 48px;
+  }
+
+  @media (max-width: 992px) {
+    width: 127px;
+    height: 69px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 }
 
+.fistLogo {
+  width: 65px;
+  height: 50px;
+  @media (min-width: 481px) {
+    display: none;
+  }
+}
+
+.bucketWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #D3D3D3;
+  right: 10px;
+  top: 90px;
+}
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color:#ffffff;
+  font-weight: bold;
+}
+
+.collapse {
+  //margin-left: auto;
+
+  @media (max-width: 992px) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.menu {
+  @media (max-width: 992px) {
+    padding-top: 50px;
+    padding-bottom: 57px;
+    background-color: white;
+    width: 360px;
+    margin-right: 0;
+    margin-left: auto;
+    border-radius: 24px;
+    z-index: 5;
+    position: relative;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 0;
+    margin: 0 auto;
+    width: 320px;
+  }
+}
+
+.link {
+  cursor: pointer;
+  @media (max-width: 992px) {
+    margin-left: 20px;
+  }
+}
+.mediaWrapper {
+  display: block;
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.btnWrapper {
+  display: none;
+  @media (max-width: 992px) {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
+
+.langToggle {
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 24px
+  }
+}
+
+.activeLang {
+  color: #000000;
+  cursor: pointer;
+}
+
+.notActiveLang {
+  color: #737373;
+  cursor: pointer;
+}
+
+.socialLinks {
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px) {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
+  }
+}
+
+.socialIcon {
+  width: 50px;
+  height: 50px;
+  fill:green;
+  stroke: green;
+  transition: all 0.25s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 
