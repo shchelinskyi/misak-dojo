@@ -48,7 +48,6 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                     <CustomButton onClick={handleClick}>записатися</CustomButton>
                 </div>
                 <Navbar.Toggle style={{border: "none"}}>
-
                     <CustomNavbarToggle/>
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav" className={s.collapse}>
@@ -108,7 +107,7 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                 </div>
             </Container>
             <div className={s.bucketWrapper}>
-                <Image src={bucket} width={39}/>
+                <Image src={bucket} className={s.bucketIcon}/>
                 <div className={s.badge}>2</div>
             </div>
 

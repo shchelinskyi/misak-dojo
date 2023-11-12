@@ -12,6 +12,8 @@ import build from "../../assets/images/main/build.png";
 import arch from "../../assets/images/main/arch.png";
 import boy1 from "../../assets/images/main/boy1.gif";
 import boy2 from "../../assets/images/main/boy2.gif";
+import boy11 from "../../assets/images/main/boy1D.gif";
+import boy22 from "../../assets/images/main/boy2D.gif";
 import fingerDown from "../../assets/images/main/fingerDown.png";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
@@ -53,15 +55,26 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
             <Container className={s.contentContainer}>
                 <TheHeader scrollActions={scrollActions}/>
                 <div className="position-relative" style={{width: "900px"}}>
-                    <div className={s.titleWrapper} style={{height: "256px", marginBottom: "34px"}}>
+                    <div className={s.titleWrapper}>
                         <h3 className={s.mainTitle}>КІОКУШИНКАЙ</h3>
                         <h3 className={cn(s.mainTitle, s.secondLine)}>КАРАТЕ</h3>
                     </div>
                     <p className={s.offerContent}>
                         Запрошуємо на навчання до київського клубу Кіокушинкай карате Місак Доджо
                     </p>
-                    <CustomButton onClick={() => console.log(1)} styles={{maxWidth: "342px"}}>ХОЧУ СТАТИ
-                        КАРАТИСТОМ/-КОЮ</CustomButton>
+                    <div className={s.btnWrapper}>
+                        <CustomButton
+                            onClick={() => console.log(1)}
+                            styles={{
+                                maxWidth: "342px",
+                                '@media (max-width: 480px)': {
+                                    margin: "0 auto"
+                                }
+                            }}
+                        >
+                            ХОЧУ СТАТИ КАРАТИСТОМ/-КОЮ
+                        </CustomButton>
+                    </div>
                 </div>
                 <div className={s.logoContainer}>
                     <Image className={s.roundText} src={roundText}/>
@@ -69,6 +82,8 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                 </div>
                 <Image className={s.boy1} src={boy1} style={calculateParallax(mousePosition, 50)}/>
                 <Image className={s.boy2} src={boy2} style={calculateParallax(mousePosition, -50)}/>
+                <Image className={s.boy11} src={boy11} style={calculateParallax(mousePosition, 50)}/>
+                <Image className={s.boy22} src={boy22} style={calculateParallax(mousePosition, -50)}/>
                 <Image className={s.build} src={build}/>
                 <Image className={s.arch} src={arch}/>
                 <Image className={s.volcano} src={volcano}/>
@@ -77,7 +92,7 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                 <Image className={s.cloudL} src={cloudL}/>
                 <div className={s.moreItem}>
                     <p className={s.fingerText}>Більше</p>
-                    <Image src={fingerDown} style={{width:"35px"}}/>
+                    <Image src={fingerDown} style={{width: "35px"}}/>
                 </div>
             </Container>
         </div>
