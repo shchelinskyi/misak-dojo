@@ -2,9 +2,12 @@
   width: 100vw;
   position:relative;
   margin-bottom: 313px;
+
 }
 
 .container {
+  position:relative;
+  border: 2px solid green;
   margin: 50px auto 0;
   padding-top: 100px;
   padding-bottom: 242px;
@@ -50,24 +53,27 @@
 
 .cloudLeftImg {
   width: 1034px;
+  height: 476px;
   position: absolute;
   z-index: 3;
-  bottom:-110px;
-  left: -20px;
+  bottom:-90px;
+  left: -350px;
 }
 
 .cloudRightTopImg {
   width: 1335px;
+  height: 568px;
   position: absolute;
   z-index: 2;
   bottom:-110px;
-  right: -170px;
+  right: -320px;
 }
 
 .cloudRightBottomImg {
   width: 1071px;
+  height: 338px;
   position: absolute;
   z-index: 3;
   bottom:-160px;
-  right: -330px;
+  right: -630px;
 }

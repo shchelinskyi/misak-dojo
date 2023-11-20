@@ -1,15 +1,15 @@
 .wrapper {
-  position: relative;
   width: 100vw;
-  height: 100vh;
-  max-width: 100%;
+  max-width: 100vw;
   background-image: url("../../assets/images/main/bg-main.png");
-  background-size: cover;
-  overflow: hidden;
+  overflow-x: hidden;
+  //z-index: -99;
 }
 
 .contentContainer {
   position: relative;
+  border:2px solid red;
+  margin-bottom: 500px;
 }
 
 .titleWrapper {
@@ -35,7 +35,6 @@
     height: 80px;
   }
 }
-
 
 .mainTitle {
   font-family: 'Gagalin', sans-serif;
@@ -209,7 +208,16 @@
 
   @media (max-width: 480px) {
     top: 310px;
-    left: 60px;
+    //left: 0;
+    left: 10vw;
+    width: 157px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 430px) {
+    top: 310px;
+    //left: 0;
+    left: 5vw;
     width: 157px;
     object-fit: contain;
   }
@@ -217,6 +225,17 @@
   //will-change: transform;
   //transform: translateY(100%) translateX(100%);
   //animation: slide-down-diagonal 1s ease-out 1s forwards;
+}
+
+@keyframes slide-down-diagonal {
+  from {
+    opacity: 0;
+    transform: translateY(-100%) translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
 }
 
 .boy11 {
@@ -232,39 +251,12 @@
   }
 }
 
-.boy22 {
-  display: none;
-  position: absolute;
-  @media (min-width: 481px) and (max-width: 992px) {
-    position: absolute;
-    display: block;
-    width: 224px;
-    height: 260px;
-    top:500px;
-    right: 250px;
-  }
-}
-
-
-
-
-@keyframes slide-down-diagonal {
-  from {
-    opacity: 0;
-    transform: translateY(-100%) translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) translateX(0);
-  }
-}
-
 .boy2 {
   width: 300px;
   position: absolute;
   top: 400px;
   right: 30px;
-  z-index: 10;
+  z-index: 12;
 
   @media (max-width: 1200px) {
     top: 350px;
@@ -277,11 +269,22 @@
     display: none;
   }
 
+
   @media (max-width: 480px) {
     width: 140px;
     object-fit: contain;
     top: 430px;
-    right: 100px;
+    //right: 50px;
+    right: 20vw;
+  }
+
+
+  @media (max-width: 430px) {
+    width: 140px;
+    object-fit: contain;
+    top: 430px;
+    //right: 50px;
+    right: 10vw;
   }
   //opacity: 0;
   //will-change: transform;
@@ -297,6 +300,19 @@
   to {
     opacity: 1;
     transform: translateY(0) translateX(0);
+  }
+}
+
+.boy22 {
+  display: none;
+  position: absolute;
+  @media (min-width: 481px) and (max-width: 992px) {
+    position: absolute;
+    display: block;
+    width: 224px;
+    height: 260px;
+    top:500px;
+    right: 250px;
   }
 }
 
@@ -341,7 +357,6 @@
   //width: 30%;
 }
 
-
 @keyframes slide-up {
   from {
     transform: translateY(100%);
@@ -353,7 +368,6 @@
   }
 }
 
-
 .cloudL {
   width: 1035px;
   position: absolute;
@@ -364,13 +378,30 @@
   animation-iteration-count: infinite;
   animation-direction: reverse;
   animation-timing-function: ease-in-out;
-  z-index: -2;
+  z-index: 11;
+
+  @media (max-width: 1200px) {
+    width: 790px;
+    top: 550px;
+    left: -450px;
+    animation-name: welcome__cloud-bottom-left-l;
+    z-index: 11;
+  }
+
+
+  @media (max-width: 993px) {
+    width: 665px;
+    top: 550px;
+    left: -320px;
+    animation-name: welcome__cloud-bottom-left-m;
+    z-index: 11;
+  }
+
 
   @media (max-width: 480px) {
-    border: 2px solid red;
     width: 394px;
     top: 550px;
-    left: -250px;
+    left: -100px;
     animation-name: welcome__cloud-bottom-left-s;
     z-index: 11;
   }
@@ -379,18 +410,42 @@
   //bottom: -20%;
 }
 
+
+@keyframes welcome__cloud-bottom-left-l {
+  0% {
+    left: -450px;
+  }
+  50% {
+    left: -400px;
+  }
+  100% {
+    left: -450px;
+  }
+}
+
+@keyframes welcome__cloud-bottom-left-m {
+  0% {
+    left: -320px;
+  }
+  50% {
+    left: -380px;
+  }
+  100% {
+    left: -320px;
+  }
+}
+
 @keyframes welcome__cloud-bottom-left-s {
   0% {
     left: -100px;
   }
   50% {
-    left: -50px;
+    left: -150px;
   }
   100% {
     left: -100px;
   }
 }
-
 
 @keyframes welcome__cloud-bottom-left {
   0% {
@@ -414,10 +469,27 @@
   animation-iteration-count: infinite;
   animation-direction: reverse;
   animation-timing-function: ease-in-out;
-  z-index: -3;
+  z-index: 10;
+
+
+  @media (max-width: 1200px) {
+    width: 1000px;
+    top: 500px;
+    right: -300px;
+    animation-name: welcome__cloud-bottom-right-back-l;
+    z-index: 10;
+  }
+
+  @media (max-width: 993px) {
+    width: 843px;
+    top: 500px;
+    right: -350px;
+    animation-name: welcome__cloud-bottom-right-back-m;
+    z-index: 10;
+  }
+
 
   @media (max-width: 480px) {
-    border: 2px solid #3ad21c;
     width: 500px;
     top: 500px;
     right: -250px;
@@ -431,6 +503,37 @@
   //right: -20%;
 }
 
+@keyframes welcome__cloud-bottom-right-back-l {
+  0% {
+    right: -300px;
+  }
+  50% {
+    right: -200px;
+  }
+  100% {
+    right: -300px;
+  }
+}
+
+
+
+@keyframes welcome__cloud-bottom-right-back-m {
+  0% {
+    right: -350px;
+  }
+  50% {
+    right: -250px;
+  }
+  100% {
+    right: -350px;
+  }
+}
+
+
+
+
+
+
 @keyframes welcome__cloud-bottom-right-back-s {
   0% {
     right: -200px;
@@ -442,7 +545,6 @@
     right: -200px;
   }
 }
-
 
 @keyframes welcome__cloud-bottom-right-back {
   0% {
@@ -456,21 +558,34 @@
   }
 }
 
-
 .cloudRb {
   width: 1071px;
   position: absolute;
-  top: 500px;
+  top: 550px;
   right: -500px;
   animation-name: welcome__cloud-bottom-right-front;
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-direction: reverse;
   animation-timing-function: ease-in-out;
-  z-index: 99;
+  z-index: 13;
+
+  @media (max-width: 1200px) {
+    width: 803px;
+    top: 650px;
+    right: -450px;
+    animation-name: welcome__cloud-bottom-right-front-l;
+  }
+
+
+  @media (max-width: 993px) {
+    width: 676px;
+    top: 650px;
+    right: -450px;
+    animation-name: welcome__cloud-bottom-right-front-m;
+  }
 
   @media (max-width: 480px) {
-    border: 2px solid #92d2f4;
     width: 400px;
     top: 600px;
     right: -250px;
@@ -483,6 +598,38 @@
   //bottom: -20%;
   //right: -40%;
 }
+
+@keyframes welcome__cloud-bottom-right-front-l {
+  0% {
+    right: -400px;
+  }
+  50% {
+    right: -350px;
+  }
+  100% {
+    right: -400px;
+  }
+}
+
+
+
+
+
+
+@keyframes welcome__cloud-bottom-right-front-m {
+  0% {
+    right: -450px;
+  }
+  50% {
+    right: -400px;
+  }
+  100% {
+    right: -450px;
+  }
+}
+
+
+
 
 
 @keyframes welcome__cloud-bottom-right-front-s {
@@ -534,7 +681,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width: 480px) {
+  z-index: 99;
+  @media (max-width: 1200px) {
     display: none;
   }
 }

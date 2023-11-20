@@ -53,15 +53,15 @@ const App = () => {
         <>
             <MainPage scrollActions={scrollActions}/>
             <div ref={aboutRef}>
-                {/*<AboutPage/>*/}
+                <AboutPage/>
             </div>
             <div ref={teamRef}>
-                {/*<TeamPage/>*/}
+                <TeamPage/>
             </div>
             <div ref={gymsRef}>
-                {/*<GymsPage/>*/}
+                <GymsPage/>
             </div>
-            {/*<TrialLessonPage/>*/}
+            <TrialLessonPage/>
             <div ref={galleryRef}>
                 {/*<GalleryPage/>*/}
             </div>
