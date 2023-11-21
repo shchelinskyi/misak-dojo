@@ -22,7 +22,6 @@ const newsData = [
         title: "Куміте в «Тайфу доджо». В гостях у Георгія Долініна. Бровари",
     }
 ]
-
 const linkArr = [
     {
         title: "Словник термінів Кіокушинкай карате", link: ""
@@ -60,17 +59,16 @@ const NewsPage = () => {
     return (
         <>
             <Container className={s.wrapper}>
-                <Container className="position-relative">
+                <div className={s.container}>
                     <h3 className={s.title}>НОВИНИ</h3>
-                    <Stack direction="horizontal"
-                           style={{justifyContent: "space-between", alignItems: "flex-start", gap: "20px"}}>
+                    <div className={s.content}>
                         {newsData.length > 0 && newsData.map((newsItem) => <NewsCard key={newsItem.url}
                                                                                      newsItem={newsItem}/>)}
+                    </div>
+                    <Stack direction="horizontal" style={{justifyContent: "center", marginTop: "70px"}}>
+                        <CustomButton>ПОКАЗАТИ БІЛЬШЕ</CustomButton>
                     </Stack>
-                    <Stack direction="horizontal" style={{justifyContent: "center"}}>
-                        <CustomButton onClick={() => console.log("show more")} label="ПОКАЗАТИ БІЛЬШЕ"/>
-                    </Stack>
-                </Container>
+                </div>
             </Container>
             <Container style={{maxWidth: "1328px"}}>
                 <h3 className={s.title} style={{marginBottom: "100px"}}>ЩЕ ПОЧИТАТИ</h3>

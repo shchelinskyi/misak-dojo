@@ -1,12 +1,12 @@
 import s from "./SupportUsPage.module.scss";
 import {Image} from "react-bootstrap";
-import spiral from "../../assets/images/spiral-support.png";
-import heartY from "../../assets/images/heart-y.png";
-import heartB from "../../assets/images/heart-b.png";
-import hands from "../../assets/images/hands.png";
-import support from "../../assets/images/support.png";
-import btnLabel from "../../assets/images/btn-label.png";
-import finger from "../../assets/images/finger-up.png";
+import spiral from "../../assets/images/support/spiral-support.svg";
+import heartY from "../../assets/images/support/heart-y.svg";
+import heartB from "../../assets/images/support/heart-b.svg";
+import hands from "../../assets/images/support/hands.svg";
+import support from "../../assets/images/support/support.svg";
+import btnLabel from "../../assets/images/support/btn-label.svg";
+import finger from "../../assets/images/support/finger-up.svg";
 import CustomButton from "../../components/CustomButton";
 
 
@@ -26,11 +26,11 @@ const SupportUsPage = () => {
                 <div className={s.supportBlock}>
                     <Image src={spiral} className={s.spiralImg}/>
                     <Image src={support} className={s.supportLabel}/>
-                    <CustomButton onClick={()=>console.log(1)} styles={{width:"245px"}}>
+                    <button className={s.btn} onClick={() => console.log(1)}>
                         <Image src={btnLabel} className={s.btnLabel}/>
-                    </CustomButton>
+                    </button>
                     <div className={s.fingerBlock}>
-                    <Image src={finger} className={s.fingerImg}/>
+                        <Image src={finger} className={s.fingerImg}/>
                         <span>* тиць</span>
                     </div>
                 </div>

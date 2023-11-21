@@ -12,10 +12,12 @@ interface NewsCardTypes {
 
 const ProductCard: FC<NewsCardTypes> = ({productItem}) => {
     return (
-        <div style={{maxWidth:"380px"}}>
+        <div className={s.card}>
             <Image className={s.productImg} src={productItem.url}/>
+            <div className={s.textBlock}>
             <h6 className={s.productTitle}>{productItem.title}</h6>
             <h6 className={s.productPrice}>{productItem.price} <span>грн</span></h6>
+            </div>
         </div>
     );
 };

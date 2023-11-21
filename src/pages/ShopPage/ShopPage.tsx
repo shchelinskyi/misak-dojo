@@ -3,7 +3,8 @@ import {Container, Image, Stack} from "react-bootstrap";
 import NewsCard from "../../components/NewsCard";
 import CustomButton from "../../components/CustomButton";
 import ProductCard from "../../components/ProductCard";
-import cn from "classnames"
+import cn from "classnames";
+
 
 
 const newsData = [
@@ -63,7 +64,7 @@ const ShopPage = () => {
     return (
         <>
             <Container className={s.wrapper}>
-                <Container className="position-relative">
+                <div className={s.container}>
                     <h3 className={s.title}>МАГАЗИН</h3>
                     <div className={s.tabsList}>
                         <div className={cn(s.tab, s.active)}>Все</div>
@@ -73,15 +74,14 @@ const ShopPage = () => {
                         <div className={s.tab}>Пояси</div>
                         <div className={s.tab}>Чохли</div>
                     </div>
-                    <Stack direction="horizontal"
-                           style={{justifyContent: "space-between", alignItems: "flex-start", gap: "20px"}}>
+                    <div className={s.content}>
                         {newsData.length > 0 && newsData.map((productItem) => <ProductCard key={productItem.url}
                                                                                            productItem={productItem}/>)}
-                    </Stack>
+                    </div>
                     <Stack direction="horizontal" style={{justifyContent: "center", marginTop:"70px"}}>
-                        <CustomButton onClick={() => console.log("show more")} label="ПОКАЗАТИ БІЛЬШЕ"/>
+                        <CustomButton onClick={() => console.log("show more")}>ПОКАЗАТИ БІЛЬШЕ</CustomButton>
                     </Stack>
-                </Container>
+                </div>
             </Container>
         </>
     );

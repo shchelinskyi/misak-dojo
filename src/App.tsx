@@ -63,14 +63,14 @@ const App = () => {
             </div>
             <TrialLessonPage/>
             <div ref={galleryRef}>
-                {/*<GalleryPage/>*/}
+                <GalleryPage/>
             </div>
-            {/*<SupportUsPage/>*/}
-            {/*<Ticker/>*/}
+            <SupportUsPage/>
+            <Ticker/>
             <div ref={shopRef}>
-                {/*<ShopPage/>*/}
+                <ShopPage/>
             </div>
-            {/*<NewsPage/>*/}
+                <NewsPage/>
             <div ref={contactsRef}>
                 {/*<ContactsPage/>*/}
             </div>

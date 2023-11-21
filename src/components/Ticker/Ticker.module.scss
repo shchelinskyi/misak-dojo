@@ -11,6 +11,10 @@
   text-transform: uppercase;
   animation: text 20s infinite linear;
   white-space: nowrap;
+
+  @media (max-width: 480px) {
+    font-size: 36px;
+  }
 }
 
 @keyframes text {
