@@ -18,12 +18,15 @@ import saturday from "../../assets/images/gyms/saturday.svg";
 import cn from "classnames";
 import s from "./GymsPage.module.scss";
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 
 const GymsPage = () => {
     const [isBlockVisible1, setIsBlockVisible1] = useState(false);
     const [isBlockVisible2, setIsBlockVisible2] = useState(false);
     const [isBlockVisible3, setIsBlockVisible3] = useState(false);
+
+    const { t } = useTranslation();
 
     const toggleVisibility = (numBlock) => {
         if (numBlock === 1) {

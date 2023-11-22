@@ -38,6 +38,7 @@
 .mainTitle {
   font-family: 'Gagalin', sans-serif;
   font-size: 128px;
+  text-transform: uppercase;
 
   @media (max-width: 1200px) {
     font-size: 100px;
@@ -692,7 +693,11 @@
   font-size: 14px;
   margin: 0;
   transform: rotate(-90deg);
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
+
 
 
 //@keyframes welcome__cloud-bottom-right-back {

@@ -20,20 +20,24 @@ import karate from "../../assets/video/karate.mp4";
 import titleTeam from "../../assets/images/about/title-team.svg";
 import s from "./AboutPage.module.scss";
 import cn from "classnames";
+import {useTranslation} from "react-i18next";
 
 
 const AboutPage = () => {
+
+    const { t } = useTranslation();
+
     return (
         <>
             <Container>
                 <Container>
                     <div className={s.sloganWrapper}>
-                        Ставай частиною нашої дружньої команди,
+                        {t('slogan1')}
                         <Image className={s.membersIcon} src={members}/>
-                        займайся у
-                        <span className={cn(s.slogan, s.dojo)}>сучасному Доджо</span>
+                        {t('slogan2')}
+                        <span className={cn(s.slogan, s.dojo)}>{t('slogan3')}</span>
                         <Image className={s.heartIcon} src={heart}/>
-                        та розвивай свої силу і дух
+                        {t('slogan4')}
                         <span>
                             <Image className={s.handLIcon} src={handL}/>
                             <Image className={s.personIcon} src={person}/>
@@ -44,19 +48,12 @@ const AboutPage = () => {
 
                 <div className={s.aboutWrapper}>
                     <div className={s.aboutContent}>
-                        <h3 className={s.aboutTitle}>ПРО НАC</h3>
+                        <h3 className={s.aboutTitle}>{t('aboutUs')}</h3>
                         <p className={s.mainText} style={{marginBottom: "40px"}}>
-                            Основною метою створення Спортивного клубу Кіокушинкай карате «Місак Доджо» є
-                            популяризація
-                            карате шляхом формування повноцінної групи Каратек, яка буде йти шляхом Кіокушинкай,
-                            розвиваючи свої моральні та вольові якості, вдосконалюючись,
-                            як інтелектуально так і фізично.
+                            {t("aboutText1")}
                         </p>
                         <p className={s.mainText}>
-                            Ми створили Доджо, у якому раді бачити кожного цілеспрямованого адепта карате, який
-                            проходитиме шлях воїна у любові, повазі та терпінні до занять, тренера
-                            та всієї групи Каратек. Наша команда приділяє велику увагу розвитку фізичних і духовних
-                            навичок, формуванню повноцінної особистості в дружньому і згуртованому колективі!
+                            {t("aboutText2")}
                         </p>
                         <Image className={s.starsImg} src={stars}/>
                         <Image className={s.starsImg2} src={stars2}/>
@@ -79,8 +76,8 @@ const AboutPage = () => {
                                 <Image className={s.smilesIcon} src={smiles}/>
                             </div>
                             <div className={s.totalItemTitle}>
-                                <h4 className={s.subTitle}>каратистів</h4>
-                                <p className={s.subMain}>зараз тренуються <br className={s.wrap}/> у Місак Доджо</p>
+                                <h4 className={s.subTitle}>{t("whoTraining1")}</h4>
+                                <p className={s.subMain}>{t("whoTraining2")} <br className={s.wrap}/> {t("whoTraining3")}</p>
                             </div>
 
                         </div>
@@ -94,8 +91,8 @@ const AboutPage = () => {
                                 <Image className={s.chimanoIcon} src={chimano}/>
                             </div>
                             <div className={s.totalItemTitle}>
-                                <h4 className={s.subTitle}>рази на рік</h4>
-                                <p className={s.subMain}>учні здають екзамени <br className={s.wrap}/> у Місак Доджо на пояси</p>
+                                <h4 className={s.subTitle}>{t("howMany1")}</h4>
+                                <p className={s.subMain}>{t("howMany2")} <br className={s.wrap}/> {t("howMany3")}</p>
                             </div>
 
                         </div>
@@ -109,8 +106,8 @@ const AboutPage = () => {
                                 <Image className={s.cupIcon} src={cup}/>
                             </div>
                             <div className={s.totalItemTitle}>
-                                <h4 className={s.subTitle}>чемпіони</h4>
-                                <p className={s.subMain}>укр. та європ. змагань <br className={s.wrap}/> серед наших учнів</p>
+                                <h4 className={s.subTitle}>{t("winners1")}</h4>
+                                <p className={s.subMain}>{t("winners2")} <br className={s.wrap}/> {t("winners3")}</p>
                             </div>
                         </div>
 

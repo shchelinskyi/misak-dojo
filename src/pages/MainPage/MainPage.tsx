@@ -17,6 +17,7 @@ import boy22 from "../../assets/images/main/boy2D.gif";
 import fingerDown from "../../assets/images/main/fingerDown.png";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
+import {useTranslation} from "react-i18next";
 
 interface IMainPageProps {
     scrollActions: {
@@ -32,6 +33,8 @@ interface IMainPageProps {
 const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
 
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -56,11 +59,11 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                 <TheHeader scrollActions={scrollActions}/>
                 <div className="position-relative" style={{width: "900px"}}>
                     <div className={s.titleWrapper}>
-                        <h3 className={s.mainTitle}>КІОКУШИНКАЙ</h3>
-                        <h3 className={cn(s.mainTitle, s.secondLine)}>КАРАТЕ</h3>
+                        <h3 className={s.mainTitle}>{t('mainTitle1')}</h3>
+                        <h3 className={cn(s.mainTitle, s.secondLine)}>{t('mainTitle2')}</h3>
                     </div>
                     <p className={s.offerContent}>
-                        Запрошуємо на навчання до київського клубу Кіокушинкай карате Місак Доджо
+                        {t("offer")}
                     </p>
                     <div className={s.btnWrapper}>
                         <CustomButton
@@ -72,7 +75,7 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                                 }
                             }}
                         >
-                            ХОЧУ СТАТИ КАРАТИСТОМ/-КОЮ
+                            {t("wantToBe")}
                         </CustomButton>
                     </div>
                 </div>
@@ -91,7 +94,7 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                 <Image className={s.cloudRb} src={cloudRb}/>
                 <Image className={s.cloudL} src={cloudL}/>
                 <div className={s.moreItem}>
-                    <p className={s.fingerText}>Більше</p>
+                    <p className={s.fingerText}>{t('more')}</p>
                     <Image src={fingerDown} style={{width: "35px"}}/>
                 </div>
             </Container>

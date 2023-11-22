@@ -12,6 +12,7 @@ import CustomButton from "../CustomButton";
 import s from "./TheHeader.module.scss";
 import CustomNavbarToggle from "../CustomNavbarToggle";
 import cn from "classnames";
+import {useTranslation} from "react-i18next";
 
 interface ITheHeaderProps {
     scrollActions: {
@@ -27,11 +28,11 @@ interface ITheHeaderProps {
 const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
 
     const [activeLang, setActiveLang] = useState('UA');
+    const { t, i18n } = useTranslation();
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    }
 
-    const handleLangToggle = (lang) => {
-        setActiveLang(lang);
-        // Добавьте здесь код для изменения языка в вашем приложении
-    };
 
     const handleClick = () => {
         console.log('Кнопка была нажата1!');
@@ -45,50 +46,26 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                     <Image className={s.fistLogo} src={fistLogo} style={{width: "65px", height: "50px"}}/>
                 </Navbar.Brand>
                 <div className={s.btnWrapper}>
-                    <CustomButton onClick={handleClick}>записатися</CustomButton>
+                    <CustomButton onClick={handleClick}>{t('signUp')}</CustomButton>
                 </div>
                 <Navbar.Toggle style={{border: "none"}}>
                     <CustomNavbarToggle/>
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav" className={s.collapse}>
                     <Nav className={cn(s.menu)}>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollAbout()}
-                                  style={{
-                                      fontFamily: "'Montserrat', sans-serif",
-                                      fontSize: "16px", color: "#000000"
-                                  }}>ПРО НАС</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollTeam()}
-                                  style={{
-                                      fontFamily: "'Montserrat', sans-serif",
-                                      fontSize: "16px", color: "#000000"
-                                  }}>КОМАНДА</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollGyms()}
-                                  style={{
-                                      fontFamily: "'Montserrat', sans-serif",
-                                      fontSize: "16px", color: "#000000"
-                                  }}>ЗАЛА</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollGallery()}
-                                  style={{
-                                      fontFamily: "'Montserrat', sans-serif",
-                                      fontSize: "16px", color: "#000000"
-                                  }}>ГАЛЕРЕЯ</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollShop()}
-                                  style={{
-                                      fontFamily: "'Montserrat', sans-serif",
-                                      fontSize: "16px", color: "#000000"
-                                  }}>МАГАЗИН</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollContacts()}
-                                  style={{
-                                      fontFamily: "'Montserrat', sans-serif",
-                                      fontSize: "16px", color: "#000000"
-                                  }}>КОНТАКТИ</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollAbout()}>{t('aboutUs')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollTeam()}>{t('team')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollGyms()}>{t('gym')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollGallery()}>{t('gallery')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollShop()}>{t('shop')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollContacts()}>{t('contacts')}</Nav.Link>
                         <div className={s.langToggle}>
                             <span className={activeLang === 'UA' ? s.activeLang : s.notActiveLang}
-                                  onClick={() => handleLangToggle('UA')}>UA</span>
+                                  onClick={() => changeLanguage('ua')}>UA</span>
                             <span className={activeLang === 'ENG' ? s.activeLang : s.notActiveLang}
-                                  onClick={() => handleLangToggle('ENG')}>ENG</span>
+                                  onClick={() => changeLanguage('en')}>EN</span>
                             <span className={activeLang === 'RU' ? s.activeLang : s.notActiveLang}
-                                  onClick={() => handleLangToggle('RU')}>RU</span>
+                                  onClick={() => changeLanguage('ru')}>RU</span>
                         </div>
                         <div className={s.socialLinks}>
                             <Image className={s.socialIcon} src={instagram}/>
@@ -103,7 +80,7 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                     <CustomSelect/>
                 </div>
                 <div className={s.mediaWrapper}>
-                    <CustomButton onClick={handleClick}>записатися</CustomButton>
+                    <CustomButton onClick={handleClick}>{t('signUp')}</CustomButton>
                 </div>
             </Container>
             <div className={s.bucketWrapper}>

@@ -18,31 +18,24 @@ import "swiper/css";
 import "swiper/css/pagination";
 import {Pagination} from "swiper/modules";
 import cn from "classnames";
+import {useTranslation} from "react-i18next";
 
 
 const TeamPage = () => {
+    const { t } = useTranslation();
     return (
         <Container className="position-relative" style={{marginTop: "245px", padding: "0"}}>
-            <h3 className={s.title}>команда</h3>
+            <h3 className={s.title}>{t("team")}</h3>
             <div className={s.trainerDescription}>
                 <Image className={s.mainTrainerImage} src={trainerM}/>
-                <TrainerLabel name="Сенпай Арзуманян Місак" rank="2 дан, КМСУ"/>
+                <TrainerLabel name= {t("trainerM")} rank={t("trainerMRank")}/>
                 <Image className={s.spiral} src={spiral}/>
                 <div className={s.textWrapper}>
                     <p className={s.trainerText}>
-                        Народився у 1988 р. в місті Суми. Вперше на Кіокушинкай карате потрапив ще у віці 6 років.
-                        Згодом,
-                        будучи студентом Української академії банківської справи, юнак розпочав тренування у Шевченка
-                        Олександра Миколайовича, а невдовзі почав виступати за Сумську область на національних
-                        змаганнях. У
-                        2009 р. хлопець здобув звання Кандидата у майстри спорту України.
+                        {t("trainerText1")}
                     </p>
                     <p className={s.trainerText}>
-                        В 2012 р. Місак переїхав до Києва. Тренувався у шихана Лящєнко Віктора Георгійовича та згодом
-                        започаткував «Місак доджо».
-                        У 2014 р. в місті Вінниця склав іспит на перший дан (чорний пояс),
-                        а у 2019 р. з товаришами по карате зареєстрували Спортивний клуб Кіокушинкай карате «Місак
-                        доджо».
+                        {t("trainerText2")}
                     </p>
                     <Image className={s.lineHorizontal} src={horizontalLine}/>
                 </div>
@@ -54,7 +47,7 @@ const TeamPage = () => {
                             <Image className={s.trainerImgM} src={trainerM}/>
                             <div className={s.trainerBg}></div>
                             <div className={s.trainerLabel}>
-                                <TrainerLabel name="Сенпай Арзуманян Місак" rank="2 дан, КМСУ"/>
+                                <TrainerLabel name= {t("trainerM")} rank={t("trainerMRank")}/>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -63,7 +56,7 @@ const TeamPage = () => {
                             <Image className={s.trainerImg} src={trainer1}/>
                             <div className={s.trainerBg}></div>
                             <div className={s.trainerLabel}>
-                                <TrainerLabel name="Сенпай Костянтин Костюк" rank="1 дан"/>
+                                <TrainerLabel name= {t("trainer1")} rank={t("trainer1Rank")}/>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -72,7 +65,7 @@ const TeamPage = () => {
                             <Image className={s.trainerBg} src={trainerBg}/>
                             <Image className={s.trainerImg} src={trainer2}/>
                             <div className={s.trainerLabel}>
-                                <TrainerLabel name="Микола Івашковець" rank="1 кю"/>
+                                <TrainerLabel name= {t("trainer2")} rank={t("trainer2Rank")}/>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -81,7 +74,7 @@ const TeamPage = () => {
                             <Image className={s.trainerBg} src={trainerBg}/>
                             <Image className={s.trainerImg} src={trainer3}/>
                             <div className={s.trainerLabel}>
-                                <TrainerLabel name="Фелікс Зінченко" rank="1 кю"/>
+                                <TrainerLabel name= {t("trainer3")} rank={t("trainer3Rank")}/>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -91,7 +84,7 @@ const TeamPage = () => {
                             <Image className={cn(s.trainerImg,s.trainerImg4)}
                                    src={trainer4}/>
                             <div className={s.trainerLabel}>
-                                <TrainerLabel name="Сенпай Валерія Сліпець" rank="3 кю"/>
+                                <TrainerLabel name= {t("trainer4")} rank={t("trainer4Rank")}/>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -101,7 +94,7 @@ const TeamPage = () => {
                             <Image className={cn(s.trainerImg,s.trainerImg5)}
                                    src={trainer5}/>
                             <div className={s.trainerLabel}>
-                                <TrainerLabel name="Сенпай Микола Скрипник" rank="4 кю"/>
+                                <TrainerLabel name= {t("trainer5")} rank={t("trainer5Rank")}/>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -113,21 +106,21 @@ const TeamPage = () => {
                     <Image className={s.trainerBg} src={trainerBg}/>
                     <Image className={s.trainerImg} src={trainer1}/>
                     <div className={s.trainerLabel}>
-                        <TrainerLabel name="Сенпай Костянтин Костюк" rank="1 дан"/>
+                        <TrainerLabel name= {t("trainer1")} rank={t("trainer1Rank")}/>
                     </div>
                 </div>
                 <div className={s.trainerCard}>
                     <Image className={s.trainerBg} src={trainerBg}/>
                     <Image className={s.trainerImg} src={trainer2}/>
                     <div className={s.trainerLabel}>
-                        <TrainerLabel name="Микола Івашковець" rank="1 кю"/>
+                        <TrainerLabel name= {t("trainer2")} rank={t("trainer2Rank")}/>
                     </div>
                 </div>
                 <div className={s.trainerCard}>
                     <Image className={s.trainerBg} src={trainerBg}/>
                     <Image className={s.trainerImg} src={trainer3}/>
                     <div className={s.trainerLabel}>
-                        <TrainerLabel name="Фелікс Зінченко" rank="1 кю"/>
+                        <TrainerLabel name= {t("trainer3")} rank={t("trainer3Rank")}/>
                     </div>
                 </div>
                 <div className={s.trainerCard}>
@@ -135,7 +128,7 @@ const TeamPage = () => {
                     <Image style={{height: "450px", width: "324px"}} className={s.trainerImg}
                            src={trainer4}/>
                     <div className={s.trainerLabel}>
-                        <TrainerLabel name="Сенпай Валерія Сліпець" rank="3 кю"/>
+                        <TrainerLabel name= {t("trainer4")} rank={t("trainer4Rank")}/>
                     </div>
                 </div>
                 <div className={s.trainerCard}>
@@ -143,7 +136,7 @@ const TeamPage = () => {
                     <Image style={{height: "456px", width: "417px"}} className={s.trainerImg}
                            src={trainer5}/>
                     <div className={s.trainerLabel}>
-                        <TrainerLabel name="Сенпай Микола Скрипник" rank="4 кю"/>
+                        <TrainerLabel name= {t("trainer5")} rank={t("trainer5Rank")}/>
                     </div>
                 </div>
                 <div className={s.logoContainer}>
