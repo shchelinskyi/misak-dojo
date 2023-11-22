@@ -1,0 +1,109 @@
+.formBlock {
+  width: 580px;
+  background-color: #ffffff;
+  border-radius: 46px;
+  padding: 40px 60px;
+
+  @media (max-width: 1200px) {
+    width: 460px;
+    padding: 40px;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+
+}
+
+.wrap {
+  display:block;
+  @media (max-width: 992px) {
+    display:none;
+  }
+}
+
+.formTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin-bottom: 18px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+}
+
+.checkbox {
+  display: none;
+}
+
+
+.box {
+  border-radius: 4px;
+  display: inline-block;
+  width:15px;
+  height: 15px;
+  border: 1px solid grey;
+  margin-right: 5px;
+  position:relative;
+}
+
+.box::after {
+  border-radius: 2px;
+  content:"";
+  width: 10px;
+  height: 10px;
+  background-color: #E1251B;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.checkbox:checked + .box::after {
+  opacity: 1;
+}
+
+.btn {
+  width: 100%;
+  position: relative;
+  background-color: #E1251B;
+  border: 2px solid black;
+  border-radius: 14px;
+
+  &::after {
+    border-radius: 14px;
+    background-color: #000000;
+    content:"";
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding:8px;
+    right:-4px;
+    bottom:-3px;
+    z-index:-4;
+  }
+
+  &:hover::after {
+    background-color: transparent;
+  }
+
+  &:disabled {
+    background-color:#CDCBCA;
+  }
+}
+
+.field {
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+}
+
+.checkboxLabel {
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}

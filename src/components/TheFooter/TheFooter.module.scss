@@ -1,15 +1,47 @@
 .wrapper {
   width: 100vw;
   height: 138px;
-  background-image: url("../../assets/images/footer.png");
+  background-image: url("../../assets/images/footer/footer.svg");
   background-position: center;
+  @media (max-width: 1200px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 700px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 600px) {
+    padding: 0 10px;
+  }
+  @media (max-width: 500px) {
+    padding: 0 5px;
+  }
+  @media (max-width: 480px) {
+    padding: 0 20px;
+    height: 252px;
+  }
 }
+.contentBlock {
+  max-width: 1180px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
 
+  @media (max-width: 480px) {
+    padding: 40px 0;
+    flex-direction: column;
+    height: 100%;
+  }
+}
 .footerContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 138px;
+
+  @media (max-width: 480px) {
+    height: auto;
+    gap: 40px;
+  }
 }
 
 .column {
@@ -18,20 +50,62 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
+  @media (max-width: 480px) {
+    height: unset;
+    flex-direction: row;
+    width: 100%;
+  }
 }
 
 .textContent {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  font-size: 14px;
+  color:#ffffff;
+  margin: 0;
+}
+
+.textRightReserve {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   font-size: 16px;
   color:#ffffff;
   margin: 0;
+
+  @media (max-width: 480px) {
+    order:1;
+    font-size: 14px;
+  }
+}
+
+.rightBlock {
+  @media (max-width: 480px) {
+    justify-content: center;
+    column-gap: 10px;
+    font-size: 15px;
+  }
+}
+
+.links {
+  @media (max-width: 480px) {
+    flex-direction: column;
+    font-size: 14px;
+  }
+}
+
+.link {
+  color:#B0B0B0;
 }
 
 .iconBlock {
   display: flex;
   gap: 5px;
   padding-left: 40px;
+
+  @media (max-width: 480px) {
+    order:2;
+  }
 }
 
 .visaIcon {
@@ -44,3 +118,20 @@
   height: 25px;
 }
 
+.order1 {
+  @media (max-width: 480px) {
+    order:1;
+  }
+}
+
+.order2 {
+  @media (max-width: 480px) {
+    order:2;
+  }
+}
+
+.order3 {
+  @media (max-width: 480px) {
+    order:3;
+  }
+}

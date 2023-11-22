@@ -22,38 +22,7 @@ const newsData = [
         title: "Куміте в «Тайфу доджо». В гостях у Георгія Долініна. Бровари",
     }
 ]
-const linkArr = [
-    {
-        title: "Словник термінів Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Принципи каратиста", link: ""
-    },
-    {
-        title: "Доджо кун Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Етикет доджо Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Біографія Масутацу Оями", link: ""
-    },
-    {
-        title: "Екзаменаційні вимоги WKO", link: ""
-    },
-    {
-        title: "Правила поведінки в доджо", link: ""
-    },
-    {
-        title: "Правила змагань Кіокушинкай", link: ""
-    },
-    {
-        title: "Kyokushinkai karate WKO", link: ""
-    },
-    {
-        title: "Значення поясів Кіокушинкай", link: ""
-    },
-]
+
 
 const NewsPage = () => {
     return (
@@ -70,20 +39,7 @@ const NewsPage = () => {
                     </Stack>
                 </div>
             </Container>
-            <Container style={{maxWidth: "1328px"}}>
-                <h3 className={s.title} style={{marginBottom: "100px"}}>ЩЕ ПОЧИТАТИ</h3>
-                <Stack className="position-relative" direction="horizontal" style={{gap: "20px", flexWrap:"wrap"}}>
-                    {linkArr.length > 0 && linkArr.map((item) => {
-                        return (
-                            <Stack key={item.title} className={s.link} direction="horizontal" >
-                                <div className={s.linkTitle}>{item.title}</div>
-                                <Image className={s.iconPlus} src={plus}/>
-                            </Stack>
-                        )
-                    })}
-                <Image className={s.usefulIcon} src={useful}/>
-                </Stack>
-            </Container>
+
         </>
     );
 };

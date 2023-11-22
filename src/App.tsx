@@ -14,6 +14,7 @@ import GalleryPage from "./pages/GalleryPage/GalleryPage.tsx";
 import SupportUsPage from "./pages/SupporUsPage";
 import Ticker from "./components/Ticker";
 import ShopPage from "./pages/ShopPage";
+import ReadMore from "./components/ReadMore";
 
 
 const App = () => {
@@ -26,27 +27,25 @@ const App = () => {
     const contactsRef = useRef();
 
     const scrollActions = {
-        scrollAbout : () => {
+        scrollAbout: () => {
             aboutRef.current.scrollIntoView({behavior: 'smooth'});
         },
-        scrollTeam : () => {
+        scrollTeam: () => {
             teamRef.current.scrollIntoView({behavior: 'smooth'});
         },
-        scrollGyms : () => {
+        scrollGyms: () => {
             gymsRef.current.scrollIntoView({behavior: 'smooth'});
         },
-        scrollGallery : () => {
+        scrollGallery: () => {
             galleryRef.current.scrollIntoView({behavior: 'smooth'});
         },
-        scrollShop : () => {
+        scrollShop: () => {
             shopRef.current.scrollIntoView({behavior: 'smooth'});
         },
-        scrollContacts : () => {
+        scrollContacts: () => {
             contactsRef.current.scrollIntoView({behavior: 'smooth'});
         }
     }
-
-
 
 
     return (
@@ -70,11 +69,12 @@ const App = () => {
             <div ref={shopRef}>
                 <ShopPage/>
             </div>
-                <NewsPage/>
+            <NewsPage/>
+            <ReadMore/>
             <div ref={contactsRef}>
-                {/*<ContactsPage/>*/}
+                <ContactsPage/>
             </div>
-            {/*<TheFooter/>*/}
+            <TheFooter/>
         </>
     )
 }
