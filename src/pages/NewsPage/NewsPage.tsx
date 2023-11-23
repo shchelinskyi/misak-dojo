@@ -10,17 +10,29 @@ const newsData = [
     {
         url: "src/assets/images/news1.png",
         date: "23.12.2022",
-        title: "4-й кубок з Кіокушинкай карате в розділі ката",
+        title: {
+            "en":"4th Kyokushinkai karate cup in the kata section",
+            "ru":"4-й кубок с Киокушинкой каратэ в разделе ката",
+            "ua":"4-й кубок з Кіокушинкай карате в розділі ката",
+        }
     },
     {
         url: "src/assets/images/news2.png",
         date: "23.12.2022",
-        title: "Чемпіонат з ката",
+        title: {
+            "en":"Kata Championship",
+            "ru":"Чемпионат по ката",
+            "ua":"Чемпіонат з ката",
+        }
     },
     {
         url: "src/assets/images/news3.png",
         date: "23.12.2022",
-        title: "Куміте в «Тайфу доджо». В гостях у Георгія Долініна. Бровари",
+        title: {
+            "en":"Kumite at Taifu Dojo. Visiting Georgy Dolinin. Breweries",
+            "ru":"Кумите в «Тайфу доджо». В гостях у Георгия Долинина. Бровары",
+            "ua":"Куміте в «Тайфу доджо». В гостях у Георгія Долініна. Бровари",
+        }
     }
 ]
 

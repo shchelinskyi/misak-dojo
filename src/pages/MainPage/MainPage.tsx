@@ -18,6 +18,9 @@ import fingerDown from "../../assets/images/main/fingerDown.png";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
 import {useTranslation} from "react-i18next";
+import {useAppDispatch} from "../../hooks.ts";
+import {closeForm, openForm} from "../../redux/slices/formTrialSessionSlice.ts";
+import FormTrialSession from "../../components/FormTrialSession";
 
 interface IMainPageProps {
     scrollActions: {
@@ -31,7 +34,7 @@ interface IMainPageProps {
 }
 
 const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
-
+    const dispatch = useAppDispatch();
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
 
     const { t } = useTranslation();
@@ -55,6 +58,7 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
 
     return (
         <div className={s.wrapper}>
+            <FormTrialSession/>
             <Container className={s.contentContainer}>
                 <TheHeader scrollActions={scrollActions}/>
                 <div className="position-relative" style={{width: "900px"}}>
@@ -67,9 +71,10 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                     </p>
                     <div className={s.btnWrapper}>
                         <CustomButton
-                            onClick={() => console.log(1)}
+                            onClick={() => dispatch(openForm())}
                             styles={{
                                 maxWidth: "342px",
+                                zIndex:"999",
                                 '@media (max-width: 480px)': {
                                     margin: "0 auto"
                                 }

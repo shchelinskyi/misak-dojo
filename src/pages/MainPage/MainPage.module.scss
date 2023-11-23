@@ -104,6 +104,11 @@
   max-width: 342px
 }
 
+.btnWrapper {
+  position: relative;
+  z-index: 999;
+}
+
 .logoContainer {
   position: absolute;
   top: 159px;

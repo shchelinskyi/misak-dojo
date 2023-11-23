@@ -1,4 +1,4 @@
-import {FC, useState} from "react"
+import {FC, useEffect, useState} from "react"
 import {Container, Image, Nav, Navbar, NavbarToggle} from "react-bootstrap";
 import logo from "../../assets/images/main/logo.png";
 import fistLogo from "../../assets/images/main/fistLogo.png";
@@ -13,6 +13,9 @@ import s from "./TheHeader.module.scss";
 import CustomNavbarToggle from "../CustomNavbarToggle";
 import cn from "classnames";
 import {useTranslation} from "react-i18next";
+import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
+import {useAppDispatch} from "../../hooks.ts";
+import {openCartModal} from "../../redux/slices/cartSlice.ts";
 
 interface ITheHeaderProps {
     scrollActions: {
@@ -26,16 +29,22 @@ interface ITheHeaderProps {
 }
 
 const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
-
-    const [activeLang, setActiveLang] = useState('UA');
+    const dispatch = useAppDispatch();
     const { t, i18n } = useTranslation();
+    const [activeLang, setActiveLang] = useState(i18n.language || 'ua');
+
+
+    useEffect(() => {
+        setActiveLang(i18n.language || 'ua');
+    }, [i18n.language]);
+
     const changeLanguage = (language) => {
         i18n.changeLanguage(language);
     }
 
 
     const handleClick = () => {
-        console.log('Кнопка была нажата1!');
+         dispatch(openForm())
     };
 
     return (
@@ -60,11 +69,11 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                         <Nav.Link className={s.link} onClick={() => scrollActions.scrollShop()}>{t('shop')}</Nav.Link>
                         <Nav.Link className={s.link} onClick={() => scrollActions.scrollContacts()}>{t('contacts')}</Nav.Link>
                         <div className={s.langToggle}>
-                            <span className={activeLang === 'UA' ? s.activeLang : s.notActiveLang}
+                            <span className={activeLang === 'ua' ? s.activeLang : s.notActiveLang}
                                   onClick={() => changeLanguage('ua')}>UA</span>
-                            <span className={activeLang === 'ENG' ? s.activeLang : s.notActiveLang}
-                                  onClick={() => changeLanguage('en')}>EN</span>
-                            <span className={activeLang === 'RU' ? s.activeLang : s.notActiveLang}
+                            <span className={activeLang === 'en' ? s.activeLang : s.notActiveLang}
+                                  onClick={() => changeLanguage('en')}>ENG</span>
+                            <span className={activeLang === 'ru' ? s.activeLang : s.notActiveLang}
                                   onClick={() => changeLanguage('ru')}>RU</span>
                         </div>
                         <div className={s.socialLinks}>
@@ -83,7 +92,7 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                     <CustomButton onClick={handleClick}>{t('signUp')}</CustomButton>
                 </div>
             </Container>
-            <div className={s.bucketWrapper}>
+            <div className={s.bucketWrapper} onClick={() => dispatch(openCartModal())}>
                 <Image src={bucket} className={s.bucketIcon}/>
                 <div className={s.badge}>2</div>
             </div>

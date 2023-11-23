@@ -11,53 +11,34 @@ import {useTranslation} from "react-i18next";
 const newsData = [
     {
         url: "src/assets/images/t-shirt.png",
-        title: "Футболка Misak Dojo",
+        title: {
+            en:"Misak Dojo t-shirt",
+            ru:"Футболка Misak Dojo",
+            ua:"Футболка Misak Dojo",
+        },
         price: "390"
     },
     {
         url: "src/assets/images/belt.png",
-        title: "Кольоровий пояс для кімоно Шинкіокушикай карате",
+        title: {
+            en:"Color belt for kimono Shinkyokushikai karate",
+            ru:"Цветной пояс для кимоно Шинкиокушикай каратэ",
+            ua:"Кольоровий пояс для кімоно Шинкіокушикай карате",
+        },
         price: "250"
     },
     {
         url: "src/assets/images/kimono.png",
-        title: "Кімоно з символікою школи карате Misak Dojo",
+        title: {
+            en:"Kimono with the symbols of the Misak Dojo karate school",
+            ru:"Кимоно с символикой школы каратэ Misak Dojo",
+            ua:"Кімоно з символікою школи карате Misak Dojo",
+        },
         price: "390"
     }
 ]
 
-const linkArr = [
-    {
-        title: "Словник термінів Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Принципи каратиста", link: ""
-    },
-    {
-        title: "Доджо кун Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Етикет доджо Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Біографія Масутацу Оями", link: ""
-    },
-    {
-        title: "Екзаменаційні вимоги WKO", link: ""
-    },
-    {
-        title: "Правила поведінки в доджо", link: ""
-    },
-    {
-        title: "Правила змагань Кіокушинкай", link: ""
-    },
-    {
-        title: "Kyokushinkai karate WKO", link: ""
-    },
-    {
-        title: "Значення поясів Кіокушинкай", link: ""
-    },
-]
+
 
 
 

@@ -11,44 +11,93 @@ import usefulArrowS from "../../assets/images/readMore/useful-arrow-s.svg";
 
 import finger from "../../assets/images/support/finger-up.svg";
 import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 
 const linkArr = [
     {
-        title: "Словник термінів Кіокушинкай карате", link: ""
+        title: {
+            en:"Kyokushinkai Karate Glossary",
+            ru:"Словарь терминов Киокушинкай каратэ",
+            ua:"Словник термінів Кіокушинкай карате",
+        },
+        link: ""
     },
     {
-        title: "Принципи каратиста", link: ""
+        title: {
+            en:"Karate principles",
+            ru:"Принципы каратиста",
+            ua:"Принципи каратиста",
+        },
+        link: ""
     },
     {
-        title: "Доджо кун Кіокушинкай карате", link: ""
+        title: {
+            en:"Dojo Kun Kyokushinkai Karate",
+            ru:"Джо Кун Киокушинкай Карате",
+            ua:"Доджо кун Кіокушинкай карате",
+        },
+        link: ""
     },
     {
-        title: "Етикет доджо Кіокушинкай карате", link: ""
+        title: {
+            en:"Kyokushinkai karate dojo etiquette",
+            ru:"Этикет доджо Киокушинкай каратэ",
+            ua:"Етикет доджо Кіокушинкай карате",
+        },
+        link: ""
     },
     {
-        title: "Біографія Масутацу Оями", link: ""
+        title: {
+            en:"Biography of Masutatsu Oyama",
+            ru:"Биография Масутацу Оямы",
+            ua:"Біографія Масутацу Оями",
+        },
+        link: ""
     },
     {
-        title: "Екзаменаційні вимоги WKO", link: ""
+        title: {
+            en:"WKO exam requirements",
+            ru:"Экзаменационные требования WKO",
+            ua:"Екзаменаційні вимоги WKO",
+        },
+        link: ""
     },
     {
-        title: "Правила поведінки в доджо", link: ""
+        title: {
+            en:"Rules of behavior in the dojo",
+            ru:"Правила поведения в доджо",
+            ua:"Правила поведінки в доджо",
+        },
+        link: ""
     },
-    {
-        title: "Правила змагань Кіокушинкай", link: ""
+    { title: {
+            en:"Rules of Kyokushinkai competitions",
+            ru:"Правила соревнований Киокушинкай",
+            ua:"Правила змагань Кіокушинкай",
+        },
+        link: ""
     },
-    {
-        title: "Kyokushinkai karate WKO", link: ""
+    {title: {
+            en:"Kyokushinkai karate WKO",
+            ru:"Kyokushinkai karate WKO",
+            ua:"Kyokushinkai karate WKO",
+        },
+        link: ""
     },
-    {
-        title: "Значення поясів Кіокушинкай", link: ""
+    {  title: {
+            en:"The meaning of Kyokushinkai belts",
+            ru:"Значение поясов Киокушинкай",
+            ua:"Значення поясів Кіокушинкай",
+        },
+        link: ""
     },
 ]
 
 const ReadMore = () => {
 
     const { t } = useTranslation();
+    const currentLanguage = i18n.language || 'ua';
 
     return (
         <>
@@ -59,7 +108,7 @@ const ReadMore = () => {
 
                             return (
                                 <div key={item.title} className={s.link}>
-                                    <div className={s.linkTitle}>{item.title}</div>
+                                    <div className={s.linkTitle}>{t(`title.${currentLanguage}`, item.title[currentLanguage])}</div>
                                     <Image className={s.iconPlus} src={plus}/>
                                 </div>
                             )

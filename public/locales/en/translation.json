@@ -85,5 +85,10 @@
   "formName": "Your name",
   "formComment": "Comment",
   "formFooter": "I consent to the processing of my personal data in accordance with the privacy policy",
-  "sendBtn": "send"
+  "sendBtn": "send",
+  "design": "Design",
+  "development": "Development",
+  "rights": "All rights reserved.",
+  "agreement": "User agreement",
+  "uah": "uah"
 }

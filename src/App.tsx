@@ -15,6 +15,7 @@ import SupportUsPage from "./pages/SupporUsPage";
 import Ticker from "./components/Ticker";
 import ShopPage from "./pages/ShopPage";
 import ReadMore from "./components/ReadMore";
+import Cart from "./components/Cart";
 
 
 const App = () => {
@@ -75,6 +76,7 @@ const App = () => {
                 <ContactsPage/>
             </div>
             <TheFooter/>
+            <Cart/>
         </>
     )
 }
