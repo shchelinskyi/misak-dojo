@@ -8,20 +8,23 @@ import support from "../../assets/images/support/support.svg";
 import btnLabel from "../../assets/images/support/btn-label.svg";
 import finger from "../../assets/images/support/finger-up.svg";
 import CustomButton from "../../components/CustomButton";
+import {useTranslation} from "react-i18next";
 
 
 const SupportUsPage = () => {
+
+    const { t } = useTranslation();
+
     return (
         <div className={s.wrapper}>
             <div className={s.contentWrapper}>
                 <div className={s.content}>
-                    <span>Ви можете підтримати</span>
+                    <span>{t("support1")}</span>
                     <Image src={hands} className={s.handsIcon}/>
-                    <span> Спортивний клуб Кіокушинкай карате «Місак Доджо» та зробити внесок у піднесення
-                    спортивної культури</span><br/>
+                    <span> {t("support2")}</span><br/>
                     <Image src={heartY} className={s.heartIcon}/>
                     <Image src={heartB} className={s.heartIcon}/>
-                    <span>української молоді</span>
+                    <span>{t("support3")}</span>
                 </div>
                 <div className={s.supportBlock}>
                     <Image src={spiral} className={s.spiralImg}/>
@@ -31,7 +34,7 @@ const SupportUsPage = () => {
                     </button>
                     <div className={s.fingerBlock}>
                         <Image src={finger} className={s.fingerImg}/>
-                        <span>* тиць</span>
+                        <span>{t("click")}</span>
                     </div>
                 </div>
             </div>

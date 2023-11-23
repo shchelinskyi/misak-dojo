@@ -4,6 +4,7 @@ import NewsCard from "../../components/NewsCard";
 import CustomButton from "../../components/CustomButton";
 import plus from "../../assets/images/plus.png";
 import useful from "../../assets/images/useful.png";
+import {useTranslation} from "react-i18next";
 
 const newsData = [
     {
@@ -25,17 +26,20 @@ const newsData = [
 
 
 const NewsPage = () => {
+
+    const { t } = useTranslation();
+
     return (
         <>
             <Container className={s.wrapper}>
                 <div className={s.container}>
-                    <h3 className={s.title}>НОВИНИ</h3>
+                    <h3 className={s.title}>{t("news")}</h3>
                     <div className={s.content}>
                         {newsData.length > 0 && newsData.map((newsItem) => <NewsCard key={newsItem.url}
                                                                                      newsItem={newsItem}/>)}
                     </div>
                     <Stack direction="horizontal" style={{justifyContent: "center", marginTop: "70px"}}>
-                        <CustomButton>ПОКАЗАТИ БІЛЬШЕ</CustomButton>
+                        <CustomButton>{t("showMore")}</CustomButton>
                     </Stack>
                 </div>
             </Container>

@@ -4,6 +4,7 @@ import {Image} from "react-bootstrap";
 import location from "../../assets/images/gyms/location.svg";
 import phone from "../../assets/images/gyms/phone.svg";
 import clip from "../../assets/images/gyms/clip.png";
+import {useTranslation} from "react-i18next";
 
 interface ContactGymProps {
     address:string;
@@ -11,11 +12,14 @@ interface ContactGymProps {
 }
 
 const ContactGym:FC<ContactGymProps> = ({address, number}) => {
+
+    const { t } = useTranslation();
+
     return (
         <div className={s.block}>
             <div className={s.contactItem}>
                 <Image className={s.locationIcon} src={location}/>
-                <p className={s.text}>м. Київ, <br className={s.wrap}/>{address}</p>
+                <p className={s.text}>{t("city")}, <br className={s.wrap}/>{address}</p>
             </div>
             <div className={s.contactItem}>
                 <Image className={s.phoneIcon} src={phone}/>

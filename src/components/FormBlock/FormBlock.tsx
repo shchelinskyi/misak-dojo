@@ -4,6 +4,7 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import {Button, Form as BootstrapForm} from "react-bootstrap";
 import * as Yup from "yup";
 import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
+import {useTranslation} from "react-i18next";
 
 interface TypeValue {
     name: string;
@@ -20,7 +21,7 @@ const validationSchema = Yup.object().shape({
 const initialValues: TypeValue = {
     name: "",
     phone: "",
-    comment: "121"
+    comment: ""
 };
 
 const CustomTextarea = ({field, form, ...props}) => (
@@ -47,6 +48,7 @@ const CustomCheckbox = ({field, form, ...props}) => (
 );
 const FormBlock = () => {
     const [isChecked, setIsChecked] = useState(false);
+    const { t } = useTranslation();
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
@@ -67,11 +69,10 @@ const FormBlock = () => {
             >
                 {({isSubmitting}) => (
                     <Form>
-                        <h4 className={s.formTitle}>Якщо виникли запитання заповніть форму <br className={s.wrap}/> і
-                            ми зателефонуємо вам протягом дня :)</h4>
+                        <h4 className={s.formTitle}>{t("formTitle1")} <br className={s.wrap}/> {t("formTitle2")}</h4>
                         <BootstrapForm.Group className="mb-3" controlId="formBasicName">
                             <Field type="text" name="name" as={BootstrapForm.Control}
-                                   placeholder="Ваше ім’я" className={s.field}/>
+                                   placeholder={t("formName")} className={s.field}/>
                             <ErrorMessage name="name" component={BootstrapForm.Text}
                                           className="text-danger"/>
                         </BootstrapForm.Group>
@@ -85,7 +86,7 @@ const FormBlock = () => {
 
                         <BootstrapForm.Group className="mb-3" controlId="formBasicComment">
                             <Field type="text" name="comment" as={CustomTextarea}
-                                   placeholder="Коментар"
+                                   placeholder={t("formComment")}
                                    style={{minHeight: "130px"}}
                                    className={s.field}
                             />
@@ -107,7 +108,7 @@ const FormBlock = () => {
                                    onChange={handleCheckboxChange} className={s.checkbox}
                                    name="agree"/>
                             <span className={s.box}></span>
-                            <span className={s.checkboxLabel}>Я даю згоду на обробку моїх персональних даних згідно з політикою конфіденційності</span>
+                            <span className={s.checkboxLabel}>{t("formFooter")}</span>
                         </label>
 
 
@@ -120,7 +121,7 @@ const FormBlock = () => {
                         <div className="d-flex justify-content-end">
                             <Button type="submit" className={s.btn}
                                     disabled={!isChecked || isSubmitting}>
-                                надіслати
+                                {t('sendBtn')}
                             </Button>
                         </div>
 

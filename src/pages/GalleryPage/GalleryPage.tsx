@@ -5,6 +5,7 @@ import plus from "../../assets/images/plus.png";
 import useful from "../../assets/images/useful.png";
 import {useEffect, useState} from "react";
 import GalleryCard from "../../components/GalleryCard";
+import {useTranslation} from "react-i18next";
 
 const newsData = [
     {
@@ -103,6 +104,7 @@ const linkArr = [
 ]
 
 const GalleryPage = () => {
+    const { t } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [newsArray, setNewsArray] = useState([]);
 
@@ -124,14 +126,14 @@ const GalleryPage = () => {
         <>
             <Container className={s.wrapper}>
                 <div className={s.container}>
-                    <h3 className={s.title}>ГАЛЕРЕЯ</h3>
+                    <h3 className={s.title}>{t("gallery")}</h3>
                     <div className={s.content}>
                         {newsArray.length> 0 && newsArray.map((newsItem, index) => (
                             <GalleryCard key={`${newsItem.url}-${index}`} newsItem={newsItem}/>
                         ))}
                     </div>
                     <Stack direction="horizontal" style={{justifyContent: "center", marginTop: "70px"}}>
-                        <CustomButton onClick={handleShowMore}>ПОКАЗАТИ БІЛЬШЕ</CustomButton>
+                        <CustomButton onClick={handleShowMore}>{t("showMore")}</CustomButton>
                     </Stack>
                 </div>
             </Container>

@@ -6,18 +6,20 @@ import cloudRT from "../../assets/images/trial/cloud-trial-rt.svg";
 import cloudRB from "../../assets/images/trial/cloud-trial-rb.svg";
 import CustomButton from "../../components/CustomButton";
 import {Image} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 
 const TrialLessonPage = () => {
+    const { t } = useTranslation();
     return (
             <div className={s.container}>
                 <div className={s.block}>
                     <Image className={s.girlImg} src={girl}/>
                     <div className={s.centerItem}>
-                        <h5 className={s.centerItemTitle}>БЕЗКОШТОВНЕ <br/> ПРОБНЕ ЗАНЯТТЯ</h5>
-                        <p className={s.centerItemDescription}>Якщо сумніваєшся, приходь на пробне тренування <br/>
-                            та випробуй свої сили разом з нами!</p>
+                        <h5 className={s.centerItemTitle}>{t("free")} <br/> {t("freeTask")}</h5>
+                        <p className={s.centerItemDescription}>{t("freeSlogan1")} <br/>
+                            {t("freeSlogan2")}</p>
                         <div className={s.btnBlock}>
-                            <CustomButton onClick={() => console.log("check")}> записатися на заняття</CustomButton>
+                            <CustomButton onClick={() => console.log("check")}> {t("signUpforClasses")}</CustomButton>
                         </div>
                         <Image className={s.cloudLeftImg} src={cloudLeft}/>
                         <Image className={s.cloudRightTopImg} src={cloudRT}/>

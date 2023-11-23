@@ -44,29 +44,29 @@ const GymsPage = () => {
 
     return (
         <div className={s.wrapper}>
-            <h3 className={s.title}>НAШІ ЗАЛИ</h3>
+            <h3 className={s.title}>{t("ourGyms")}</h3>
             <Container className={s.content}>
                 <div className={s.gymBlock}>
                     <div className={s.gymTitle}>
-                        <ContactGym address="вул. Маршала Тимошенка, 9" number="+38 (099) 042 08 20"/>
+                        <ContactGym address={t("gym1")} number="+38 (099) 042 08 20"/>
                     </div>
                     <div className={s.btnShow}>
-                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(1)}>Дивитися розклад</CustomButton>
+                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(1)}>{t("scheduleSee")}</CustomButton>
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible1 })}>
                         <div className={cn(s.item3times, s.order1)}>
                             <Image className={s.dayIcon} src={monday}/>
                             <div>
                                 <li className={s.timeText}>17:30 - 18:30</li>
-                                <p className={s.text}>Група 3 (новачки, діти 5-8 років)</p>
+                                <p className={s.text}>{t("group3")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>18:30 - 20:00</li>
-                                <p className={s.text}>Група 2 (діти 9-13 років)</p>
+                                <p className={s.text}>{t("group2")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>20:00 - 22:00</li>
-                                <p className={s.text}>Група 1 (доросла, 14+ років)</p>
+                                <p className={s.text}>{t("group1")}</p>
                             </div>
                         </div>
 
@@ -75,15 +75,15 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={wednesday}/>
                             <div>
                                 <li className={s.timeText}>17:30 - 18:30</li>
-                                <p className={s.text}>Група 3 (новачки, діти 5-8 років)</p>
+                                <p className={s.text}>{t("group3")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>18:30 - 20:00</li>
-                                <p className={s.text}>Група 2 (діти 9-13 років)</p>
+                                <p className={s.text}>{t("group2")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>20:00 - 22:00</li>
-                                <p className={s.text}>Група 1 (доросла, 14+ років)</p>
+                                <p className={s.text}>{t("group1")}</p>
                             </div>
                         </div>
 
@@ -91,11 +91,11 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={friday}/>
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
-                                <p className={s.text}>Група 4 (новачки, діти 5-8 років)</p>
+                                <p className={s.text}>{t("group4")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>20:00 - 21:00</li>
-                                <p className={s.text}>Група 5 (новачки, діти 9-15 років)</p>
+                                <p className={s.text}>{t("group5")}</p>
                             </div>
                         </div>
 
@@ -104,11 +104,11 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={tuesday}/>
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
-                                <p className={s.text}>Група 4 (новачки, діти 5-8 років)</p>
+                                <p className={s.text}>{t("group4")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>20:00 - 21:00</li>
-                                <p className={s.text}>Група 5 (новачки, діти 9-15 років)</p>
+                                <p className={s.text}>{t("group5")}</p>
                             </div>
                         </div>
 
@@ -116,15 +116,15 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={thursday}/>
                             <div>
                                 <li className={s.timeText}>17:30 - 18:30</li>
-                                <p className={s.text}>Група 3 (новачки, діти 5-8 років)</p>
+                                <p className={s.text}>{t("group3")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>18:30 - 20:00</li>
-                                <p className={s.text}>Група 2 (діти 9-13 років)</p>
+                                <p className={s.text}>{t("group2")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>20:00 - 22:00</li>
-                                <p className={s.text}>Група 1 (доросла, 14+ років)</p>
+                                <p className={s.text}>{t("group1")}</p>
                             </div>
                         </div>
                     </div>
@@ -134,21 +134,21 @@ const GymsPage = () => {
 
                 <div className={s.gymBlock}>
                     <div className={s.gymTitle}>
-                        <ContactGym address="проспект Володимира Івасюка 13Б," number="+38 (099) 042 08 20"/>
+                        <ContactGym address={t("gym2")} number="+38 (099) 042 08 20"/>
                     </div>
                     <div className={s.btnShow}>
-                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(2)}>Дивитися розклад</CustomButton>
+                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(2)}>{t("scheduleSee")}</CustomButton>
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible2 })}>
                         <div className={cn(s.item2times, s.order1)}>
                             <Image className={s.dayIcon} src={monday}/>
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
-                                <p className={s.text}>Група 6 (діти 6-8 років)</p>
+                                <p className={s.text}>{t("group6")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
-                                <p className={s.text}>Група 7 (діти 9-15 років</p>
+                                <p className={s.text}>{t("group7")}</p>
                             </div>
                         </div>
 
@@ -156,11 +156,11 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={wednesday}/>
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
-                                <p className={s.text}>Група 6 (діти 6-8 років)</p>
+                                <p className={s.text}>{t("group6")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
-                                <p className={s.text}>Група 7 (діти 9-15 років</p>
+                                <p className={s.text}>{t("group7")}</p>
                             </div>
                         </div>
 
@@ -169,11 +169,11 @@ const GymsPage = () => {
                             <Image className={s.scrollIcon} src={scroll}/>
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
-                                <p className={s.text}>Група 6 (діти 6-8 років)</p>
+                                <p className={s.text}>{t("group6")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
-                                <p className={s.text}>Група 7 (діти 9-15 років</p>
+                                <p className={s.text}>{t("group7")}</p>
                             </div>
                         </div>
 
@@ -182,11 +182,11 @@ const GymsPage = () => {
                             <Image className={s.eyesIcon} src={eyes}/>
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
-                                <p className={s.text}>Група 6 (діти 6-8 років)</p>
+                                <p className={s.text}>{t("group6")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
-                                <p className={s.text}>Група 7 (діти 9-15 років</p>
+                                <p className={s.text}>{t("group7")}</p>
                             </div>
                         </div>
 
@@ -194,11 +194,11 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={thursday}/>
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
-                                <p className={s.text}>Група 6 (діти 6-8 років)</p>
+                                <p className={s.text}>{t("group6")}</p>
                             </div>
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
-                                <p className={s.text}>Група 7 (діти 9-15 років</p>
+                                <p className={s.text}>{t("group7")}</p>
                             </div>
                         </div>
                     </div>
@@ -208,10 +208,10 @@ const GymsPage = () => {
 
                 <div className={s.gymBlock}>
                     <div className={s.gymTitle}>
-                        <ContactGym address="вул. Олександра Мишуги, 2" number="+38 (093) 726 54 24"/>
+                        <ContactGym address={t("gym3")} number="+38 (093) 726 54 24"/>
                     </div>
                     <div className={s.btnShow}>
-                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(3)}>Дивитися розклад</CustomButton>
+                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(3)}>{t("scheduleSee")}</CustomButton>
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible3 }, s.thirdGym)}>
 
@@ -219,11 +219,11 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={tuesday}/>
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>18:00 - 19:00</li>
-                                <p className={s.text}>Група (4-8 років)</p>
+                                <p className={s.text}>{t("group8")}</p>
                             </div>
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>19:00 - 20:30</li>
-                                <p className={s.text}>Група (дорослі)</p>
+                                <p className={s.text}>{t("group9")}</p>
                             </div>
                         </div>
 
@@ -231,11 +231,11 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={saturday}/>
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>10:00 - 11:00</li>
-                                <p className={s.text}>Група (4-8 років)</p>
+                                <p className={s.text}>{t("group8")}</p>
                             </div>
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>11:00 - 12:30</li>
-                                <p className={s.text}>Група (дорослі)</p>
+                                <p className={s.text}>{t("group9")}</p>
                             </div>
                         </div>
 
@@ -244,11 +244,11 @@ const GymsPage = () => {
                             <Image className={s.dayIcon} src={thursday}/>
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>18:00 - 19:00</li>
-                                <p className={s.text}>Група (4-8 років)</p>
+                                <p className={s.text}>{t("group8")}</p>
                             </div>
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>19:00 - 20:30</li>
-                                <p className={s.text}>Група (дорослі)</p>
+                                <p className={s.text}>{t("group9")}</p>
                             </div>
                         </div>
 

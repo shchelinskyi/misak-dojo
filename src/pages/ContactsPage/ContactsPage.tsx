@@ -4,21 +4,25 @@ import ua from "../../assets/images/ua.png";
 import roundWait from "../../assets/images/roundWait.png";
 import ContactGymSocial from "../../components/ContactGymSocial";
 import FormBlock from "../../components/FormBlock";
+import {useTranslation} from "react-i18next";
 
 
 
 
 const ContactsPage = () => {
+
+    const { t } = useTranslation();
+
     return (
         <div className={s.wrapper}>
             <div className={s.container}>
-                <h3 className={s.contactsTitle}>НАШІ КОНТАКТИ</h3>
+                <h3 className={s.contactsTitle}>{t("ourContacts")}</h3>
                 <div className={s.content}>
                     <ContactGymSocial
-                        address="м.Київ, вул. Маршала Тимошенка, 9"
+                        address={t("gymFull1")}
                         email="MisakDojo@gmail.com"
                         phone="+38 (099) 042 08 20"
-                        underground="Мінська"
+                        underground={t("underground1")}
                         socialLinks={
                             {
                                 instagramLink: "#",
@@ -30,10 +34,10 @@ const ContactsPage = () => {
                     />
 
                     <ContactGymSocial
-                        address="м. Київ, проспект Володимира Івасюка 13Б, Початкова Школа 211"
+                        address={t("gymFull2")}
                         email="MisakDojo@gmail.com"
                         phone="+38 (099) 042 08 20"
-                        underground="Оболонь"
+                        underground={t("underground2")}
                         socialLinks={
                             {
                                 instagramLink: "#",
@@ -45,9 +49,9 @@ const ContactsPage = () => {
                     />
 
                     <ContactGymSocial
-                        address="м.Київ, вул. Олександра Мишуги, 2"
+                        address={t("gymFull3")}
                         phone="+38 (093) 726 54 24"
-                        underground="Позняки"
+                        underground={t("underground3")}
                         socialLinks={
                             {
                                 instagramLink: "#",

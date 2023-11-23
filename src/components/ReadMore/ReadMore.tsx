@@ -10,6 +10,7 @@ import usefulTextS from "../../assets/images/readMore/useful-text-s.svg";
 import usefulArrowS from "../../assets/images/readMore/useful-arrow-s.svg";
 
 import finger from "../../assets/images/support/finger-up.svg";
+import {useTranslation} from "react-i18next";
 
 
 const linkArr = [
@@ -46,10 +47,13 @@ const linkArr = [
 ]
 
 const ReadMore = () => {
+
+    const { t } = useTranslation();
+
     return (
         <>
             <div className={s.wrapper}>
-                <h3 className={s.title}>ЩЕ ПОЧИТАТИ</h3>
+                <h3 className={s.title}>{t("readMore")}</h3>
                 <div className={s.contentBlock}>
                     {linkArr.length > 0 && linkArr.map((item) => {
 
@@ -74,7 +78,7 @@ const ReadMore = () => {
                     </div>
                     <div className={s.fingerBlockS}>
                         <Image src={finger} className={s.fingerImg}/>
-                        <span>* тиць</span>
+                        <span>{t("click")}</span>
                     </div>
                 </div>
             </div>

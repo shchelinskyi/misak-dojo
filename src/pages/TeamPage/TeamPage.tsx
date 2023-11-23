@@ -28,7 +28,7 @@ const TeamPage = () => {
             <h3 className={s.title}>{t("team")}</h3>
             <div className={s.trainerDescription}>
                 <Image className={s.mainTrainerImage} src={trainerM}/>
-                <TrainerLabel name= {t("trainerM")} rank={t("trainerMRank")}/>
+                <TrainerLabel name= {t("trainerM")} rank={t("trainerMRank")}  mainTrainer={true}/>
                 <Image className={s.spiral} src={spiral}/>
                 <div className={s.textWrapper}>
                     <p className={s.trainerText}>
@@ -47,7 +47,7 @@ const TeamPage = () => {
                             <Image className={s.trainerImgM} src={trainerM}/>
                             <div className={s.trainerBg}></div>
                             <div className={s.trainerLabel}>
-                                <TrainerLabel name= {t("trainerM")} rank={t("trainerMRank")}/>
+                                <TrainerLabel name= {t("trainerM")} rank={t("trainerMRank")} mainTrainer={true}/>
                             </div>
                         </div>
                     </SwiperSlide>

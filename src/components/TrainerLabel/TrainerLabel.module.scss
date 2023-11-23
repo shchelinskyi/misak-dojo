@@ -18,6 +18,13 @@
   }
 }
 
+.mainTrainer {
+  width: 380px;
+  @media (max-width: 480px) {
+    width: 250px;
+  }
+}
+
 .rankWrapper {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
