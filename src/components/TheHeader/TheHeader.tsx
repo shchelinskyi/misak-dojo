@@ -48,7 +48,7 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
     };
 
     return (
-        <Navbar expand="lg" className="bg-transparent position-relative" sticky="top">
+        <Navbar expand="lg" className="bg-transparent position-relative">
             <Container style={{minWidth: "335px"}}>
                 <Navbar.Brand>
                     <Image className={s.logo} src={logo}/>

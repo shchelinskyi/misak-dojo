@@ -1,44 +1,67 @@
-import React from 'react';
-import {Form as BootstrapForm, Button, Modal} from 'react-bootstrap';
+import {useState} from 'react';
+import {Form as BootstrapForm} from 'react-bootstrap';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
+import CustomTextarea from "../CustomTextArea";
+import CustomPhoneInput from "../CustomPhoneInput";
 import * as Yup from 'yup';
-import {useAppDispatch, useAppSelector} from "../../hooks";
+import {useAppDispatch} from "../../hooks";
 import {closeForm} from "../../redux/slices/formTrialSessionSlice"
-
+import {useTranslation} from "react-i18next";
+import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
+import s from "./FormTrialSession.module.scss"
 
 interface TypeValue {
     name: string;
-    content: string;
-    status: "активне" | "виконане"
+    age: string;
+    phone: string;
+    comment: string
 }
-
-const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Поле обов'язкове"),
-    content: Yup.string().required("Поле обов'язкове"),
-});
 
 const initialValues: TypeValue = {
     name: '',
-    content: '',
-    status: "активне"
+    age: '',
+    phone: '',
+    comment: ''
 };
 
-const FormTrialSession:React.FC = () => {
+const FormTrialSession = () => {
+    const [isChecked, setIsChecked] = useState(false);
+    const {t} = useTranslation();
     const dispatch = useAppDispatch();
-    const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
-    const handleSubmit = (values:TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
-        setSubmitting(false);
-        dispatch(closeForm());
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
     };
+
     const handleCloseForm = () => {
         dispatch(closeForm());
     }
+
+    const handleSubmit = (values: TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
+        setSubmitting(false);
+        dispatch(closeForm());
+        sendMessageToTelegram(values)
+    };
+
+    const validationSchema = Yup.object().shape({
+        name: Yup.string().required(t("fieldRequired")),
+        age: Yup.string().required(t("fieldRequired")).matches(/^\d{2}$/, t("validationAge")),
+        comment: Yup.string().required(t("fieldRequired")),
+        phone: Yup.string().required(t("fieldRequired"))
+    });
+
     return (
-        <Modal show={isFormOpen} onHide={handleCloseForm}>
-            <Modal.Header closeButton>
-                <Modal.Title className="text-primary fw-bold">Створити нове завдання</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
+        <div className={s.overlay} onClick={handleCloseForm}>
+            <div className={s.content} onClick={(e) => e.stopPropagation()}>
+                <div className={s.titleBlock}>
+                    <h4 className={s.title}>{t("freeTrial")}</h4>
+                    <span className={s.closeBtn} onClick={handleCloseForm}>&times;</span>
+                </div>
+                <div className={s.description}>
+                    {t("freeTrialLabel1")}
+                    <br className={s.wrap}/>
+                    {t("freeTrialLabel2")}
+                </div>
+                <div className={s.line}></div>
                 <Formik
                     initialValues={initialValues}
                     validationSchema={validationSchema}
@@ -47,38 +70,60 @@ const FormTrialSession:React.FC = () => {
                     {({isSubmitting}) => (
                         <Form>
                             <BootstrapForm.Group className="mb-3" controlId="formBasicName">
-                                <BootstrapForm.Label className="text-secondary fw-bold">Назва завдання</BootstrapForm.Label>
-                                <Field type="text" name="name" as={BootstrapForm.Control} placeholder="Введіть назву завдання"/>
-                                <ErrorMessage name="name" component={BootstrapForm.Text} className="text-danger"/>
+                                <BootstrapForm.Label className={s.formLabel}>{t("formTrialName")}</BootstrapForm.Label>
+                                <Field type="text" name="name" as={BootstrapForm.Control}
+                                       className={s.field}/>
+                                <ErrorMessage name="name" component={BootstrapForm.Text}
+                                              className="text-danger"/>
                             </BootstrapForm.Group>
 
-                            <BootstrapForm.Group className="mb-3" controlId="formBasicContent">
-                                <BootstrapForm.Label className="text-secondary fw-bold">Опис завдання</BootstrapForm.Label>
-                                <Field type="text" name="content" as={BootstrapForm.Control} placeholder="Введіть опис завдання"/>
-                                <ErrorMessage name="content" component={BootstrapForm.Text} className="text-danger"/>
+                            <BootstrapForm.Group className="mb-3" controlId="formBasicAge">
+                                <BootstrapForm.Label className={s.formLabel}>{t("formTrialAge")}</BootstrapForm.Label>
+                                <Field type="text" name="age" as={BootstrapForm.Control}
+                                       className={s.field}/>
+                                <ErrorMessage name="age" component={BootstrapForm.Text}
+                                              className="text-danger"/>
                             </BootstrapForm.Group>
 
-                            <BootstrapForm.Group className="mb-3" controlId="formBasicStatus">
-                                <BootstrapForm.Label className="text-secondary fw-bold">Статус виконання</BootstrapForm.Label>
-                                <Field as={BootstrapForm.Select} name="status" className="form-select">
-                                    <option value="активне">активне</option>
-                                    <option value="виконане">виконане</option>
-                                </Field>
+                            <BootstrapForm.Group className="mb-3" controlId="formBasicPhone">
+                                <BootstrapForm.Label className={s.formLabel}>{t("formTrialPhone")}</BootstrapForm.Label>
+                                <Field type="tel" name="phone" as={CustomPhoneInput} className={s.field}/>
+                                <ErrorMessage name="phone" component={BootstrapForm.Text} className="text-danger"/>
                             </BootstrapForm.Group>
+
+                            <BootstrapForm.Group className="mb-3" controlId="formBasicComment">
+                                <BootstrapForm.Label
+                                    className={s.formLabel}>{t("formTrialComment")}</BootstrapForm.Label>
+                                <Field type="text" name="comment" as={CustomTextarea} style={{minHeight: "50px"}}
+                                       className={s.field}/>
+                                <ErrorMessage name="comment" component={BootstrapForm.Text}
+                                              className="text-danger"/>
+                            </BootstrapForm.Group>
+
+                            <label className={s.label}>
+                                <input type="checkbox" checked={isChecked}
+                                       onChange={handleCheckboxChange} className={s.checkbox}
+                                       name="agree"/>
+                                <span className={s.box}></span>
+                                <p className={s.checkboxLabel}>
+                                    <span className={s.footerLabel1}>{t("formFooter1")}</span>
+                                    <br/>
+                                    <span className={s.footerLabel2}>{t("formFooter2")}</span>
+                                </p>
+                            </label>
 
                             <div className="d-flex justify-content-end">
-                                <Button className="text-light" variant="primary" type="submit" disabled={isSubmitting}>
-                                    Додати завдання
-                                </Button>
+                                <button type="submit" className={s.btn} disabled={!isChecked || isSubmitting}>
+                                    {t('sendBtn')}
+                                </button>
                             </div>
+
                         </Form>
                     )}
                 </Formik>
-            </Modal.Body>
-
-        </Modal>
+            </div>
+        </div>
     );
 };
 
 export default FormTrialSession;
-

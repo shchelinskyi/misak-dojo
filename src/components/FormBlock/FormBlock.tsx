@@ -53,10 +53,9 @@ const FormBlock = () => {
         setIsChecked(!isChecked);
     };
     const handleSubmit = (values: TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
-        console.log(1);
         setSubmitting(false);
         console.log(values);
-        sendMessageToTelegram(values)
+        // sendMessageToTelegram(values)
     };
 
     return (
@@ -108,7 +107,7 @@ const FormBlock = () => {
                                    onChange={handleCheckboxChange} className={s.checkbox}
                                    name="agree"/>
                             <span className={s.box}></span>
-                            <span className={s.checkboxLabel}>{t("formFooter")}</span>
+                            <span className={s.checkboxLabel}>{t("formFooter1")} {t("formFooter2")}</span>
                         </label>
 
 

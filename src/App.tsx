@@ -16,6 +16,8 @@ import Ticker from "./components/Ticker";
 import ShopPage from "./pages/ShopPage";
 import ReadMore from "./components/ReadMore";
 import Cart from "./components/Cart";
+import FormTrialSession from "./components/FormTrialSession";
+import {useAppSelector} from "./hooks.ts";
 
 
 const App = () => {
@@ -26,6 +28,9 @@ const App = () => {
     const galleryRef = useRef();
     const shopRef = useRef();
     const contactsRef = useRef();
+
+    const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
+    const isCartOpened = useAppSelector(state => state.cart.isOpenedCartModal);
 
     const scrollActions = {
         scrollAbout: () => {
@@ -51,6 +56,8 @@ const App = () => {
 
     return (
         <>
+            {isFormOpen && <FormTrialSession/>}
+
             <MainPage scrollActions={scrollActions}/>
             <div ref={aboutRef}>
                 <AboutPage/>
@@ -76,7 +83,7 @@ const App = () => {
                 <ContactsPage/>
             </div>
             <TheFooter/>
-            <Cart/>
+            {isCartOpened && <Cart/>}
         </>
     )
 }

@@ -18,7 +18,7 @@ import fingerDown from "../../assets/images/main/fingerDown.png";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
 import {useTranslation} from "react-i18next";
-import {useAppDispatch} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 import {closeForm, openForm} from "../../redux/slices/formTrialSessionSlice.ts";
 import FormTrialSession from "../../components/FormTrialSession";
 
@@ -58,8 +58,8 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
 
     return (
         <div className={s.wrapper}>
-            <FormTrialSession/>
             <Container className={s.contentContainer}>
+
                 <TheHeader scrollActions={scrollActions}/>
                 <div className="position-relative" style={{width: "900px"}}>
                     <div className={s.titleWrapper}>

@@ -13,9 +13,11 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         openCartModal: (state) => {
+            document.body.style.overflow = 'hidden';
             state.isOpenedCartModal = true;
         },
         closeCartModal: (state) => {
+            document.body.style.overflow = 'auto';
             state.isOpenedCartModal = false;
         },
     },

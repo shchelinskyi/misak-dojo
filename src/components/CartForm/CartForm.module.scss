@@ -1,69 +1,9 @@
-.overlay {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1001;
-  max-width: 620px;
-  width: 620px;
-  overflow-y: scroll;
-  background: white;
-  padding: 30px;
-  border-radius: 46px;
-}
-
-.titleBlock {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-}
-
-.title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
-  color: #000000;
-}
-
-.closeBtn {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  cursor: pointer;
-  color: #000000;
-}
-
-.description {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  margin-bottom: 30px;
-  color: #737373;
-}
-
-.line {
-  width: 100%;
-  height: 3px;
-  background-color: #D8D8D8;
-  margin-bottom: 30px;
-}
-
-
 .formLabel {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color:#000000;
 }
+
 
 .label {
   margin-bottom: 10px;
@@ -100,6 +40,18 @@
 .checkbox:checked + .box::after {
   opacity: 1;
 }
+
+.deliveryLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.radio:checked + .box::after {
+  opacity: 1;
+}
+
+
+
 
 .btn {
   width: 100%;
@@ -176,16 +128,37 @@
   font-size: 14px;
   color: #000000;
 }
+
 .footerLabel2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #E1251B;
 }
 
+.deliveryBlock {
+  display: flex;
+  flex-direction: column;
+}
 
+.deliveryTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
 
+.deliveryLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
 
+.radio {
+  display: none;
+}
 
-
-
-
+.totalPrice {
+  align-self: flex-end;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
