@@ -103,7 +103,7 @@
 
 .charactersBlock {
   display: flex;
-  justify-content: space-between;
+  column-gap: 20px;
   width: 580px;
   margin-bottom: 30px;
 }

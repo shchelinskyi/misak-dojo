@@ -101,5 +101,21 @@
   "formTrialComment": "Comment",
   "fieldRequired": "Field is required",
   "validationAge": "Age can not be more than 99 years",
-  "validationPhone": "Enter 9 digits"
+  "validationPhone": "Enter 9 digits",
+  "material": "Material",
+  "size": "Size",
+  "sizeBackpack": "Розмір(Д х Ш х В) см",
+  "color": "Color",
+  "white": "white",
+  "black": "black",
+  "orange": "orange",
+  "green": "green",
+  "brown": "brown",
+  "yellow": "yellow",
+  "red": "red",
+  "size3": "3-4 years",
+  "size5": "5-6 years",
+  "size7": "7-8 years",
+  "size9": "9-11 years",
+  "buy": "buy"
 }

@@ -53,6 +53,10 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  max-width: 1180px;
+  flex-wrap: wrap;
+  cursor: pointer;
+
   @media (max-width: 1200px) {
     gap: 15px;
     flex-wrap: wrap;
@@ -103,6 +107,11 @@
   padding:12px 30px;
   border: 1px solid black;
   cursor: pointer;
+  color:black;
+
+  &:hover {
+    color:black;
+  }
 
   @media (max-width: 1200px) {
     font-size: 16px;
@@ -122,6 +131,6 @@
 
 .active {
   background-color: black;
-  color: #ffffff;
+  color: #ffffff!important;
 }
 

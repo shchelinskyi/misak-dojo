@@ -101,5 +101,21 @@
   "formTrialComment": "Коментар",
   "fieldRequired": "Поле обов'язкове",
   "validationAge": "Вік не може бути більше 99 років",
-  "validationPhone": "Введіть 9 цифр"
+  "validationPhone": "Введіть 9 цифр",
+  "material": "Склад",
+  "size": "Розмір",
+  "sizeBackpack": "Розмір(Д х Ш х В) см",
+  "color": "Kолір",
+  "white": "білий",
+  "black": "чорний",
+  "orange": "помаранчевий",
+  "green": "зелений",
+  "brown": "коричневий",
+  "yellow": "жовтий",
+  "red": "червоний",
+  "size3": "3-4 років",
+  "size5": "5-6 років",
+  "size7": "7-8 років",
+  "size9": "9-11 років",
+  "buy": "купити"
 }
