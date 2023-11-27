@@ -26,6 +26,7 @@
 }
 
 .charactersBlock {
+  width: 160px;
   display: flex;
   flex-direction: column;
   row-gap: 3px;
@@ -35,6 +36,7 @@
 .charactersItem {
   display: flex;
   column-gap: 2px;
+  flex-wrap: wrap;
 }
 
 .characterLabel {
@@ -52,6 +54,7 @@
 }
 
 .btnGroup {
+  width: 80px;
   display: flex;
   margin-right: 20px;
 }
@@ -83,12 +86,13 @@
 }
 
 .price {
+  width: 80px;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 153%;
   color: #E2231A;
-  margin-right: 55px;
+  margin-right: 45px;
 }
 
 .delBtn {

@@ -5,10 +5,14 @@ import {closeCartModal} from "../../redux/slices/cartSlice";
 import s from "./Cart.module.scss";
 import CartItem from "../CartItem";
 import CartForm from "../CartForm";
+import {useTranslation} from "react-i18next";
 
 
 const Cart = () => {
+    const {t} = useTranslation();
     const dispatch = useAppDispatch();
+    const total = useAppSelector(state => state.cart.total);
+    const cartItems = useAppSelector(state => state.cart.cartItems);
 
     const handleCloseCartModal = () => {
         dispatch(closeCartModal())
@@ -18,17 +22,19 @@ const Cart = () => {
         <div className={s.overlay} onClick={handleCloseCartModal}>
             <div className={s.content} onClick={(e) => e.stopPropagation()}>
                 <div className={s.titleBlock}>
-                    <h4 className={s.title}>Ваше замовлення:</h4>
+                    <h4 className={s.title}>{t("yourOrder")}</h4>
                     <div className={s.closeBtn} onClick={handleCloseCartModal}>&times;</div>
                 </div>
                 <div className={s.line}></div>
                 <div className={s.cartItems}>
-                    <CartItem/>
-                    <CartItem/>
-                    <CartItem/>
+                    {cartItems.length > 0 && cartItems.map((cartProduct) => {
+                        return  (<CartItem key={`${cartProduct.id}-${cartProduct.color}-${cartProduct.size}`} cartProduct={cartProduct}/>)
+                    })
+                    }
+                    {cartItems.length === 0 && <p className={s.cartFree}>{t("cartFree")}</p>}
                 </div>
                 <div className={s.line}></div>
-                <div className={s.totalPrice}>Сума: 2880 грн</div>
+                <div className={s.totalPrice}>{t("sum")} {total} {t("uah")}</div>
                 <CartForm/>
             </div>
         </div>

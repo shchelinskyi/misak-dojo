@@ -115,7 +115,7 @@ const AboutPage = () => {
                 </Container>
             </Container>
             <div className={s.video}>
-                <video preload="auto" muted={true}  src={karate} className={s.videoItem}/>
+                <video preload="auto" loop autoPlay={true} muted={true}  src={karate} className={s.videoItem}/>
                 <div className={s.titleTeamWrapper}>
                     <Image className={s.titleTeamImage} src={titleTeam}/>
                 </div>

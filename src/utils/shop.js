@@ -206,9 +206,9 @@ export const products = [
         children: true,
         adult: false,
         description: {
-            en: "A backpack for shoes is an incredibly useful bag in which you can carry a change of shoes to the office, school, kindergarten, and for training.",
-            ru: "Рюкзак для обуви – невероятно полезная сумка, в которой вы можете переносить сменную обувь как в офис, школу, детский сад, так и на тренировку.",
-            ua: "Рюкзак для взуття — неймовірно корисна сумка, в якій ви можете переносити змінне взуття як в офіс, школу, дитячий садок, так і на тренування.",
+            en: "A backpack for shoes is an incredibly useful bag in which you can carry a change of shoes to the office, school, kindergarten, and for training. Size: 26-36 cm.",
+            ru: "Рюкзак для обуви – невероятно полезная сумка, в которой вы можете переносить сменную обувь как в офис, школу, детский сад, так и на тренировку. Размер: 26-36 см.",
+            ua: "Рюкзак для взуття — неймовірно корисна сумка, в якій ви можете переносити змінне взуття як в офіс, школу, дитячий садок, так і на тренування. Розмір: 26-36 см.",
         },
         briefDescription: {
             en: "A backpack for shoes is an incredibly useful bag in which you can carry a change of shoes to the office, school, kindergarten, and for training.",
@@ -249,7 +249,7 @@ export const products = [
                 "The back of the backpack and its straps are equipped with a 3D mesh that is responsible for air circulation for greater comfort and convenience.\n" +
                 "Lining: 100% polyester.\n" +
                 "Patch and pullers made of genuine leather.\n" +
-                "Sealed bottom made of very strong polyester.",
+                "Sealed bottom made of very strong polyester. Volume: 26 l. Size: 44-27-15 sm.",
             ru: "Вы можете взять с собой личные вещи, ноутбук, планшет, документы и разместить их внутри рюкзака максимально эргономично.\n" +
                 "Наружный материал: прочный водонепроницаемый полиэстер.\n" +
                 "Основное отделение, горловина которого регулируется шнуром, закрывается клапаном на застежках.\n" +
@@ -257,7 +257,7 @@ export const products = [
                 "Спинка рюкзака и его лямки оснащены 3D сеткой, отвечающей за циркуляцию воздуха для большего комфорта и удобства.\n" +
                 "Подкладка: 100% полиэстер.\n" +
                 "Нашивка и пулер из натуральной кожи.\n" +
-                "Уплотненное дно из очень крепкого полиэстера.",
+                "Уплотненное дно из очень крепкого полиэстера. Объем: 26 л. Размер: 44-27-15 см.",
             ua: "Ви зможете взяти з собою особисті речі, ноутбук, планшет, документи та розмістити їх всередині рюкзака максимально ергономічно.\n" +
                 "Зовнішній матеріал: міцний водонепроникний поліестер.\n" +
                 "Основне відділення, горловина якого регулюється шнуром, закривається клапаном на застібках.\n" +
@@ -265,7 +265,7 @@ export const products = [
                 "Спинка рюкзака і його лямки оснащені 3D сіткою, яка відповідає за циркуляцію повітря для більшого комфорту і зручності.\n" +
                 "Підкладка: 100% поліестер.\n" +
                 "Нашивка та пулери з натуральної шкіри.\n" +
-                "Ущільнене дно із дуже міцного поліестеру."
+                "Ущільнене дно із дуже міцного поліестеру. Об'єм: 26 л. Розмір: 44-27-15 см."
         },
         briefDescription: {
             en: "Universal and reliable backpack, ideal for everyday use.",
@@ -289,7 +289,7 @@ export const products = [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700902439/products/umhribf3xp3nsj9c5rpl.webp"
         ],
         category: "backpack",
-        size: ["42-28-14", "60-28-14"],
+        size: ["42(60)-28-14"],
         material: {
             en: "polyester",
             ru: "полиэстер",
@@ -304,19 +304,19 @@ export const products = [
                 "The back of the backpack is also equipped with 3D Air Mesh, which is responsible for air circulation for greater comfort and convenience.\n" +
                 "Dense polyester, from which the backpack is made, makes it waterproof and resistant to temperature changes.\n" +
                 "Inside the main compartment is a pocket for a laptop with a diagonal of up to 15.6 inches. Front patch pocket with zipper for small items. You can take your personal belongings, laptop, tablet, documents with you and place them inside the backpack as ergonomically as possible.\n" +
-                "A reliable and trendy accessory that is ideal for everyday use.",
+                "A reliable and trendy accessory that is ideal for everyday use. Volume: 25(30) l. Size: 42(60)-28-14 cm.",
             ru: "Уникальная застежка основного кармана затягивается сзади, благодаря чему стропа плотно прилегает к рюкзаку и не стучит при ходьбе или во время бега!\n" +
                 "Анатомические мягкие ручки прошит специальной 3D сеткой Air Mesh, что позволит удобно носить рюкзак.\n" +
                 "Спинка рюкзака также оснащена 3D сеткой Air Mesh, отвечающей за циркуляцию воздуха для большего комфорта и удобства.\n" +
                 "Плотный полиэстер, из которого изготовлен рюкзак, делает его водонепроницаемым и устойчивым к перепадам температуры.\n" +
                 "Внутри основного отделения карман для ноутбука диагональю до 15.6 дюймов. Спереди накладной карман на молнии для мелочей. Вы можете взять с собой личные вещи, ноутбук, планшет, документы и расположить их снутри рюкзака очень эргономично.\n" +
-                "Надежный и трендовый аксессуар, идеально подходящий для повседневного использования.",
+                "Надежный и трендовый аксессуар, идеально подходящий для повседневного использования. Объем: 25(30) л. Размер: 42(60)-28-14 см.",
             ua: "Унікальна застібка основної кишені затягується ззаду, завдяки чому стропа щільно прилягає до рюкзака та не стукає при ходьбі або під час бігу!\n" +
                 "Анатомічні м'які ручки прошиті спеціальною 3D сіткою Air Mesh, що дозволить зручно носити рюкзак.\n" +
                 "Спинка рюкзака також оснащена 3D сіткою Air Mesh, яка відповідає за циркуляцію повітря для більшого комфорту та зручності.\n" +
                 "Щільний поліестер, з якого виготовлено рюкзак, робить його водонепроникним та стійким до перепадів температури.\n" +
                 "Всередині основного відділення кишеня для ноутбука діагоналлю до 15.6 дюймів. Спереду накладна кишеня на блискавці для дрібниць. Ви зможете взяти з собою особисті речі, ноутбук, планшет, документи і розмістити їх усередині рюкзака максимально ергономічно.\n" +
-                "Надійний і трендовий аксесуар, що ідеально підходить для повсякденного використання."
+                "Надійний і трендовий аксесуар, що ідеально підходить для повсякденного використання. Об'єм: 25(30) л. Розмір: 42(60)-28-14 см."
         },
         briefDescription: {
             en: "A convenient model of a rolltop backpack will come in handy both in the city and outside of it.",
@@ -340,7 +340,7 @@ export const products = [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700903249/products/ynsb8dsha22buw2zdeq4.webp"
         ],
         category: "kimono",
-        size: ["100-110"],
+        size: ["100"],
         material: {
             en: "100% cotton",
             ru: "100% хлопок",
@@ -376,7 +376,7 @@ export const products = [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700903659/products/ec2bljtoelkhuyixh0xn.webp",
         ],
         category: "belt",
-        size: ["230"],
+        size: ["230", "240", "250", "270", "280", "290", "300", "320"],
         material: {
             en: "100% cotton",
             ru: "100% хлопок",
@@ -404,7 +404,7 @@ export const products = [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700904805/products/te5icueesxoiitqnrmvp.webp",
         ],
         category: "belt",
-        size: ["230"],
+        size: ["230", "240", "250", "270", "280", "290", "300", "320"],
         material: {
             en: "100% cotton",
             ru: "100% хлопок",
@@ -547,42 +547,6 @@ export const products = [
             ua: "шкіра",
         },
         color: ["black"],
-        children: true,
-        adult: true,
-        description: {
-            en: "Gloves for training in pairs and working on shells.",
-            ru: "Перчатки для тренировок в парах и работы на снарядах.",
-            ua: "Рукавиці для тренувань в парах та роботи на снарядах."
-        },
-        briefDescription: {
-            en: "Gloves for training in pairs and working on shells",
-            ru: "Перчатки для тренировок в парах и работы на снарядах",
-            ua: "Рукавиці для тренувань в парах та роботи на снарядах"
-        },
-        model: "",
-        producer: "Ukraine",
-        length: "",
-        comment: ""
-    },
-    {
-        id: "3787250e-8b79-11ee-b9d1-0242ac120002",
-        title: {
-            en: "Leather gloves (Shinkyokushinkai)",
-            ru: "Перчатки кожаные (Шинкиокушинкой)",
-            ua: "Рукавиці шкіряні (Шинкіокушинкай)"
-        },
-        price: "490",
-        images: [
-            "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700906295/products/bhynnspkcwirv2hbwiax.webp",
-        ],
-        category: "protection",
-        size: ["XS", "S", "M", "L", "XL"],
-        material: {
-            en: "leather",
-            ru: "кожа",
-            ua: "шкіра",
-        },
-        color: ["white"],
         children: true,
         adult: true,
         description: {
@@ -1006,7 +970,7 @@ export const products = [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909176/products/kzdz72i57ufdax5jbwkc.webp",
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909177/products/le9ibr00inoamey0jgj9.webp"
         ],
-        category: "protection",
+        category: "cup",
         size: ["8,2", "9,5"],
         material: "",
         color: ["white"],
@@ -1035,6 +999,106 @@ export const products = [
             ua: "Підтримайте нас"
         },
         price: "50",
+        images: [
+            "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909521/products/n7a4f3pd1x9o5woqz9nq.webp"
+        ],
+        category: "support",
+        size: "",
+        material: "",
+        color: "",
+        children: true,
+        adult: true,
+        description: {
+            en: "You can support our sports club. All funds received will be used to improve the Dojo, renew sports equipment for students and develop the MisakDojo club.\n" +
+                "\n" +
+                "You can buy things from our store or send the desired amount to the account of our trainer - Misak Arzumanyan Aleksanovych.\n" +
+                "\n" +
+                "Our team is very grateful for any support! Join our sports club and develop the strength and spirit of a true warrior!\n" +
+                "\n" +
+                "Osu!",
+            ru: "Вы можете поддержать наш спортивный клуб. Все полученные средства пойдут на улучшение Доджо, обновление спортивного инвентаря для учеников и развитие клуба «MisakDojo».\n" +
+                "\n" +
+                "Вы можете приобрести вещи из нашего магазина или отправить желаемую сумму на счет нашего тренера — Мисак Арзуманян Алексанович.\n" +
+                "\n" +
+                "Наша команда очень благодарна за любую поддержку! Присоединяйтесь к нашему спортивному клубу и развивайте силу и дух настоящего воина!\n" +
+                "\n" +
+                "Осу!",
+            ua: "Ви можете підтримати наш спортивний клуб. Всі отримані кошти підуть на покращення Доджо, поновлення спортивного інвентарю для учнів та розвиток клубу «MisakDojo».\n" +
+                "\n" +
+                "Ви можете придбати речі з нашого магазину або ж надіслати бажану суму на рахунок нашого тренера — Місак Арзуманян Алексанович.\n" +
+                "\n" +
+                "Наша команда дуже вдячна за будь-яку підтримку! Приєднуйтеся до нашого спортивного клубу та розвивайте силу і дух справжнього воїна!\n" +
+                "\n" +
+                "Осу!"
+        },
+        briefDescription: {
+            en: "You can support our sports club, and all funds received will go to improve the Dojo and develop the team",
+            ru: "Вы можете поддержать наш спортивный клуб, а все полученные средства пойдут на улучшение Доджо и развитие команды",
+            ua: "Ви можете підтримати наш спортивний клуб, а всі отримані кошти підуть на покращення Доджо та розвиток команди"
+        },
+        model: "",
+        producer: "",
+        length: "",
+        comment: ""
+    },
+    {
+        id: "db5a3bda-8d0e-11ee-b9d1-0242ac120002",
+        title: {
+            en: "Support us",
+            ru: "Поддержите нас",
+            ua: "Підтримайте нас"
+        },
+        price: "100",
+        images: [
+            "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909521/products/n7a4f3pd1x9o5woqz9nq.webp"
+        ],
+        category: "support",
+        size: "",
+        material: "",
+        color: "",
+        children: true,
+        adult: true,
+        description: {
+            en: "You can support our sports club. All funds received will be used to improve the Dojo, renew sports equipment for students and develop the MisakDojo club.\n" +
+                "\n" +
+                "You can buy things from our store or send the desired amount to the account of our trainer - Misak Arzumanyan Aleksanovych.\n" +
+                "\n" +
+                "Our team is very grateful for any support! Join our sports club and develop the strength and spirit of a true warrior!\n" +
+                "\n" +
+                "Osu!",
+            ru: "Вы можете поддержать наш спортивный клуб. Все полученные средства пойдут на улучшение Доджо, обновление спортивного инвентаря для учеников и развитие клуба «MisakDojo».\n" +
+                "\n" +
+                "Вы можете приобрести вещи из нашего магазина или отправить желаемую сумму на счет нашего тренера — Мисак Арзуманян Алексанович.\n" +
+                "\n" +
+                "Наша команда очень благодарна за любую поддержку! Присоединяйтесь к нашему спортивному клубу и развивайте силу и дух настоящего воина!\n" +
+                "\n" +
+                "Осу!",
+            ua: "Ви можете підтримати наш спортивний клуб. Всі отримані кошти підуть на покращення Доджо, поновлення спортивного інвентарю для учнів та розвиток клубу «MisakDojo».\n" +
+                "\n" +
+                "Ви можете придбати речі з нашого магазину або ж надіслати бажану суму на рахунок нашого тренера — Місак Арзуманян Алексанович.\n" +
+                "\n" +
+                "Наша команда дуже вдячна за будь-яку підтримку! Приєднуйтеся до нашого спортивного клубу та розвивайте силу і дух справжнього воїна!\n" +
+                "\n" +
+                "Осу!"
+        },
+        briefDescription: {
+            en: "You can support our sports club, and all funds received will go to improve the Dojo and develop the team",
+            ru: "Вы можете поддержать наш спортивный клуб, а все полученные средства пойдут на улучшение Доджо и развитие команды",
+            ua: "Ви можете підтримати наш спортивний клуб, а всі отримані кошти підуть на покращення Доджо та розвиток команди"
+        },
+        model: "",
+        producer: "",
+        length: "",
+        comment: ""
+    },
+    {
+        id: "ebae2488-8d0e-11ee-b9d1-0242ac120002",
+        title: {
+            en: "Support us",
+            ru: "Поддержите нас",
+            ua: "Підтримайте нас"
+        },
+        price: "500",
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909521/products/n7a4f3pd1x9o5woqz9nq.webp"
         ],

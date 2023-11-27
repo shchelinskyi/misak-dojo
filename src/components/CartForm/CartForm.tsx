@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import * as Yup from "yup";
 import {ErrorMessage, Field, Form, Formik} from "formik";
@@ -6,7 +6,7 @@ import {Form as BootstrapForm} from "react-bootstrap";
 import s from "./CartForm.module.scss";
 import CustomPhoneInput from "../CustomPhoneInput";
 import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
-import {useAppDispatch} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 
 interface TypeValue {
     name: string;
@@ -23,7 +23,9 @@ const initialValues: TypeValue = {
 const CartForm = () => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
+    const total = useAppSelector(state => state.cart.total);
     const [isChecked, setIsChecked] = useState(false);
+    const [totalSum, setTotalSum] = useState(total);
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
@@ -48,6 +50,18 @@ const CartForm = () => {
         setSelectedOption(value);
     };
 
+    useEffect(() => {
+        if (selectedOption === "pickup") {
+            setTotalSum(total)
+        } else if (selectedOption === "courier") {
+            const sum = Number(total) + 100;
+            setTotalSum(sum)
+        } else {
+            const sum = Number(total) + 70;
+            setTotalSum(sum)
+        }
+    }, [dispatch, total, selectedOption]);
+
     return (
         <div>
             <Formik
@@ -58,7 +72,7 @@ const CartForm = () => {
                 {({isSubmitting}) => (
                     <Form>
                         <BootstrapForm.Group className="mb-3" controlId="formBasicName">
-                            <BootstrapForm.Label className={s.formLabel}>Ваше ім’я</BootstrapForm.Label>
+                            <BootstrapForm.Label className={s.formLabel}>{t("formName")}</BootstrapForm.Label>
                             <Field type="text" name="name" as={BootstrapForm.Control}
                                    className={s.field}/>
                             <ErrorMessage name="name" component={BootstrapForm.Text}
@@ -66,14 +80,14 @@ const CartForm = () => {
                         </BootstrapForm.Group>
 
                         <BootstrapForm.Group className="mb-3" controlId="formBasicPhone">
-                            <BootstrapForm.Label className={s.formLabel}>Телефон</BootstrapForm.Label>
+                            <BootstrapForm.Label className={s.formLabel}>{t("formTrialPhone")}</BootstrapForm.Label>
                             <Field type="tel" name="phone" as={CustomPhoneInput} className={s.field}/>
                             <ErrorMessage name="phone" component={BootstrapForm.Text} className="text-danger"/>
                         </BootstrapForm.Group>
 
 
                         <BootstrapForm.Group className="mb-3" controlId="formBasicEmail">
-                            <BootstrapForm.Label className={s.formLabel}>Ваш e-mail</BootstrapForm.Label>
+                            <BootstrapForm.Label className={s.formLabel}>{t("your")} e-mail</BootstrapForm.Label>
                             <Field type="text" name="email" as={BootstrapForm.Control}
                                    className={s.field}/>
                             <ErrorMessage name="emai" component={BootstrapForm.Text}
@@ -81,7 +95,7 @@ const CartForm = () => {
                         </BootstrapForm.Group>
 
                         <div className={s.deliveryBlock}>
-                            <h5 className={s.deliveryTitle}>Спосіб доставки:</h5>
+                            <h5 className={s.deliveryTitle}>{t("delivery")}</h5>
                             <label>
                                 <input type="radio" value="pickup"
                                        checked={selectedOption === 'pickup'}
@@ -90,7 +104,7 @@ const CartForm = () => {
                                 />
                                 <span className={s.box}></span>
                                 <span className={s.deliveryLabel}>
-                                           Самовивіз (безкоштовно)
+                                           {t("freeDelivery")}
                                     </span>
                             </label>
 
@@ -104,7 +118,7 @@ const CartForm = () => {
                                 />
                                 <span className={s.box}></span>
                                 <span className={s.deliveryLabel}>
-                                          Нова Пошта (70 грн)
+                                          {t("novaPost")} (70 {t("uah")})
                                     </span>
                             </label>
 
@@ -118,7 +132,7 @@ const CartForm = () => {
                                 />
                                 <span className={s.box}></span>
                                 <span className={s.deliveryLabel}>
-                                         Кур’єр по Києву (100 грн)
+                                         {t("courier")} (100 {t("uah")})
                                     </span>
                             </label>
                         </div>
@@ -126,28 +140,28 @@ const CartForm = () => {
                         {selectedOption === "courier" && (
                             <>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicCity">
-                                    <BootstrapForm.Label className={s.formLabel}>Місто</BootstrapForm.Label>
+                                    <BootstrapForm.Label className={s.formLabel}>{t("cityLabel")}</BootstrapForm.Label>
                                     <Field type="text" name="city" as={BootstrapForm.Control}
-                                           className={s.field} placeholder="м. Біла Церква, Київська область"/>
+                                           className={s.field} placeholder={t("cityPlaceholder")}/>
                                     <ErrorMessage name="city" component={BootstrapForm.Text}
                                                   className="text-danger"/>
                                 </BootstrapForm.Group>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicAddress">
-                                    <BootstrapForm.Label className={s.formLabel}>Адреса</BootstrapForm.Label>
+                                    <BootstrapForm.Label className={s.formLabel}>{t("address")}</BootstrapForm.Label>
                                     <Field type="text" name="address" as={BootstrapForm.Control}
-                                           className={s.field} placeholder="вул. Підвальна"/>
+                                           className={s.field} placeholder={t("streetLabel")}/>
                                     <ErrorMessage name="address" component={BootstrapForm.Text}
                                                   className="text-danger"/>
                                 </BootstrapForm.Group>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicNumber">
-                                    <BootstrapForm.Label className={s.formLabel}>Номер будинку</BootstrapForm.Label>
+                                    <BootstrapForm.Label className={s.formLabel}>{t("buildingNumber")}</BootstrapForm.Label>
                                     <Field type="text" name="number" as={BootstrapForm.Control}
                                            className={s.field} placeholder="57"/>
                                     <ErrorMessage name="number" component={BootstrapForm.Text}
                                                   className="text-danger"/>
                                 </BootstrapForm.Group>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicFlat">
-                                    <BootstrapForm.Label className={s.formLabel}>Квартира</BootstrapForm.Label>
+                                    <BootstrapForm.Label className={s.formLabel}>{t("flat")}</BootstrapForm.Label>
                                     <Field type="text" name="flat" as={BootstrapForm.Control}
                                            className={s.field} placeholder="345"/>
                                     <ErrorMessage name="flat" component={BootstrapForm.Text}
@@ -158,14 +172,14 @@ const CartForm = () => {
                         {selectedOption === "post" && (
                             <>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicPostCity">
-                                    <BootstrapForm.Label className={s.formLabel}>Місто</BootstrapForm.Label>
+                                    <BootstrapForm.Label className={s.formLabel}>{t("cityLabel")}</BootstrapForm.Label>
                                     <Field type="text" name="postCity" as={BootstrapForm.Control}
-                                           className={s.field} placeholder="м. Біла Церква, Київська область"/>
+                                           className={s.field} placeholder={t("cityPlaceholder")}/>
                                     <ErrorMessage name="postCity" component={BootstrapForm.Text}
                                                   className="text-danger"/>
                                 </BootstrapForm.Group>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicPostNumber">
-                                    <BootstrapForm.Label className={s.formLabel}>Номер відділення Нової пошти</BootstrapForm.Label>
+                                    <BootstrapForm.Label className={s.formLabel}>{t("postNumber")}</BootstrapForm.Label>
                                     <Field type="text" name="postNumber" as={BootstrapForm.Control}
                                            className={s.field} placeholder="10"/>
                                     <ErrorMessage name="postNumber" component={BootstrapForm.Text}
@@ -187,7 +201,7 @@ const CartForm = () => {
                         </label>
 
                         <div className="d-flex justify-content-end">
-                            <div className={s.totalPrice}>Загальна сума: 2880 грн</div>
+                            <div className={s.totalPrice}>{t("totalSum")} {totalSum} {t("uah")}</div>
                         </div>
 
                         <div className="d-flex justify-content-end">

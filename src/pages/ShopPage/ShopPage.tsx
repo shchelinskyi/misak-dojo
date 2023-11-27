@@ -17,6 +17,8 @@ const ShopPage = () => {
     const [currentIndexKimonos, setCurrentIndexKimonos] = useState(0);
     const [currentIndexBelts, setCurrentIndexBelts] = useState(0);
     const [currentIndexCovers, setCurrentIndexCovers] = useState(0);
+    const [currentIndexProtections, setCurrentIndexProtections] = useState(0);
+    const [currentIndexSupports, setCurrentIndexSupports] = useState(0);
 
     const [allProducts, setAllProducts] = useState([]);
     const [allCasuals, setAllCasuals] = useState([]);
@@ -24,6 +26,8 @@ const ShopPage = () => {
     const [allKimonos, setAllKimonos] = useState([]);
     const [allBelts, setAllBelts] = useState([]);
     const [allCovers, setAllCovers] = useState([]);
+    const [allProtections, setAllProtections] = useState([]);
+    const [allSupports, setAllSupports] = useState([]);
 
     const [activeKey, setActiveKey] = useState('all');
 
@@ -32,6 +36,8 @@ const ShopPage = () => {
             const someArr = products.slice(0, currentIndexAll + 3);
             setAllProducts([...someArr]);
         }
+
+
     }, [currentIndexAll])
 
     useEffect(() => {
@@ -79,10 +85,27 @@ const ShopPage = () => {
         }
     }, [currentIndexCovers])
 
+    useEffect(() => {
+        const filteredProducts = products.filter((item) => item.category === "protection");
+
+        if ( filteredProducts.length > 0 &&  filteredProducts.length > allProtections.length  ) {
+            const someArr = filteredProducts.slice(0, currentIndexProtections + 3);
+            setAllProtections([...someArr]);
+        }
+    }, [currentIndexProtections])
+
+    useEffect(() => {
+        const filteredProducts = products.filter((item) => item.category === "support");
+
+        if ( filteredProducts.length > 0 &&  filteredProducts.length > allSupports.length  ) {
+            const someArr = filteredProducts.slice(0, currentIndexSupports + 3);
+            setAllSupports([...someArr]);
+        }
+    }, [currentIndexSupports])
 
     const handleShowMoreAll = () => {
         const newIndex = currentIndexAll + 3;
-        setCurrentIndexAll(newIndex >= products.length ? 0 : newIndex);
+        setCurrentIndexAll(newIndex >= products.length ? products.length : newIndex);
     };
 
     const handleShowMoreCasuals = () => {
@@ -115,6 +138,18 @@ const ShopPage = () => {
         setCurrentIndexCovers(newIndex >= filteredProducts.length ? 0 : newIndex);
     };
 
+    const handleShowMoreProtections = () => {
+        const filteredProducts = products.filter((item) => item.category === "protection");
+        const newIndex = currentIndexProtections + 3;
+        setCurrentIndexProtections(newIndex >= filteredProducts.length ? 0 : newIndex);
+    };
+
+    const handleShowMoreSupports = () => {
+        const filteredProducts = products.filter((item) => item.category === "support");
+        const newIndex = currentIndexSupports + 3;
+        setCurrentIndexSupports(newIndex >= filteredProducts.length ? 0 : newIndex);
+    };
+
     return (
         <>
             <Container className={s.wrapper}>
@@ -140,6 +175,12 @@ const ShopPage = () => {
                             <Nav.Item>
                                 <Nav.Link eventKey="covers" className={cn(s.tab, { [s.active]: activeKey === "covers" })}>{t("covers")}</Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="protection" className={cn(s.tab, { [s.active]: activeKey === "protection" })}>{t("protection")}</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="support" className={cn(s.tab, { [s.active]: activeKey === "support" })}>{t("support")}</Nav.Link>
+                            </Nav.Item>
                         </Nav>
                         <Tab.Content>
                             <Tab.Pane eventKey="all">
@@ -147,9 +188,10 @@ const ShopPage = () => {
                                     {allProducts.length > 0 && allProducts.map((productItem) => <ProductCard key={productItem.id}
                                                                                                        productItem={productItem}/>)}
                                 </div>
-                                <Stack direction="horizontal" style={{justifyContent: "center", marginTop:"70px"}}>
+                                {(allProducts.length !== products.length) &&  <Stack direction="horizontal" style={{justifyContent: "center", marginTop:"70px"}}>
                                     <CustomButton onClick={handleShowMoreAll}>{t("showMore")}</CustomButton>
                                 </Stack>
+                                }
                             </Tab.Pane>
                             <Tab.Pane eventKey="casual">
                                 <div className={s.content}>
@@ -194,6 +236,24 @@ const ShopPage = () => {
                                 </div>
                                 <Stack direction="horizontal" style={{justifyContent: "center", marginTop:"70px"}}>
                                     <CustomButton onClick={handleShowMoreCovers}>{t("showMore")}</CustomButton>
+                                </Stack>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="protection">
+                                <div className={s.content}>
+                                    {allProtections.length > 0 && allProtections.map((productItem) => <ProductCard key={productItem.id}
+                                                                                                         productItem={productItem}/>)}
+                                </div>
+                                <Stack direction="horizontal" style={{justifyContent: "center", marginTop:"70px"}}>
+                                    <CustomButton onClick={handleShowMoreProtections}>{t("showMore")}</CustomButton>
+                                </Stack>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="support">
+                                <div className={s.content}>
+                                    {allSupports.length > 0 && allSupports.map((productItem) => <ProductCard key={productItem.id}
+                                                                                                                   productItem={productItem}/>)}
+                                </div>
+                                <Stack direction="horizontal" style={{justifyContent: "center", marginTop:"70px"}}>
+                                    <CustomButton onClick={handleShowMoreSupports}>{t("showMore")}</CustomButton>
                                 </Stack>
                             </Tab.Pane>
                         </Tab.Content>

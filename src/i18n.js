@@ -6,7 +6,7 @@ import {initReactI18next} from "react-i18next";
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
     supportedLngs:["en","ru","ua"],
     fallback:"ua",
-    debug: true,
+    debug: false,
     detector: {
         order: ["queryString", "cookie"],
         cache: ["cookie"]

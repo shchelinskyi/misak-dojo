@@ -14,7 +14,7 @@ import CustomNavbarToggle from "../CustomNavbarToggle";
 import cn from "classnames";
 import {useTranslation} from "react-i18next";
 import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
-import {useAppDispatch} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 import {openCartModal} from "../../redux/slices/cartSlice.ts";
 
 interface ITheHeaderProps {
@@ -32,6 +32,7 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
     const dispatch = useAppDispatch();
     const { t, i18n } = useTranslation();
     const [activeLang, setActiveLang] = useState(i18n.language || 'ua');
+    const cartItems = useAppSelector(state => state.cart.cartItems);
 
 
     useEffect(() => {
@@ -94,7 +95,7 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
             </Container>
             <div className={s.bucketWrapper} onClick={() => dispatch(openCartModal())}>
                 <Image src={bucket} className={s.bucketIcon}/>
-                <div className={s.badge}>2</div>
+                <div className={s.badge}>{cartItems.length}</div>
             </div>
 
         </Navbar>

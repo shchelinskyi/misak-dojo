@@ -1,32 +1,77 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import img1 from "../../assets/images/product/img1.jpg";
 import {Image} from "react-bootstrap"
 import s from "./CartItem.module.scss";
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
+import {useAppDispatch} from "../../hooks.ts";
+import {addToCart, calculateTotal, removeFromCartAllQuantity, removeFromCartOne} from "../../redux/slices/cartSlice.ts";
 
-const CartItem = () => {
+const CartItem = ({cartProduct}) => {
+    const dispatch = useAppDispatch();
+    const {t} = useTranslation();
+    const currentLanguage = i18n.language || 'ua';
+    const [productSize, setProductSize] = useState('');
+
+    useEffect(() => {
+        if (cartProduct.size === "3" || cartProduct.size === "5" || cartProduct.size === "7" || cartProduct.size === "9" || cartProduct.size === "100") {
+            setProductSize(t(`size${cartProduct.size}`))
+        } else {
+            setProductSize(cartProduct.size)
+        }
+    }, []);
+
+    const addQuantity = () => {
+        dispatch(addToCart(cartProduct));
+        dispatch(calculateTotal());
+    }
+
+    const removeQuantity = () => {
+        dispatch(removeFromCartOne(cartProduct));
+        dispatch(calculateTotal());
+    }
+
+    const removeProduct = () => {
+        dispatch(removeFromCartAllQuantity(cartProduct));
+        dispatch(calculateTotal());
+    }
+
+
     return (
         <div className={s.container}>
-            <Image src={img1} className={s.productImg}/>
+            <Image src={cartProduct.image} className={s.productImg}/>
             <div className={s.description}>
-                <h5 className={s.title}>Рюкзак-мішок з логотипом клубу Misak Dojo</h5>
+                <h5 className={s.title}>
+                    {t(`title.${currentLanguage}`, cartProduct.title[currentLanguage])}
+                </h5>
                 <div className={s.charactersBlock}>
                     <div className={s.charactersItem}>
                         <div className={s.characterLabel}>
-                            Розмір:
+                            {cartProduct.category === "backpack" && t("sizeBackpack")}
+                            {cartProduct.category === "belt" && t("sizeBelt")}
+                            {(cartProduct.category !== "belt" && cartProduct.category !== "backpack") && t("size")}
                         </div>
                         <div className={s.characterValue}>
-                            XS
+                            {productSize}
+                        </div>
+                    </div>
+                    <div className={s.charactersItem}>
+                        <div className={s.characterLabel}>
+                            {t("color")}:
+                        </div>
+                        <div className={s.characterValue}>
+                            {t(cartProduct.color)}
                         </div>
                     </div>
                 </div>
             </div>
             <div className={s.btnGroup}>
-                <button className={s.btnDel}>-</button>
-                <span className={s.quantity}>1</span>
-                <button className={s.btnAdd}>+</button>
+                <button className={s.btnDel} onClick={removeQuantity}>-</button>
+                <span className={s.quantity}>{cartProduct.quantity}</span>
+                <button className={s.btnAdd} onClick={addQuantity}>+</button>
             </div>
-            <div className={s.price}>1990 грн</div>
-            <div className={s.delBtn}>&times;</div>
+            <div className={s.price}>{cartProduct.price} {t("uah")}</div>
+            <div className={s.delBtn} onClick={removeProduct}>&times;</div>
         </div>
     );
 };
