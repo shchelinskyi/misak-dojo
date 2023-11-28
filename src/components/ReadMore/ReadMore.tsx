@@ -1,52 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, Stack} from "react-bootstrap";
 import s from "./ReadMore.module.scss";
-import plus from "../../assets/images/readMore/plus.svg";
 import usefulText from "../../assets/images/readMore/useful-text.svg";
 import usefulArrow from "../../assets/images/readMore/useful-arrow.svg";
 import usefulTextM from "../../assets/images/readMore/useful-text-m.svg";
 import usefulArrowM from "../../assets/images/readMore/useful-arrow-m.svg";
 import usefulTextS from "../../assets/images/readMore/useful-text-s.svg";
 import usefulArrowS from "../../assets/images/readMore/useful-arrow-s.svg";
-
 import finger from "../../assets/images/support/finger-up.svg";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
+import ReadMoreItem from "../ReadMoreItem";
+import {readMoreData} from "../../utils/readMore"
+import Glossary from "../ReadMoreItem/Items/Glossary";
+import Principles from "../ReadMoreItem/Items/Principles";
+import DojoCun from "../ReadMoreItem/Items/DojoCun";
+import Etiquette from "../ReadMoreItem/Items/Etiquette";
 
 
 const linkArr = [
-    {
-        title: {
-            en:"Kyokushinkai Karate Glossary",
-            ru:"Словарь терминов Киокушинкай каратэ",
-            ua:"Словник термінів Кіокушинкай карате",
-        },
-        link: ""
-    },
-    {
-        title: {
-            en:"Karate principles",
-            ru:"Принципы каратиста",
-            ua:"Принципи каратиста",
-        },
-        link: ""
-    },
-    {
-        title: {
-            en:"Dojo Kun Kyokushinkai Karate",
-            ru:"Джо Кун Киокушинкай Карате",
-            ua:"Доджо кун Кіокушинкай карате",
-        },
-        link: ""
-    },
-    {
-        title: {
-            en:"Kyokushinkai karate dojo etiquette",
-            ru:"Этикет доджо Киокушинкай каратэ",
-            ua:"Етикет доджо Кіокушинкай карате",
-        },
-        link: ""
-    },
     {
         title: {
             en:"Biography of Masutatsu Oyama",
@@ -95,7 +67,7 @@ const linkArr = [
 ]
 
 const ReadMore = () => {
-
+    const [isModalOpened, setIsModalOpened] = useState(false);
     const { t } = useTranslation();
     const currentLanguage = i18n.language || 'ua';
 
@@ -104,15 +76,30 @@ const ReadMore = () => {
             <div className={s.wrapper}>
                 <h3 className={s.title}>{t("readMore")}</h3>
                 <div className={s.contentBlock}>
-                    {linkArr.length > 0 && linkArr.map((item) => {
+                    <ReadMoreItem key={readMoreData.glossary.title.en} item={readMoreData.glossary}>
+                        <Glossary/>
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.principles.title.en} item={readMoreData.principles}>
+                        <Principles/>
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.dojoKun.title.en} item={readMoreData.dojoKun}>
+                        <DojoCun/>
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.etiquette.title.en} item={readMoreData.etiquette}>
+                        <Etiquette/>
+                    </ReadMoreItem>
 
-                            return (
-                                <div key={item.title} className={s.link}>
-                                    <div className={s.linkTitle}>{t(`title.${currentLanguage}`, item.title[currentLanguage])}</div>
-                                    <Image className={s.iconPlus} src={plus}/>
-                                </div>
-                            )
-                    })}
+
+                    {/*{linkArr.length > 0 && linkArr.map((item) => {*/}
+
+                    {/*        return (*/}
+
+                    {/*            <div key={item.title} className={s.link}>*/}
+                    {/*                <div className={s.linkTitle}>{t(`title.${currentLanguage}`, item.title[currentLanguage])}</div>*/}
+                    {/*                <Image className={s.iconPlus} src={plus}/>*/}
+                    {/*            </div>*/}
+                    {/*        )*/}
+                    {/*})}*/}
 
 
                     <div className={s.usefulBlockS}>

@@ -1,0 +1,48 @@
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.content {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contentTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.contentItem {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: my-counter;
+}
+
+li {
+  counter-increment: my-counter;
+  margin-bottom: 10px;
+}
+
+li::before {
+  content: counter(my-counter) ". ";
+  font-weight: bold;
+  margin-right: 5px;
+}

@@ -19,7 +19,7 @@ const cartSlice = createSlice({
             state.isOpenedCartModal = true;
         },
         closeCartModal: (state) => {
-            document.body.style.overflow = 'auto';
+            document.body.style.overflowX = 'auto';
             state.isOpenedCartModal = false;
         },
         addToCart: (state, action) => {
