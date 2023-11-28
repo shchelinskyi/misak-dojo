@@ -16,59 +16,14 @@ import Glossary from "../ReadMoreItem/Items/Glossary";
 import Principles from "../ReadMoreItem/Items/Principles";
 import DojoCun from "../ReadMoreItem/Items/DojoCun";
 import Etiquette from "../ReadMoreItem/Items/Etiquette";
-
-
-const linkArr = [
-    {
-        title: {
-            en:"Biography of Masutatsu Oyama",
-            ru:"Биография Масутацу Оямы",
-            ua:"Біографія Масутацу Оями",
-        },
-        link: ""
-    },
-    {
-        title: {
-            en:"WKO exam requirements",
-            ru:"Экзаменационные требования WKO",
-            ua:"Екзаменаційні вимоги WKO",
-        },
-        link: ""
-    },
-    {
-        title: {
-            en:"Rules of behavior in the dojo",
-            ru:"Правила поведения в доджо",
-            ua:"Правила поведінки в доджо",
-        },
-        link: ""
-    },
-    { title: {
-            en:"Rules of Kyokushinkai competitions",
-            ru:"Правила соревнований Киокушинкай",
-            ua:"Правила змагань Кіокушинкай",
-        },
-        link: ""
-    },
-    {title: {
-            en:"Kyokushinkai karate WKO",
-            ru:"Kyokushinkai karate WKO",
-            ua:"Kyokushinkai karate WKO",
-        },
-        link: ""
-    },
-    {  title: {
-            en:"The meaning of Kyokushinkai belts",
-            ru:"Значение поясов Киокушинкай",
-            ua:"Значення поясів Кіокушинкай",
-        },
-        link: ""
-    },
-]
+import Biography from "../ReadMoreItem/Items/Biography";
+import Exam from "../ReadMoreItem/Items/Exam";
+import Rules from "../ReadMoreItem/Items/Rules";
+import RulesKio from "../ReadMoreItem/Items/RulesKio";
 
 const ReadMore = () => {
     const [isModalOpened, setIsModalOpened] = useState(false);
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
 
     return (
@@ -88,18 +43,24 @@ const ReadMore = () => {
                     <ReadMoreItem key={readMoreData.etiquette.title.en} item={readMoreData.etiquette}>
                         <Etiquette/>
                     </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.biography.title.en} item={readMoreData.biography}>
+                        <Biography/>
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.exam.title.en} item={readMoreData.exam}>
+                        <Exam/>
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.rules.title.en} item={readMoreData.rules}>
+                        <Rules/>
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.rulesKio.title.en} item={readMoreData.rulesKio}>
+                        <RulesKio/>
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.wko.title.en} item={readMoreData.wko}>
 
+                    </ReadMoreItem>
+                    <ReadMoreItem key={readMoreData.belts.title.en} item={readMoreData.belts}>
 
-                    {/*{linkArr.length > 0 && linkArr.map((item) => {*/}
-
-                    {/*        return (*/}
-
-                    {/*            <div key={item.title} className={s.link}>*/}
-                    {/*                <div className={s.linkTitle}>{t(`title.${currentLanguage}`, item.title[currentLanguage])}</div>*/}
-                    {/*                <Image className={s.iconPlus} src={plus}/>*/}
-                    {/*            </div>*/}
-                    {/*        )*/}
-                    {/*})}*/}
+                    </ReadMoreItem>
 
 
                     <div className={s.usefulBlockS}>
