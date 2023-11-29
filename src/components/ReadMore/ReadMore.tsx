@@ -20,6 +20,8 @@ import Biography from "../ReadMoreItem/Items/Biography";
 import Exam from "../ReadMoreItem/Items/Exam";
 import Rules from "../ReadMoreItem/Items/Rules";
 import RulesKio from "../ReadMoreItem/Items/RulesKio";
+import Wko from "../ReadMoreItem/Items/Wko";
+import Belts from "../ReadMoreItem/Items/Belts";
 
 const ReadMore = () => {
     const [isModalOpened, setIsModalOpened] = useState(false);
@@ -56,10 +58,10 @@ const ReadMore = () => {
                         <RulesKio/>
                     </ReadMoreItem>
                     <ReadMoreItem key={readMoreData.wko.title.en} item={readMoreData.wko}>
-
+                        <Wko/>
                     </ReadMoreItem>
                     <ReadMoreItem key={readMoreData.belts.title.en} item={readMoreData.belts}>
-
+                        <Belts/>
                     </ReadMoreItem>
 
 

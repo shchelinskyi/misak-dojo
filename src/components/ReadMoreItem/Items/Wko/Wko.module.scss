@@ -1,0 +1,28 @@
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.imageBlock {
+  display: flex;
+}
+
+.img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.contentTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.contentItem {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
