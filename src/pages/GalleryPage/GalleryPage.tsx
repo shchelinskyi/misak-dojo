@@ -6,6 +6,7 @@ import useful from "../../assets/images/useful.png";
 import {useEffect, useState} from "react";
 import GalleryCard from "../../components/GalleryCard";
 import {useTranslation} from "react-i18next";
+import {gallery} from "../../utils/gallery";
 
 const newsData = [
     {
@@ -64,55 +65,23 @@ const newsData = [
     },
 ]
 
-const linkArr = [
-    {
-        title: "Словник термінів Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Принципи каратиста", link: ""
-    },
-    {
-        title: "Доджо кун Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Етикет доджо Кіокушинкай карате", link: ""
-    },
-    {
-        title: "Біографія Масутацу Оями", link: ""
-    },
-    {
-        title: "Екзаменаційні вимоги WKO", link: ""
-    },
-    {
-        title: "Правила поведінки в доджо", link: ""
-    },
-    {
-        title: "Правила змагань Кіокушинкай", link: ""
-    },
-    {
-        title: "Kyokushinkai karate WKO", link: ""
-    },
-    {
-        title: "Значення поясів Кіокушинкай", link: ""
-    },
-]
 
 const GalleryPage = () => {
     const { t } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [newsArray, setNewsArray] = useState([]);
+    const [galleryArray, setGalleryArray] = useState([]);
 
     useEffect(() => {
-        if (newsData.length > 0 && newsData.length > newsArray.length  ) {
-            const someArr = newsData.slice(0, currentIndex + 6);
-            setNewsArray([...someArr]);
+        if (gallery.length > 0 && gallery.length > galleryArray.length  ) {
+            const someArr = gallery.slice(0, currentIndex + 6);
+            setGalleryArray([...someArr]);
         }
     }, [currentIndex])
 
 
     const handleShowMore = () => {
         const newIndex = currentIndex + 6;
-        setCurrentIndex(newIndex >= newsData.length ? 0 : newIndex);
+        setCurrentIndex(newIndex >= gallery.length ? 0 : newIndex);
     };
 
 
@@ -122,8 +91,8 @@ const GalleryPage = () => {
                 <div className={s.container}>
                     <h3 className={s.title}>{t("gallery")}</h3>
                     <div className={s.content}>
-                        {newsArray.length> 0 && newsArray.map((newsItem, index) => (
-                            <GalleryCard key={`${newsItem.url}-${index}`} newsItem={newsItem}/>
+                        {gallery.length> 0 && gallery.map((galleryItem) => (
+                            <GalleryCard key={galleryItem.title.en} galleryItem={galleryItem}/>
                         ))}
                     </div>
                     <Stack direction="horizontal" style={{justifyContent: "center", marginTop: "70px"}}>
