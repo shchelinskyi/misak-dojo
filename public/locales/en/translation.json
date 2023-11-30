@@ -137,5 +137,6 @@
   "buildingNumber": "Building number",
   "flat": "Apartment",
   "postNumber": "Branch number of the Nova Poshta",
-  "totalSum" : "Total:"
+  "totalSum" : "Total:",
+  "published": "Published"
 }
