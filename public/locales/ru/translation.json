@@ -102,7 +102,7 @@
   "formTrialPhone": "Телефон",
   "formTrialComment": "Комментарий",
   "fieldRequired": "Поле обязательно",
-  "validationAge": "Возраст не может быть больше 99 лет",
+  "validationAge": "Указанный возраст должен быть от 4 до 99 лет",
   "validationPhone": "Введите 9 цифр",
   "material": "Состав",
   "size": "Размер:",

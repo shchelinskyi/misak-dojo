@@ -1,8 +1,8 @@
 import {FC, useEffect, useState} from "react"
 import {Container, Image, Nav, Navbar, NavbarToggle} from "react-bootstrap";
-import logo from "../../assets/images/main/logo.png";
-import fistLogo from "../../assets/images/main/fistLogo.png";
-import bucket from "../../assets/images/main/bucket.png";
+import logo from "../../assets/images/main/logo.webp";
+import fistLogo from "../../assets/images/main/fistLogo.webp";
+import bucket from "../../assets/images/main/bucket.webp";
 import instagram from "../../assets/images/main/instagram.svg";
 import facebook from "../../assets/images/main/facebook.svg";
 import telegram from "../../assets/images/main/telegram.svg";
@@ -16,6 +16,7 @@ import {useTranslation} from "react-i18next";
 import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
 import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 import {openCartModal} from "../../redux/slices/cartSlice.ts";
+import _debounce from 'lodash/debounce';
 
 interface ITheHeaderProps {
     scrollActions: {
@@ -34,6 +35,22 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
     const [activeLang, setActiveLang] = useState(i18n.language || 'ua');
     const cartItems = useAppSelector(state => state.cart.cartItems);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = _debounce(() => {
+            setIsScrolled(window.scrollY > 300);
+        }, 100);
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+        const backgroundColor = isScrolled ? 'white' : '#e1e1e1';
+
 
     useEffect(() => {
         setActiveLang(i18n.language || 'ua');
@@ -49,8 +66,8 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
     };
 
     return (
-        <Navbar expand="lg" className="bg-transparent position-relative">
-            <Container style={{minWidth: "335px"}}>
+        <Navbar className={s.wrapper}  style={{backgroundColor}}>
+            <Container  className={s.container} style={{minWidth: "335px"}}>
                 <Navbar.Brand>
                     <Image className={s.logo} src={logo}/>
                     <Image className={s.fistLogo} src={fistLogo} style={{width: "65px", height: "50px"}}/>

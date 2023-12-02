@@ -26,7 +26,7 @@ const GalleryCard: FC<GalleryCardTypes> = ({galleryItem}) => {
     }
 
     const handleClose = () => {
-        document.body.style.overflowY = 'auto';
+        document.body.style.overflowY = 'scroll';
         setIsModalOpened(false);
     }
 

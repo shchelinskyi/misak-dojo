@@ -7,9 +7,13 @@ import cloudRB from "../../assets/images/trial/cloud-trial-rb.svg";
 import CustomButton from "../../components/CustomButton";
 import {Image} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
+import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
+import {useAppDispatch} from "../../hooks.ts";
 
 const TrialLessonPage = () => {
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+
     return (
             <div className={s.container}>
                 <div className={s.block}>
@@ -19,7 +23,7 @@ const TrialLessonPage = () => {
                         <p className={s.centerItemDescription}>{t("freeSlogan1")} <br/>
                             {t("freeSlogan2")}</p>
                         <div className={s.btnBlock}>
-                            <CustomButton onClick={() => console.log("check")}> {t("signUpforClasses")}</CustomButton>
+                            <CustomButton  onClick={() => dispatch(openForm())}> {t("signUpforClasses")}</CustomButton>
                         </div>
                         <Image className={s.cloudLeftImg} src={cloudLeft}/>
                         <Image className={s.cloudRightTopImg} src={cloudRT}/>

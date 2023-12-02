@@ -1,61 +1,76 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainPage from "./pages/MainPage";
 import "./App.scss";
-import React, {useRef} from 'react';
-
+import {useEffect, useRef, useState} from 'react';
+import {useAppSelector} from "./hooks.ts";
+import MainPage from "./pages/MainPage";
 import AboutPage from "./pages/AboutPage";
-import TheFooter from "./components/TheFooter";
-import ContactsPage from "./pages/ContactsPage/ContactsPage.tsx";
-import NewsPage from "./pages/NewsPage";
 import TeamPage from "./pages/TeamPage";
 import GymsPage from "./pages/GymsPage";
 import TrialLessonPage from "./pages/TrialLessonPage";
-import GalleryPage from "./pages/GalleryPage/GalleryPage.tsx";
+import GalleryPage from "./pages/GalleryPage";
 import SupportUsPage from "./pages/SupporUsPage";
-import Ticker from "./components/Ticker";
 import ShopPage from "./pages/ShopPage";
+import NewsPage from "./pages/NewsPage";
 import ReadMore from "./components/ReadMore";
+import ContactsPage from "./pages/ContactsPage";
+import TheFooter from "./components/TheFooter";
+import Ticker from "./components/Ticker";
 import Cart from "./components/Cart";
 import FormTrialSession from "./components/FormTrialSession";
-import {useAppSelector} from "./hooks.ts";
+import Loading from "./components/Loading";
+
 
 
 const App = () => {
 
-    const aboutRef = useRef();
-    const teamRef = useRef();
-    const gymsRef = useRef();
-    const galleryRef = useRef();
-    const shopRef = useRef();
-    const contactsRef = useRef();
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const teamRef = useRef<HTMLDivElement>(null);
+    const gymsRef = useRef<HTMLDivElement>(null);
+    const galleryRef = useRef<HTMLDivElement>(null);
+    const shopRef = useRef<HTMLDivElement>(null);
+    const contactsRef = useRef<HTMLDivElement>(null);
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // document.body.style.overflowY = 'hidden';
+        // document.body.style.overflowX = 'hidden';
+        const timer = setTimeout(() => {
+            setLoading(false);
+            // document.body.style.overflowY = 'scroll';
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
     const isCartOpened = useAppSelector(state => state.cart.isOpenedCartModal);
-
     const scrollActions = {
         scrollAbout: () => {
-            aboutRef.current.scrollIntoView({behavior: 'smooth'});
+            aboutRef.current!.scrollIntoView({behavior: 'smooth'});
         },
         scrollTeam: () => {
-            teamRef.current.scrollIntoView({behavior: 'smooth'});
+            teamRef.current!.scrollIntoView({behavior: 'smooth'});
         },
         scrollGyms: () => {
-            gymsRef.current.scrollIntoView({behavior: 'smooth'});
+            gymsRef.current!.scrollIntoView({behavior: 'smooth'});
         },
         scrollGallery: () => {
-            galleryRef.current.scrollIntoView({behavior: 'smooth'});
+            galleryRef.current!.scrollIntoView({behavior: 'smooth'});
         },
         scrollShop: () => {
-            shopRef.current.scrollIntoView({behavior: 'smooth'});
+            shopRef.current!.scrollIntoView({behavior: 'smooth'});
         },
         scrollContacts: () => {
-            contactsRef.current.scrollIntoView({behavior: 'smooth'});
+            contactsRef.current!.scrollIntoView({behavior: 'smooth'});
         }
     }
 
-
     return (
         <>
+            {loading && <Loading/>}
+
+
             {isFormOpen && <FormTrialSession/>}
 
             <MainPage scrollActions={scrollActions}/>

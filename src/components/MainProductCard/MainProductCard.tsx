@@ -4,7 +4,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {closeProductModal} from "../../redux/slices/productSlice.ts";
 import s from "./MainProductCard.module.scss";
 import cn from "classnames"
-import iconSelect from "../../assets/images/main/select-flag.png";
+import iconSelect from "../../assets/images/main/select-flag.webp";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {addToCart, calculateTotal} from "../../redux/slices/cartSlice.ts";

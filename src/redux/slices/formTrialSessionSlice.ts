@@ -1,11 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 type FormState = {
-    isOpenedForm: boolean
+    isOpenedForm: boolean;
+    isOpenedSuccessModal: boolean;
 }
 
 const initialState: FormState = {
-    isOpenedForm: false
+    isOpenedForm: false,
+    isOpenedSuccessModal: false
 };
 
 const formTrialSessionSlice = createSlice({
@@ -13,10 +15,26 @@ const formTrialSessionSlice = createSlice({
     initialState,
     reducers: {
         openForm: (state) => {
+            // document.body.classList.add('no-scroll');
+            // document.body.style.overflowY = 'hidden';
+            document.body.style.setProperty('overflow-y', 'hidden', 'important');
             state.isOpenedForm = true;
         },
         closeForm: (state) => {
             state.isOpenedForm = false;
+            // document.body.classList.remove('no-scroll');
+            document.body.style.overflowY = 'auto';
+        },
+        openSuccessModal: (state) => {
+            // document.body.classList.add('no-scroll');
+            // document.body.style.overflowY = 'hidden';
+            document.body.style.setProperty('overflow-y', 'hidden', 'important');
+            state.isOpenedSuccessModal = true;
+        },
+        closeSuccessModal: (state) => {
+            state.isOpenedSuccessModal = false;
+            // document.body.classList.remove('no-scroll');
+            document.body.style.overflowY = 'auto';
         },
     },
 });

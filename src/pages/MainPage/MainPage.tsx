@@ -1,25 +1,25 @@
 import {FC, useEffect, useState} from "react";
 import {Container, Image} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
+import {useAppDispatch, useAppSelector} from "../../hooks.ts";
+import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
 import TheHeader from "../../components/TheHeader";
 import CustomButton from "../../components/CustomButton";
-import roundText from "../../assets/images/roundText.png";
-import lightning from "../../assets/images/lightning.png";
-import volcano from "../../assets/images/main/volcano.png";
-import cloudL from "../../assets/images/main/cloud-l.png";
-import cloudRt from "../../assets/images/main/cloud-rt.png";
-import cloudRb from "../../assets/images/main/cloud-rb.png";
-import build from "../../assets/images/main/build.png";
-import arch from "../../assets/images/main/arch.png";
+import roundText from "../../assets/images/main/roundText.webp";
+import lightning from "../../assets/images/main/lightning.webp";
+import volcano from "../../assets/images/main/volcano.webp";
+import cloudL from "../../assets/images/main/cloud-l.webp";
+import cloudRt from "../../assets/images/main/cloud-rt.webp";
+import cloudRb from "../../assets/images/main/cloud-rb.webp";
+import build from "../../assets/images/main/build.webp";
+import arch from "../../assets/images/main/arch.webp";
 import boy1 from "../../assets/images/main/boy1.gif";
 import boy2 from "../../assets/images/main/boy2.gif";
 import boy11 from "../../assets/images/main/boy1D.gif";
 import boy22 from "../../assets/images/main/boy2D.gif";
-import fingerDown from "../../assets/images/main/fingerDown.png";
+import fingerDown from "../../assets/images/main/fingerDown.webp";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
-import {useTranslation} from "react-i18next";
-import {useAppDispatch, useAppSelector} from "../../hooks.ts";
-import {closeForm, openForm} from "../../redux/slices/formTrialSessionSlice.ts";
 import FormTrialSession from "../../components/FormTrialSession";
 
 interface IMainPageProps {
@@ -36,6 +36,7 @@ interface IMainPageProps {
 const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
     const dispatch = useAppDispatch();
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
+    const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
 
     const { t } = useTranslation();
 
@@ -56,12 +57,17 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
         transform: `translate(${position.x / strength}px, ${position.y / strength}px)`,
     });
 
+    const handleOpenModal = () => {
+        dispatch(openForm())
+    }
+
     return (
         <div className={s.wrapper}>
+
             <Container className={s.contentContainer}>
 
                 <TheHeader scrollActions={scrollActions}/>
-                <div className="position-relative" style={{width: "900px"}}>
+                <div className="position-relative" style={{ marginTop:"100px", width: "900px"}}>
                     <div className={s.titleWrapper}>
                         <h3 className={s.mainTitle}>{t('mainTitle1')}</h3>
                         <h3 className={cn(s.mainTitle, s.secondLine)}>{t('mainTitle2')}</h3>
@@ -71,7 +77,7 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                     </p>
                     <div className={s.btnWrapper}>
                         <CustomButton
-                            onClick={() => dispatch(openForm())}
+                            onClick={handleOpenModal}
                             styles={{
                                 maxWidth: "342px",
                                 zIndex:"999",

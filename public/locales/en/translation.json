@@ -102,7 +102,7 @@
   "formTrialPhone": "Phone",
   "formTrialComment": "Comment",
   "fieldRequired": "Field is required",
-  "validationAge": "Age can not be more than 99 years",
+  "validationAge": "The specified age should be from 4 to 99 years",
   "validationPhone": "Enter 9 digits",
   "material": "Material",
   "size": "Size:",
