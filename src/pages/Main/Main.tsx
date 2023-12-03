@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import {useAppSelector} from "../../hooks.ts";
+import {useAppSelector, useScrollActions} from "../../hooks.ts";
 import Loading from "../../components/Loading";
 import FormTrialSession from "../../components/FormTrialSession";
 import InformModal from "../../components/InformModal/InformModal.tsx";
@@ -15,17 +15,11 @@ import ShopPage from "../ShopPage";
 import NewsPage from "../NewsPage";
 import ReadMore from "../../components/ReadMore";
 import ContactsPage from "../ContactsPage";
-import TheFooter from "../../components/TheFooter";
 import Cart from "../../components/Cart";
 
 const Main = () => {
 
-    const aboutRef = useRef<HTMLDivElement>(null);
-    const teamRef = useRef<HTMLDivElement>(null);
-    const gymsRef = useRef<HTMLDivElement>(null);
-    const galleryRef = useRef<HTMLDivElement>(null);
-    const shopRef = useRef<HTMLDivElement>(null);
-    const contactsRef = useRef<HTMLDivElement>(null);
+    const { aboutRef, teamRef, gymsRef, galleryRef, shopRef, contactsRef, scrollActions } = useScrollActions();
 
     const [loading, setLoading] = useState(true);
 
@@ -43,33 +37,14 @@ const Main = () => {
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
     const isCartOpened = useAppSelector(state => state.cart.isOpenedCartModal);
     const isOpenedSuccessModal = useAppSelector(state => state.formTrial.isOpenedSuccessModal);
-    const scrollActions = {
-        scrollAbout: () => {
-            aboutRef.current!.scrollIntoView({behavior: 'smooth'});
-        },
-        scrollTeam: () => {
-            teamRef.current!.scrollIntoView({behavior: 'smooth'});
-        },
-        scrollGyms: () => {
-            gymsRef.current!.scrollIntoView({behavior: 'smooth'});
-        },
-        scrollGallery: () => {
-            galleryRef.current!.scrollIntoView({behavior: 'smooth'});
-        },
-        scrollShop: () => {
-            shopRef.current!.scrollIntoView({behavior: 'smooth'});
-        },
-        scrollContacts: () => {
-            contactsRef.current!.scrollIntoView({behavior: 'smooth'});
-        }
-    }
+
 
     return (
         <>
             {loading && <Loading/>}
             {isFormOpen && <FormTrialSession/>}
             {isOpenedSuccessModal && <InformModal/>}
-            <MainPage scrollActions={scrollActions}/>
+            <MainPage/>
             <div ref={aboutRef}>
                 <AboutPage/>
             </div>
@@ -93,7 +68,6 @@ const Main = () => {
             <div ref={contactsRef}>
                 <ContactsPage/>
             </div>
-            <TheFooter/>
             {isCartOpened && <Cart/>}
         </>
     );

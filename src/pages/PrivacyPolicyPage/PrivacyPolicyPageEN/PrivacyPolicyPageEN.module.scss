@@ -1,0 +1,68 @@
+.container {
+  width: 100vw;
+  margin-top: 50px;
+}
+
+.content {
+  width: 1180px;
+  margin: 0 auto 40px;
+}
+
+.logoBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.logo {
+  width: 145px;
+  height: 77px;
+
+  @media (max-width: 1200px) {
+    width: 90px;
+    height: 48px;
+  }
+
+  @media (max-width: 992px) {
+    width: 127px;
+    height: 69px;
+  }
+
+  //@media (max-width: 480px) {
+  //  display: none;
+  //}
+}
+
+.mainTitle {
+  font-size: 82px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  line-height: 94px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: justify;
+}
+
+.textBlock {
+  margin-bottom: 20px;
+}
+
+.list {
+  padding-left: 30px;
+}
+
+.text {
+  font-size: 18px;
+  text-align: justify;
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #ff8562;
+  cursor: pointer;
+}

@@ -24,18 +24,8 @@ import FormTrialSession from "../../components/FormTrialSession";
 import {openCartModal} from "../../redux/slices/cartSlice.ts";
 import bucket from "../../assets/images/main/bucket.webp";
 
-interface IMainPageProps {
-    scrollActions: {
-        scrollAbout: () => void,
-        scrollTeam: () => void,
-        scrollGyms: () => void,
-        scrollGallery: () => void,
-        scrollShop: () => void,
-        scrollContacts: () => void,
-    }
-}
 
-const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
+const MainPage = () => {
     const dispatch = useAppDispatch();
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
@@ -69,7 +59,6 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
 
             <Container className={s.contentContainer}>
 
-                <TheHeader scrollActions={scrollActions}/>
                 <div className="position-relative" style={{ marginTop:"100px", width: "900px"}}>
                     <div className={s.titleWrapper}>
                         <h3 className={s.mainTitle}>{t('mainTitle1')}</h3>

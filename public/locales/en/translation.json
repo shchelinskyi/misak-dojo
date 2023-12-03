@@ -139,5 +139,15 @@
   "postNumber": "Branch number of the Nova Poshta",
   "totalSum" : "Total:",
   "published": "Published",
-  "infoText": "Your request has been successfully sent!"
+  "infoText": "Your request has been successfully sent!",
+  "return": "BACK",
+  "titlePrivacy": "Privacy Policy",
+  "privacyLabel1": "1. General Provisions",
+  "privacyLabel2": "2. Basic concepts used in Politics",
+  "privacyLabel3": "3. The Operator may process the following personal data of the User",
+  "privacyLabel4": "4. The purpose of personal data processing",
+  "privacyLabel5": "5. Legal grounds for personal data processing",
+  "privacyLabel6": "6. Procedure for collection, storage, transfer and other types of personal data processing",
+  "privacyLabel7": "7. Cross-border transfer of personal data",
+  "privacyLabel8": "8. Final provisions"
 }
