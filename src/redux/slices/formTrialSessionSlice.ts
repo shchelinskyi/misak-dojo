@@ -25,13 +25,13 @@ const formTrialSessionSlice = createSlice({
             // document.body.classList.remove('no-scroll');
             document.body.style.overflowY = 'auto';
         },
-        openSuccessModal: (state) => {
+        openInfoModal: (state) => {
             // document.body.classList.add('no-scroll');
             // document.body.style.overflowY = 'hidden';
             document.body.style.setProperty('overflow-y', 'hidden', 'important');
             state.isOpenedSuccessModal = true;
         },
-        closeSuccessModal: (state) => {
+        closeInfoModal: (state) => {
             state.isOpenedSuccessModal = false;
             // document.body.classList.remove('no-scroll');
             document.body.style.overflowY = 'auto';
@@ -42,6 +42,8 @@ const formTrialSessionSlice = createSlice({
 export const {
     openForm,
     closeForm,
+    openInfoModal,
+    closeInfoModal
 } = formTrialSessionSlice.actions;
 
 export default formTrialSessionSlice.reducer;

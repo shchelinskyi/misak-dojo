@@ -21,6 +21,8 @@ import fingerDown from "../../assets/images/main/fingerDown.webp";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
 import FormTrialSession from "../../components/FormTrialSession";
+import {openCartModal} from "../../redux/slices/cartSlice.ts";
+import bucket from "../../assets/images/main/bucket.webp";
 
 interface IMainPageProps {
     scrollActions: {
@@ -37,6 +39,7 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
     const dispatch = useAppDispatch();
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
+    const cartItems = useAppSelector(state => state.cart.cartItems);
 
     const { t } = useTranslation();
 
@@ -107,6 +110,10 @@ const MainPage: FC<IMainPageProps> = ({scrollActions}) => {
                 <div className={s.moreItem}>
                     <p className={s.fingerText}>{t('more')}</p>
                     <Image src={fingerDown} style={{width: "35px"}}/>
+                </div>
+                <div className={s.bucketWrapper} onClick={() => dispatch(openCartModal())}>
+                    <Image src={bucket} className={s.bucketIcon}/>
+                    <div className={s.badge}>{cartItems.length}</div>
                 </div>
             </Container>
         </div>

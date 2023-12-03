@@ -138,5 +138,6 @@
   "flat": "Apartment",
   "postNumber": "Branch number of the Nova Poshta",
   "totalSum" : "Total:",
-  "published": "Published"
+  "published": "Published",
+  "infoText": "Your request has been successfully sent!"
 }

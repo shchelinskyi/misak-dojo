@@ -15,11 +15,11 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         openCartModal: (state) => {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflowY = 'hidden';
             state.isOpenedCartModal = true;
         },
         closeCartModal: (state) => {
-            document.body.style.overflowX = 'auto';
+            document.body.style.overflowY = 'auto';
             state.isOpenedCartModal = false;
         },
         addToCart: (state, action) => {

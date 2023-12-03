@@ -1,29 +1,24 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.scss";
-import {useEffect, useRef, useState} from 'react';
-import {useAppSelector} from "./hooks.ts";
-import MainPage from "./pages/MainPage";
-import AboutPage from "./pages/AboutPage";
-import TeamPage from "./pages/TeamPage";
-import GymsPage from "./pages/GymsPage";
-import TrialLessonPage from "./pages/TrialLessonPage";
-import GalleryPage from "./pages/GalleryPage";
-import SupportUsPage from "./pages/SupporUsPage";
-import ShopPage from "./pages/ShopPage";
-import NewsPage from "./pages/NewsPage";
-import ReadMore from "./components/ReadMore";
-import ContactsPage from "./pages/ContactsPage";
-import TheFooter from "./components/TheFooter";
-import Ticker from "./components/Ticker";
-import Cart from "./components/Cart";
-import FormTrialSession from "./components/FormTrialSession";
-import Loading from "./components/Loading";
-import InformModal from "./components/InformModal/InformModal.tsx";
-import ChangeData from "./components/ChangeData/ChangeData.tsx";
+import {useEffect, useRef, useState} from "react";
+import {useAppSelector} from "../../hooks.ts";
+import Loading from "../../components/Loading";
+import FormTrialSession from "../../components/FormTrialSession";
+import InformModal from "../../components/InformModal/InformModal.tsx";
+import MainPage from "../MainPage";
+import AboutPage from "../AboutPage";
+import TeamPage from "../TeamPage";
+import GymsPage from "../GymsPage";
+import TrialLessonPage from "../TrialLessonPage";
+import GalleryPage from "../GalleryPage";
+import SupportUsPage from "../SupporUsPage";
+import Ticker from "../../components/Ticker";
+import ShopPage from "../ShopPage";
+import NewsPage from "../NewsPage";
+import ReadMore from "../../components/ReadMore";
+import ContactsPage from "../ContactsPage";
+import TheFooter from "../../components/TheFooter";
+import Cart from "../../components/Cart";
 
-
-
-const App = () => {
+const Main = () => {
 
     const aboutRef = useRef<HTMLDivElement>(null);
     const teamRef = useRef<HTMLDivElement>(null);
@@ -74,9 +69,6 @@ const App = () => {
             {loading && <Loading/>}
             {isFormOpen && <FormTrialSession/>}
             {isOpenedSuccessModal && <InformModal/>}
-            {/*<AppRouter/>*/}
-
-
             <MainPage scrollActions={scrollActions}/>
             <div ref={aboutRef}>
                 <AboutPage/>
@@ -104,7 +96,7 @@ const App = () => {
             <TheFooter/>
             {isCartOpened && <Cart/>}
         </>
-    )
-}
+    );
+};
 
-export default App;
+export default Main;

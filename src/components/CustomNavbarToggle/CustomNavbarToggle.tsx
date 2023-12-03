@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import styles from './CustomNavbarToggle.module.scss'; // Используем модульный SCSS
+import styles from './CustomNavbarToggle.module.scss';
 
 const CustomNavbarToggle = ({ onClick }) => {
     const [isOpen, setIsOpen] = useState(false);
