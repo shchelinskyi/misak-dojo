@@ -1,14 +1,14 @@
-import s from "./TrialLessonPage.module.scss";
+import {useAppDispatch} from "../../hooks.ts";
+import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
+import {useTranslation} from "react-i18next";
+import {Image} from "react-bootstrap";
+import CustomButton from "../../components/CustomButton";
 import girl from "../../assets/images/trial/girl.svg";
 import boy from "../../assets/images/trial/boy.svg";
 import cloudLeft from "../../assets/images/trial/cloud-trial-left.svg";
 import cloudRT from "../../assets/images/trial/cloud-trial-rt.svg";
 import cloudRB from "../../assets/images/trial/cloud-trial-rb.svg";
-import CustomButton from "../../components/CustomButton";
-import {Image} from "react-bootstrap";
-import {useTranslation} from "react-i18next";
-import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
-import {useAppDispatch} from "../../hooks.ts";
+import s from "./TrialLessonPage.module.scss";
 
 const TrialLessonPage = () => {
     const { t } = useTranslation();

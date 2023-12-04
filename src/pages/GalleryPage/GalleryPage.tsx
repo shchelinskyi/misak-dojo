@@ -1,28 +1,27 @@
-import s from "./GalleryPage.module.scss"
-import {Container, Image, Stack} from "react-bootstrap";
-import CustomButton from "../../components/CustomButton";
-import plus from "../../assets/images/plus.png";
-import useful from "../../assets/images/useful.png";
 import {useEffect, useState} from "react";
-import GalleryCard from "../../components/GalleryCard";
 import {useTranslation} from "react-i18next";
+import {Container, Stack} from "react-bootstrap";
+import CustomButton from "../../components/CustomButton";
+import GalleryCard from "../../components/GalleryCard";
 import {gallery} from "../../utils/gallery";
+import s from "./GalleryPage.module.scss"
+
 
 const GalleryPage = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [galleryArray, setGalleryArray] = useState([]);
 
     useEffect(() => {
-        if (gallery.length > 0 && gallery.length > galleryArray.length  ) {
-            const someArr = gallery.slice(0, currentIndex + 6);
+        if (gallery.length > 0 && gallery.length > galleryArray.length) {
+            const someArr = gallery.slice(0, currentIndex + 3);
             setGalleryArray([...someArr]);
         }
     }, [currentIndex])
 
 
     const handleShowMore = () => {
-        const newIndex = currentIndex + 6;
+        const newIndex = currentIndex + 3;
         setCurrentIndex(newIndex >= gallery.length ? 0 : newIndex);
     };
 
@@ -33,13 +32,16 @@ const GalleryPage = () => {
                 <div className={s.container}>
                     <h3 className={s.title}>{t("gallery")}</h3>
                     <div className={s.content}>
-                        {gallery.length> 0 && gallery.map((galleryItem) => (
+                        {gallery.length > 0 && galleryArray.map((galleryItem) => (
                             <GalleryCard key={galleryItem.title.en} galleryItem={galleryItem}/>
                         ))}
                     </div>
-                    <Stack direction="horizontal" style={{justifyContent: "center", marginTop: "70px"}}>
-                        <CustomButton onClick={handleShowMore}>{t("showMore")}</CustomButton>
-                    </Stack>
+                    {
+                        (galleryArray.length !== gallery.length) &&
+                        (<Stack direction="horizontal" style={{justifyContent: "center", marginTop: "70px"}}>
+                            <CustomButton onClick={handleShowMore}>{t("showMore")}</CustomButton>
+                        </Stack>)
+                    }
                 </div>
             </Container>
         </>

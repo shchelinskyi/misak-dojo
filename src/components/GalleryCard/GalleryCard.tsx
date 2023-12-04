@@ -1,23 +1,25 @@
-import React, {FC, useState} from 'react';
-import {Image} from "react-bootstrap";
-import s from "./GalleryCard.module.scss";
-import news1 from "../../assets/images/news1.png"
+import {FC, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
-import ReadMoreModalItem from "../ReadMoreModalItem";
+import {Image} from "react-bootstrap";
 import GalleryCardModal from "./GalleryCardModal";
+import s from "./GalleryCard.module.scss";
 
-interface GalleryCardTypes {
-    newsItem: {
-        url: string;
+type GalleryCardTypes = {
+    galleryItem: {
+        title: {
+            en: string,
+            ru: string,
+            ua: string
+        },
         date: string;
-        title: any;
+        images: string[]
     }
 }
 
-const GalleryCard: FC<GalleryCardTypes> = ({galleryItem}) => {
+const GalleryCard: FC<GalleryCardTypes> = ({galleryItem, styles}) => {
     const [isModalOpened, setIsModalOpened] = useState(false);
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
 
     const handleOpen = () => {
@@ -32,11 +34,11 @@ const GalleryCard: FC<GalleryCardTypes> = ({galleryItem}) => {
 
     return (
         <>
-        <div className={s.card} onClick={handleOpen}>
-            <Image className={s.newsImg} src={galleryItem.images[0]}/>
-            <p className={s.newsDate}>{galleryItem.date}</p>
-            <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, galleryItem.title[currentLanguage])}</h6>
-        </div>
+            <div className={s.card} onClick={handleOpen} style={styles}>
+                <Image className={s.cardImg} src={galleryItem.images[0]}/>
+                <p className={s.cardDate}>{galleryItem.date}</p>
+                <h6 className={s.cardTitle}>{t(`title.${currentLanguage}`, galleryItem.title[currentLanguage])}</h6>
+            </div>
             {isModalOpened && <GalleryCardModal images={galleryItem.images} onClose={handleClose}/>}
         </>
 
