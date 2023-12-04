@@ -120,7 +120,6 @@
 }
 
 .thirdGym {
-  //max-height: 460px;
   max-height: 600px;
   @media (max-width: 1200px) {
     max-height: 600px;
@@ -156,7 +155,7 @@
 
 .item3times {
   position: relative;
-  background-image: url("../../assets/images/gyms/bg-3times.svg");
+  background-image: url("../../assets/images/gyms/bg-3times.png");
   width: 380px;
   height: 331px;
   padding: 50px 40px;
@@ -167,20 +166,20 @@
   @media (max-width: 993px) {
     width: 334px;
     height: 316px;
-    background-image: url("../../assets/images/gyms/bg-3times-m.svg");
+    background-image: url("../../assets/images/gyms/bg-3times-m.png");
   }
 
   @media (max-width: 480px) {
     padding: 30px 0 30px 30px;
     width: 320px;
     height: 276px;
-    background-image: url("../../assets/images/gyms/bg-3times-s.svg");
+    background-image: url("../../assets/images/gyms/bg-3times-s.png");
   }
 }
 
 .item2times {
   position: relative;
-  background-image: url("../../assets/images/gyms/bg-2times.svg");
+  background-image: url("../../assets/images/gyms/bg-2times.png");
   width: 380px;
   height: 264px;
   padding: 50px 40px;
@@ -191,20 +190,20 @@
   @media (max-width: 993px) {
     width: 334px;
     height: 254px;
-    background-image: url("../../assets/images/gyms/bg-2times-m.svg");
+    background-image: url("../../assets/images/gyms/bg-2times-m.png");
   }
 
   @media (max-width: 480px) {
     padding: 30px 0 30px 30px;
     width: 320px;
     height: 214px;
-    background-image: url("../../assets/images/gyms/bg-2times-s.svg");
+    background-image: url("../../assets/images/gyms/bg-2times-s.png");
   }
 }
 
 .item2timesShot {
   position: relative;
-  background-image: url("../../assets/images/gyms/bg-2times-shot.svg");
+  background-image: url("../../assets/images/gyms/bg-2times-shot.png");
   width: 380px;
   object-fit: cover;
   padding: 50px 40px;
@@ -214,7 +213,7 @@
 
   @media (max-width: 993px) {
     width: 334px;
-    background-image: url("../../assets/images/gyms/bg-2times-m.svg");
+    background-image: url("../../assets/images/gyms/bg-2times-m.png");
     background-position: center;
     border-radius: 46px;
   }
@@ -226,7 +225,6 @@
 }
 
 .timeText {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
   margin: 0;
@@ -236,7 +234,6 @@
 }
 
 .text {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin: 0;
   @media (max-width: 480px) {

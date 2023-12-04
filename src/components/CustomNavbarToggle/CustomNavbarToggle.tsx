@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import styles from './CustomNavbarToggle.module.scss';
 
-const CustomNavbarToggle = ({ onClick }) => {
+type CustomNavbarToggleProps = {
+    onClick : () => void;
+}
+
+const CustomNavbarToggle: FC<CustomNavbarToggleProps>  = ({ onClick }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
@@ -11,9 +15,7 @@ const CustomNavbarToggle = ({ onClick }) => {
     };
 
     return (
-        <Button
-            variant="outline-light"
-            onClick={handleClick}
+        <Button variant="outline-light" onClick={handleClick}
             className={`${styles.customToggle} ${isOpen ? styles.open : ''}`}
         >
             <span className={styles.line}></span>

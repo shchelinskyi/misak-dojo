@@ -9,16 +9,29 @@ import smile from "../../assets/images/gyms/smile.svg";
 import smile2 from "../../assets/images/gyms/smile2.svg";
 import scroll from "../../assets/images/gyms/scroll.svg";
 import eyes from "../../assets/images/gyms/eyes.svg";
-import monday from "../../assets/images/gyms/monday.svg";
-import tuesday from "../../assets/images/gyms/tuesday.svg";
-import wednesday from "../../assets/images/gyms/wednesday.svg";
-import thursday from "../../assets/images/gyms/thursday.svg";
-import friday from "../../assets/images/gyms/friday.svg";
-import saturday from "../../assets/images/gyms/saturday.svg";
+import mondayUA from "../../assets/images/gyms/monday-ua.webp";
+import tuesdayUA from "../../assets/images/gyms/tuesday-ua.webp";
+import wednesdayUA from "../../assets/images/gyms/wednesday-ua.webp";
+import thursdayUA from "../../assets/images/gyms/thursday-ua.webp";
+import fridayUA from "../../assets/images/gyms/friday-ua.webp";
+import saturdayUA from "../../assets/images/gyms/saturday-ua.webp";
+import mondayRU from "../../assets/images/gyms/monday-ru.webp";
+import tuesdayRU from "../../assets/images/gyms/tuesday-ru.webp";
+import wednesdayRU from "../../assets/images/gyms/wednesday-ru.webp";
+import thursdayRU from "../../assets/images/gyms/thursday-ru.webp";
+import fridayRU from "../../assets/images/gyms/friday-ru.webp";
+import saturdayRU from "../../assets/images/gyms/saturday-ru.webp";
+import mondayEN from "../../assets/images/gyms/monday-en.webp";
+import tuesdayEN from "../../assets/images/gyms/tuesday-en.webp";
+import wednesdayEN from "../../assets/images/gyms/wednesday-en.webp";
+import thursdayEN from "../../assets/images/gyms/thursday-en.webp";
+import fridayEN from "../../assets/images/gyms/friday-en.webp";
+import saturdayEN from "../../assets/images/gyms/saturday-en.webp";
 import cn from "classnames";
 import s from "./GymsPage.module.scss";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 
 const GymsPage = () => {
@@ -27,6 +40,14 @@ const GymsPage = () => {
     const [isBlockVisible3, setIsBlockVisible3] = useState(false);
 
     const { t } = useTranslation();
+    const currentLanguage = i18n.language || 'ua';
+    const [language, setLanguage] = useState("i18n.language");
+
+    const change = t("language");
+
+    useEffect(() => {
+        setLanguage(currentLanguage)
+    }, [change]);
 
     const toggleVisibility = (numBlock) => {
         if (numBlock === 1) {
@@ -38,9 +59,6 @@ const GymsPage = () => {
         }
 
     };
-
-
-
 
     return (
         <div className={s.wrapper}>
@@ -55,7 +73,9 @@ const GymsPage = () => {
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible1 })}>
                         <div className={cn(s.item3times, s.order1)}>
-                            <Image className={s.dayIcon} src={monday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={mondayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={mondayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={mondayEN}/>}
                             <div>
                                 <li className={s.timeText}>17:30 - 18:30</li>
                                 <p className={s.text}>{t("group3")}</p>
@@ -72,7 +92,9 @@ const GymsPage = () => {
 
                         <div className={cn(s.item3times, s.order3)}>
                             <Image className={s.smileIcon} src={smile}/>
-                            <Image className={s.dayIcon} src={wednesday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={wednesdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={wednesdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={wednesdayEN}/>}
                             <div>
                                 <li className={s.timeText}>17:30 - 18:30</li>
                                 <p className={s.text}>{t("group3")}</p>
@@ -88,7 +110,9 @@ const GymsPage = () => {
                         </div>
 
                         <div className={cn(s.item2times, s.order5)}>
-                            <Image className={s.dayIcon} src={friday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={fridayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={fridayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={fridayEN}/>}
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
                                 <p className={s.text}>{t("group4")}</p>
@@ -101,7 +125,9 @@ const GymsPage = () => {
 
                         <div className={cn(s.item2times, s.order2)}>
                             <Image className={s.signatureIcon} src={signature}/>
-                            <Image className={s.dayIcon} src={tuesday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={tuesdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={tuesdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={tuesdayEN}/>}
                             <div>
                                 <li className={s.timeText}>19:00 - 20:00</li>
                                 <p className={s.text}>{t("group4")}</p>
@@ -113,7 +139,9 @@ const GymsPage = () => {
                         </div>
 
                         <div className={cn(s.item3times, s.order4)}>
-                            <Image className={s.dayIcon} src={thursday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={thursdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={thursdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={thursdayEN}/>}
                             <div>
                                 <li className={s.timeText}>17:30 - 18:30</li>
                                 <p className={s.text}>{t("group3")}</p>
@@ -141,7 +169,9 @@ const GymsPage = () => {
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible2 })}>
                         <div className={cn(s.item2times, s.order1)}>
-                            <Image className={s.dayIcon} src={monday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={mondayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={mondayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={mondayEN}/>}
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
                                 <p className={s.text}>{t("group6")}</p>
@@ -153,7 +183,9 @@ const GymsPage = () => {
                         </div>
 
                         <div className={cn(s.item2times, s.order3)}>
-                            <Image className={s.dayIcon} src={wednesday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={wednesdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={wednesdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={wednesdayEN}/>}
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
                                 <p className={s.text}>{t("group6")}</p>
@@ -165,7 +197,9 @@ const GymsPage = () => {
                         </div>
 
                         <div className={cn(s.item2times, s.order5)}>
-                            <Image className={s.dayIcon} src={friday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={fridayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={fridayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={fridayEN}/>}
                             <Image className={s.scrollIcon} src={scroll}/>
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
@@ -178,7 +212,9 @@ const GymsPage = () => {
                         </div>
 
                         <div className={cn(s.item2times, s.order2)}>
-                            <Image className={s.dayIcon} src={tuesday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={tuesdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={tuesdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={tuesdayEN}/>}
                             <Image className={s.eyesIcon} src={eyes}/>
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
@@ -191,7 +227,9 @@ const GymsPage = () => {
                         </div>
 
                         <div className={cn(s.item2times, s.order4)}>
-                            <Image className={s.dayIcon} src={thursday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={thursdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={thursdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={thursdayEN}/>}
                             <div>
                                 <li className={s.timeText}>18:00 - 19:00</li>
                                 <p className={s.text}>{t("group6")}</p>
@@ -216,7 +254,9 @@ const GymsPage = () => {
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible3 }, s.thirdGym)}>
 
                         <div className={cn(s.item2timesShot)}>
-                            <Image className={s.dayIcon} src={tuesday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={tuesdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={tuesdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={tuesdayEN}/>}
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>18:00 - 19:00</li>
                                 <p className={s.text}>{t("group8")}</p>
@@ -228,7 +268,9 @@ const GymsPage = () => {
                         </div>
 
                         <div className={cn(s.item2timesShot, s.order3)}>
-                            <Image className={s.dayIcon} src={saturday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={saturdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={saturdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={saturdayEN}/>}
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>10:00 - 11:00</li>
                                 <p className={s.text}>{t("group8")}</p>
@@ -241,7 +283,9 @@ const GymsPage = () => {
 
                         <div className={cn(s.item2timesShot)}>
                             <Image className={s.smile2Icon} src={smile2}/>
-                            <Image className={s.dayIcon} src={thursday}/>
+                            {language === "ua" && <Image className={s.dayIcon} src={thursdayUA}/>}
+                            {language === "ru" && <Image className={s.dayIcon} src={thursdayRU}/>}
+                            {language === "en" && <Image className={s.dayIcon} src={thursdayEN}/>}
                             <div className={s.dataRow}>
                                 <li className={s.timeText}>18:00 - 19:00</li>
                                 <p className={s.text}>{t("group8")}</p>

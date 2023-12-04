@@ -16,11 +16,11 @@
 }
 
 .trainerDescription {
+  position: relative;
   width: 880px;
   height: 597px;
   padding: 67px 100px;
   background-image: url("../../assets/images/team/bg-trainer.svg");
-  position: relative;
   border-radius: 46px;
 
   @media (max-width: 1200px) {
@@ -35,17 +35,16 @@
 }
 
 .trainerText {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
 
 .textWrapper {
-  maxWidth: 680px;
-  margin-top: 30px;
   position: relative;
+  max-width: 680px;
+  margin-top: 30px;
 }
 
-.lineHorizontal {
+.lineHorizontalUA {
   position: absolute;
   width: 288px;
   height: 8px;
@@ -53,9 +52,34 @@
   right: 200px;
   @media (max-width: 1200px) {
     bottom: 75px;
+    right: 150px;
+    width: 146px;
+  }
+}
+
+.lineHorizontalEN {
+  position: absolute;
+  width: 288px;
+  height: 8px;
+  bottom: 50px;
+  right: 240px;
+  @media (max-width: 1200px) {
+    bottom: 80px;
     right: 170px;
     width: 146px;
+  }
+}
 
+.lineHorizontalRU {
+  position: absolute;
+  width: 288px;
+  height: 8px;
+  bottom: 80px;
+  right: 160px;
+  @media (max-width: 1200px) {
+    bottom: 75px;
+    left: 10px;
+    width: 146px;
   }
 }
 
@@ -64,7 +88,7 @@
   height: 110px;
   position: absolute;
   top: 43px;
-  right: 0px;
+  right: 0;
   @media (max-width: 1200px) {
     width: 184px;
     height: 83px;
@@ -83,7 +107,7 @@
 
   @media (max-width: 1200px) {
     width: 400px;
-    height: 577px;
+    height: 550px;
     top: -50px;
     right: -280px;
   }
@@ -105,7 +129,6 @@
   @media (max-width: 1200px) {
     display: block;
   }
-
 }
 
 .trainerCard {
@@ -153,15 +176,31 @@
   width: 287px;
   height: 485px;
   position: absolute;
-  //top:-120px;
-  bottom:30px;
+  bottom: 30px;
   left: 50px;
   z-index: 2;
 
   @media (max-width: 480px) {
     width: 270px;
     height: 350px;
-    top:0;
+    top: 0;
+    left: -10px;
+  }
+}
+
+
+.trainerImg12 {
+  width: 287px;
+  height: 485px;
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  z-index: 2;
+
+  @media (max-width: 480px) {
+    width: 240px;
+    height: 350px;
+    top: 0;
     left: -10px;
   }
 }
@@ -170,17 +209,33 @@
   width: 382px;
   height: 498px;
   position: absolute;
-  //top:-120px;
-  bottom:30px;
+  bottom: 30px;
   left: 0;
   z-index: 2;
   @media (max-width: 480px) {
     width: 270px;
     height: 350px;
-    top:-10px;
+    top: -10px;
     left: -20px;
   }
 }
+
+.trainerImg3 {
+  width: 324px;
+  height: 460px;
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  z-index: 2;
+
+  @media (max-width: 480px) {
+    width: 270px;
+    height: 350px;
+    top: 0;
+    left: -10px;
+  }
+}
+
 
 .trainerImg4 {
   height: 450px;
@@ -193,33 +248,28 @@
 
 .trainerImg5 {
   height: 456px;
-  width: 417px;
+  width: 380px;
+  left: 10px;
   @media (max-width: 480px) {
     height: 295px;
     width: 270px;
   }
 }
 
-
-
-
 .trainerImgSwiper {
   width: 287px;
   height: 485px;
   position: relative;
-  top:0;
+  top: 0;
   left: 50px;
   z-index: 2;
 }
-
-
 
 .trainerLabel {
   background-color: white;
   z-index: 3;
   position: absolute;
 }
-
 
 .logoContainer {
   position: absolute;
@@ -231,7 +281,7 @@
   align-items: center;
   justify-content: center;
   @media (max-width: 1200px) {
-    display:none;
+    display: none;
   }
 }
 
@@ -253,5 +303,23 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.hide {
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    display: none;
+    border: 2px solid red;
+  }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .swiperBlock {
+    .mySwiper {
+      .swiper-slide:first-child {
+        display: none;
+      }
+    }
   }
 }

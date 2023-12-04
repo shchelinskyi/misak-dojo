@@ -1,8 +1,8 @@
-import {Image} from "react-bootstrap";
-import s from "./CustomSelect.module.scss";
-import iconSelect from "../../assets/images/main/select-flag.webp";
-import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
+import {Image} from "react-bootstrap";
+import iconSelect from "../../assets/images/main/select-flag.webp";
+import s from "./CustomSelect.module.scss";
 
 
 const CustomSelect = () => {
