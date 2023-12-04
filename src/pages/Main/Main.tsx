@@ -16,10 +16,16 @@ import NewsPage from "../NewsPage";
 import ReadMore from "../../components/ReadMore";
 import ContactsPage from "../ContactsPage";
 import Cart from "../../components/Cart";
+import TheHeader from "../../components/TheHeader";
 
-const Main = () => {
+const Main = ({setRefData}) => {
 
-    const { aboutRef, teamRef, gymsRef, galleryRef, shopRef, contactsRef, scrollActions } = useScrollActions();
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const teamRef = useRef<HTMLDivElement>(null);
+    const gymsRef = useRef<HTMLDivElement>(null);
+    const galleryRef = useRef<HTMLDivElement>(null);
+    const shopRef = useRef<HTMLDivElement>(null);
+    const contactsRef = useRef<HTMLDivElement>(null);
 
     const [loading, setLoading] = useState(true);
 
@@ -34,6 +40,13 @@ const Main = () => {
         return () => clearTimeout(timer);
     }, []);
 
+    useEffect(() => {
+        const data = {aboutRef, teamRef, gymsRef, galleryRef, shopRef, contactsRef }
+        setRefData({... data})
+
+    }, [aboutRef, teamRef, gymsRef, galleryRef, shopRef, contactsRef  ]);
+
+
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
     const isCartOpened = useAppSelector(state => state.cart.isOpenedCartModal);
     const isOpenedSuccessModal = useAppSelector(state => state.formTrial.isOpenedSuccessModal);
@@ -45,7 +58,7 @@ const Main = () => {
             {isFormOpen && <FormTrialSession/>}
             {isOpenedSuccessModal && <InformModal/>}
             <MainPage/>
-            <div ref={aboutRef}>
+            <div ref={aboutRef} style={{paddingTop:"100px"}}>
                 <AboutPage/>
             </div>
             <div ref={teamRef}>

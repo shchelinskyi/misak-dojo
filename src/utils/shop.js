@@ -6,7 +6,7 @@ export const products = [
             ru: "Футболка Misak Dojo",
             ua: "Футболка Misak Dojo"
         },
-        price: "390",
+        price: 390,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700897800/products/ifx4c4slw3160nszalu8.webp",
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700897826/products/lgbkrs9nu8nfixu3n9j7.webp",
@@ -44,7 +44,7 @@ export const products = [
             ru: "Футболка Karate shinkyokushinkai",
             ua: "Футболка Karate shinkyokushinkai"
         },
-        price: "390",
+        price: 390,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700899966/products/w9igzdsazi4zulhjow6k.webp",
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700899967/products/bbt643fg0a0zj89q5u2v.webp"
@@ -81,7 +81,7 @@ export const products = [
             ru: "Футболка Misak Dojo та Kyokushinkai",
             ua: "Футболка Misak Dojo та Kyokushinkai"
         },
-        price: "500",
+        price: 500,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700900419/products/qysox1yemxi0dcclwk9k.webp",
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700900419/products/xsaejkwgbp7qrgfq48oc.webp"
@@ -118,7 +118,7 @@ export const products = [
             ru: "Футболка с талисманом клуба",
             ua: "Футболка з талісманом клубу"
         },
-        price: "600",
+        price: 600,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700900790/products/txyhonrcd3rg1c0clb7c.webp"
         ],
@@ -154,7 +154,7 @@ export const products = [
             ru: "Черный свитшот Just say osu and do it",
             ua: "Чорний світшот Just say osu and do it"
         },
-        price: "1000",
+        price: 1000,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700901086/products/z9f2zlf61jhug0wynxvb.webp",
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700901086/products/y6vbywpfvbq44i7t10rf.webp"
@@ -191,7 +191,7 @@ export const products = [
             ru: "Рюкзак-мешок с логотипом клуба Misak Dojo",
             ua: "Рюкзак-мішок з логотипом клубу Misak Dojo",
         },
-        price: "350",
+        price: 350,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700901517/products/mc6lillrj7edxqoufswx.webp"
         ],
@@ -227,7 +227,7 @@ export const products = [
             ru: "Рюкзак шинкиокушинкой What do you fight for? | CAMPING BACKPACK",
             ua: "Рюкзак шинкіокушинкай What do you fight for? | CAMPING BACKPACK"
         },
-        price: "1000",
+        price: 1000,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700901981/products/fzumpoczpixepcjloe5s.webp"
         ],
@@ -284,7 +284,7 @@ export const products = [
             ru: "Рюкзак шинкиокушинкой What do you fight for? | Rolltop",
             ua: "Рюкзак шинкіокушинкай What do you fight for? | Rolltop"
         },
-        price: "1000",
+        price: 1000,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700902439/products/umhribf3xp3nsj9c5rpl.webp"
         ],
@@ -335,7 +335,7 @@ export const products = [
             ru: "Кимоно с символикой школы каратэ Misak Dojo",
             ua: "Кімоно з символікою школи карате Misak Dojo"
         },
-        price: "850",
+        price: 850,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700903249/products/ynsb8dsha22buw2zdeq4.webp"
         ],
@@ -371,7 +371,7 @@ export const products = [
             ru: "Цветной пояс для кимоно Шинкиокушикай каратэ",
             ua: "Кольоровий пояс для кімоно Шинкіокушикай карате"
         },
-        price: "150",
+        price: 150,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700903659/products/ec2bljtoelkhuyixh0xn.webp",
         ],
@@ -399,7 +399,7 @@ export const products = [
             ru: "Именный пояс Шинкиокушинкай каратэ",
             ua: "Іменний пояс Шинкіокушинкай карате"
         },
-        price: "500",
+        price: 500,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700904805/products/te5icueesxoiitqnrmvp.webp",
         ],
@@ -427,7 +427,7 @@ export const products = [
             ru: "Чехол для телефона с логотипом шинкиокушинкой",
             ua: "Чохол для телефону з логотипом шинкіокушинкай"
         },
-        price: "300",
+        price: 300,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700905008/products/ifgtlpzkqpj9apwjoidf.webp"
         ],
@@ -463,7 +463,7 @@ export const products = [
             ru: "Чехол для телефона «Абсолютная истина»",
             ua: "Чохол для телефону «Абсолютна істина»"
         },
-        price: "300",
+        price: 300,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700905436/products/ojnxcrfinjlctcucqij8.webp"
         ],
@@ -499,7 +499,7 @@ export const products = [
             ru: "Чехол для телефона «Тысяча дней тренировок – начало воинскому пути»",
             ua: "Чохол для телефону «Тисяча днів тренувань — початок воїнському шляху»"
         },
-        price: "300",
+        price: 300,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700905702/products/c8sauvlvnwdbyeg4635v.webp"
         ],
@@ -535,7 +535,7 @@ export const products = [
             ru: "Перчатки кожаные (Шинкиокушинкой)",
             ua: "Рукавиці шкіряні (Шинкіокушинкай)"
         },
-        price: "490",
+        price: 490,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700906295/products/bhynnspkcwirv2hbwiax.webp",
         ],
@@ -571,7 +571,7 @@ export const products = [
             ru: "Перчатки кожаные (Шинкиокушинкой)",
             ua: "Рукавиці шкіряні (Шинкіокушинкай)"
         },
-        price: "490",
+        price: 490,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700906534/products/sgl2balqmvdnhzcmouku.webp",
         ],
@@ -607,7 +607,7 @@ export const products = [
             ru: "Перчатки (чулок)",
             ua: "Рукавиці (панчоха)"
         },
-        price: "190",
+        price: 190,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700906689/products/jvptagobs8smsmarmjhu.webp",
         ],
@@ -643,7 +643,7 @@ export const products = [
             ru: "Протектор груди",
             ua: "Протектор грудей"
         },
-        price: "490",
+        price: 490,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700906949/products/f1l2qxvivfrx48l7rd3n.webp",
         ],
@@ -680,7 +680,7 @@ export const products = [
             ru: "Протектор груди детский (Киокушинкай)",
             ua: "Протектор грудей дитячий (Кіокушинкай)"
         },
-        price: "250",
+        price: 250,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700907191/products/dhaz78spdd9g9tbbvxyh.webp",
         ],
@@ -717,7 +717,7 @@ export const products = [
             ru: "Протектор груди детский (Шинкиокушинкай)",
             ua: "Протектор грудей дитячий (Шинкіокушинкай)"
         },
-        price: "250",
+        price: 250,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700907411/products/y9huwusr0xba7wgvo488.webp",
         ],
@@ -753,7 +753,7 @@ export const products = [
             ru: "Протектор груди",
             ua: "Протектор грудей"
         },
-        price: "650",
+        price: 650,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700907551/products/uxdwsr3c7hqiyjazuwjl.webp",
         ],
@@ -789,7 +789,7 @@ export const products = [
             ru: "Протектор голени (чулок)",
             ua: "Протектор гомілки (панчоха)"
         },
-        price: "240",
+        price: 240,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700907880/products/qe4qx0s83hns3fadkbsv.webp",
         ],
@@ -825,7 +825,7 @@ export const products = [
             ru: "Протектор голени усиленный (Киокушинкай)",
             ua: "Протектор гомілки посилений (Кіокушинкай)"
         },
-        price: "320",
+        price: 320,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700908176/products/wefhyg6rvmwu0t9uyq7u.webp",
         ],
@@ -861,7 +861,7 @@ export const products = [
             ru: "Протектор паха (муж.)",
             ua: "Протектор паху (чол.)"
         },
-        price: "190",
+        price: 190,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700908504/products/s2ksea5e20aaavcftno6.webp",
         ],
@@ -897,7 +897,7 @@ export const products = [
             ru: "Протектор паха (жен.)",
             ua: "Протектор паху (жін.)"
         },
-        price: "250",
+        price: 250,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700908687/products/y56dfglknmrghcdcuyxa.webp",
         ],
@@ -933,7 +933,7 @@ export const products = [
             ru: "Шлем с забралом",
             ua: "Шолом з забралом"
         },
-        price: "900",
+        price: 900,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700908813/products/ekgup3hvvrcd5bbgrf0e.webp",
         ],
@@ -965,7 +965,7 @@ export const products = [
             ru: "Чашка Misak Dojo",
             ua: "Чашка Misak Dojo"
         },
-        price: "350",
+        price: 350,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909176/products/kzdz72i57ufdax5jbwkc.webp",
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909177/products/le9ibr00inoamey0jgj9.webp"
@@ -998,7 +998,7 @@ export const products = [
             ru: "Поддержите нас",
             ua: "Підтримайте нас"
         },
-        price: "50",
+        price: 50,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909521/products/n7a4f3pd1x9o5woqz9nq.webp"
         ],
@@ -1048,7 +1048,7 @@ export const products = [
             ru: "Поддержите нас",
             ua: "Підтримайте нас"
         },
-        price: "100",
+        price: 100,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909521/products/n7a4f3pd1x9o5woqz9nq.webp"
         ],
@@ -1098,7 +1098,7 @@ export const products = [
             ru: "Поддержите нас",
             ua: "Підтримайте нас"
         },
-        price: "500",
+        price: 500,
         images: [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700909521/products/n7a4f3pd1x9o5woqz9nq.webp"
         ],

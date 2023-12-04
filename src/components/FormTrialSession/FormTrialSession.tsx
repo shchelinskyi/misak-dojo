@@ -40,6 +40,10 @@ const FormTrialSession = () => {
         dispatch(closeForm());
     }
 
+    const handleOpenPrivacy = () => {
+        dispatch(closeForm());
+    }
+
     const handleSubmit = (values: TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
         setSubmitting(false);
         sendMessageToTelegram(values);
@@ -123,7 +127,7 @@ const FormTrialSession = () => {
                                     <p className={s.checkboxLabel}>
                                         <span className={s.footerLabel1}>{t("formFooter1")}</span>
                                         <br className={s.wrap}/>
-                                        <Link className={s.link} to="privacy-policy" onClick={() =>  {document.body.style.overflowY = 'auto';}}>
+                                        <Link className={s.link} to="privacy-policy" onClick={handleOpenPrivacy}>
                                             <span className={s.footerLabel2}>{t("formFooter2")}</span>
                                         </Link>
                                     </p>

@@ -1,12 +1,29 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-type ModalState = {
-    isOpenedCartModal: boolean
+type CartItem = {
+    id: string,
+    image: string,
+    title: {
+        en: string,
+        ru: string,
+        ua: string
+    },
+    price: number,
+    size: string,
+    color: string,
+    category: string,
+    quantity: number
 }
 
-const initialState: ModalState = {
+type CartStateProps = {
+    isOpenedCartModal: boolean,
+    cartItems: CartItem[],
+    total: number
+}
+
+const initialState: CartStateProps = {
     isOpenedCartModal: false,
-    cartItems: [],
+    cartItems:  <CartItem[]>[],
     total: 0,
 };
 
@@ -69,5 +86,7 @@ export const {
     removeFromCartOne,
     removeFromCartAllQuantity
 } = cartSlice.actions;
+
+export type { CartItem };
 
 export default cartSlice.reducer;

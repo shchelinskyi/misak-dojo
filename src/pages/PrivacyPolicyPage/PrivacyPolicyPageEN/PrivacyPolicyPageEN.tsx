@@ -1,8 +1,8 @@
-import logo from "../../../assets/images/main/logo.webp";
-import s from "./PrivacyPolicyPageEN.module.scss";
-import {Image} from "react-bootstrap";
-import CustomButton from "../../../components/CustomButton";
+import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import logo from "../../../assets/images/main/logo.webp";
+import {Image} from "react-bootstrap";
+import s from "../PrivacyPolicyPage.module.scss";
 
 const PrivacyPolicyPageEN = () => {
     const {t} = useTranslation();
@@ -11,11 +11,15 @@ const PrivacyPolicyPageEN = () => {
         <div className={s.container}>
             <div className={s.content}>
                 <div className={s.logoBlock}>
-                    <Image className={s.logo} src={logo}/>
+                    <Link to="/">
+                        <Image className={s.logo} src={logo}/>
+                    </Link>
                     <div>
-                        <CustomButton>
-                            {t("return")}
-                        </CustomButton>
+                        <Link to="/">
+                            <button className={s.btn}>
+                                {t("return")}
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <h3 className={s.mainTitle}>Privacy Policy</h3>

@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
 }
+
 .productImg {
   width: 90px;
   height: 90px;
@@ -10,27 +11,60 @@
   margin-right: 10px;
 }
 
+.content {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 160px;
+  }
+}
+
+.delBtn {
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+
+  @media (max-width: 700px) {
+    align-self: flex-start;
+    margin-left: auto;
+
+  }
+}
+
 .description {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+  flex-grow: 2;
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 180%;
   width: 200px;
-  //width: 160px;
+
+  @media (max-width: 700px) {
+    width: 250px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 160px;
+  }
 }
 
 .charactersBlock {
   width: 160px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   row-gap: 3px;
-  margin-right: 20px;
 }
 
 .charactersItem {
@@ -40,23 +74,27 @@
 }
 
 .characterLabel {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 140%;
   color: #737373;
 }
 
 .characterValue {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 140%;
   color: #737373;
 }
 
 .btnGroup {
-  width: 80px;
+  min-width: 80px;
   display: flex;
+  align-items: center;
+  height: 40px;
   margin-right: 20px;
+
+  @media (max-width: 700px) {
+    margin-right: 0;
+  }
 }
 
 .btnDel {
@@ -87,17 +125,12 @@
 
 .price {
   width: 80px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 153%;
   color: #E2231A;
-  margin-right: 45px;
+  margin-right: 25px;
 }
 
-.delBtn {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  cursor: pointer;
-  color: #000000;
-}
+
+

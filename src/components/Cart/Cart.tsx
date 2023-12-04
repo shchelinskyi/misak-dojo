@@ -1,5 +1,3 @@
-import React from 'react';
-import {Modal, Button} from "react-bootstrap"
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {closeCartModal} from "../../redux/slices/cartSlice";
 import s from "./Cart.module.scss";
@@ -20,22 +18,25 @@ const Cart = () => {
 
     return (
         <div className={s.overlay} onClick={handleCloseCartModal}>
-            <div className={s.content} onClick={(e) => e.stopPropagation()}>
-                <div className={s.titleBlock}>
-                    <h4 className={s.title}>{t("yourOrder")}</h4>
-                    <div className={s.closeBtn} onClick={handleCloseCartModal}>&times;</div>
+            <div className={s.contentWrapper} onClick={(e) => e.stopPropagation()}>
+                <div className={s.content}>
+                    <div className={s.titleBlock}>
+                        <h4 className={s.title}>{t("yourOrder")}</h4>
+                        <div className={s.closeBtn} onClick={handleCloseCartModal}>&times;</div>
+                    </div>
+                    <div className={s.line}></div>
+                    <div className={s.cartItems}>
+                        {cartItems.length > 0 && cartItems.map((cartProduct) => {
+                            return (<CartItem key={`${cartProduct.id}-${cartProduct.color}-${cartProduct.size}`}
+                                              cartProduct={cartProduct}/>)
+                        })
+                        }
+                        {cartItems.length === 0 && <p className={s.cartFree}>{t("cartFree")}</p>}
+                    </div>
+                    <div className={s.line}></div>
+                    <div className={s.totalPrice}>{t("sum")} {total} {t("uah")}</div>
+                    <CartForm/>
                 </div>
-                <div className={s.line}></div>
-                <div className={s.cartItems}>
-                    {cartItems.length > 0 && cartItems.map((cartProduct) => {
-                        return  (<CartItem key={`${cartProduct.id}-${cartProduct.color}-${cartProduct.size}`} cartProduct={cartProduct}/>)
-                    })
-                    }
-                    {cartItems.length === 0 && <p className={s.cartFree}>{t("cartFree")}</p>}
-                </div>
-                <div className={s.line}></div>
-                <div className={s.totalPrice}>{t("sum")} {total} {t("uah")}</div>
-                <CartForm/>
             </div>
         </div>
     );

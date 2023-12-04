@@ -10,6 +10,8 @@ import i18n from "i18next";
 import {addToCart, calculateTotal} from "../../redux/slices/cartSlice.ts";
 
 
+
+
 const MainProductCard = ({productItem, onClose}) => {
 
     useEffect(() => {

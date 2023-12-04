@@ -24,7 +24,7 @@ import {useTranslation} from "react-i18next";
 const TeamPage = () => {
     const { t } = useTranslation();
     return (
-        <Container className="position-relative" style={{marginTop: "245px", padding: "0"}}>
+        <Container className="position-relative" style={{marginTop: "245px", paddingTop: "100px"}}>
             <h3 className={s.title}>{t("team")}</h3>
             <div className={s.trainerDescription}>
                 <Image className={s.mainTrainerImage} src={trainerM}/>

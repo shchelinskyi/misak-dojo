@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react"
+import React, {FC, useEffect, useRef, useState} from "react"
 import {Container, Image, Nav, Navbar, NavbarToggle} from "react-bootstrap";
 import logo from "../../assets/images/main/logo.webp";
 import fistLogo from "../../assets/images/main/fistLogo.webp";
@@ -14,22 +14,23 @@ import CustomNavbarToggle from "../CustomNavbarToggle";
 import cn from "classnames";
 import {useTranslation} from "react-i18next";
 import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
-import {useAppDispatch, useAppSelector} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector, useScrollActions} from "../../hooks.ts";
 import {openCartModal} from "../../redux/slices/cartSlice.ts";
 import _debounce from 'lodash/debounce';
 
 interface ITheHeaderProps {
-    scrollActions: {
-        scrollAbout: () => void,
-        scrollTeam: () => void,
-        scrollGyms: () => void,
-        scrollGallery: () => void,
-        scrollShop: () => void,
-        scrollContacts: () => void,
+    refData: {
+        aboutRef: React.RefObject<HTMLDivElement>;
+        teamRef: React.RefObject<HTMLDivElement>;
+        gymsRef: React.RefObject<HTMLDivElement>;
+        galleryRef: React.RefObject<HTMLDivElement>;
+        shopRef: React.RefObject<HTMLDivElement>;
+        contactsRef: React.RefObject<HTMLDivElement>;
     }
 }
 
-const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
+const TheHeader:FC<ITheHeaderProps> = ({refData}) => {
+
     const dispatch = useAppDispatch();
     const {t, i18n} = useTranslation();
     const [activeLang, setActiveLang] = useState(i18n.language || 'ua');
@@ -49,7 +50,7 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
         };
     }, []);
 
-    const backgroundColor = isScrolled ? 'white' : '#e1e1e1';
+    const backgroundColor = isScrolled ? 'white' : '#dedede';
 
 
     useEffect(() => {
@@ -81,14 +82,14 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                 <Navbar.Collapse id="basic-navbar-nav" className={s.collapse}>
                     <Nav className={cn(s.menu)}>
                         <Nav.Link className={s.link}
-                                  onClick={() => scrollActions.scrollAbout()}>{t('aboutUs')}</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollTeam()}>{t('team')}</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollGyms()}>{t('gym')}</Nav.Link>
+                                  onClick={() => refData.aboutRef.current.scrollIntoView({behavior: 'smooth',  block: 'start', inline: 'nearest'})}>{t('aboutUs')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => refData.teamRef.current.scrollIntoView({behavior: 'smooth'})}>{t('team')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => refData.gymsRef.current.scrollIntoView({behavior: 'smooth'})}>{t('gym')}</Nav.Link>
                         <Nav.Link className={s.link}
-                                  onClick={() => scrollActions.scrollGallery()}>{t('gallery')}</Nav.Link>
-                        <Nav.Link className={s.link} onClick={() => scrollActions.scrollShop()}>{t('shop')}</Nav.Link>
+                                  onClick={() => refData.galleryRef.current.scrollIntoView({behavior: 'smooth'})}>{t('gallery')}</Nav.Link>
+                        <Nav.Link className={s.link} onClick={() => refData.shopRef.current.scrollIntoView({behavior: 'smooth'})}>{t('shop')}</Nav.Link>
                         <Nav.Link className={s.link}
-                                  onClick={() => scrollActions.scrollContacts()}>{t('contacts')}</Nav.Link>
+                                  onClick={() => refData.contactsRef.current.scrollIntoView({behavior: 'smooth'})}>{t('contacts')}</Nav.Link>
                         <div className={s.langToggle}>
                             <span className={activeLang === 'ua' ? s.activeLang : s.notActiveLang}
                                   onClick={() => changeLanguage('ua')}>UA</span>
@@ -157,10 +158,6 @@ const TheHeader: FC<ITheHeaderProps> = ({scrollActions}) => {
                     <CustomButton onClick={handleClick}>{t('signUp')}</CustomButton>
                 </div>
             </Container>
-            {/*<div className={s.bucketWrapper} onClick={() => dispatch(openCartModal())}>*/}
-            {/*    <Image src={bucket} className={s.bucketIcon}/>*/}
-            {/*    <div className={s.badge}>{cartItems.length}</div>*/}
-            {/*</div>*/}
 
         </Navbar>
     );

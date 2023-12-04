@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import img1 from "../../assets/images/product/img1.jpg";
+import {FC, useEffect, useState} from 'react';
 import {Image} from "react-bootstrap"
-import s from "./CartItem.module.scss";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {useAppDispatch} from "../../hooks.ts";
-import {addToCart, calculateTotal, removeFromCartAllQuantity, removeFromCartOne} from "../../redux/slices/cartSlice.ts";
+import {addToCart, calculateTotal, removeFromCartAllQuantity, removeFromCartOne} from "../../redux/slices/cartSlice";
+import s from "./CartItem.module.scss";
+import type {CartItem} from "../../redux/slices/cartSlice";
 
-const CartItem = ({cartProduct}) => {
+const CartItem: FC<{ cartProduct: CartItem }> = ({cartProduct}) => {
     const dispatch = useAppDispatch();
     const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
@@ -40,37 +40,39 @@ const CartItem = ({cartProduct}) => {
     return (
         <div className={s.container}>
             <Image src={cartProduct.image} className={s.productImg}/>
-            <div className={s.description}>
-                <h5 className={s.title}>
-                    {t(`title.${currentLanguage}`, cartProduct.title[currentLanguage])}
-                </h5>
-                <div className={s.charactersBlock}>
-                    <div className={s.charactersItem}>
-                        <div className={s.characterLabel}>
-                            {cartProduct.category === "backpack" && t("sizeBackpack")}
-                            {cartProduct.category === "belt" && t("sizeBelt")}
-                            {(cartProduct.category !== "belt" && cartProduct.category !== "backpack") && t("size")}
+            <div className={s.content}>
+                <div className={s.description}>
+                    <h5 className={s.title}>
+                        {t(`title.${currentLanguage}`, cartProduct.title[currentLanguage])}
+                    </h5>
+                    <div className={s.charactersBlock}>
+                        <div className={s.charactersItem}>
+                            <div className={s.characterLabel}>
+                                {cartProduct.category === "backpack" && t("sizeBackpack")}
+                                {cartProduct.category === "belt" && t("sizeBelt")}
+                                {(cartProduct.category !== "belt" && cartProduct.category !== "backpack") && t("size")}
+                            </div>
+                            <div className={s.characterValue}>
+                                {productSize}
+                            </div>
                         </div>
-                        <div className={s.characterValue}>
-                            {productSize}
-                        </div>
-                    </div>
-                    <div className={s.charactersItem}>
-                        <div className={s.characterLabel}>
-                            {t("color")}:
-                        </div>
-                        <div className={s.characterValue}>
-                            {t(cartProduct.color)}
+                        <div className={s.charactersItem}>
+                            <div className={s.characterLabel}>
+                                {t("color")}:
+                            </div>
+                            <div className={s.characterValue}>
+                                {t(cartProduct.color)}
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div className={s.btnGroup}>
+                    <button className={s.btnDel} onClick={removeQuantity}>-</button>
+                    <span className={s.quantity}>{cartProduct.quantity}</span>
+                    <button className={s.btnAdd} onClick={addQuantity}>+</button>
+                </div>
+                <div className={s.price}>{cartProduct.price} {t("uah")}</div>
             </div>
-            <div className={s.btnGroup}>
-                <button className={s.btnDel} onClick={removeQuantity}>-</button>
-                <span className={s.quantity}>{cartProduct.quantity}</span>
-                <button className={s.btnAdd} onClick={addQuantity}>+</button>
-            </div>
-            <div className={s.price}>{cartProduct.price} {t("uah")}</div>
             <div className={s.delBtn} onClick={removeProduct}>&times;</div>
         </div>
     );
