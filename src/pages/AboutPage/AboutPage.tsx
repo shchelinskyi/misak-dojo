@@ -1,31 +1,42 @@
-import {Container, Image, Stack} from "react-bootstrap";
-import members from "../../assets/images/about/members.svg";
-import heart from "../../assets/images/about/heart.svg";
-import handL from "../../assets/images/about/handL.svg";
-import handR from "../../assets/images/about/handR.svg";
-import person from "../../assets/images/about/person.svg";
-import stars from "../../assets/images/about/stars.svg";
-import stars2 from "../../assets/images/about/stars2.svg";
-import about1 from "../../assets/images/about/about1.svg";
-import about12 from "../../assets/images/about/about12.svg";
-import about13 from "../../assets/images/about/about13.svg";
-import about14 from "../../assets/images/about/about14.svg";
-import about2 from "../../assets/images/about/about2.svg";
-import smiles from "../../assets/images/about/smiles.svg";
-import line from "../../assets/images/about/line.svg";
-import line2 from "../../assets/images/about/line2.svg";
-import chimano from "../../assets/images/about/chimano.svg";
-import cup from "../../assets/images/about/cup.svg";
+import {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
+import {Container, Image} from "react-bootstrap";
+import members from "../../assets/images/about/members.webp";
+import heart from "../../assets/images/about/heart.webp";
+import handL from "../../assets/images/about/handL.webp";
+import handR from "../../assets/images/about/handR.webp";
+import person from "../../assets/images/about/person.webp";
+import stars from "../../assets/images/about/stars.webp";
+import stars2 from "../../assets/images/about/stars2.webp";
+import about1 from "../../assets/images/about/about1.webp";
+import about12 from "../../assets/images/about/about12.webp";
+import about13 from "../../assets/images/about/about13.webp";
+import about14 from "../../assets/images/about/about14.webp";
+import about2 from "../../assets/images/about/about2.webp";
+import smiles from "../../assets/images/about/smiles.webp";
+import line from "../../assets/images/about/line.webp";
+import line2 from "../../assets/images/about/line2.webp";
+import chimano from "../../assets/images/about/chimano.webp";
+import cup from "../../assets/images/about/cup.webp";
 import karate from "../../assets/video/karate.mp4";
-import titleTeam from "../../assets/images/about/title-team.svg";
+import titleTeamUA from "../../assets/images/about/title-team-ua.webp";
+import titleTeamRU from "../../assets/images/about/title-team-ru.webp";
+import titleTeamEN from "../../assets/images/about/title-team-en.webp";
 import s from "./AboutPage.module.scss";
 import cn from "classnames";
-import {useTranslation} from "react-i18next";
-
 
 const AboutPage = () => {
 
     const { t } = useTranslation();
+    const currentLanguage = i18n.language || 'ua';
+    const [language, setLanguage] = useState("i18n.language");
+
+    const change = t("language");
+
+    useEffect(() => {
+        setLanguage(currentLanguage)
+    }, [change]);
 
     return (
         <>
@@ -117,7 +128,9 @@ const AboutPage = () => {
             <div className={s.video}>
                 <video preload="auto" loop autoPlay={true} muted={true}  src={karate} className={s.videoItem}/>
                 <div className={s.titleTeamWrapper}>
-                    <Image className={s.titleTeamImage} src={titleTeam}/>
+                    {language === "ua" &&   <Image className={s.titleTeamImage} src={titleTeamUA}/>}
+                    {language === "ru" &&   <Image className={s.titleTeamImage} src={titleTeamRU}/>}
+                    {language === "en" &&   <Image className={s.titleTeamImageEN} src={titleTeamEN}/>}
                 </div>
             </div>
         </>
@@ -125,6 +138,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
-//
-// <video preload="auto" loop muted={true} autoPlay={true} src={karate} className={s.videoItem}/>

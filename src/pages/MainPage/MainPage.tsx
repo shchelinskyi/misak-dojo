@@ -1,9 +1,9 @@
-import {FC, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Container, Image} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
-import TheHeader from "../../components/TheHeader";
+import {openCartModal} from "../../redux/slices/cartSlice.ts";
 import CustomButton from "../../components/CustomButton";
 import roundText from "../../assets/images/main/roundText.webp";
 import lightning from "../../assets/images/main/lightning.webp";
@@ -18,17 +18,14 @@ import boy2 from "../../assets/images/main/boy2.gif";
 import boy11 from "../../assets/images/main/boy1D.gif";
 import boy22 from "../../assets/images/main/boy2D.gif";
 import fingerDown from "../../assets/images/main/fingerDown.webp";
+import bucket from "../../assets/images/main/bucket.webp";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
-import FormTrialSession from "../../components/FormTrialSession";
-import {openCartModal} from "../../redux/slices/cartSlice.ts";
-import bucket from "../../assets/images/main/bucket.webp";
 
 
 const MainPage = () => {
     const dispatch = useAppDispatch();
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
-    const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
     const cartItems = useAppSelector(state => state.cart.cartItems);
 
     const { t } = useTranslation();
@@ -68,16 +65,7 @@ const MainPage = () => {
                         {t("offer")}
                     </p>
                     <div className={s.btnWrapper}>
-                        <CustomButton
-                            onClick={handleOpenModal}
-                            styles={{
-                                maxWidth: "342px",
-                                zIndex:"999",
-                                '@media (max-width: 480px)': {
-                                    margin: "0 auto"
-                                }
-                            }}
-                        >
+                        <CustomButton onClick={handleOpenModal}>
                             {t("wantToBe")}
                         </CustomButton>
                     </div>

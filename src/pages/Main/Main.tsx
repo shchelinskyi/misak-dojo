@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import {useAppSelector, useScrollActions} from "../../hooks.ts";
+import {useAppSelector} from "../../hooks.ts";
 import Loading from "../../components/Loading";
 import FormTrialSession from "../../components/FormTrialSession";
 import InformModal from "../../components/InformModal/InformModal.tsx";
@@ -16,7 +16,7 @@ import NewsPage from "../NewsPage";
 import ReadMore from "../../components/ReadMore";
 import ContactsPage from "../ContactsPage";
 import Cart from "../../components/Cart";
-import TheHeader from "../../components/TheHeader";
+
 
 const Main = ({setRefData}) => {
 
