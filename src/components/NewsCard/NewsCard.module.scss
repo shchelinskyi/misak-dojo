@@ -1,5 +1,7 @@
 .card {
   width: 380px;
+  cursor: pointer;
+
   @media (max-width: 1200px) {
     width: 300px;
   }
@@ -12,25 +14,25 @@
 }
 
 .newsImg {
-  width: 380px;
+  width: 370px;
   height: 330px;
   object-fit: cover;
+  border-radius: 46px;
   @media (max-width: 1200px) {
-    width: 300px;
+    width: 290px;
     height: 260px;
   }
   @media (max-width: 992px) {
-    width: 334px;
-    height: 288px;
+    width: 324px;
+    height: 290px;
   }
   @media (max-width: 480px) {
-    width: 320px;
+    width: 310px;
     height: 278px;
   }
 }
 
 .newsDate {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color:#737373;
   margin: 12px 0;
@@ -40,7 +42,6 @@
 }
 
 .newsTitle {
-  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 600;
   @media (max-width: 1200px) {
@@ -49,4 +50,9 @@
   @media (max-width: 992px) {
     font-size: 16px;
   }
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

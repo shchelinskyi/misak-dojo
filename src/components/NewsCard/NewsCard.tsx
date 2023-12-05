@@ -1,47 +1,61 @@
-import React, {FC, useState} from 'react';
+import {FC, ReactNode, useState} from 'react';
 import {Image} from "react-bootstrap";
-import s from "./NewsCard.module.scss";
-import news1 from "../../assets/images/news1.png"
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
-import GalleryCardModal from "../GalleryCard/GalleryCardModal";
 import NewsModal from "./NewsModal";
+import s from "./NewsCard.module.scss";
+import {Link} from "react-router-dom";
 
-// interface NewsCardTypes {
-//     newsItem: {
-//         url: string;
-//         date: string;
-//         title: any;
-//     }
-// }
+type NewsItem = {
+    type: string;
+    title: {
+        en: string;
+        ru: string;
+        ua: string;
+    };
+    date: string;
+    category: {
+        en: string;
+        ru: string;
+        ua: string;
+    };
+    images: string[];
+}
 
-const NewsCard = ({children, newsItem}) => {
-    const [isModalOpened, setIsModalOpened] = useState(false);
-    const { t } = useTranslation();
+type NewsCardTypes = {
+    newsItem: NewsItem;
+    children: ReactNode;
+}
+
+const NewsCard: FC<NewsCardTypes> = ({children, newsItem}) => {
+    const [isNewsModalOpened, setIsNewsModalOpened] = useState(false);
+    const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
+
+    const {type, id} = newsItem;
 
     const handleOpen = () => {
         document.body.style.overflowY = 'hidden';
-        setIsModalOpened(true);
+        setIsNewsModalOpened(true);
     }
 
     const handleClose = () => {
         document.body.style.overflowY = 'auto';
-        setIsModalOpened(false);
+        setIsNewsModalOpened(false);
     }
 
 
     return (
-        <>
-        <div className={s.card} onClick={handleOpen}>
-            <Image className={s.newsImg} src={newsItem.images[0]}/>
-            <p className={s.newsDate}>{newsItem.date}</p>
-            <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, newsItem.title[currentLanguage])}</h6>
-        </div>
-            {isModalOpened && <NewsModal onClose={handleClose}>
-                {children}
-            </NewsModal>}
-        </>
+        <Link className={s.link} to={`news/${type}`}>
+            <div className={s.card}>
+                <Image className={s.newsImg} src={newsItem.images[0]}/>
+                <p className={s.newsDate}>{newsItem.date}</p>
+                <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, newsItem.title[currentLanguage])}</h6>
+            </div>
+            {/*{isNewsModalOpened && <NewsModal onClose={handleClose}>*/}
+            {/*    {children}*/}
+            {/*</NewsModal>}*/}
+        </Link>
     );
 };
 

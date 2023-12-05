@@ -6,8 +6,8 @@ import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import iconSelect from "../../assets/images/main/select-flag.webp";
 import cn from "classnames";
-import s from "./MainProductCard.module.scss";
 import type {ProductItemType} from "../ProductCard/ProductCard";
+import s from "./MainProductCard.module.scss";
 
 type MainProductCardProps = {
     productItem:ProductItemType;

@@ -1,12 +1,9 @@
+import {FC, useState} from "react";
 import {Image} from "react-bootstrap";
-import s from "./ProductCard.module.scss";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
-import {useDispatch} from "react-redux";
-import {openProductModal} from "../../redux/slices/productSlice.ts";
 import MainProductCard from "../MainProductCard";
-import {useAppSelector} from "../../hooks.ts";
-import {FC, useState} from "react";
+import s from "./ProductCard.module.scss";
 
 export type ProductItemType = {
     id: string,
@@ -43,7 +40,7 @@ export type ProductItemType = {
     comment?: string
 }
 
-interface ProductItemProps {
+type ProductItemProps = {
     productItem: ProductItemType
 }
 

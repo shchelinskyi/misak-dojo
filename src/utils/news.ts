@@ -1,5 +1,6 @@
 export const newsData = {
     openCup: {
+        type: "openCup",
         title: {
             en: "Open cup of the city of Kyiv from the kata",
             ru: "Открытый кубок г. Киева из ката",
@@ -63,6 +64,7 @@ export const newsData = {
         },
     },
     kumiteMarathon: {
+        type: "kumiteMarathon",
         title: {
             en: "Kumite marathon",
             ru: "Кумите марафон",
@@ -107,6 +109,7 @@ export const newsData = {
         text4: "🥋👊🥋👊🥋👊🥋👊🥋👊"
     },
     summerSchool31: {
+        type: "summerSchool31",
         title: {
             en: "31st Kyokushinkai Karate Summer School \"Vinnytsia-2021\"",
             ru: "31-я Летняя школа Киокушинкай каратэ «Винница-2021»",
@@ -174,6 +177,7 @@ export const newsData = {
         }
     },
     coachDay: {
+        type: "coachDay",
         title: {
             en: "Coach's Day is celebrated in Ukraine on July 19",
             ru: "19 июля в Украине отмечают День тренера",
@@ -207,6 +211,7 @@ export const newsData = {
         }
     },
     childTraining: {
+        type: "childTraining",
         title: {
             en: "Where to send the child for training? Kyokushinka karate!",
             ru: "Куда отдать ребенка на тренировку? Киокушинка каратэ!",
@@ -265,6 +270,7 @@ export const newsData = {
         },
     },
     karateDay: {
+        type: "karateDay",
         title: {
             en: "October 7 is World Karate Day",
             ru: "7 октября - Всемирный день каратэ",
@@ -322,6 +328,7 @@ export const newsData = {
         }
     },
     meaningTerm: {
+        type: "meaningTerm",
         title: {
             en: "The meaning of the term \"Osu\"",
             ru: "Значение термина «Осу»",
@@ -391,6 +398,7 @@ export const newsData = {
         }
     },
     summerSchool32: {
+        type: "summerSchool32",
         title: {
             en: "32nd Kyokushinkai Karate Summer School \"Vinnytsia 2019\"",
             ru: "32-я Летняя школа Киокушинкай каратэ «Винница 2019»",
@@ -448,6 +456,7 @@ export const newsData = {
         }
     },
     championship: {
+        type: "championship",
         title: {
             en: "Zhytomyr Oblast Kyokushinkai Karate Championship",
             ru: "Чемпионат Житомирской области по Киокушинкай карате",

@@ -142,5 +142,7 @@
   "infoText": "Your request has been successfully sent!",
   "return": "BACK",
   "language": "en",
-  "addToCart": "Product added to cart"
+  "addToCart": "Product added to cart",
+  "followUs": "Follow us",
+  "share": "Share"
 }
