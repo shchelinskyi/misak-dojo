@@ -1,14 +1,13 @@
-import React from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import i18n from "i18next";
 import {useTranslation} from "react-i18next";
 import {Image} from "react-bootstrap";
-import i18n from "i18next";
 import {newsData} from "../../../../utils/news";
-import s from "./OpenCup.module.scss";
-import arrow from "../../../../assets/images/news/arrow-back.svg";
-import {Link} from "react-router-dom";
 import FollowLinks from "../../../FollowLinks";
 import ShareLinks from "../../../ShareLinks/ShareLinks.tsx";
-import { useLocation } from 'react-router-dom';
+import arrow from "../../../../assets/images/news/arrow-back.svg";
+import s from "./OpenCup.module.scss";
+import {useEffect} from "react";
 
 const OpenCup = () => {
     const {t} = useTranslation();
@@ -18,11 +17,19 @@ const OpenCup = () => {
 
     const fullUrl = `https://misakdojo.com${pathname}`
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 20,
+            behavior: 'smooth',
+        });
+    }, []);
+
+
     return (
         <div>
             <div className={s.content}>
                 <div className={s.head}>
-                    <Link to="/">
+                    <Link to="/" >
                         <Image src={arrow} className={s.icon}/>
                     </Link>
                     <div className={s.publishedItem}>{t("published")}: <span>{newsItem.date}</span></div>

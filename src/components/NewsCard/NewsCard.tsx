@@ -24,25 +24,16 @@ type NewsItem = {
 
 type NewsCardTypes = {
     newsItem: NewsItem;
-    children: ReactNode;
 }
 
-const NewsCard: FC<NewsCardTypes> = ({children, newsItem}) => {
-    const [isNewsModalOpened, setIsNewsModalOpened] = useState(false);
+const NewsCard: FC<NewsCardTypes> = ({ newsItem}) => {
     const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
 
-    const {type, id} = newsItem;
+    const {type} = newsItem;
 
-    const handleOpen = () => {
-        document.body.style.overflowY = 'hidden';
-        setIsNewsModalOpened(true);
-    }
 
-    const handleClose = () => {
-        document.body.style.overflowY = 'auto';
-        setIsNewsModalOpened(false);
-    }
+
 
 
     return (
@@ -52,9 +43,6 @@ const NewsCard: FC<NewsCardTypes> = ({children, newsItem}) => {
                 <p className={s.newsDate}>{newsItem.date}</p>
                 <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, newsItem.title[currentLanguage])}</h6>
             </div>
-            {/*{isNewsModalOpened && <NewsModal onClose={handleClose}>*/}
-            {/*    {children}*/}
-            {/*</NewsModal>}*/}
         </Link>
     );
 };

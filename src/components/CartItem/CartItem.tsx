@@ -2,7 +2,7 @@ import {FC, useEffect, useState} from 'react';
 import {Image} from "react-bootstrap"
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
-import {useAppDispatch} from "../../hooks.ts";
+import {useAppDispatch} from "../../hooks";
 import {addToCart, calculateTotal, removeFromCartAllQuantity, removeFromCartOne} from "../../redux/slices/cartSlice";
 import s from "./CartItem.module.scss";
 import type {CartItem} from "../../redux/slices/cartSlice";

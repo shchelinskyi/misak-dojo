@@ -1,4 +1,4 @@
-import {useAppDispatch} from "../../hooks.ts";
+import {useAppDispatch} from "../../hooks";
 import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
 import {useTranslation} from "react-i18next";
 import {Image} from "react-bootstrap";

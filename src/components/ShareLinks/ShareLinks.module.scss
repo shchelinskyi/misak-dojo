@@ -1,12 +1,9 @@
 .content {
-  //width: 347px;
   display: flex;
   color: #737373;
   font-size: 24px;
   column-gap: 20px;
-  //justify-content: space-between;
   align-items: center;
-  border: 2px solid green;
   @media (max-width: 1200px) {
     font-size: 20px;
   }

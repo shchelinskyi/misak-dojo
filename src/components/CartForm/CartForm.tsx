@@ -6,7 +6,7 @@ import {Form as BootstrapForm} from "react-bootstrap";
 import s from "./CartForm.module.scss";
 import CustomPhoneInput from "../CustomPhoneInput";
 import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
-import {useAppDispatch, useAppSelector} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 
 interface TypeValue {
     name: string;

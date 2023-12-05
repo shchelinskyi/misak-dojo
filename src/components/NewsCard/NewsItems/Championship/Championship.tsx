@@ -1,14 +1,29 @@
-import React from 'react';
+import {Link, useLocation} from "react-router-dom";
+import i18n from "i18next";
 import {useTranslation} from "react-i18next";
 import {Image} from "react-bootstrap";
-import i18n from "i18next";
 import {newsData} from "../../../../utils/news";
+import ShareLinks from "../../../ShareLinks/ShareLinks.tsx";
+import FollowLinks from "../../../FollowLinks";
+import arrow from "../../../../assets/images/news/arrow-back.svg";
 import s from "./Championship.module.scss";
+import {useEffect} from "react";
 
 const Championship = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
     const {championship: newsItem} = newsData;
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 20,
+            behavior: 'smooth',
+        });
+    }, []);
+
+    const {pathname} = useLocation();
+
+    const fullUrl = `https://misakdojo.com${pathname}`
 
     const paragraphs1 = newsItem.text1[currentLanguage]
         ? newsItem.text1[currentLanguage].split('\n').map((paragraph, index) => (
@@ -52,29 +67,39 @@ const Championship = () => {
         : null;
 
     return (
-        <div className={s.content}>
-            <div className={s.head}>
-                <div className={s.publishedItem}>{t("published")}: <span>{newsItem.date}</span></div>
-            </div>
-            <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}</h4>
-            <Image src={newsItem.images[0]} className={s.img}/>
-            <div className={s.block}>
-                {paragraphs1}
-            </div>
-            <Image src={newsItem.images[1]} className={s.img}/>
-            <div className={s.block}>
-                {paragraphs2}
-            </div>
-            <div className={s.videoWrapper}>
-                <iframe width="760" height="453" src="https://www.youtube.com/embed/UwVZaj05dPo"
-                        title="Чемпионат Житомирской области по Киокушинкай каратэ 🥋 2019" frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen></iframe>
-            </div>
-            <div className={s.block}>
-                {paragraphs3}
-            </div>
+        <div>
+            <div className={s.content}>
+                <div className={s.head}>
+                    <Link to="/">
+                        <Image src={arrow} className={s.icon}/>
+                    </Link>
+                    <div className={s.publishedItem}>{t("published")}: <span>{newsItem.date}</span></div>
+                </div>
+                <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}</h4>
+                <Image src={newsItem.images[0]} className={s.img}/>
+                <div className={s.block}>
+                    {paragraphs1}
+                </div>
+                <Image src={newsItem.images[1]} className={s.img}/>
+                <div className={s.block}>
+                    {paragraphs2}
+                </div>
+                <div className={s.videoWrapper}>
+                    <iframe width="760" height="453" src="https://www.youtube.com/embed/UwVZaj05dPo"
+                            title="Чемпионат Житомирской области по Киокушинкай каратэ 🥋 2019" frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen></iframe>
+                </div>
+                <div className={s.block}>
+                    {paragraphs3}
+                </div>
 
+            </div>
+            <div className={s.socialContent}>
+                <ShareLinks url={fullUrl}
+                            quote={t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}/>
+                <FollowLinks/>
+            </div>
         </div>
     );
 };

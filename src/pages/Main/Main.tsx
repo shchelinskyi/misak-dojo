@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import {useAppDispatch, useAppSelector} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import Loading from "../../components/Loading";
 import FormTrialSession from "../../components/FormTrialSession";
 import InformModal from "../../components/InformModal/InformModal.tsx";
@@ -36,11 +36,8 @@ const Main = ({setRefData}) => {
 
 
     useEffect(() => {
-        // document.body.style.overflowY = 'hidden';
-        // document.body.style.overflowX = 'hidden';
         const timer = setTimeout(() => {
             setLoading(false);
-            // document.body.style.overflowY = 'scroll';
         }, 2000);
 
         return () => clearTimeout(timer);
@@ -84,7 +81,7 @@ const Main = ({setRefData}) => {
             <div ref={shopRef}>
                 <ShopPage/>
             </div>
-            <NewsPage/>
+            <NewsPage />
             <ReadMore/>
             <div ref={contactsRef}>
                 <ContactsPage/>

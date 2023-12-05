@@ -1,8 +1,8 @@
 import React from 'react';
-import s from "./ShareLinks.module.scss"
 import {useTranslation} from "react-i18next";
 import { ShareButton } from 'react-facebook';
 import {TwitterShareButton} from "react-share";
+import s from "./ShareLinks.module.scss"
 
 const ShareLinks = ({url,quote }) => {
     const {t} = useTranslation();

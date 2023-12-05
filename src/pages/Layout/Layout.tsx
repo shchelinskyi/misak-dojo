@@ -6,7 +6,7 @@ import {useScrollActions} from "../../hooks";
 const Layout = ({refData}) => {
     // const { scrollActions } = useScrollActions();
     const location = useLocation();
-    const isPrivacyPolicyPage = location.pathname === "/privacy-policy";
+    const isPrivacyPolicyPage = location.pathname !== "/";
 
 
     return (

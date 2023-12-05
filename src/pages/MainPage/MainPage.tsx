@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Container, Image} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
-import {useAppDispatch, useAppSelector} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
 import {openCartModal} from "../../redux/slices/cartSlice.ts";
 import CustomButton from "../../components/CustomButton";

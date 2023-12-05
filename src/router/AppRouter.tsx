@@ -1,6 +1,5 @@
 import {Route, Routes} from "react-router-dom";
 import Main from "../pages/Main";
-
 import Layout from "../pages/Layout";
 import i18n from "i18next";
 import PrivacyPolicyPageUA from "../pages/PrivacyPolicyPage/PrivacyPolicyPageUA";
@@ -19,6 +18,7 @@ import SummerSchool32 from "../components/NewsCard/NewsItems/SummerSchool32";
 import Championship from "../components/NewsCard/NewsItems/Championship";
 
 
+
 const AppRouter = () => {
     const currentLanguage = i18n.language || 'ua';
     const [language, setLanguage] = useState("i18n.language");
@@ -29,6 +29,8 @@ const AppRouter = () => {
     useEffect(() => {
         setLanguage(currentLanguage)
     }, [change]);
+
+
 
 
     return (
