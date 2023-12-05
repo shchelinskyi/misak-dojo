@@ -1,19 +1,32 @@
-import s from "./SupportUsPage.module.scss";
+import {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 import {Image} from "react-bootstrap";
 import spiral from "../../assets/images/support/spiral-support.svg";
 import heartY from "../../assets/images/support/heart-y.svg";
 import heartB from "../../assets/images/support/heart-b.svg";
 import hands from "../../assets/images/support/hands.svg";
-import support from "../../assets/images/support/support.svg";
+import supportUA from "../../assets/images/support/support-ua.webp";
+import supportRU from "../../assets/images/support/support-ru.webp";
+import supportEN from "../../assets/images/support/support-en.webp";
 import btnLabel from "../../assets/images/support/btn-label.svg";
 import finger from "../../assets/images/support/finger-up.svg";
+import s from "./SupportUsPage.module.scss";
 import CustomButton from "../../components/CustomButton";
-import {useTranslation} from "react-i18next";
+
 
 
 const SupportUsPage = () => {
 
-    const { t } = useTranslation();
+    const {t} = useTranslation();
+    const currentLanguage = i18n.language || 'ua';
+    const [language, setLanguage] = useState("i18n.language");
+
+    const change = t("language");
+
+    useEffect(() => {
+        setLanguage(currentLanguage)
+    }, [change]);
 
     return (
         <div className={s.wrapper}>
@@ -28,14 +41,26 @@ const SupportUsPage = () => {
                 </div>
                 <div className={s.supportBlock}>
                     <Image src={spiral} className={s.spiralImg}/>
-                    <Image src={support} className={s.supportLabel}/>
-                    <button className={s.btn} onClick={() => console.log(1)}>
-                        <Image src={btnLabel} className={s.btnLabel}/>
-                    </button>
-                    <div className={s.fingerBlock}>
+                    {language === "ua" && <Image src={supportUA} className={s.supportLabel}/>}
+                    {language === "ru" && <Image src={supportRU} className={s.supportLabel}/>}
+                    {language === "en" && <Image src={supportEN} className={s.supportLabel}/>}
+                    <a href="https://www.buymeacoffee.com/misakdojo" target="_blank">
+                        <CustomButton>
+                            <Image src={btnLabel} className={s.btnLabel}/>
+                        </CustomButton>
+                    </a>
+                    {language === "ua" && <div className={s.fingerBlock}>
                         <Image src={finger} className={s.fingerImg}/>
                         <span>{t("click")}</span>
-                    </div>
+                    </div>}
+                    {language === "ru" && <div className={s.fingerBlock}>
+                        <Image src={finger} className={s.fingerImg}/>
+                        <span>{t("click")}</span>
+                    </div>}
+                    {language === "en" && <div className={s.fingerBlockEN}>
+                        <Image src={finger} className={s.fingerImg}/>
+                        <span>{t("click")}</span>
+                    </div>}
                 </div>
             </div>
         </div>

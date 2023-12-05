@@ -141,5 +141,6 @@
   "published": "Published",
   "infoText": "Your request has been successfully sent!",
   "return": "BACK",
-  "language": "en"
+  "language": "en",
+  "addToCart": "Product added to cart"
 }

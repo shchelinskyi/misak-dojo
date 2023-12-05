@@ -4,7 +4,7 @@ import {Container, Stack} from "react-bootstrap";
 import CustomButton from "../../components/CustomButton";
 import GalleryCard from "../../components/GalleryCard";
 import {gallery} from "../../utils/gallery";
-import s from "./GalleryPage.module.scss"
+import s from "./GalleryPage.module.scss";
 
 
 const GalleryPage = () => {

@@ -13,13 +13,12 @@
   }
 }
 
-
-
-.productImg {
+.imgWrapper {
+  background-color: white;
   width: 380px;
   height: 330px;
-  object-fit: cover;
   margin-bottom: 18px;
+  border-radius: 46px;
 
   @media (max-width: 1200px) {
     width: 300px;
@@ -33,6 +32,27 @@
     width: 150px;
     height: 132px;
     flex-shrink: 1;
+  }
+}
+
+
+.productImg {
+  width: 380px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 46px;
+
+  @media (max-width: 1200px) {
+    width: 300px;
+    height: 260px;
+  }
+  @media (max-width: 992px) {
+    width: 216px;
+    height: 188px;
+  }
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 132px;
   }
 }
 

@@ -14,20 +14,20 @@
 }
 
 .cardImg {
-  width: 380px;
+  width: 370px;
   height: 330px;
   object-fit: cover;
   border-radius: 46px;
   @media (max-width: 1200px) {
-    width: 300px;
+    width: 290px;
     height: 260px;
   }
   @media (max-width: 992px) {
-    width: 334px;
+    width: 324px;
     height: 290px;
   }
   @media (max-width: 480px) {
-    width: 320px;
+    width: 310px;
     height: 278px;
   }
 }

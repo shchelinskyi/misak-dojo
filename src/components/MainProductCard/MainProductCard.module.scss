@@ -1,14 +1,15 @@
 .overlay {
   position: fixed;
-  z-index: 1000;
+  z-index: 2003;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  @media (max-width: 480px) {
+    background-color: white;
+  }
 }
 
 .content {
@@ -16,61 +17,125 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1001;
-  max-width: 1180px;
   width: 1180px;
   overflow-y: scroll;
+  overflow-x: hidden;
   background: white;
-  padding: 30px;
+  padding: 100px 100px 50px 100px;
   border-radius: 46px;
   display: flex;
   column-gap: 20px;
   justify-content: center;
+
+  @media (max-width: 1200px) {
+    width: 940px;
+    padding: 80px 80px 50px 80px;
+  }
+
+  @media (max-width: 992px) {
+    width: 90vw;
+    padding: 60px 40px 50px 40px;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  @media (max-width: 480px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    width: 100vw;
+    padding: 60px 20px 50px 20px;
+  }
 }
 
-.customModal {
-  width: 1180px;
-  border: 2px solid #f5f506;
-  background-color: #ffffff;
-}
-
-//.content {
-//  display: flex;
-//  column-gap: 20px;
-//  justify-content: center;
-//}
 
 .imageBlock {
   position: relative;
   width: 380px;
-  height: 500px;
+  max-height: 500px;
+
+  @media (max-width: 1200px) {
+    width: 300px;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 540px;
+    width: 100%;
+    max-height: unset;
+  }
+
 }
 
 .descriptionBlock {
   min-width: 580px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1200px) {
+    min-width: unset;
+    width: 460px;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 540px;
+    width: 100%;
+  }
 }
 
 .imgShow {
-  border: 1px solid #D8D8D8;
-  border-radius: 46px;
   width: 380px;
   height: 380px;
   object-fit: cover;
+  border: 1px solid #D8D8D8;
+  border-radius: 46px;
+
+  @media (max-width: 1200px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    height: auto;
+    max-width: 540px;
+    max-height: 540px;
+  }
+
 }
 
 .navImages {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .imgShot {
   border: 1px solid #D8D8D8;
-  border-radius: 30px;
+  border-radius: 16px;
   width: 87px;
   height: 87px;
   object-fit: cover;
+
+  @media (max-width: 1200px) {
+    flex: 2 2 69px;
+    max-width: 69px;
+    max-height: 69px;
+  }
+
+  @media (max-width: 992px) {
+    flex: 2 2 124px;
+    max-width: 124px;
+    max-height: 124px;
+  }
+
+  @media (max-width: 480px) {
+    flex: 2 2 74px;
+    max-width: 74px;
+    max-height: 74px;
+  }
 }
 
 .arrow {
@@ -89,18 +154,38 @@
 }
 
 .productTitle {
-  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 20px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 }
 
 .productPrice {
-  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   color: #c41414;
   font-weight: 600;
   margin-bottom: 20px;
+
+  @media (max-width: 1200px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 20px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 }
 
 .charactersBlock {
@@ -108,6 +193,11 @@
   column-gap: 20px;
   width: 580px;
   margin-bottom: 30px;
+  @media (max-width: 992px) {
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
 }
 
 .charactersItem {
@@ -115,10 +205,13 @@
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+
 }
 
 .charactersTitle {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   line-height: 180%;
 }
@@ -128,22 +221,23 @@
   display: flex;
   justify-content: center;
   position: relative;
-  width:180px;
+  width: 180px;
   height: 40px;
   border: 1px solid #D8D8D8;
   border-radius: 12px;
   padding: 5px 8px 5px 20px;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 }
 
 .selectBox {
-  width:180px;
   position: relative;
   appearance: none;
   background-color: transparent;
   width: 100%;
   display: block;
   border: none;
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #737373;
   z-index: 5;
@@ -160,44 +254,23 @@
 }
 
 .btn {
-  max-width: 145px;
-  position:relative;
+  max-width: 150px;
   padding: 8px 12px;
   background-color: #E1251B;
-  border:2px solid black;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
   border-radius: 12px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: bold;
-  color:#ffffff;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  transition: 0.25s;
-  margin-bottom: 30px;
-
-  &::after {
-    width:100%;
-    height:100%;
-    content:"";
-    position:absolute;
-    right:-4px;
-    bottom:-3px;
-    z-index:-1;
-    background-color: black;
-    border-radius: 12px;
-  }
-
-  &:hover::after {
-    background-color: transparent;
-  }
+  transition: all 0.3s;
 
   &:hover {
-    background-color: #E1251B;
     border: 2px solid black;
-  }
-
-  &:active::after {
-    background-color: transparent;
   }
 
   &:active {
@@ -209,53 +282,75 @@
   }
 
   &:disabled::after {
+    background-color: transparent;
   }
 }
 
 .productDescription {
-  width: 580px;
-  margin: 0 0 20px 0;
-  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  max-width: 580px;
+  margin: 20px 0 20px 0;
   font-size: 16px;
   line-height: 180%;
   text-align: justify;
+
+  @media (max-width: 1200px) {
+    max-width: 460px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
 
-
 .productComment {
-  width: 580px;
-  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  max-width: 580px;
   font-size: 16px;
   font-weight: 600;
   line-height: 180%;
   text-align: justify;
+
+  @media (max-width: 992px) {
+    max-width: 460px;
+    width: 100%;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
-
-
-
-
-
 
 .additionalData {
   display: flex;
   flex-direction: column;
-  //row-gap: 10px;
 }
+
 .additionalItem {
   display: flex;
   column-gap: 2px;
 }
 
 .additionalItemLabel {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 180%;
 }
 
 .additionalItemValue {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 180%;
+}
+
+.closeBtn {
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }

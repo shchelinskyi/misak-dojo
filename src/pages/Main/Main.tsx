@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import {useAppSelector} from "../../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 import Loading from "../../components/Loading";
 import FormTrialSession from "../../components/FormTrialSession";
 import InformModal from "../../components/InformModal/InformModal.tsx";
@@ -16,6 +16,9 @@ import NewsPage from "../NewsPage";
 import ReadMore from "../../components/ReadMore";
 import ContactsPage from "../ContactsPage";
 import Cart from "../../components/Cart";
+import {useTranslation} from "react-i18next";
+import {closeInfoModal} from "../../redux/slices/formTrialSessionSlice.ts";
+import {closeAddToCartModal} from "../../redux/slices/cartSlice.ts";
 
 
 const Main = ({setRefData}) => {
@@ -28,6 +31,9 @@ const Main = ({setRefData}) => {
     const contactsRef = useRef<HTMLDivElement>(null);
 
     const [loading, setLoading] = useState(true);
+    const {t} = useTranslation();
+    const dispatch = useAppDispatch();
+
 
     useEffect(() => {
         // document.body.style.overflowY = 'hidden';
@@ -50,13 +56,15 @@ const Main = ({setRefData}) => {
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
     const isCartOpened = useAppSelector(state => state.cart.isOpenedCartModal);
     const isOpenedSuccessModal = useAppSelector(state => state.formTrial.isOpenedSuccessModal);
+    const isOpenedAddToCartModal = useAppSelector(state => state.cart.isOpenedAddToCartModal);
 
 
     return (
         <>
             {loading && <Loading/>}
             {isFormOpen && <FormTrialSession/>}
-            {isOpenedSuccessModal && <InformModal/>}
+            {isOpenedSuccessModal && <InformModal onClose={() => dispatch(closeInfoModal())}>{t("infoText")}</InformModal>}
+            {isOpenedAddToCartModal && <InformModal onClose={() => dispatch(closeAddToCartModal())}>{t("addToCart")}</InformModal>}
             <MainPage/>
             <div ref={aboutRef} style={{paddingTop:"100px"}}>
                 <AboutPage/>

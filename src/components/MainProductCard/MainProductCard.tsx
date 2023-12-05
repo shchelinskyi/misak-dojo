@@ -1,31 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Nav, Tab, Image} from "react-bootstrap"
-import {useAppDispatch, useAppSelector} from "../../hooks";
-import {closeProductModal} from "../../redux/slices/productSlice.ts";
-import s from "./MainProductCard.module.scss";
-import cn from "classnames"
-import iconSelect from "../../assets/images/main/select-flag.webp";
+import {useAppDispatch} from "../../hooks";
+import {addToCart, calculateTotal, openAddToCartModal} from "../../redux/slices/cartSlice";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
-import {addToCart, calculateTotal} from "../../redux/slices/cartSlice.ts";
+import iconSelect from "../../assets/images/main/select-flag.webp";
+import cn from "classnames";
+import s from "./MainProductCard.module.scss";
+import type {ProductItemType} from "../ProductCard/ProductCard";
+
+type MainProductCardProps = {
+    productItem:ProductItemType;
+    onClose: () => void;
+};
 
 
+const MainProductCard:FC<MainProductCardProps> = ({productItem, onClose}) => {
 
-
-const MainProductCard = ({productItem, onClose}) => {
-
-    useEffect(() => {
-    }, [productItem]);
+    const [selectedSize, setSelectedSize] = useState(productItem.size[0] || "");
+    const [selectedColor, setSelectedColor] = useState(productItem.color[0] || "");
+    const [activeKey, setActiveKey] = useState('1');
 
     const dispatch = useAppDispatch();
     const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
-
-    const handleCloseProductModal = () => {
-        dispatch(closeProductModal())
-    }
-
-    const [activeKey, setActiveKey] = useState('1');
 
     const handlePrev = () => {
         const totalImages = productItem.images.length;
@@ -47,16 +45,12 @@ const MainProductCard = ({productItem, onClose}) => {
         }
     };
 
-    const [selectedSize, setSelectedSize] = useState(productItem.size[0] || "");
-    const [selectedColor, setSelectedColor] = useState(productItem.color[0] || "");
-    const [selectedModel, setSelectedModel] = useState('');
-
-    const handleChangeSize = (event) => {
+    const handleChangeSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const size = event.target.value;
         setSelectedSize(size);
     }
 
-    const handleChangeColor = (event) => {
+    const handleChangeColor = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const color = event.target.value;
         setSelectedColor(color);
     }
@@ -75,17 +69,13 @@ const MainProductCard = ({productItem, onClose}) => {
         dispatch(addToCart(productData));
         dispatch(calculateTotal());
         onClose();
+        dispatch(openAddToCartModal())
     }
-
-    const handleChangeModel = (event) => {
-        const model = event.targe.value;
-        setSelectedModel(model);
-    }
-
 
     return (
         <div className={s.overlay} onClick={onClose}>
             <div className={s.content} onClick={(e) => e.stopPropagation()}>
+                <span className={s.closeBtn} onClick={onClose}>&times;</span>
                 <div className={s.imageBlock}>
                     <span className={cn(s.arrow, s.arrowLeft)} onClick={handlePrev}>&lt;</span>
                     <span className={cn(s.arrow, s.arrowRight)} onClick={handleNext}>&gt;</span>
@@ -153,7 +143,6 @@ const MainProductCard = ({productItem, onClose}) => {
                                  <div className={s.selectContainer}>
                                      <select value={selectedColor} className={s.selectBox} onChange={handleChangeColor}>
                                          {productItem.color.length > 0 && productItem.color.map((colorItem, index) =>
-                                             // (<option key={colorItem} value={t(colorItem)}>
                                              (<option key={colorItem} value={colorItem}>
                                                  {t(colorItem)}
                                              </option>))
@@ -164,19 +153,6 @@ const MainProductCard = ({productItem, onClose}) => {
                                      </div>
                                  </div>
                              </div>
-                             {/*<div className={s.charactersItem}>*/}
-                             {/*    <div className={s.charactersTitle}>*/}
-                             {/*        Модель:*/}
-                             {/*    </div>*/}
-                             {/*    <div className={s.selectContainer}>*/}
-                             {/*        <select value={selectedModel} className={s.selectBox} onChange={handleChangeModel}>*/}
-                             {/*            <option value="Roltop">Roltop</option>*/}
-                             {/*        </select>*/}
-                             {/*        <div className={s.iconContainer}>*/}
-                             {/*            <Image className={s.selectIcon} src={iconSelect}/>*/}
-                             {/*        </div>*/}
-                             {/*    </div>*/}
-                             {/*</div>*/}
                          </div>
                      }
 
@@ -197,14 +173,6 @@ const MainProductCard = ({productItem, onClose}) => {
                                 className={s.additionalItemValue}>{t(`material.${currentLanguage}`, productItem.material[currentLanguage])}</span>
                         </div>
                         }
-                        {/*<div className={s.additionalItem}>*/}
-                        {/*    <span className={s.additionalItemLabel}>Об'єм:</span>*/}
-                        {/*    <span className={s.additionalItemValue}>20 літрів</span>*/}
-                        {/*</div>*/}
-                        {/*<div className={s.additionalItem}>*/}
-                        {/*    <span className={s.additionalItemLabel}>Висота:</span>*/}
-                        {/*    <span className={s.additionalItemValue}>54 см</span>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
             </div>
