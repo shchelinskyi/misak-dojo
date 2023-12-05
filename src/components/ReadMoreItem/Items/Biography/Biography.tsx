@@ -1,8 +1,8 @@
 import React from 'react';
 import i18n from "i18next";
+import {useTranslation} from "react-i18next";
 import {readMoreData} from "../../../../utils/readMore";
 import s from "./Biography.module.scss";
-import {useTranslation} from "react-i18next";
 
 const Biography = () => {
     const {t} = useTranslation();

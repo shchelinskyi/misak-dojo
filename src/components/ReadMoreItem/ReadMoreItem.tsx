@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import s from "./ReadMoreItem.module.scss";
-import {Image} from "react-bootstrap";
-import plus from "../../assets/images/readMore/plus.svg";
-import {useTranslation} from "react-i18next";
 import i18n from "i18next";
+import {useTranslation} from "react-i18next";
+import {Image} from "react-bootstrap";
+import plus from "../../assets/images/readMore/plus.webp";
 import ReadMoreModalItem from "../ReadMoreModalItem";
+import s from "./ReadMoreItem.module.scss";
 
 const ReadMoreItem = ({item, children}) => {
 

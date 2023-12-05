@@ -24,7 +24,6 @@
 
   @media (max-width: 480px) {
     font-size: 60px;
-    margin: 0;
     margin-bottom: 40px;
   }
 }
@@ -35,48 +34,46 @@
   gap: 20px;
   flex-wrap: wrap;
   padding-bottom: 80px;
+
+  @media (max-width: 1200px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 992px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
-
-
-
-
-
 
 .fingerImg {
   width: 41px;
 }
 
 .fingerBlock {
-  display:flex;
-  gap: 2px;
-  font-family: 'Montserrat', sans-serif;
-  align-items: flex-end;
-  font-size: 16px;
   position: absolute;
   bottom: -10px;
   right: -30px;
-
-  //@media (max-width: 992px) {
-  //  bottom:-25px;
-  //  right: -25px;
-  //}
-  //
-  //@media (max-width: 480px) {
-  //  bottom:-25px;
-  //  right: 25px;
-  //}
-}
-
-
-.fingerBlockS {
   display:flex;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  position: absolute;
   gap: 2px;
   align-items: flex-end;
+  font-size: 16px;
+}
+
+.fingerBlockS {
+  position: absolute;
   top: 70px;
   left:950px;
+  font-size: 16px;
+  display:flex;
+  gap: 2px;
+  align-items: flex-end;
+
 
   @media (max-width: 1200px) {
     top: 58px;
@@ -100,16 +97,16 @@
   display: flex;
   padding-left: 600px;
   @media (max-width: 992px) {
+    position: relative;
     display: flex;
     width: 100%;
     padding-left: 20px;
-    position: relative;
   }
   @media (max-width: 480px) {
+    position: relative;
     display: flex;
     width: 100%;
     padding-left: 20px;
-    position: relative;
   }
 }
 
@@ -117,9 +114,6 @@
   display: inline-flex;
   width: 366px;
   height: 35px;
-  //position: absolute;
-  //bottom: 20px;
-  //right: 200px;
   @media (max-width: 992px) {
     display: none;
   }
@@ -146,17 +140,71 @@
   }
 }
 
+.usefulTextSRU {
+  display: none;
+  @media (max-width: 480px) {
+    display: inline-flex;
+    width: 200px;
+    object-fit: cover;
+  }
+}
+
+.usefulTextSEN {
+  display: none;
+  @media (max-width: 480px) {
+    display: inline-flex;
+    width: 200px;
+    object-fit: cover;
+  }
+}
+
 .usefulArrow {
-  display: block;
-  width: 146px;
-  height: 339px;
   position: absolute;
   bottom: 40px;
   left: 950px;
+  display: block;
+  width: 146px;
+  height: 339px;
 
   @media (max-width: 1200px) {
     bottom: 40px;
     left: 850px;
+  }
+
+  @media (max-width: 992px) {
+    display:none;
+  }
+}
+
+.usefulArrowEN {
+  position: absolute;
+  bottom: 40px;
+  left: 1000px;
+  display: block;
+  width: 146px;
+  height: 339px;
+
+  @media (max-width: 1200px) {
+    bottom: 40px;
+    left: 870px;
+  }
+
+  @media (max-width: 992px) {
+    display:none;
+  }
+}
+
+.usefulArrowRU {
+  position: absolute;
+  bottom: 40px;
+  left: 990px;
+  display: block;
+  width: 146px;
+  height: 339px;
+
+  @media (max-width: 1200px) {
+    bottom: 40px;
+    left: 870px;
   }
 
   @media (max-width: 992px) {
@@ -170,7 +218,16 @@
     display:block;
     position: absolute;
     top: -80px;
-    left: 290px;
+    left: 310px;
+    width: 139px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 505px) {
+    display:block;
+    position: absolute;
+    top: -80px;
+    left: 346px;
     width: 139px;
     object-fit: cover;
   }
@@ -179,7 +236,45 @@
   }
 }
 
+.usefulArrowMEN {
+  display: none;
+  @media (max-width: 992px) {
+    display:block;
+    position: absolute;
+    top: -80px;
+    left: 320px;
+    width: 139px;
+    object-fit: cover;
+  }
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
 
+.usefulArrowMRU {
+  display: none;
+  @media (max-width: 992px) {
+    display:block;
+    position: absolute;
+    top: -80px;
+    left: 305px;
+    width: 139px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 501px) {
+    display:block;
+    position: absolute;
+    top: -80px;
+    left: 342px;
+    width: 139px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
 
 .usefulArrowS {
   display: none;
@@ -190,5 +285,32 @@
     left: 170px;
     width: 139px;
     object-fit: cover;
+    transform: rotate(-30deg);
+  }
+}
+
+.usefulArrowSRU {
+  display: none;
+  @media (max-width: 480px) {
+    display:block;
+    position: absolute;
+    top: -40px;
+    left: 220px;
+    width: 139px;
+    object-fit: cover;
+    transform: rotate(-30deg);
+  }
+}
+
+.usefulArrowSEN {
+  display: none;
+  @media (max-width: 480px) {
+    display:block;
+    position: absolute;
+    top: -35px;
+    left: 220px;
+    width: 139px;
+    object-fit: cover;
+    transform: rotate(-30deg);
   }
 }

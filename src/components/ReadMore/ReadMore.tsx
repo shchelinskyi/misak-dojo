@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import {Image, Stack} from "react-bootstrap";
-import s from "./ReadMore.module.scss";
-import usefulText from "../../assets/images/readMore/useful-text.svg";
+import {useEffect, useState} from 'react';
+import {Image} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
+import usefulTextUA from "../../assets/images/readMore/usefull-text-ua.webp";
+import usefulTextRU from "../../assets/images/readMore/usefull-text-ru.webp";
+import usefulTextEN from "../../assets/images/readMore/usefull-text-en.webp";
 import usefulArrow from "../../assets/images/readMore/useful-arrow.svg";
-import usefulTextM from "../../assets/images/readMore/useful-text-m.svg";
 import usefulArrowM from "../../assets/images/readMore/useful-arrow-m.svg";
 import usefulTextS from "../../assets/images/readMore/useful-text-s.svg";
 import usefulArrowS from "../../assets/images/readMore/useful-arrow-s.svg";
 import finger from "../../assets/images/support/finger-up.svg";
-import {useTranslation} from "react-i18next";
-import i18n from "i18next";
 import ReadMoreItem from "../ReadMoreItem";
 import {readMoreData} from "../../utils/readMore"
 import Glossary from "../ReadMoreItem/Items/Glossary";
@@ -22,11 +22,17 @@ import Rules from "../ReadMoreItem/Items/Rules";
 import RulesKio from "../ReadMoreItem/Items/RulesKio";
 import Wko from "../ReadMoreItem/Items/Wko";
 import Belts from "../ReadMoreItem/Items/Belts";
+import s from "./ReadMore.module.scss";
 
 const ReadMore = () => {
-    const [isModalOpened, setIsModalOpened] = useState(false);
+    const [language, setLanguage] = useState("i18n.language");
     const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
+    const change = t("language");
+
+    useEffect(() => {
+        setLanguage(currentLanguage)
+    }, [change]);
 
     return (
         <>
@@ -66,14 +72,26 @@ const ReadMore = () => {
 
 
                     <div className={s.usefulBlockS}>
-                        <Image className={s.usefulText} src={usefulText}/>
-                        <Image className={s.usefulArrow} src={usefulArrow}/>
+                        {language === "ua" && <Image className={s.usefulText} src={usefulTextUA}/>}
+                        {language === "ru" && <Image className={s.usefulText} src={usefulTextRU}/>}
+                        {language === "en" && <Image className={s.usefulText} src={usefulTextEN}/>}
+                        {language === "ua" && <Image className={s.usefulArrow} src={usefulArrow}/>}
+                        {language === "en" && <Image className={s.usefulArrowEN} src={usefulArrow}/>}
+                        {language === "ru" && <Image className={s.usefulArrowRU} src={usefulArrow}/>}
 
-                        <Image src={usefulTextM} className={s.usefulTextM}/>
-                        <Image src={usefulArrowM} className={s.usefulArrowM}/>
+                        {language === "ua" && <Image className={s.usefulTextM} src={usefulTextUA}/>}
+                        {language === "ru" && <Image className={s.usefulTextM} src={usefulTextRU}/>}
+                        {language === "en" && <Image className={s.usefulTextM} src={usefulTextEN}/>}
+                        {language === "ua" && <Image src={usefulArrowM} className={s.usefulArrowM}/>}
+                        {language === "ru" && <Image src={usefulArrowM} className={s.usefulArrowMRU}/>}
+                        {language === "en" && <Image src={usefulArrowM} className={s.usefulArrowMRU}/>}
 
-                        <Image src={usefulTextS} className={s.usefulTextS}/>
-                        <Image src={usefulArrowS} className={s.usefulArrowS}/>
+                        {language === "ua" && <Image className={s.usefulTextS} src={usefulTextS} />}
+                        {language === "ru" && <Image className={s.usefulTextSRU} src={usefulTextRU} />}
+                        {language === "en" && <Image className={s.usefulTextSEN} src={usefulTextEN} />}
+                        {language === "ua" &&<Image src={usefulArrowS} className={s.usefulArrowS}/>}
+                        {language === "ru" &&<Image src={usefulArrowS} className={s.usefulArrowSRU}/>}
+                        {language === "en" &&<Image src={usefulArrowS} className={s.usefulArrowSEN}/>}
                     </div>
                     <div className={s.fingerBlockS}>
                         <Image src={finger} className={s.fingerImg}/>

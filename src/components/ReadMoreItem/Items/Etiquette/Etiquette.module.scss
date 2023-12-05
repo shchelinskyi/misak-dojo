@@ -1,48 +1,63 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-family: Gagalin, sans-serif;
+  font-size: 50px;
   font-weight: 600;
   margin-bottom: 10px;
+
+  @media (max-width: 1200px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 25px;
+  }
+}
+
+.note {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 40px;
 }
 
 .content {
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   margin-bottom: 20px;
 }
 
-.contentTitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .contentItem {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
+  text-align: justify;
+
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 }
 
 .label {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 20px;
 }
 
-//ol {
-//  list-style-type: none;
-//  counter-reset: my-counter;
-//}
-//
-//li {
-//  counter-increment: my-counter;
-//  margin-bottom: 10px;
-//}
-//
-//li::before {
-//  content: counter(my-counter) ". ";
-//  font-weight: bold;
-//  margin-right: 5px;
-//}
+.contentTitle {
+  font-weight: 600;
+}

@@ -1,9 +1,9 @@
 export const readMoreData = {
     glossary: {
         title: {
-            en: "KYOKUSHINKAI KARATE GLOSSARY",
-            ru: "СЛОВАРЬ ТЕРМИНОВ КИОКУШИНКОЙ КАРАТЕ",
-            ua: "СЛОВНИК ТЕРМІНІВ КІОКУШИНКАЙ КАРАТЕ"
+            en: "Kyokushinkai karate glossary",
+            ru: "Словарь терминов киокушинкой карате",
+            ua: "Словник термінів кіокушинкай карате"
         },
         note: {
             en: "Note: If the Japanese transcription of a term differs from the English, it is indicated in parentheses.",
@@ -484,9 +484,9 @@ export const readMoreData = {
     },
     principles: {
         title: {
-            en: "PRINCIPLES OF KARATEIST",
-            ru: "ПРИНЦИПЫ КАРАТИСТА",
-            ua: "ПРИНЦИПИ КАРАТИСТА"
+            en: "Principles of karateist",
+            ru: "Принципы каратиста",
+            ua: "Принципи каратиста"
         },
         titleLabel: {
             en: "10 principles of karate",
@@ -629,9 +629,9 @@ export const readMoreData = {
     },
     dojoKun: {
         title: {
-            en: "DOJO KUN KYOKUSHINKAI KARATE",
-            ru: "ДОДЖО КУН КІОКУШИНКАЙ КАРАТЭ",
-            ua: "ДОДЖО КУН КІОКУШИНКАЙ КАРАТЕ"
+            en: "Dojo kun kyokushinkai karate",
+            ru: "Доджо кун кіокушинкай каратэ",
+            ua: "Доджо кун кіокушинкай карате"
         },
         subTitle: {
             en: "DOJO KUN",

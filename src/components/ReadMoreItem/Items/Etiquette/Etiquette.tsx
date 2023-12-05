@@ -1,8 +1,8 @@
 import React from 'react';
 import i18n from "i18next";
+import {useTranslation} from "react-i18next";
 import {readMoreData} from "../../../../utils/readMore";
 import s from "./Etiquette.module.scss";
-import {useTranslation} from "react-i18next";
 
 const Etiquette = () => {
     const {t} = useTranslation();

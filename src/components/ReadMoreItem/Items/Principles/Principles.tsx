@@ -1,8 +1,8 @@
 import React from 'react';
-import s from "./Principles.module.scss";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {readMoreData} from "../../../../utils/readMore";
+import s from "./Principles.module.scss";
 
 const Principles = () => {
     const {t} = useTranslation();
