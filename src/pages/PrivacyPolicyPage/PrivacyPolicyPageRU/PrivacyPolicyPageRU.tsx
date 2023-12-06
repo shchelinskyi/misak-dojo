@@ -4,10 +4,17 @@ import logo from "../../../assets/images/main/logo.webp";
 import {Image} from "react-bootstrap";
 import s from "../PrivacyPolicyPage.module.scss";
 import cn from "classnames";
+import {useEffect} from "react";
 
 
 const PrivacyPolicyPageRU = () => {
     const {t} = useTranslation();
+    useEffect(() => {
+        window.scrollTo({
+            top: 20,
+            behavior: 'smooth',
+        });
+    }, []);
 
     return (
         <div className={s.container}>

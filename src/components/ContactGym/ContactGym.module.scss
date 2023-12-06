@@ -30,6 +30,9 @@
   gap: 6px;
   padding: 0;
   margin-bottom: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
   @media (max-width: 1200px) {
     width: 100%;
   }
@@ -47,7 +50,6 @@
 
 
 .text {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 500;
   margin: 0;

@@ -5,12 +5,11 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {closeForm, openInfoModal} from "../../redux/slices/formTrialSessionSlice"
 import {useTranslation} from "react-i18next";
 import {Form as BootstrapForm} from 'react-bootstrap';
-import {Formik, Field, Form, ErrorMessage} from 'formik';
+import {Formik, Field, Form, ErrorMessage, FormikHelpers} from 'formik';
 import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
 import CustomTextarea from "../CustomTextArea";
 import CustomPhoneInput from "../CustomPhoneInput";
 import s from "./FormTrialSession.module.scss"
-import InformModal from "../InformModal/InformModal.tsx";
 
 interface TypeValue {
     name: string;
@@ -44,12 +43,12 @@ const FormTrialSession = () => {
         dispatch(closeForm());
     }
 
-    const handleSubmit = (values: TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
+    const handleSubmit = (values: TypeValue, {setSubmitting, resetForm}:  FormikHelpers<TypeValue>) => {
         setSubmitting(false);
         sendMessageToTelegram(values);
         dispatch(closeForm());
+        resetForm();
         dispatch(openInfoModal())
-        // setIsOpenedInfoModal(true)
     };
 
     const validationSchema = Yup.object().shape({

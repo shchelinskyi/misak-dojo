@@ -62,6 +62,7 @@ const Main = ({setRefData}) => {
             {isFormOpen && <FormTrialSession/>}
             {isOpenedSuccessModal && <InformModal onClose={() => dispatch(closeInfoModal())}>{t("infoText")}</InformModal>}
             {isOpenedAddToCartModal && <InformModal onClose={() => dispatch(closeAddToCartModal())}>{t("addToCart")}</InformModal>}
+            {isCartOpened && <Cart/>}
             <MainPage/>
             <div ref={aboutRef} style={{paddingTop:"100px"}}>
                 <AboutPage/>
@@ -86,7 +87,6 @@ const Main = ({setRefData}) => {
             <div ref={contactsRef}>
                 <ContactsPage/>
             </div>
-            {isCartOpened && <Cart/>}
         </>
     );
 };

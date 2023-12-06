@@ -42,16 +42,12 @@
 }
 
 .deliveryLabel {
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
 
 .radio:checked + .box::after {
   opacity: 1;
 }
-
-
-
 
 .btn {
   width: 100%;

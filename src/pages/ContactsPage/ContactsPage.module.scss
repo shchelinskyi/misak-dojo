@@ -72,19 +72,19 @@
   }
 }
 
-.AppLogo {
+.logo {
   pointer-events: none;
   width: 128px;
   height: 128px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .AppLogo {
-    animation: App-logo-spin infinite 20s linear;
+  .logo  {
+    animation: Logo-spin infinite 20s linear;
   }
 }
 
-@keyframes App-logo-spin {
+@keyframes Logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -103,4 +103,13 @@
     background-color: #D8D8D8;
   }
 
+}
+
+.uaIcon{
+  width: 49px;
+  height: 49px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -3,9 +3,17 @@ import {useTranslation} from "react-i18next";
 import logo from "../../../assets/images/main/logo.webp";
 import {Image} from "react-bootstrap";
 import s from "../PrivacyPolicyPage.module.scss";
+import {useEffect} from "react";
 
 const PrivacyPolicyPageUA = () => {
     const {t} = useTranslation();
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 20,
+            behavior: 'smooth',
+        });
+    }, []);
 
     return (
         <div className={s.container}>

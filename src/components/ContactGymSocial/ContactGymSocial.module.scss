@@ -15,11 +15,14 @@
 }
 
 .contactItem {
+  padding: 0;
+  margin-bottom: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 0;
-  margin-bottom: 8px;
 }
 
 .locationIcon {
@@ -41,7 +44,6 @@
 
 
 .text {
-  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 500;
   margin: 0;
@@ -80,20 +82,16 @@
     flex-shrink: 2;
   }
 }
-.socialIcon {
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
-}
+
 
 .underground {
+  padding: 16px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
   border:1px solid black;
   border-radius: 44px;
-  padding: 16px 30px;
 
   @media (max-width: 1200px) {
     padding: 10px 20px;
@@ -117,10 +115,30 @@
 
 }
 .undergroundLabel {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   margin: 0;
   @media (max-width: 1200px) {
     font-size: 16px;
   }
+}
+
+.socialIcon {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  transition: all 0.25s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:hover .svgIcon {
+    fill:#E1251B;
+  }
+}
+
+.svgIcon {
+  width: 50px;
+  height: 50px;
+  transition: all 0.25s;
 }

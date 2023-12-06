@@ -1,3 +1,5 @@
+import {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
 import ContactGym from "../../components/ContactGym";
 import CustomButton from "../../components/CustomButton";
 import {Container, Image} from "react-bootstrap";
@@ -27,11 +29,10 @@ import wednesdayEN from "../../assets/images/gyms/wednesday-en.webp";
 import thursdayEN from "../../assets/images/gyms/thursday-en.webp";
 import fridayEN from "../../assets/images/gyms/friday-en.webp";
 import saturdayEN from "../../assets/images/gyms/saturday-en.webp";
+import i18n from "i18next";
+import {address} from "../../utils/addressGym.ts";
 import cn from "classnames";
 import s from "./GymsPage.module.scss";
-import {useEffect, useState} from "react";
-import {useTranslation} from "react-i18next";
-import i18n from "i18next";
 
 
 const GymsPage = () => {
@@ -66,7 +67,7 @@ const GymsPage = () => {
             <Container className={s.content}>
                 <div className={s.gymBlock}>
                     <div className={s.gymTitle}>
-                        <ContactGym address={t("gym1")} number="+38 (099) 042 08 20"/>
+                        <ContactGym address={t("gym1")}  addressLink={address.gym1} phone="+38 (099) 042 08 20"/>
                     </div>
                     <div className={s.btnShow}>
                         <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(1)}>{t("scheduleSee")}</CustomButton>
@@ -162,7 +163,7 @@ const GymsPage = () => {
 
                 <div className={s.gymBlock}>
                     <div className={s.gymTitle}>
-                        <ContactGym address={t("gym2")} number="+38 (099) 042 08 20"/>
+                        <ContactGym address={t("gym2")}  addressLink={address.gym2} phone="+38 (099) 042 08 20"/>
                     </div>
                     <div className={s.btnShow}>
                         <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(2)}>{t("scheduleSee")}</CustomButton>
@@ -246,7 +247,7 @@ const GymsPage = () => {
 
                 <div className={s.gymBlock}>
                     <div className={s.gymTitle}>
-                        <ContactGym address={t("gym3")} number="+38 (093) 726 54 24"/>
+                        <ContactGym address={t("gym3")}  addressLink={address.gym3} phone="+38 (093) 726 54 24"/>
                     </div>
                     <div className={s.btnShow}>
                         <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(3)}>{t("scheduleSee")}</CustomButton>

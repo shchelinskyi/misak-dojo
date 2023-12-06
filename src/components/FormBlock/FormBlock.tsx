@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
-import s from "./FormBlock.module.scss";
-import {ErrorMessage, Field, Form, Formik} from "formik";
-import {Button, Form as BootstrapForm} from "react-bootstrap";
+import {useState} from 'react';
+import {Link} from "react-router-dom";
 import * as Yup from "yup";
+import {ErrorMessage, Field, Form, Formik, FormikHelpers} from "formik";
+import { Form as BootstrapForm} from "react-bootstrap";
 import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
 import {useTranslation} from "react-i18next";
+import {useAppDispatch} from "../../hooks.tsx";
+import {closeForm, openInfoModal} from "../../redux/slices/formTrialSessionSlice.ts";
+import CustomPhoneInput from "../CustomPhoneInput";
+import s from "./FormBlock.module.scss";
 
 interface TypeValue {
     name: string;
@@ -12,11 +16,7 @@ interface TypeValue {
     comment: string
 }
 
-const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Поле обов'язкове"),
-    phone: Yup.string().required("Поле обов'язкове").matches(/^\d{9}$/, "Введіть 9 цифр"),
-    comment: Yup.string().required("Поле обов'язкове"),
-});
+
 
 const initialValues: TypeValue = {
     name: "",
@@ -30,33 +30,36 @@ const CustomTextarea = ({field, form, ...props}) => (
     </>
 );
 
-const CustomCheckbox = ({field, form, ...props}) => (
-    <BootstrapForm.Check>
-        <BootstrapForm.Check.Input
-            type="checkbox"
-            {...field}
-            {...props}
-            style={{
-                backgroundColor: field.value ? "red" : "transparent",
-                borderColor: "red",
-            }}
-        />
-        <BootstrapForm.Check.Label style={{color: "red"}} htmlFor={field.name}>
-            Я даю згоду на обробку моїх персональних даних <br/> згідно з політикою конфіденційності
-        </BootstrapForm.Check.Label>
-    </BootstrapForm.Check>
-);
+
 const FormBlock = () => {
     const [isChecked, setIsChecked] = useState(false);
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
-    const handleSubmit = (values: TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
-        setSubmitting(false);
-        console.log(values);
-        // sendMessageToTelegram(values)
+
+    const handleOpenPrivacy = () => {
+        dispatch(closeForm());
     };
+
+    const handleSubmit = (values: TypeValue, {setSubmitting, resetForm}:  FormikHelpers<TypeValue>) => {
+        setSubmitting(false);
+        sendMessageToTelegram(values);
+        resetForm();
+        dispatch(openInfoModal());
+    };
+
+    const validationSchema = Yup.object().shape({
+        name: Yup.string().required(t("fieldRequired")),
+        phone: Yup.string().required(t("fieldRequired"))
+            .test('isValidPhone', t("validationPhone"), (value) => {
+                const phoneNumber = value.replace(/\D/g, '');
+                return phoneNumber.length === 12;
+            }),
+        comment: Yup.string().required(t("fieldRequired"))
+    });
 
     return (
         <div className={s.formBlock}>
@@ -77,8 +80,7 @@ const FormBlock = () => {
                         </BootstrapForm.Group>
 
                         <BootstrapForm.Group className="mb-3" controlId="formBasicPhone">
-                            <Field type="text" name="phone" as={BootstrapForm.Control}
-                                   placeholder="+38" className={s.field}/>
+                            <Field type="tel" name="phone" as={CustomPhoneInput} className={s.field}/>
                             <ErrorMessage name="phone" component={BootstrapForm.Text}
                                           className="text-danger"/>
                         </BootstrapForm.Group>
@@ -93,35 +95,27 @@ const FormBlock = () => {
                                           className="text-danger"/>
                         </BootstrapForm.Group>
 
-                        {/*<BootstrapForm.Group className="mb-3" controlId="formBasicAgree">*/}
-                        {/*    <Field type="checkbox" name="agree" as={CustomCheckbox} />*/}
-                        {/*</BootstrapForm.Group>*/}
 
-                        {/*<BootstrapForm.Group className="mb-3" controlId="formBasicAgree">*/}
-                        {/*    <Field type="checkbox" name="agree"/>*/}
-                        {/*    <BootstrapForm.Label className="text-black">Я даю згоду на обробку моїх персональних даних <br/> згідно з політикою конфіденційності</BootstrapForm.Label>*/}
-                        {/*</BootstrapForm.Group>*/}
-
-                        <label>
+                        <label className={s.label}>
                             <input type="checkbox" checked={isChecked}
                                    onChange={handleCheckboxChange} className={s.checkbox}
                                    name="agree"/>
                             <span className={s.box}></span>
-                            <span className={s.checkboxLabel}>{t("formFooter1")} {t("formFooter2")}</span>
+                            <p className={s.checkboxLabel}>
+                                <span className={s.footerLabel1}>{t("formFooter1")}</span>
+                                {/*<br className={s.wrap}/>*/}
+                                <Link className={s.link} to="privacy-policy" onClick={handleOpenPrivacy}>
+                                    <span className={s.footerLabel2}>{t("formFooter2")}</span>
+                                </Link>
+                            </p>
                         </label>
 
 
-                        {/*<BootstrapForm.Check*/}
-                        {/*    className="custom-control-input"*/}
-                        {/*    type="checkbox"*/}
-                        {/*    id="checkbox"*/}
-                        {/*    label="Я даю згоду на обробку моїх персональних даних згідно з політикою конфіденційності"*/}
-                        {/*/>*/}
-                        <div className="d-flex justify-content-end">
-                            <Button type="submit" className={s.btn}
+                        <div  className={s.btnBlock}>
+                            <button type="submit" className={s.btnSubmit}
                                     disabled={!isChecked || isSubmitting}>
                                 {t('sendBtn')}
-                            </Button>
+                            </button>
                         </div>
 
                     </Form>
