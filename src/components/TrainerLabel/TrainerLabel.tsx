@@ -1,10 +1,10 @@
 import {FC} from 'react';
-import line from "../../assets/images/line.png";
-import s from "./TrainerLabel.module.scss";
+import line from "../../assets/images/team/line.png";
 import {Image} from "react-bootstrap";
 import cn from "classnames";
+import s from "./TrainerLabel.module.scss";
 
-interface TrainerLabelProps {
+type TrainerLabelProps = {
     name: string,
     rank: string,
     mainTrainer?: boolean

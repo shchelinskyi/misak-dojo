@@ -6,7 +6,7 @@ type CustomNavbarToggleProps = {
     onClick : () => void;
 }
 
-const CustomNavbarToggle: FC<CustomNavbarToggleProps>  = ({ onClick }) => {
+const CustomNavbarToggle: FC<CustomNavbarToggleProps>  = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {

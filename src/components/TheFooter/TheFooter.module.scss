@@ -96,6 +96,18 @@
 
 .link {
   color:#B0B0B0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    color: #c41414;
+  }
+}
+
+.link2 {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
 }
 
 .iconBlock {

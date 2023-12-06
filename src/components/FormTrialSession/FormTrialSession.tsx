@@ -11,7 +11,7 @@ import CustomTextarea from "../CustomTextArea";
 import CustomPhoneInput from "../CustomPhoneInput";
 import s from "./FormTrialSession.module.scss"
 
-interface TypeValue {
+type TypeValue = {
     name: string;
     age?: number;
     phone: string;

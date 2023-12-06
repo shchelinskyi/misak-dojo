@@ -14,7 +14,7 @@ import s from "./TheHeader.module.scss";
 import SocialLinks from "../SocialLinks";
 import {useLocation, useNavigate} from "react-router-dom";
 
-interface ITheHeaderProps {
+type TheHeaderProps = {
     refData: {
         aboutRef: React.RefObject<HTMLDivElement>;
         teamRef: React.RefObject<HTMLDivElement>;
@@ -25,7 +25,7 @@ interface ITheHeaderProps {
     }
 }
 
-const TheHeader:FC<ITheHeaderProps> = ({refData}) => {
+const TheHeader:FC<TheHeaderProps> = ({refData}) => {
 
     const dispatch = useAppDispatch();
     const {t, i18n} = useTranslation();

@@ -2,7 +2,10 @@ import React, {useEffect, useState} from 'react';
 import i18n from "i18next";
 import {Container, Image} from "react-bootstrap";
 import TrainerLabel from "../../components/TrainerLabel";
-import horizontalLine from "../../assets/images/line-horizontal.png";
+import {Swiper, SwiperSlide} from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import horizontalLine from "../../assets/images/team/line-horizontal.webp";
 import trainerM from "../../assets/images/team/trainer-main.webp";
 import trainer1 from "../../assets/images/team/trainer-1.webp";
 import trainer2 from "../../assets/images/team/trainer-2.webp";
@@ -13,12 +16,9 @@ import trainerBg from "../../assets/images/team/trainer-bg.svg";
 import spiral from "../../assets/images/team/spiral.svg";
 import roundLogo from "../../assets/images/team/round-logo.svg";
 import love from "../../assets/images/team/love.svg";
-import {Swiper, SwiperSlide} from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import s from "./TeamPage.module.scss";
-import cn from "classnames";
 import {useTranslation} from "react-i18next";
+import cn from "classnames";
+import s from "./TeamPage.module.scss";
 
 
 

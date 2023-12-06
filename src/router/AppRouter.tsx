@@ -16,6 +16,9 @@ import KarateDay from "../components/NewsCard/NewsItems/KarateDay";
 import MeaningTerm from "../components/NewsCard/NewsItems/MeaningTerm";
 import SummerSchool32 from "../components/NewsCard/NewsItems/SummerSchool32";
 import Championship from "../components/NewsCard/NewsItems/Championship";
+import ContractOfferUA from "../pages/ContractOffer/ContractOfferUA";
+import ContractOfferEN from "../pages/ContractOffer/ContractOfferEN";
+import ContractOfferRU from "../pages/ContractOffer/ContractOfferRU";
 
 
 
@@ -41,6 +44,9 @@ const AppRouter = () => {
                     {language === "ua" && <Route path="privacy-policy" element={<PrivacyPolicyPageUA/>}/>}
                     {language === "en" && <Route path="privacy-policy" element={<PrivacyPolicyPageEN/>}/>}
                     {language === "ru" && <Route path="privacy-policy" element={<PrivacyPolicyPageRU/>}/>}
+                    {language === "ua" && <Route path="contract-offer" element={<ContractOfferUA/>}/>}
+                    {language === "en" && <Route path="contract-offer" element={<ContractOfferEN/>}/>}
+                    {language === "ru" && <Route path="contract-offer" element={<ContractOfferRU/>}/>}
                     <Route path="/news/openCup" element={<OpenCup />} />
                     <Route path="/news/kumiteMarathon" element={<KumiteMarathon />} />
                     <Route path="/news/summerSchool31" element={<SummerSchool31 />} />

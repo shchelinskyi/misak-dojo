@@ -20,7 +20,8 @@
   width: 880px;
   height: 597px;
   padding: 67px 100px;
-  background-image: url("../../assets/images/team/bg-trainer.svg");
+  background-image: url("../../assets/images/team/bg-trainer.webp");
+  background-size: cover;
   border-radius: 46px;
 
   @media (max-width: 1200px) {

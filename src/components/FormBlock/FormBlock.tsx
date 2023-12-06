@@ -10,7 +10,7 @@ import {closeForm, openInfoModal} from "../../redux/slices/formTrialSessionSlice
 import CustomPhoneInput from "../CustomPhoneInput";
 import s from "./FormBlock.module.scss";
 
-interface TypeValue {
+type TypeValue = {
     name: string;
     phone: string;
     comment: string

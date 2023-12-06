@@ -8,7 +8,7 @@ import CustomPhoneInput from "../CustomPhoneInput";
 import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 
-interface TypeValue {
+type TypeValue = {
     name: string;
     phone: string;
     email: string
