@@ -24,7 +24,7 @@ type CartStateProps = {
 
 const initialState: CartStateProps = {
     isOpenedCartModal: false,
-    cartItems:  <CartItem[]>[],
+    cartItems:  [],
     total: 0,
     isOpenedAddToCartModal: false
 };
@@ -78,15 +78,16 @@ const cartSlice = createSlice({
             state.cartItems = state.cartItems.filter(item => !(item.id === id && item.color === color && item.size === size));
         },
         openAddToCartModal: (state) => {
-            // document.body.classList.add('no-scroll');
-            // document.body.style.overflowY = 'hidden';
             document.body.style.setProperty('overflow-y', 'hidden', 'important');
             state.isOpenedAddToCartModal = true;
         },
         closeAddToCartModal: (state) => {
             state.isOpenedAddToCartModal = false;
-            // document.body.classList.remove('no-scroll');
             document.body.style.overflowY = 'auto';
+        },
+        removeAllCartProducts:(state) => {
+            state.cartItems =  [];
+            state.total = 0;
         },
     },
 });
@@ -99,7 +100,8 @@ export const {
     removeFromCartOne,
     removeFromCartAllQuantity,
     openAddToCartModal,
-    closeAddToCartModal
+    closeAddToCartModal,
+    removeAllCartProducts
 } = cartSlice.actions;
 
 export type { CartItem };

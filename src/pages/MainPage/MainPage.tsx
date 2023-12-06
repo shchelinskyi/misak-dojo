@@ -32,7 +32,9 @@ const MainPage = () => {
 
     useEffect(() => {
         const handleMouseMove = (e) => {
-            setMousePosition({x: e.clientX, y: e.clientY});
+            requestAnimationFrame(() => {
+                setMousePosition({ x: e.clientX, y: e.clientY });
+            });
         };
 
         window.addEventListener('mousemove', handleMouseMove);
@@ -40,7 +42,6 @@ const MainPage = () => {
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
         };
-
     }, []);
 
     const calculateParallax = (position, strength) => ({
@@ -90,7 +91,7 @@ const MainPage = () => {
                 </div>
                 <div className={s.bucketWrapper} onClick={() => dispatch(openCartModal())}>
                     <Image src={bucket} className={s.bucketIcon}/>
-                    <div className={s.badge}>{cartItems.length}</div>
+                    <div className={s.badge}>{cartItems.length > 0 ? cartItems.length : null}</div>
                 </div>
             </Container>
         </div>

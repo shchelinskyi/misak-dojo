@@ -340,7 +340,7 @@ export const products = [
             "https://res.cloudinary.com/dbmudmpyk/image/upload/v1700903249/products/ynsb8dsha22buw2zdeq4.webp"
         ],
         category: "kimono",
-        size: ["100"],
+        size: ["100", "110","116", "124","132","140","148","154","162","170","178","184","194"],
         material: {
             en: "100% cotton",
             ru: "100% хлопок",

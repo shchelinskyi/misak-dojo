@@ -46,24 +46,28 @@ const CartItem: FC<{ cartProduct: CartItem }> = ({cartProduct}) => {
                         {t(`title.${currentLanguage}`, cartProduct.title[currentLanguage])}
                     </h5>
                     <div className={s.charactersBlock}>
-                        <div className={s.charactersItem}>
-                            <div className={s.characterLabel}>
-                                {cartProduct.category === "backpack" && t("sizeBackpack")}
-                                {cartProduct.category === "belt" && t("sizeBelt")}
-                                {(cartProduct.category !== "belt" && cartProduct.category !== "backpack") && t("size")}
+                        {cartProduct.size !== "" &&
+                            <div className={s.charactersItem}>
+                                <div className={s.characterLabel}>
+                                    {cartProduct.category === "backpack" && t("sizeBackpack")}
+                                    {cartProduct.category === "belt" && t("sizeBelt")}
+                                    {(cartProduct.category !== "belt" && cartProduct.category !== "backpack") && t("size")}
+                                </div>
+                                <div className={s.characterValue}>
+                                    {productSize}
+                                </div>
                             </div>
-                            <div className={s.characterValue}>
-                                {productSize}
+                        }
+                        {cartProduct.color !== "" &&
+                            <div className={s.charactersItem}>
+                                <div className={s.characterLabel}>
+                                    {t("color")}:
+                                </div>
+                                <div className={s.characterValue}>
+                                    {t(cartProduct.color)}
+                                </div>
                             </div>
-                        </div>
-                        <div className={s.charactersItem}>
-                            <div className={s.characterLabel}>
-                                {t("color")}:
-                            </div>
-                            <div className={s.characterValue}>
-                                {t(cartProduct.color)}
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
                 <div className={s.btnGroup}>

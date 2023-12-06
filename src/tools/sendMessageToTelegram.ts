@@ -10,6 +10,9 @@ export const sendMessageToTelegram = (values) => {
     if (values.age) {
         message += `<b>Вік: ${values.age}</b>\n`;
     }
+    if (values.email) {
+        message += `<b>Email: ${values.email}</b>\n`;
+    }
     message += `<b>Телефон: ${values.phone}</b>\n`;
 
     if (values.comment) {

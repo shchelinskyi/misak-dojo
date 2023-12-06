@@ -1,23 +1,41 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import * as Yup from "yup";
-import {ErrorMessage, Field, Form, Formik} from "formik";
+import {ErrorMessage, Field, Form, Formik, FormikHelpers} from "formik";
 import {Form as BootstrapForm} from "react-bootstrap";
 import s from "./CartForm.module.scss";
 import CustomPhoneInput from "../CustomPhoneInput";
 import {sendMessageToTelegram} from "../../tools/sendMessageToTelegram.ts";
 import {useAppDispatch, useAppSelector} from "../../hooks";
+import {Link} from "react-router-dom";
+import {closeCartModal, removeAllCartProducts} from "../../redux/slices/cartSlice.ts";
+import {sendProductsToTelegram} from "../../tools/sendProductsToTelegram.ts";
+import {string} from "yup";
 
 type TypeValue = {
     name: string;
     phone: string;
-    email: string
+    email: string;
+    city: string;
+    address:string;
+    number:string;
+    flat:string;
+    postCity:string;
+    postNumber:string;
+    selectedOption:string;
 }
 
 const initialValues: TypeValue = {
     name: '',
     phone: '',
-    email: ''
+    email: '',
+    city: '',
+    address:'',
+    number:'',
+    flat:'',
+    postCity:'',
+    postNumber:'',
+    selectedOption:'pickup'
 };
 
 const CartForm = () => {
@@ -26,6 +44,8 @@ const CartForm = () => {
     const total = useAppSelector(state => state.cart.total);
     const [isChecked, setIsChecked] = useState(false);
     const [totalSum, setTotalSum] = useState(total);
+    const cartItems = useAppSelector(state => state.cart.cartItems);
+    const [selectedOption, setSelectedOption] = useState('pickup');
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
@@ -34,17 +54,50 @@ const CartForm = () => {
     const validationSchema = Yup.object().shape({
         name: Yup.string().required(t("fieldRequired")),
         email: Yup.string().required(t("fieldRequired")),
-        phone: Yup.string().required(t("fieldRequired"))
+        post:  Yup.boolean(),
+        phone: Yup.string()
+            .required(t("fieldRequired"))
+            .test('isValidPhone', t("validationPhone"), (value, { parent }) => {
+                const phoneNumber = value.replace(/\D/g, '');
+                return parent.selectedOption !== 'courier' || phoneNumber.length === 12;
+            }),
+        city: Yup.string().when(selectedOption, {
+            is: 'courier',
+            then: (schema) => schema.required(t("fieldRequired")),
+        }),
+        address: Yup.string().when(selectedOption, {
+            is: 'courier',
+            then: (schema) => schema.required(t("fieldRequired")),
+        }),
+        number: Yup.string().when(selectedOption, {
+            is: 'courier',
+            then: (schema) => schema.required(t("fieldRequired")),
+        }),
+        flat: Yup.string().when(selectedOption, {
+            is: 'courier',
+            then: (schema) => schema.required(t("fieldRequired")),
+        }),
+        postCity: Yup.string().when(selectedOption, {
+            is: 'false',
+            then: (validationSchema) => validationSchema.required(t("fieldRequired")),
+        }),
+        postNumber: Yup.string().when('post', {
+            is: 'false',
+            then: (validationSchema) => validationSchema.required(t("fieldRequired")),
+        })
     });
 
-    const handleSubmit = (values: TypeValue, {setSubmitting}: { setSubmitting: (isSubmitting: boolean) => void }) => {
+
+    const handleSubmit = (values: TypeValue, {setSubmitting, resetForm}:  FormikHelpers<TypeValue>) => {
         setSubmitting(false);
-        console.log(values)
-        // dispatch(closeForm());
-        // sendMessageToTelegram(values)
+        console.log(values);
+        // sendProductsToTelegram({cartItems, values, total, totalSum});
+        dispatch(removeAllCartProducts());
+        resetForm();
+        dispatch(closeCartModal());
     };
 
-    const [selectedOption, setSelectedOption] = useState('pickup');
+
 
     const handleRadioChange = (value) => {
         setSelectedOption(value);
@@ -90,14 +143,15 @@ const CartForm = () => {
                             <BootstrapForm.Label className={s.formLabel}>{t("your")} e-mail</BootstrapForm.Label>
                             <Field type="text" name="email" as={BootstrapForm.Control}
                                    className={s.field}/>
-                            <ErrorMessage name="emai" component={BootstrapForm.Text}
+                            <ErrorMessage name="email" component={BootstrapForm.Text}
                                           className="text-danger"/>
                         </BootstrapForm.Group>
 
                         <div className={s.deliveryBlock}>
                             <h5 className={s.deliveryTitle}>{t("delivery")}</h5>
                             <label>
-                                <input type="radio" value="pickup"
+                                <Field type="radio" value="pickup"
+                                       name="selectedOption"
                                        checked={selectedOption === 'pickup'}
                                        onChange={() => handleRadioChange('pickup')}
                                        className={s.radio}
@@ -109,9 +163,10 @@ const CartForm = () => {
                             </label>
 
                             <label>
-                                <input
+                                <Field
                                     type="radio"
                                     value="post"
+                                    name="selectedOption"
                                     checked={selectedOption === 'post'}
                                     onChange={() => handleRadioChange('post')}
                                     className={s.radio}
@@ -123,9 +178,10 @@ const CartForm = () => {
                             </label>
 
                             <label className={s.label}>
-                                <input
+                                <Field
                                     type="radio"
                                     value="courier"
+                                    name="selectedOption"
                                     checked={selectedOption === 'courier'}
                                     onChange={() => handleRadioChange('courier')}
                                     className={s.radio}
@@ -154,7 +210,8 @@ const CartForm = () => {
                                                   className="text-danger"/>
                                 </BootstrapForm.Group>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicNumber">
-                                    <BootstrapForm.Label className={s.formLabel}>{t("buildingNumber")}</BootstrapForm.Label>
+                                    <BootstrapForm.Label
+                                        className={s.formLabel}>{t("buildingNumber")}</BootstrapForm.Label>
                                     <Field type="text" name="number" as={BootstrapForm.Control}
                                            className={s.field} placeholder="57"/>
                                     <ErrorMessage name="number" component={BootstrapForm.Text}
@@ -169,7 +226,7 @@ const CartForm = () => {
                                 </BootstrapForm.Group>
                             </>)}
 
-                        {selectedOption === "post" && (
+                        {selectedOption === 'post' && (
                             <>
                                 <BootstrapForm.Group className="mb-3" controlId="formBasicPostCity">
                                     <BootstrapForm.Label className={s.formLabel}>{t("cityLabel")}</BootstrapForm.Label>
@@ -196,7 +253,9 @@ const CartForm = () => {
                             <p className={s.checkboxLabel}>
                                 <span className={s.footerLabel1}>{t("formFooter1")}</span>
                                 <br/>
-                                <span className={s.footerLabel2}>{t("formFooter2")}</span>
+                                <Link className={s.link2} to="contract-offer" onClick={() => dispatch(closeCartModal())}>
+                                    <span className={s.footerLabel2}>{t("formFooter2")}</span>
+                                </Link>
                             </p>
                         </label>
 
@@ -204,8 +263,9 @@ const CartForm = () => {
                             <div className={s.totalPrice}>{t("totalSum")} {totalSum} {t("uah")}</div>
                         </div>
 
-                        <div className="d-flex justify-content-end">
-                            <button type="submit" className={s.btn} disabled={!isChecked || isSubmitting}>
+                        <div  className={s.btnBlock}>
+                            <button type="submit" className={s.btnSubmit}
+                                    disabled={!isChecked || isSubmitting}>
                                 {t('sendBtn')}
                             </button>
                         </div>
