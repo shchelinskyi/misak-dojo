@@ -18,7 +18,8 @@ import ContactsPage from "../ContactsPage";
 import Cart from "../../components/Cart";
 import {useTranslation} from "react-i18next";
 import {closeInfoModal} from "../../redux/slices/formTrialSessionSlice.ts";
-import {closeAddToCartModal} from "../../redux/slices/cartSlice.ts";
+import {closeAddToCartModal, closeOrderedModal, openCartModal} from "../../redux/slices/cartSlice.ts";
+import s from "./Main.module.scss"
 
 
 const Main = ({setRefData}) => {
@@ -54,6 +55,12 @@ const Main = ({setRefData}) => {
     const isCartOpened = useAppSelector(state => state.cart.isOpenedCartModal);
     const isOpenedSuccessModal = useAppSelector(state => state.formTrial.isOpenedSuccessModal);
     const isOpenedAddToCartModal = useAppSelector(state => state.cart.isOpenedAddToCartModal);
+    const isOpenedOrderedModal = useAppSelector(state => state.cart.isOpenedOrderedModal);
+
+    const handleClickBtn = () => {
+        dispatch(closeAddToCartModal())
+        dispatch(openCartModal())
+    }
 
 
     return (
@@ -61,7 +68,14 @@ const Main = ({setRefData}) => {
             {loading && <Loading/>}
             {isFormOpen && <FormTrialSession/>}
             {isOpenedSuccessModal && <InformModal onClose={() => dispatch(closeInfoModal())}>{t("infoText")}</InformModal>}
-            {isOpenedAddToCartModal && <InformModal onClose={() => dispatch(closeAddToCartModal())}>{t("addToCart")}</InformModal>}
+            {isOpenedAddToCartModal && <InformModal onClose={() => dispatch(closeAddToCartModal())}><div>
+                {t("addToCart")}
+                </div>
+                <button onClick={handleClickBtn} className={s.orderBtn}>
+                    {t("orderBtn")}
+                </button>
+            </InformModal>}
+            {isOpenedOrderedModal && <InformModal onClose={() => dispatch(closeOrderedModal())}>{t("ordered")}</InformModal>}
             {isCartOpened && <Cart/>}
             <MainPage/>
             <div ref={aboutRef} style={{paddingTop:"100px"}}>

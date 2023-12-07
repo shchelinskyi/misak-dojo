@@ -85,7 +85,9 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                                 {productItem.images.length > 0 && productItem.images.map((itemImg, index) => {
                                     return (
                                         <Tab.Pane eventKey={index + 1} key={itemImg}>
-                                            <Image src={itemImg} className={s.imgShow}/>
+                                            <div className={s.imageWrapper}>
+                                                <Image src={itemImg} className={s.imgShow}/>
+                                            </div>
                                         </Tab.Pane>
                                     )
                                 })}
@@ -93,7 +95,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                             <Nav className={s.navImages}>
                                 {productItem.images.length > 0 && productItem.images.map((itemImg, index) => {
                                     return (
-                                        <Nav.Item>
+                                        <Nav.Item key={itemImg}>
                                             <Nav.Link eventKey={index + 1} key={itemImg}>
                                                 <Image src={itemImg} className={s.imgShot}/>
                                             </Nav.Link>

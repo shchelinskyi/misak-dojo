@@ -75,6 +75,10 @@
   font-size: 30px;
   cursor: pointer;
   color: #000000;
+  transition: all 0.25s;
+  &:hover {
+    transform: scale(1.2);
+  }
   @media (max-width: 480px) {
    position: absolute;
     right: 40px;

@@ -35,7 +35,7 @@ const Cart = () => {
                     </div>
                     <div className={s.line}></div>
                     <div className={s.totalPrice}>{t("sum")} {total} {t("uah")}</div>
-                    <CartForm/>
+                    {cartItems.length !== 0 && <CartForm/>}
                 </div>
             </div>
         </div>

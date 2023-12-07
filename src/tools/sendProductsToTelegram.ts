@@ -7,7 +7,13 @@ export const sendProductsToTelegram = ({cartItems, total, totalSum, values}) => 
 
     let message = `<b>Заявка з сайту</b>\n`;
 
-    message += `<b>Кількість замовлених товарів: ${cartItems.length}</b>\n`;
+    let count = 0;
+
+    const deliveryValue = totalSum - total;
+
+    cartItems.forEach((item) => count += item.quantity);
+
+    message += `<b>Кількість замовлених товарів: ${count}</b>\n`;
 
     cartItems.forEach((item, index) => {
         const URL = String(`${item.image}`);
@@ -28,8 +34,13 @@ export const sendProductsToTelegram = ({cartItems, total, totalSum, values}) => 
 
     })
 
+    if (values.comment) {
+        message += `<b>Коментар: ${values.comment}</b>\n`;
+        message += `<b>-------------------</b>\n`
+    }
+
     message += `<b>Вартість товарів: ${total}</b>\n`;
-    message += `<b>Вартість замовлення: ${totalSum}</b>\n`;
+    message += `<b>Вартість доставки: ${deliveryValue}</b>\n`;
     message += `<b>Дані отримувача:</b>\n`;
     message += `<b>Iм'я: ${values.name}</b>\n`;
     if (values.age) {
@@ -41,7 +52,7 @@ export const sendProductsToTelegram = ({cartItems, total, totalSum, values}) => 
     message += `<b>Телефон: ${values.phone}</b>\n`;
 
     if (!values.postCity && !values.address) {
-        message += `<b>Самовівивіз</b>\n`;
+        message += `<b>Самовивіз</b>\n`;
     }
 
     if (values.postCity) {
@@ -52,11 +63,10 @@ export const sendProductsToTelegram = ({cartItems, total, totalSum, values}) => 
         message += `<b>Номер НП: ${values.postNumber}</b>\n`;
     }
 
-    if (values.city && values.address && values.number && values.flat ) {
+    if (values.address && values.number && values.flat ) {
         message += `<b>Доставка кур'єром</b>\n`;
-        message += `<b>Віддправка: місто ${values.city}, вул. ${values.address}, ${values.number}, кв. ${values.flat} </b>\n`;
+        message += `<b>Віддправка: місто Київ, вул. ${values.address}, ${values.number}, кв. ${values.flat} </b>\n`;
     }
-
 
 
     axios.post(URI_API, {

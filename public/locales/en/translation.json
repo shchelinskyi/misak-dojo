@@ -156,5 +156,7 @@
   "language": "en",
   "addToCart": "Product added to cart",
   "followUs": "Follow us",
-  "share": "Share"
+  "share": "Share",
+  "ordered": "Your order has been successfully placed",
+  "orderBtn": "go to cart"
 }
