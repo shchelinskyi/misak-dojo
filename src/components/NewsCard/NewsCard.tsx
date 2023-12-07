@@ -1,8 +1,7 @@
-import {FC, ReactNode, useState} from 'react';
+import {FC} from 'react';
 import {Image} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
-import NewsModal from "./NewsModal";
 import s from "./NewsCard.module.scss";
 import {Link} from "react-router-dom";
 
@@ -41,7 +40,7 @@ const NewsCard: FC<NewsCardTypes> = ({ newsItem}) => {
             <div className={s.card}>
                 <Image className={s.newsImg} src={newsItem.images[0]}/>
                 <p className={s.newsDate}>{newsItem.date}</p>
-                <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, newsItem.title[currentLanguage])}</h6>
+                <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}</h6>
             </div>
         </Link>
     );

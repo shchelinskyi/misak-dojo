@@ -20,12 +20,20 @@ import ContractOfferUA from "../pages/ContractOffer/ContractOfferUA";
 import ContractOfferEN from "../pages/ContractOffer/ContractOfferEN";
 import ContractOfferRU from "../pages/ContractOffer/ContractOfferRU";
 
+type RefData = {
+    aboutRef: React.RefObject<HTMLDivElement> | null;
+    teamRef: React.RefObject<HTMLDivElement> | null;
+    gymsRef: React.RefObject<HTMLDivElement> | null;
+    galleryRef: React.RefObject<HTMLDivElement> | null;
+    shopRef: React.RefObject<HTMLDivElement> | null;
+    contactsRef: React.RefObject<HTMLDivElement> | null;
+};
 
 
 const AppRouter = () => {
     const currentLanguage = i18n.language || 'ua';
     const [language, setLanguage] = useState("i18n.language");
-    const [refData, setRefData] = useState(null);
+    const [refData, setRefData] = useState<RefData | null>(null);
     const {t} = useTranslation();
     const change = t("language");
 
@@ -39,7 +47,7 @@ const AppRouter = () => {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<Layout refData={refData}/>}>
+                <Route path="/misak-dojo/" element={<Layout refData={refData}/>}>
                     <Route index element={<Main setRefData={setRefData}/>}/>
                     {language === "ua" && <Route path="privacy-policy" element={<PrivacyPolicyPageUA/>}/>}
                     {language === "en" && <Route path="privacy-policy" element={<PrivacyPolicyPageEN/>}/>}
@@ -47,15 +55,15 @@ const AppRouter = () => {
                     {language === "ua" && <Route path="contract-offer" element={<ContractOfferUA/>}/>}
                     {language === "en" && <Route path="contract-offer" element={<ContractOfferEN/>}/>}
                     {language === "ru" && <Route path="contract-offer" element={<ContractOfferRU/>}/>}
-                    <Route path="/news/openCup" element={<OpenCup />} />
-                    <Route path="/news/kumiteMarathon" element={<KumiteMarathon />} />
-                    <Route path="/news/summerSchool31" element={<SummerSchool31 />} />
-                    <Route path="/news/childTraining" element={<ChildTraining />} />
-                    <Route path="/news/coachDay" element={<CoachDay />} />
-                    <Route path="/news/karateDay" element={<KarateDay />} />
-                    <Route path="/news/meaningTerm" element={<MeaningTerm />} />
-                    <Route path="/news/summerSchool32" element={<SummerSchool32 />} />
-                    <Route path="/news/championship" element={<Championship />} />
+                    <Route path="news/openCup" element={<OpenCup />} />
+                    <Route path="news/kumiteMarathon" element={<KumiteMarathon />} />
+                    <Route path="news/summerSchool31" element={<SummerSchool31 />} />
+                    <Route path="news/childTraining" element={<ChildTraining />} />
+                    <Route path="news/coachDay" element={<CoachDay />} />
+                    <Route path="news/karateDay" element={<KarateDay />} />
+                    <Route path="news/meaningTerm" element={<MeaningTerm />} />
+                    <Route path="news/summerSchool32" element={<SummerSchool32 />} />
+                    <Route path="news/championship" element={<Championship />} />
                 </Route>
             </Routes>
         </div>

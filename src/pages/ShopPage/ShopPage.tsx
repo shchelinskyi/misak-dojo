@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, SetStateAction, Dispatch} from "react";
 import {Container, Stack, Tab, Nav} from "react-bootstrap";
 import CustomButton from "../../components/CustomButton";
 import ProductCard from "../../components/ProductCard";
@@ -11,33 +11,33 @@ import type {ProductItemType} from "../../components/ProductCard/ProductCard";
 const ShopPage = () => {
 
     const {t} = useTranslation();
-    const [currentIndexAll, setCurrentIndexAll] = useState(0);
-    const [currentIndexCasuals, setCurrentIndexCasuals] = useState(0);
-    const [currentIndexBackpacks, setCurrentIndexBackpacks] = useState(0);
-    const [currentIndexKimonos, setCurrentIndexKimonos] = useState(0);
-    const [currentIndexBelts, setCurrentIndexBelts] = useState(0);
-    const [currentIndexCovers, setCurrentIndexCovers] = useState(0);
-    const [currentIndexProtections, setCurrentIndexProtections] = useState(0);
-    const [currentIndexSupports, setCurrentIndexSupports] = useState(0);
+    const [currentIndexAll, setCurrentIndexAll] = useState<number>(0);
+    const [currentIndexCasuals, setCurrentIndexCasuals] = useState<number>(0);
+    const [currentIndexBackpacks, setCurrentIndexBackpacks] = useState<number>(0);
+    const [currentIndexKimonos, setCurrentIndexKimonos] = useState<number>(0);
+    const [currentIndexBelts, setCurrentIndexBelts] = useState<number>(0);
+    const [currentIndexCovers, setCurrentIndexCovers] = useState<number>(0);
+    const [currentIndexProtections, setCurrentIndexProtections] = useState<number>(0);
+    const [currentIndexSupports, setCurrentIndexSupports] = useState<number>(0);
 
-    const [allProducts, setAllProducts] = useState([]);
-    const [allCasuals, setAllCasuals] = useState([]);
-    const [allBackpacks, setAllBackpacks] = useState([]);
-    const [allKimonos, setAllKimonos] = useState([]);
-    const [allBelts, setAllBelts] = useState([]);
-    const [allCovers, setAllCovers] = useState([]);
-    const [allProtections, setAllProtections] = useState([]);
-    const [allSupports, setAllSupports] = useState([]);
+    const [allProducts, setAllProducts] = useState<ProductItemType[]>([]);
+    const [allCasuals, setAllCasuals] = useState<ProductItemType[]>([]);
+    const [allBackpacks, setAllBackpacks] = useState<ProductItemType[]>([]);
+    const [allKimonos, setAllKimonos] = useState<ProductItemType[]>([]);
+    const [allBelts, setAllBelts] = useState<ProductItemType[]>([]);
+    const [allCovers, setAllCovers] = useState<ProductItemType[]>([]);
+    const [allProtections, setAllProtections] = useState<ProductItemType[]>([]);
+    const [allSupports, setAllSupports] = useState<ProductItemType[]>([]);
 
     const [activeKey, setActiveKey] = useState('all');
 
     const filterItems = (category: string): ProductItemType[] => {
-        return products.filter((item) => item.category === category)
+        return products.filter((item: ProductItemType) => item.category === category)
     }
 
     useEffect(() => {
         if (products.length > 0 && products.length > allProducts.length) {
-            const someArr = products.slice(0, currentIndexAll + 3);
+            const someArr: ProductItemType[] =(products as ProductItemType[]).slice(0, currentIndexAll + 3);
             setAllProducts([...someArr]);
         }
     }, [currentIndexAll])
@@ -45,7 +45,7 @@ const ShopPage = () => {
     useEffect(() => {
         const filteredProducts = filterItems("casual");
         if (filteredProducts.length > 0 && filteredProducts.length > allCasuals.length) {
-            const someArr = filteredProducts.slice(0, currentIndexCasuals + 3);
+            const someArr: ProductItemType[] = filteredProducts.slice(0, currentIndexCasuals + 3);
             setAllCasuals([...someArr]);
         }
     }, [currentIndexCasuals])
@@ -53,7 +53,7 @@ const ShopPage = () => {
     useEffect(() => {
         const filteredProducts = filterItems("backpack");
         if (filteredProducts.length > 0 && filteredProducts.length > allBackpacks.length) {
-            const someArr = filteredProducts.slice(0, currentIndexBackpacks + 3);
+            const someArr: ProductItemType[] = filteredProducts.slice(0, currentIndexBackpacks + 3);
             setAllBackpacks([...someArr]);
         }
     }, [currentIndexBackpacks])
@@ -61,7 +61,7 @@ const ShopPage = () => {
     useEffect(() => {
         const filteredProducts = filterItems("kimono");
         if (filteredProducts.length > 0 && filteredProducts.length > allKimonos.length) {
-            const someArr = filteredProducts.slice(0, currentIndexKimonos + 3);
+            const someArr: ProductItemType[] = filteredProducts.slice(0, currentIndexKimonos + 3);
             setAllKimonos([...someArr]);
         }
     }, [currentIndexKimonos])
@@ -69,7 +69,7 @@ const ShopPage = () => {
     useEffect(() => {
         const filteredProducts = filterItems("belt");
         if (filteredProducts.length > 0 && filteredProducts.length > allBelts.length) {
-            const someArr = filteredProducts.slice(0, currentIndexBelts + 3);
+            const someArr: ProductItemType[] = filteredProducts.slice(0, currentIndexBelts + 3);
             setAllBelts([...someArr]);
         }
     }, [currentIndexBelts])
@@ -77,7 +77,7 @@ const ShopPage = () => {
     useEffect(() => {
         const filteredProducts = filterItems("case");
         if (filteredProducts.length > 0 && filteredProducts.length > allCovers.length) {
-            const someArr = filteredProducts.slice(0, currentIndexCovers + 3);
+            const someArr: ProductItemType[] = filteredProducts.slice(0, currentIndexCovers + 3);
             setAllCovers([...someArr]);
         }
     }, [currentIndexCovers])
@@ -85,7 +85,7 @@ const ShopPage = () => {
     useEffect(() => {
         const filteredProducts = filterItems("protection");
         if (filteredProducts.length > 0 && filteredProducts.length > allProtections.length) {
-            const someArr = filteredProducts.slice(0, currentIndexProtections + 3);
+            const someArr: ProductItemType[] = filteredProducts.slice(0, currentIndexProtections + 3);
             setAllProtections([...someArr]);
         }
     }, [currentIndexProtections])
@@ -93,14 +93,14 @@ const ShopPage = () => {
     useEffect(() => {
         const filteredProducts = filterItems("support");
         if (filteredProducts.length > 0 && filteredProducts.length > allSupports.length) {
-            const someArr = filteredProducts.slice(0, currentIndexSupports + 3);
+            const someArr: ProductItemType[] = filteredProducts.slice(0, currentIndexSupports + 3);
             setAllSupports([...someArr]);
         }
     }, [currentIndexSupports])
 
-    const handleShowMore = (category, currentIndex, setCurrentIndex) => {
+    const handleShowMore = (category: string, currentIndex: number,  setCurrentIndex: Dispatch<SetStateAction<number>>) => {
         if (category === "all") {
-            const newIndex = currentIndex + 3;
+            const newIndex: number = currentIndex + 3;
             setCurrentIndex(newIndex >= products.length ? 0 : newIndex);
         } else {
             const filteredProducts = filterItems(category);
@@ -114,7 +114,7 @@ const ShopPage = () => {
             <Container className={s.wrapper}>
                 <div className={s.container}>
                     <h3 className={s.title}>{t("shop")}</h3>
-                    <Tab.Container defaultActiveKey="all" activeKey={activeKey} onSelect={(k) => setActiveKey(k)}>
+                    <Tab.Container defaultActiveKey="all" activeKey={activeKey} onSelect={(k: string | null) => setActiveKey(k as string)}>
                         <Nav className={s.tabsList}>
                             <Nav.Item>
                                 <Nav.Link eventKey="all"
@@ -152,7 +152,7 @@ const ShopPage = () => {
                         <Tab.Content>
                             <Tab.Pane eventKey="all">
                                 <div className={s.content}>
-                                    {allProducts.length > 0 && allProducts.map((productItem) => <ProductCard
+                                    {allProducts.length > 0 && allProducts.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>
@@ -164,7 +164,7 @@ const ShopPage = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="casual">
                                 <div className={s.content}>
-                                    {allCasuals.length > 0 && allCasuals.map((productItem) => <ProductCard
+                                    {allCasuals.length > 0 && allCasuals.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>
@@ -179,7 +179,7 @@ const ShopPage = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="backpacks">
                                 <div className={s.content}>
-                                    {allBackpacks.length > 0 && allBackpacks.map((productItem) => <ProductCard
+                                    {allBackpacks.length > 0 && allBackpacks.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>
@@ -193,7 +193,7 @@ const ShopPage = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="kimonos">
                                 <div className={s.content}>
-                                    {allKimonos.length > 0 && allKimonos.map((productItem) => <ProductCard
+                                    {allKimonos.length > 0 && allKimonos.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>
@@ -207,7 +207,7 @@ const ShopPage = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="belts">
                                 <div className={s.content}>
-                                    {allBelts.length > 0 && allBelts.map((productItem) => <ProductCard
+                                    {allBelts.length > 0 && allBelts.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>
@@ -220,7 +220,7 @@ const ShopPage = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="covers">
                                 <div className={s.content}>
-                                    {allCovers.length > 0 && allCovers.map((productItem) => <ProductCard
+                                    {allCovers.length > 0 && allCovers.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>
@@ -234,7 +234,7 @@ const ShopPage = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="protection">
                                 <div className={s.content}>
-                                    {allProtections.length > 0 && allProtections.map((productItem) => <ProductCard
+                                    {allProtections.length > 0 && allProtections.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>
@@ -248,7 +248,7 @@ const ShopPage = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="support">
                                 <div className={s.content}>
-                                    {allSupports.length > 0 && allSupports.map((productItem) => <ProductCard
+                                    {allSupports.length > 0 && allSupports.map((productItem: ProductItemType) => <ProductCard
                                         key={productItem.id}
                                         productItem={productItem}/>)}
                                 </div>

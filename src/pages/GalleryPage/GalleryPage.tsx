@@ -6,11 +6,21 @@ import GalleryCard from "../../components/GalleryCard";
 import {gallery} from "../../utils/gallery";
 import s from "./GalleryPage.module.scss";
 
+type GalleryItem = {
+    title: {
+        en: string;
+        ru:string;
+        ua:string;
+    };
+    date:string;
+    images:string[]
+}
+
 
 const GalleryPage = () => {
     const {t} = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [galleryArray, setGalleryArray] = useState([]);
+    const [galleryArray, setGalleryArray] = useState<GalleryItem[] | []>([]);
 
     useEffect(() => {
         if (gallery.length > 0 && gallery.length > galleryArray.length) {

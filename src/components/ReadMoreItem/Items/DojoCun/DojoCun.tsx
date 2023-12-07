@@ -1,4 +1,3 @@
-import React from 'react';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {readMoreData} from "../../../../utils/readMore";
@@ -11,11 +10,11 @@ const DojoCun = () => {
     const {dojoKun} = readMoreData;
     return (
         <div className={s.container}>
-            <h4 className={s.title}>{t(`dojoKun.subTitle.${currentLanguage}`, dojoKun.subTitle[currentLanguage])}:</h4>
+            <h4 className={s.title}>{t(`dojoKun.subTitle.${currentLanguage}`, (dojoKun.subTitle as any)[currentLanguage] as string)}:</h4>
             <div className={s.content}>
-                {dojoKun.list[currentLanguage].map((item) => (
-                    <div key={item.label}>
-                        <h5 className={s.contentTitle}>{dojoKun.swear[currentLanguage]}:</h5>
+                {((dojoKun.list as any)[currentLanguage] as string[]).map((item: string) => (
+                    <div key={item}>
+                        <h5 className={s.contentTitle}>{(dojoKun.swear as any)[currentLanguage] as string}:</h5>
                         <p className={s.contentItem}>{item}</p>
                     </div>
                 ))}

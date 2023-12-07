@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import {FC, useEffect, useRef, useState, SetStateAction, Dispatch} from "react";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import Loading from "../../components/Loading";
 import FormTrialSession from "../../components/FormTrialSession";
@@ -19,10 +19,25 @@ import Cart from "../../components/Cart";
 import {useTranslation} from "react-i18next";
 import {closeInfoModal} from "../../redux/slices/formTrialSessionSlice.ts";
 import {closeAddToCartModal, closeOrderedModal, openCartModal} from "../../redux/slices/cartSlice.ts";
-import s from "./Main.module.scss"
+import s from "./Main.module.scss";
+import React from "react";
+
+type RefData = {
+    aboutRef: React.RefObject<HTMLDivElement> | null;
+    teamRef: React.RefObject<HTMLDivElement> | null;
+    gymsRef: React.RefObject<HTMLDivElement> | null;
+    galleryRef: React.RefObject<HTMLDivElement> | null;
+    shopRef: React.RefObject<HTMLDivElement> | null;
+    contactsRef: React.RefObject<HTMLDivElement> | null;
+};
 
 
-const Main = ({setRefData}) => {
+interface MainProps {
+    setRefData: Dispatch<SetStateAction<RefData | null>>;
+}
+
+
+const Main: FC<MainProps> = ({setRefData}) => {
 
     const aboutRef = useRef<HTMLDivElement>(null);
     const teamRef = useRef<HTMLDivElement>(null);

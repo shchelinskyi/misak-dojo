@@ -35,7 +35,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "f879472a-8b69-11ee-b9d1-0242ac120002",
@@ -72,7 +76,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "1700ce9c-8b6b-11ee-b9d1-0242ac120002",
@@ -109,7 +117,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "e91e805e-8b6b-11ee-b9d1-0242ac120002",
@@ -145,7 +157,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "97760820-8b6c-11ee-b9d1-0242ac120002",
@@ -182,7 +198,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "a18648ec-8b6d-11ee-b9d1-0242ac120002",
@@ -218,7 +238,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "d44a5cfe-8b6e-11ee-b9d1-0242ac120002",
@@ -275,7 +299,11 @@ export const products = [
         model: "CAMPING BACKPACK",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "f69ca8f6-8b6f-11ee-b9d1-0242ac120002",
@@ -326,7 +354,11 @@ export const products = [
         model: "Rolltop",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "d5cc8a18-8b71-11ee-b9d1-0242ac120002",
@@ -362,7 +394,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "adbbfbd4-8b72-11ee-b9d1-0242ac120002",
@@ -385,12 +421,24 @@ export const products = [
         color: ["white", "black", "orange", "yellow", "green", "brown", "blue"],
         children: true,
         adult: true,
-        description: "",
-        briefDescription: "",
+        description: {
+            en: "",
+            ru: "",
+            ua: ""
+        },
+        briefDescription: {
+            en: "",
+            ru: "",
+            ua: ""
+        },
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "75abf570-8b75-11ee-b9d1-0242ac120002",
@@ -413,12 +461,24 @@ export const products = [
         color: ["white", "black", "orange", "yellow", "green", "brown", "blue"],
         children: true,
         adult: true,
-        description: "",
-        briefDescription: "",
+        description: {
+            en: "",
+            ru: "",
+            ua: ""
+        },
+        briefDescription: {
+        en: "",
+        ru: "",
+        ua: ""
+        },
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "ec4052f8-8b75-11ee-b9d1-0242ac120002",
@@ -432,8 +492,12 @@ export const products = [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701937423/shop/AnyConv.com__Phone_case_zpjl5b.webp"
         ],
         category: "case",
-        size: "",
-        material: "",
+        size: [],
+        material:{
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: ["black"],
         children: true,
         adult: true,
@@ -468,8 +532,12 @@ export const products = [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701937420/shop/AnyConv.com__Phone_case_1_y4kc4s.webp"
         ],
         category: "case",
-        size: "",
-        material: "",
+        size: [],
+        material: {
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: ["black"],
         children: true,
         adult: true,
@@ -504,8 +572,12 @@ export const products = [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701937421/shop/AnyConv.com__Phone_case_2_ijtlcw.webp"
         ],
         category: "case",
-        size: "",
-        material: "",
+        size: [],
+        material: {
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: ["black"],
         children: true,
         adult: true,
@@ -562,7 +634,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "2ae67fe6-8b8a-11ee-b9d1-0242ac120002",
@@ -598,7 +674,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "cc9194c2-8b79-11ee-b9d1-0242ac120002",
@@ -634,7 +714,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "8cce89d4-8b7a-11ee-b9d1-0242ac120002",
@@ -670,7 +754,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "039f136c-8b7b-11ee-b9d1-0242ac120002",
@@ -707,7 +795,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "7f75fe4c-8b7b-11ee-b9d1-0242ac120002",
@@ -744,7 +836,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "dad8ec22-8b7b-11ee-b9d1-0242ac120002",
@@ -780,7 +876,11 @@ export const products = [
         model: "",
         producer: "Ukraine",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "8725d06c-8b7c-11ee-b9d1-0242ac120002",
@@ -816,7 +916,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "206d7734-8b7d-11ee-b9d1-0242ac120002",
@@ -852,7 +956,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "e46fa5da-8b7d-11ee-b9d1-0242ac120002",
@@ -888,7 +996,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "85c9b196-8b7e-11ee-b9d1-0242ac120002",
@@ -924,7 +1036,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "caab8686-8b7e-11ee-b9d1-0242ac120002",
@@ -939,7 +1055,11 @@ export const products = [
         ],
         category: "protection",
         size: ["S", "M", "L"],
-        material: "",
+        material:  {
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: ["blue"],
         children: true,
         adult: true,
@@ -956,7 +1076,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "9c67e64c-8b7f-11ee-b9d1-0242ac120002",
@@ -972,7 +1096,11 @@ export const products = [
         ],
         category: "cup",
         size: ["8,2", "9,5"],
-        material: "",
+        material:{
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: ["white"],
         children: true,
         adult: true,
@@ -989,7 +1117,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "747e0444-8b80-11ee-b9d1-0242ac120002",
@@ -1003,8 +1135,12 @@ export const products = [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701937418/shop/AnyConv.com__IMG_8925_wmotpi.webp"
         ],
         category: "support",
-        size: "",
-        material: "",
+        size: [],
+        material:{
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: "",
         children: true,
         adult: true,
@@ -1039,7 +1175,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "db5a3bda-8d0e-11ee-b9d1-0242ac120002",
@@ -1053,8 +1193,12 @@ export const products = [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701937418/shop/AnyConv.com__IMG_8925_wmotpi.webp"
         ],
         category: "support",
-        size: "",
-        material: "",
+        size: [],
+        material: {
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: "",
         children: true,
         adult: true,
@@ -1089,7 +1233,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
     {
         id: "ebae2488-8d0e-11ee-b9d1-0242ac120002",
@@ -1103,8 +1251,12 @@ export const products = [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701937418/shop/AnyConv.com__IMG_8925_wmotpi.webp"
         ],
         category: "support",
-        size: "",
-        material: "",
+        size: [],
+        material: {
+            en: "",
+            ru: "",
+            ua: ""
+        },
         color: "",
         children: true,
         adult: true,
@@ -1139,7 +1291,11 @@ export const products = [
         model: "",
         producer: "",
         length: "",
-        comment: ""
+        comment: {
+            en: "",
+            ru: "",
+            ua: ""
+        }
     },
 
 ]

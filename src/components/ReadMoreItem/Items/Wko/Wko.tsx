@@ -1,4 +1,3 @@
-import React from 'react';
 import i18n from "i18next";
 import {useTranslation} from "react-i18next";
 import {readMoreData} from "../../../../utils/readMore";
@@ -20,7 +19,7 @@ const Wko = () => {
     return (
         <div className={s.container}>
             <h4 className={s.title}>
-                {t(`wko.subTitle.${currentLanguage}`, wko.subTitle[currentLanguage])}
+                {t(`wko.subTitle.${currentLanguage}`, (wko.subTitle as any)[currentLanguage] as string)}
             </h4>
             {currentLanguage === 'ua' &&
                 <div className={s.imageBlock}>
@@ -41,16 +40,16 @@ const Wko = () => {
                 </div>
             }
             <h5 className={s.contentTitle}>
-                {t(`wko.label1.${currentLanguage}`, wko.label1[currentLanguage])}
+                {t(`wko.label1.${currentLanguage}`, (wko.label1 as any)[currentLanguage] as string)}
             </h5>
             <p className={s.contentItem}>
-                {t(`wko.text1.${currentLanguage}`, wko.text1[currentLanguage])}
+                {t(`wko.text1.${currentLanguage}`, (wko.text1 as any)[currentLanguage] as string)}
             </p>
             <h5 className={s.contentTitle}>
-                {t(`wko.label2.${currentLanguage}`, wko.label2[currentLanguage])}
+                {t(`wko.label2.${currentLanguage}`, (wko.label2 as any)[currentLanguage] as string)}
             </h5>
             <p className={s.contentItem}>
-                {t(`wko.text2.${currentLanguage}`, wko.text2[currentLanguage])}
+                {t(`wko.text2.${currentLanguage}`, (wko.text2 as any)[currentLanguage] as string)}
             </p>
 
         </div>

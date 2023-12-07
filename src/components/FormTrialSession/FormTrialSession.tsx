@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Link} from "react-router-dom";
 import * as Yup from 'yup';
-import {useAppDispatch, useAppSelector} from "../../hooks";
+import {useAppDispatch} from "../../hooks";
 import {closeForm, openInfoModal} from "../../redux/slices/formTrialSessionSlice"
 import {useTranslation} from "react-i18next";
 import {Form as BootstrapForm} from 'react-bootstrap';
@@ -13,13 +13,14 @@ import s from "./FormTrialSession.module.scss"
 
 type TypeValue = {
     name: string;
-    age?: number;
+    age: number;
     phone: string;
-    comment: string
+    comment: string;
 }
 
 const initialValues: TypeValue = {
     name: '',
+    age: 18,
     phone: '',
     comment: ''
 };

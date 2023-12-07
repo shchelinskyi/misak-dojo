@@ -1,4 +1,3 @@
-import React from 'react';
 import i18n from "i18next";
 import {useTranslation} from "react-i18next";
 import {readMoreData} from "../../../../utils/readMore";
@@ -9,8 +8,8 @@ const Exam = () => {
     const currentLanguage = i18n.language || 'ua';
     const {exam} = readMoreData;
 
-    const paragraphs1 = exam.text1[currentLanguage]
-        ? exam.text1[currentLanguage].split('\n').map((paragraph, index) => (
+    const paragraphs1 = (exam.text1 as any)[currentLanguage] as string
+        ? ((exam.text1 as any)[currentLanguage] as string).split('\n').map((paragraph: string, index: number) => (
             <p key={index} className={s.contentItem}>
                 {paragraph}
             </p>
@@ -19,7 +18,7 @@ const Exam = () => {
 
     return (
         <div className={s.container}>
-            <h4 className={s.title}>{t(`exam.title.${currentLanguage}`,exam.title[currentLanguage])}:</h4>
+            <h4 className={s.title}>{t(`exam.title.${currentLanguage}`,(exam.title as any)[currentLanguage] as string)}:</h4>
             {paragraphs1}
         </div>
     );

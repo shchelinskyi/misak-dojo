@@ -1,18 +1,49 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, FC, ReactNode, useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import * as Yup from "yup";
-import {ErrorMessage, Field, FormikHelpers, useFormik} from "formik";
+import {FormikHelpers, useFormik} from "formik";
 import {Form as BootstrapForm} from "react-bootstrap";
 import s from "./CartForm.module.scss";
 import CustomPhoneInput from "../CustomPhoneInput";
-
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {Link} from "react-router-dom";
 import {closeCartModal, openOrderedModal, removeAllCartProducts} from "../../redux/slices/cartSlice.ts";
 import {sendProductsToTelegram} from "../../tools/sendProductsToTelegram.ts";
 
 
-const CustomTextarea = ({field, form, ...props}) => (
+interface CustomTextareaProps {
+    type?: string;
+    name?: string;
+    className?: string;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onBlur?: (e:  React.FocusEvent<HTMLInputElement>) => void;
+    style?:{
+        minHeight: string;
+    },
+    value: string;
+    placeholder: string;
+    field?: {
+        name: string;
+        value: string;
+        onChange: (e: React.ChangeEvent<any>) => void;
+        onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
+    };
+    form?: {
+        setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void;
+    };
+    // props: {
+    //     type: string;
+    //     name: string;
+    //     className: string;
+    //     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    //     onBlur: (e:  React.FocusEvent<HTMLInputElement>) => void;
+    //     value: string;
+    // };
+    children?: ReactNode;
+}
+
+
+const CustomTextarea: FC<CustomTextareaProps> = ({field, form, ...props}) => (
     <>
         <BootstrapForm.Control as="textarea" rows={3} {...field} {...props} />
     </>

@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-type CartItem = {
+export type CartItem = {
     id: string,
     image: string,
     title: {
@@ -116,6 +116,5 @@ export const {
     closeOrderedModal
 } = cartSlice.actions;
 
-export type { CartItem };
 
 export default cartSlice.reducer;

@@ -50,7 +50,7 @@ const GymsPage = () => {
         setLanguage(currentLanguage)
     }, [change]);
 
-    const toggleVisibility = (numBlock) => {
+    const toggleVisibility = (numBlock:number) => {
         if (numBlock === 1) {
             setIsBlockVisible1(!isBlockVisible1);
         } else if (numBlock === 2) {
@@ -70,7 +70,7 @@ const GymsPage = () => {
                         <ContactGym address={t("gym1")}  addressLink={address.gym1} phone="+38 (099) 042 08 20"/>
                     </div>
                     <div className={s.btnShow}>
-                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(1)}>{t("scheduleSee")}</CustomButton>
+                        <CustomButton onClick={()=>toggleVisibility(1)}>{t("scheduleSee")}</CustomButton>
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible1 })}>
                         <div className={cn(s.item3times, s.order1)}>
@@ -166,7 +166,7 @@ const GymsPage = () => {
                         <ContactGym address={t("gym2")}  addressLink={address.gym2} phone="+38 (099) 042 08 20"/>
                     </div>
                     <div className={s.btnShow}>
-                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(2)}>{t("scheduleSee")}</CustomButton>
+                        <CustomButton onClick={()=>toggleVisibility(2)}>{t("scheduleSee")}</CustomButton>
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible2 })}>
                         <div className={cn(s.item2times, s.order1)}>
@@ -250,7 +250,7 @@ const GymsPage = () => {
                         <ContactGym address={t("gym3")}  addressLink={address.gym3} phone="+38 (093) 726 54 24"/>
                     </div>
                     <div className={s.btnShow}>
-                        <CustomButton style={{width: "100%"}} onClick={()=>toggleVisibility(3)}>{t("scheduleSee")}</CustomButton>
+                        <CustomButton onClick={()=>toggleVisibility(3)}>{t("scheduleSee")}</CustomButton>
                     </div>
                     <div className={cn(s.gymContent, { [s.showContent]: isBlockVisible3 }, s.thirdGym)}>
 

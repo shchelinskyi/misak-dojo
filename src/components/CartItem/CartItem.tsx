@@ -7,7 +7,11 @@ import {addToCart, calculateTotal, removeFromCartAllQuantity, removeFromCartOne}
 import s from "./CartItem.module.scss";
 import type {CartItem} from "../../redux/slices/cartSlice";
 
-const CartItem: FC<{ cartProduct: CartItem }> = ({cartProduct}) => {
+interface CartItemProps {
+    cartProduct: CartItem
+}
+
+const CartItem: FC<CartItemProps> = ({cartProduct}) => {
     const dispatch = useAppDispatch();
     const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
@@ -43,7 +47,7 @@ const CartItem: FC<{ cartProduct: CartItem }> = ({cartProduct}) => {
             <div className={s.content}>
                 <div className={s.description}>
                     <h5 className={s.title}>
-                        {t(`title.${currentLanguage}`, cartProduct.title[currentLanguage])}
+                        {t(`title.${currentLanguage}`, (cartProduct.title as any)[currentLanguage] as string)}
                     </h5>
                     <div className={s.charactersBlock}>
                         {cartProduct.size !== "" &&

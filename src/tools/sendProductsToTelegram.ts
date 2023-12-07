@@ -1,6 +1,25 @@
 import axios from "axios";
+import type {CartItem} from "../redux/slices/cartSlice.ts";
 
-export const sendProductsToTelegram = ({cartItems, total, totalSum, values}) => {
+type sendProductsProps = {
+    cartItems: CartItem[];
+    total: number;
+    totalSum: number;
+    values: {
+        name: string;
+        age?: string;
+        phone: string;
+        email: string;
+        comment?: string;
+        postCity?:string;
+        postNumber?:string;
+        address?:string;
+        number?:string;
+        flat?:string;
+    }
+}
+
+export const sendProductsToTelegram = ({cartItems, total, totalSum, values}: sendProductsProps) => {
     const TOKEN = "6256749568:AAHTtPs90MP3gNYCio0QQCbTZHkyHLv0am4";
     const CHAT_ID = "-1002036629099";
     const URI_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
@@ -11,11 +30,11 @@ export const sendProductsToTelegram = ({cartItems, total, totalSum, values}) => 
 
     const deliveryValue = totalSum - total;
 
-    cartItems.forEach((item) => count += item.quantity);
+    cartItems.forEach((item: CartItem) => count += item.quantity);
 
     message += `<b>Кількість замовлених товарів: ${count}</b>\n`;
 
-    cartItems.forEach((item, index) => {
+    cartItems.forEach((item:CartItem, index:number) => {
         const URL = String(`${item.image}`);
         message += `<b>-------------------</b>\n`
         message += `<b>Товар ${index+1}</b>\n`

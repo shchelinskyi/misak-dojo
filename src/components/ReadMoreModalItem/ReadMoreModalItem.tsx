@@ -1,7 +1,12 @@
-import React from 'react';
 import s from "./ReadMoreModalItem.module.scss";
+import {FC, ReactNode} from "react";
 
-const ReadMoreModalItem = ({children, onClose}) => {
+type ReadMoreModalItem = {
+    children: ReactNode;
+    onClose: () => void;
+}
+
+const ReadMoreModalItem:FC<ReadMoreModalItem> = ({children, onClose}) => {
     return (
         <div className={s.overlay} onClick={onClose}>
             <div className={s.contentWrapper}>

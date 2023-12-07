@@ -19,11 +19,11 @@ const ContractOfferUA = () => {
         <div className={s.container}>
             <div className={s.content}>
                 <div className={s.logoBlock}>
-                    <Link to="/">
+                    <Link to="/misak-dojo/">
                         <Image className={s.logo} src={logo}/>
                     </Link>
                     <div>
-                        <Link to="/">
+                        <Link to="/misak-dojo/">
                             <button className={s.btn}>
                                 {t("return")}
                             </button>
@@ -476,11 +476,11 @@ const ContractOfferUA = () => {
                     </p>
                 </div>
                 <div className={s.logoBlock}>
-                    <Link to="/">
+                    <Link to="/misak-dojo/">
                         <Image className={s.logo} src={logo}/>
                     </Link>
                     <div>
-                        <Link to="/">
+                        <Link to="/misak-dojo/">
                             <button className={s.btn}>
                                 {t("return")}
                             </button>

@@ -80,7 +80,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                     <div className={s.imageBlock}>
                         <span className={cn(s.arrow, s.arrowLeft)} onClick={handlePrev}>&lt;</span>
                         <span className={cn(s.arrow, s.arrowRight)} onClick={handleNext}>&gt;</span>
-                        <Tab.Container id="left-tabs-example" activeKey={activeKey} onSelect={(k) => setActiveKey(k)}>
+                        <Tab.Container id="left-tabs-example" activeKey={activeKey} onSelect={(k: string | null) => setActiveKey(k)}>
                             <Tab.Content>
                                 {productItem.images.length > 0 && productItem.images.map((itemImg, index) => {
                                     return (
@@ -107,7 +107,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                     </div>
                     <div className={s.descriptionBlock}>
                         <h4 className={s.productTitle}>
-                            {t(`title.${currentLanguage}`, productItem.title[currentLanguage])}
+                            {t(`title.${currentLanguage}`, (productItem.title as any)[currentLanguage] as string)}
                         </h4>
                         <div className={s.productPrice}>{productItem.price} {t("uah")}</div>
                         {(productItem.category !== "case" && productItem.category !== "support") &&
@@ -122,7 +122,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                                     <div className={s.selectContainer}>
                                         <select value={selectedSize} className={s.selectBox}
                                                 onChange={handleChangeSize}>
-                                            {productItem.size.length > 0 && productItem.size.map((sizeItem, index) => {
+                                            {productItem.size.length > 0 && productItem.size.map((sizeItem) => {
                                                 if (sizeItem === "3" || sizeItem === "5" || sizeItem === "7" || sizeItem === "9"
                                                     || sizeItem === "100" || sizeItem === "110" || sizeItem === "116"
                                                     || sizeItem === "124" || sizeItem === "132" || sizeItem === "140"
@@ -153,7 +153,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                                     <div className={s.selectContainer}>
                                         <select value={selectedColor} className={s.selectBox}
                                                 onChange={handleChangeColor}>
-                                            {productItem.color.length > 0 && productItem.color.map((colorItem, index) =>
+                                            {productItem.color.length > 0 && productItem.color.map((colorItem) =>
                                                 (<option key={colorItem} value={colorItem}>
                                                     {t(colorItem)}
                                                 </option>))
@@ -171,17 +171,17 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                             {t("buy")}
                         </button>
                         <p className={s.productDescription}>
-                            {productItem.description != "" && <>{t(`description.${currentLanguage}`, productItem.description[currentLanguage])}</>}
+                            {productItem.description != "" && <>{t(`description.${currentLanguage}`, (productItem.description as any)[currentLanguage] as string)}</>}
                         </p>
                         <p className={s.productComment}>
-                            {productItem.comment != "" && <>{t(`description.${currentLanguage}`, productItem.comment[currentLanguage])}</>}
+                            {productItem.comment != "" && <>{t(`description.${currentLanguage}`, (productItem.comment as any)[currentLanguage] as string)}</>}
                         </p>
                         <div className={s.additionalData}>
                             {(productItem.category !== "case" && productItem.category !== "support") &&
                                 <div className={s.additionalItem}>
                                     <span className={s.additionalItemLabel}>{t("material")}:</span>
                                     <span
-                                        className={s.additionalItemValue}>{t(`material.${currentLanguage}`, productItem.material[currentLanguage])}</span>
+                                        className={s.additionalItemValue}>{t(`material.${currentLanguage}`, (productItem.material as any)[currentLanguage] as string)}</span>
                                 </div>
                             }
                         </div>

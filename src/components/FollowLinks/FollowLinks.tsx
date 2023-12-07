@@ -1,9 +1,8 @@
-import React from 'react';
 import {useTranslation} from "react-i18next";
 import s from "./FollowLinks.module.scss";
 
 const FollowLinks = () => {
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <div className={s.content}>

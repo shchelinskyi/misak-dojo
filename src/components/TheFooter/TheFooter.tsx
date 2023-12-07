@@ -1,5 +1,5 @@
 import s from "./TheFooter.module.scss";
-import {Container, Stack, Image} from "react-bootstrap";
+import {Image} from "react-bootstrap";
 import visaIcon from "../../assets/images/footer/visa.svg";
 import masterCard from "../../assets/images/footer/mastercard.svg";
 import cn from "classnames"

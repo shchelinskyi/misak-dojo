@@ -24,8 +24,8 @@ const SummerSchool31 = () => {
 
     const fullUrl = `https://misakdojo.com${pathname}`
 
-    const paragraphs1 = newsItem.list[currentLanguage]
-        ? newsItem.list[currentLanguage].split('\n').map((paragraph, index) => (
+    const paragraphs1 = (newsItem.list as any)[currentLanguage] as string
+        ? ((newsItem.list as any)[currentLanguage] as string).split('\n').map((paragraph: string, index: number) => (
             <div key={index} className={s.textItem}>
                 {paragraph}
             </div>
@@ -36,25 +36,25 @@ const SummerSchool31 = () => {
         <div>
             <div className={s.content}>
                 <div className={s.head}>
-                    <Link to="/">
+                    <Link to="/misak-dojo/" >
                         <Image src={arrow} className={s.icon}/>
                     </Link>
                     <div className={s.publishedItem}>{t("published")}: <span>{newsItem.date}</span></div>
                 </div>
-                <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}</h4>
+                <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}</h4>
                 <Image src={newsItem.images[0]} className={s.img}/>
                 <p className={s.textItem}>
-                    {t(`newsItem.text1.${currentLanguage}`, newsItem.text1[currentLanguage])}
+                    {t(`newsItem.text1.${currentLanguage}`, (newsItem.text1 as any)[currentLanguage] as string)}
                 </p>
                 <Image src={newsItem.images[1]} className={s.img}/>
                 <p className={s.textItem}>
-                    {t(`newsItem.text2.${currentLanguage}`, newsItem.text2[currentLanguage])}
+                    {t(`newsItem.text2.${currentLanguage}`, (newsItem.text2 as any)[currentLanguage] as string)}
                 </p>
                 <p className={s.textItem}>
                     {paragraphs1}
                 </p>
                 <p className={s.textItem}>
-                    {t(`newsItem.text3.${currentLanguage}`, newsItem.text3[currentLanguage])}
+                    {t(`newsItem.text3.${currentLanguage}`, (newsItem.text3 as any)[currentLanguage] as string)}
                 </p>
                 <Image src={newsItem.images[2]} className={s.img}/>
                 <Image src={newsItem.images[3]} className={s.img}/>
@@ -64,12 +64,12 @@ const SummerSchool31 = () => {
                 <Image src={newsItem.images[7]} className={s.img}/>
                 <Image src={newsItem.images[8]} className={s.img}/>
                 <p className={s.textItem}>
-                    {t(`newsItem.text4.${currentLanguage}`, newsItem.text4[currentLanguage])}
+                    {t(`newsItem.text4.${currentLanguage}`, (newsItem.text4 as any)[currentLanguage] as string)}
                 </p>
             </div>
             <div className={s.socialContent}>
                 <ShareLinks url={fullUrl}
-                            quote={t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}/>
+                            quote={t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}/>
                 <FollowLinks/>
             </div>
         </div>

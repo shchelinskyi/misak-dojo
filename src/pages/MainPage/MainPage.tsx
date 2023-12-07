@@ -22,6 +22,11 @@ import bucket from "../../assets/images/main/bucket.webp";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
 
+interface Position {
+    x: number;
+    y: number;
+}
+
 
 const MainPage = () => {
     const dispatch = useAppDispatch();
@@ -31,7 +36,7 @@ const MainPage = () => {
     const { t } = useTranslation();
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e:MouseEvent) => {
             requestAnimationFrame(() => {
                 setMousePosition({ x: e.clientX, y: e.clientY });
             });
@@ -44,7 +49,7 @@ const MainPage = () => {
         };
     }, []);
 
-    const calculateParallax = (position, strength) => ({
+    const calculateParallax = (position: Position, strength: number): { transform: string } => ({
         transform: `translate(${position.x / strength}px, ${position.y / strength}px)`,
     });
 

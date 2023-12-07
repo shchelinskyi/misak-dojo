@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import {CSSProperties, FC, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Image} from "react-bootstrap";
@@ -14,7 +14,8 @@ type GalleryCardTypes = {
         },
         date: string;
         images: string[]
-    }
+    },
+    styles?: CSSProperties;
 }
 
 const GalleryCard: FC<GalleryCardTypes> = ({galleryItem, styles}) => {
@@ -37,7 +38,7 @@ const GalleryCard: FC<GalleryCardTypes> = ({galleryItem, styles}) => {
             <div className={s.card} onClick={handleOpen} style={styles}>
                 <Image className={s.cardImg} src={galleryItem.images[0]}/>
                 <p className={s.cardDate}>{galleryItem.date}</p>
-                <h6 className={s.cardTitle}>{t(`title.${currentLanguage}`, galleryItem.title[currentLanguage])}</h6>
+                <h6 className={s.cardTitle}>{t(`title.${currentLanguage}`, (galleryItem.title as any)[currentLanguage] as string)}</h6>
             </div>
             {isModalOpened && <GalleryCardModal images={galleryItem.images} onClose={handleClose}/>}
         </>

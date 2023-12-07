@@ -1,4 +1,3 @@
-import React from 'react';
 import s from "./Loading.module.scss";
 import loading from "../../assets/images/loading/loading.svg";
 import {Image} from "react-bootstrap";

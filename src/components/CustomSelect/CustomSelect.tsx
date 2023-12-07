@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import {useTranslation} from "react-i18next";
 import {Image} from "react-bootstrap";
 import iconSelect from "../../assets/images/main/select-flag.webp";
@@ -14,11 +14,11 @@ const CustomSelect = () => {
     }, [i18n.language]);
 
 
-    const changeLanguage = (language) => {
+    const changeLanguage = (language:string) => {
         i18n.changeLanguage(language);
     }
 
-    const handleLanguageChange = (event) => {
+    const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const selectedLanguage = event.target.value;
         changeLanguage(selectedLanguage);
     };

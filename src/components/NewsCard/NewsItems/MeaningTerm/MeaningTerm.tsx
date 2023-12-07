@@ -1,3 +1,4 @@
+import React from "react"
 import {Link, useLocation} from "react-router-dom";
 import i18n from "i18next";
 import {useTranslation} from "react-i18next";
@@ -25,8 +26,8 @@ const MeaningTerm = () => {
 
     const fullUrl = `https://misakdojo.com${pathname}`
 
-    const paragraphs1 = newsItem.text[currentLanguage]
-        ? newsItem.text[currentLanguage].split('\n').map((paragraph, index) => {
+    const paragraphs1 = (newsItem.text as any)[currentLanguage] as string
+        ? ((newsItem.text as any)[currentLanguage] as string).split('\n').map((paragraph: string, index: number) => {
             const match = paragraph.match(/<strong>(.*?)<\/strong>/);
 
             const formattedParagraph = match
@@ -55,12 +56,12 @@ const MeaningTerm = () => {
         <div>
             <div className={s.content}>
                 <div className={s.head}>
-                    <Link to="/">
+                    <Link to="/misak-dojo/" >
                         <Image src={arrow} className={s.icon}/>
                     </Link>
                     <div className={s.publishedItem}>{t("published")}: <span>{newsItem.date}</span></div>
                 </div>
-                <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}</h4>
+                <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}</h4>
                 <Image src={newsItem.images[0]} className={s.img}/>
                 <div className={s.block}>
                     {paragraphs1}
@@ -68,7 +69,7 @@ const MeaningTerm = () => {
             </div>
             <div className={s.socialContent}>
                 <ShareLinks url={fullUrl}
-                            quote={t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}/>
+                            quote={t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}/>
                 <FollowLinks/>
             </div>
         </div>

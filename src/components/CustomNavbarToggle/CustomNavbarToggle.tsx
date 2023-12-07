@@ -1,12 +1,9 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import styles from './CustomNavbarToggle.module.scss';
 
-type CustomNavbarToggleProps = {
-    onClick : () => void;
-}
 
-const CustomNavbarToggle: FC<CustomNavbarToggleProps>  = ({ onClick }) => {
+const CustomNavbarToggle  = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {

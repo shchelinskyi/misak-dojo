@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import i18n from "i18next";
 import {Container, Image} from "react-bootstrap";
 import TrainerLabel from "../../components/TrainerLabel";

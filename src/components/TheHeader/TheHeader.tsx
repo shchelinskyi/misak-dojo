@@ -16,12 +16,12 @@ import {useLocation, useNavigate} from "react-router-dom";
 
 type TheHeaderProps = {
     refData: {
-        aboutRef: React.RefObject<HTMLDivElement>;
-        teamRef: React.RefObject<HTMLDivElement>;
-        gymsRef: React.RefObject<HTMLDivElement>;
-        galleryRef: React.RefObject<HTMLDivElement>;
-        shopRef: React.RefObject<HTMLDivElement>;
-        contactsRef: React.RefObject<HTMLDivElement>;
+        aboutRef: React.RefObject<HTMLDivElement> | null;
+        teamRef: React.RefObject<HTMLDivElement> | null;
+        gymsRef: React.RefObject<HTMLDivElement> | null;
+        galleryRef: React.RefObject<HTMLDivElement> | null;
+        shopRef: React.RefObject<HTMLDivElement> | null;
+        contactsRef: React.RefObject<HTMLDivElement> | null;
     }
 }
 
@@ -35,55 +35,37 @@ const TheHeader:FC<TheHeaderProps> = ({refData}) => {
     const navigate = useNavigate();
 
     const navigateToAbout = () => {
-        if (pathname !== "/") {
-            navigate('/');
-            refData.aboutRef.current.scrollIntoView({behavior: 'smooth'})
-        } else {
+        if (refData.aboutRef && refData.aboutRef.current) {
             refData.aboutRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToGyms = () => {
-        if (pathname !== "/") {
-            navigate('/');
-            refData.gymsRef.current.scrollIntoView({behavior: 'smooth'})
-        } else {
+        if (refData.gymsRef && refData.gymsRef.current) {
             refData.gymsRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToTeam = () => {
-        if (pathname !== "/") {
-            navigate('/');
-            refData.teamRef.current.scrollIntoView({behavior: 'smooth'})
-        } else {
+        if (refData.teamRef && refData.teamRef.current) {
             refData.teamRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToGallery = () => {
-        if (pathname !== "/") {
-            navigate('/');
-            refData.galleryRef.current.scrollIntoView({behavior: 'smooth'})
-        } else {
+        if (refData.galleryRef && refData.galleryRef.current) {
             refData.galleryRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToShop = () => {
-        if (pathname !== "/") {
-            navigate('/');
-            refData.shopRef.current.scrollIntoView({behavior: 'smooth'})
-        } else {
+        if (refData.shopRef && refData.shopRef.current) {
             refData.shopRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToContacts = () => {
-        if (pathname !== "/") {
-            navigate('/');
-            refData.contactsRef.current.scrollIntoView({behavior: 'smooth'})
-        } else {
+        if (refData.contactsRef && refData.contactsRef.current) {
             refData.contactsRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
@@ -106,22 +88,17 @@ const TheHeader:FC<TheHeaderProps> = ({refData}) => {
         setActiveLang(i18n.language || 'ua');
     }, [i18n.language]);
 
-    const changeLanguage = (language) => {
+    const changeLanguage = (language:string) => {
         i18n.changeLanguage(language);
     }
 
     const handleClick = () => {
-        if (pathname !== "/") {
-            navigate('/');
             dispatch(openForm())
-        } else {
-            dispatch(openForm())
-        }
     };
 
     const clickLogo = () => {
-        if (pathname !== "/") {
-            navigate('/');
+        if (pathname !== "/misak-dojo/") {
+            navigate('/misak-dojo/');
         } else {
             window.scrollTo({
                 top: 20,

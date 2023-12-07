@@ -1,4 +1,3 @@
-import React from 'react';
 import s from "./ChangeData.module.scss";
 import {Image} from "react-bootstrap";
 import loading from "../../assets/images/loading/loading.svg";

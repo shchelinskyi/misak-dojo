@@ -1,13 +1,18 @@
-import React from 'react';
 import s from "./GalleryCardModal.module.scss";
 import {Image} from "react-bootstrap";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/navigation';
+import {FC} from "react";
+
+type GalleryCardModalProps = {
+    images:string[],
+    onClose: () => void
+}
 
 
-const GalleryCardModal = ({images, onClose}) => {
+const GalleryCardModal:FC<GalleryCardModalProps> = ({images, onClose}) => {
     return (
         <div className={s.overlay}  onClick={onClose}>
             <div className={s.content} onClick={(e) => e.stopPropagation()}>

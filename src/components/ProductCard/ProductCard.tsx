@@ -6,25 +6,25 @@ import MainProductCard from "../MainProductCard";
 import s from "./ProductCard.module.scss";
 
 export type ProductItemType = {
-    id: string,
+    id: string;
     title: {
         en: string,
         ru: string,
         ua: string
-    },
-    price: number,
-    images: string [],
-    category: string,
-    size: string [],
-    material: {
+    };
+    price: number;
+    images: string[] | [];
+    category: string;
+    size: string[] | [];
+    material?: {
         en: string,
         ru: string,
         ua: string
-    },
-    color: string [],
-    children: boolean,
-    adult: boolean,
-    description: {
+    };
+    color: string[] | [];
+    children: boolean;
+    adult: boolean;
+    description?: {
         en: string,
         ru: string,
         ua: string
@@ -34,10 +34,14 @@ export type ProductItemType = {
         ru: string,
         ua: string
     },
-    model?: string,
-    producer?: string,
-    length?: string,
-    comment?: string
+    model?: string;
+    producer?: string;
+    length?: string;
+    comment?:{
+        en: string,
+        ru: string,
+        ua: string
+    };
 }
 
 type ProductItemProps = {

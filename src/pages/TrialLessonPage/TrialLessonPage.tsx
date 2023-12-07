@@ -11,13 +11,18 @@ import cloudRT from '../../assets/images/trial/cloud-trial-rt.svg';
 import cloudRB from '../../assets/images/trial/cloud-trial-rb.svg';
 import s from './TrialLessonPage.module.scss';
 
+interface Position {
+    x: number;
+    y: number;
+}
+
 const TrialLessonPage: FC = () => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e:MouseEvent) => {
             requestAnimationFrame(() => {
                 setMousePosition({ x: e.clientX, y: e.clientY });
             });
@@ -30,7 +35,7 @@ const TrialLessonPage: FC = () => {
         };
     }, []);
 
-    const calculateParallax = (position, strength) => ({
+    const calculateParallax = (position: Position, strength: number): { transform: string } => ({
         transform: `translate(${position.x / strength}px, ${position.y / strength}px)`,
     });
 

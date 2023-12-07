@@ -28,39 +28,39 @@ const KumiteMarathon = () => {
         <div>
             <div className={s.content}>
                 <div className={s.head}>
-                    <Link to="/">
+                    <Link to="/misak-dojo/" >
                         <Image src={arrow} className={s.icon}/>
                     </Link>
                     <div className={s.publishedItem}>{t("published")}: <span>{newsItem.date}</span></div>
                 </div>
-                <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}</h4>
+                <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}</h4>
                 <Image src={newsItem.images[0]} className={s.img}/>
                 <p className={s.textItem}>
-                    {t(`newsItem.text1.${currentLanguage}`, newsItem.text1[currentLanguage])}
+                    {t(`newsItem.text1.${currentLanguage}`, (newsItem.text1 as any)[currentLanguage] as string)}
                 </p>
                 <Image src={newsItem.images[1]} className={s.img}/>
                 <Image src={newsItem.images[2]} className={s.img}/>
                 <Image src={newsItem.images[3]} className={s.img}/>
                 <p className={s.textItem}>
-                    {t(`newsItem.text2.${currentLanguage}`, newsItem.text2[currentLanguage])}
+                    {t(`newsItem.text2.${currentLanguage}`, (newsItem.text2 as any)[currentLanguage] as string)}
                 </p>
                 <Image src={newsItem.images[4]} className={s.img}/>
                 <Image src={newsItem.images[5]} className={s.img}/>
                 <Image src={newsItem.images[6]} className={s.img}/>
                 <Image src={newsItem.images[7]} className={s.img}/>
                 <p className={s.textItem}>
-                    {t(`newsItem.text3.${currentLanguage}`, newsItem.text2[currentLanguage])}
+                    {t(`newsItem.text3.${currentLanguage}`, (newsItem.text2 as any)[currentLanguage] as string)}
                 </p>
                 <p className={s.textItem}>
                     {newsItem.text4}
                 </p>
                 <p className={s.textItem}>
-                    {t(`newsItem.osu.${currentLanguage}`, newsItem.osu[currentLanguage])}
+                    {t(`newsItem.osu.${currentLanguage}`, (newsItem.osu as any)[currentLanguage] as string)}
                 </p>
             </div>
             <div className={s.socialContent}>
                 <ShareLinks url={fullUrl}
-                            quote={t(`newsItem.title.${currentLanguage}`, newsItem.title[currentLanguage])}/>
+                            quote={t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}/>
                 <FollowLinks/>
             </div>
         </div>
