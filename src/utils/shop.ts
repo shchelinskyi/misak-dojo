@@ -222,7 +222,7 @@ export const products = [
             ru: "полиэстер",
             ua: "поліестер",
         },
-        color: ["red","black"],
+        color: ["red", "black"],
         children: true,
         adult: false,
         description: {
@@ -372,7 +372,7 @@ export const products = [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701937418/shop/AnyConv.com__Kimono_with_symbols__gu1kot.webp"
         ],
         category: "kimono",
-        size: ["100", "110","116", "124","132","140","148","154","162","170","178","184","194"],
+        size: ["100", "110", "116", "124", "132", "140", "148", "154", "162", "170", "178", "184", "194"],
         material: {
             en: "100% cotton",
             ru: "100% хлопок",
@@ -467,9 +467,9 @@ export const products = [
             ua: ""
         },
         briefDescription: {
-        en: "",
-        ru: "",
-        ua: ""
+            en: "",
+            ru: "",
+            ua: ""
         },
         model: "",
         producer: "Ukraine",
@@ -493,7 +493,7 @@ export const products = [
         ],
         category: "case",
         size: [],
-        material:{
+        material: {
             en: "",
             ru: "",
             ua: ""
@@ -1055,7 +1055,7 @@ export const products = [
         ],
         category: "protection",
         size: ["S", "M", "L"],
-        material:  {
+        material: {
             en: "",
             ru: "",
             ua: ""
@@ -1096,7 +1096,7 @@ export const products = [
         ],
         category: "cup",
         size: ["8,2", "9,5"],
-        material:{
+        material: {
             en: "",
             ru: "",
             ua: ""
@@ -1136,12 +1136,12 @@ export const products = [
         ],
         category: "support",
         size: [],
-        material:{
+        material: {
             en: "",
             ru: "",
             ua: ""
         },
-        color: "",
+        color: [],
         children: true,
         adult: true,
         description: {
@@ -1199,7 +1199,7 @@ export const products = [
             ru: "",
             ua: ""
         },
-        color: "",
+        color: [],
         children: true,
         adult: true,
         description: {
@@ -1257,7 +1257,7 @@ export const products = [
             ru: "",
             ua: ""
         },
-        color: "",
+        color: [],
         children: true,
         adult: true,
         description: {

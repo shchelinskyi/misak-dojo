@@ -14,15 +14,17 @@ import s from "./TheHeader.module.scss";
 import SocialLinks from "../SocialLinks";
 import {useLocation, useNavigate} from "react-router-dom";
 
-type TheHeaderProps = {
-    refData: {
-        aboutRef: React.RefObject<HTMLDivElement> | null;
-        teamRef: React.RefObject<HTMLDivElement> | null;
-        gymsRef: React.RefObject<HTMLDivElement> | null;
-        galleryRef: React.RefObject<HTMLDivElement> | null;
-        shopRef: React.RefObject<HTMLDivElement> | null;
-        contactsRef: React.RefObject<HTMLDivElement> | null;
-    }
+type RefData = {
+    aboutRef: React.RefObject<HTMLDivElement> | null;
+    teamRef: React.RefObject<HTMLDivElement> | null;
+    gymsRef: React.RefObject<HTMLDivElement> | null;
+    galleryRef: React.RefObject<HTMLDivElement> | null;
+    shopRef: React.RefObject<HTMLDivElement> | null;
+    contactsRef: React.RefObject<HTMLDivElement> | null;
+};
+
+interface TheHeaderProps {
+    refData: RefData | null;
 }
 
 const TheHeader:FC<TheHeaderProps> = ({refData}) => {
@@ -35,37 +37,37 @@ const TheHeader:FC<TheHeaderProps> = ({refData}) => {
     const navigate = useNavigate();
 
     const navigateToAbout = () => {
-        if (refData.aboutRef && refData.aboutRef.current) {
+        if (refData && refData.aboutRef && refData.aboutRef.current) {
             refData.aboutRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToGyms = () => {
-        if (refData.gymsRef && refData.gymsRef.current) {
+        if (refData && refData.gymsRef && refData.gymsRef.current) {
             refData.gymsRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToTeam = () => {
-        if (refData.teamRef && refData.teamRef.current) {
+        if (refData && refData.teamRef && refData.teamRef.current) {
             refData.teamRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToGallery = () => {
-        if (refData.galleryRef && refData.galleryRef.current) {
+        if (refData && refData.galleryRef && refData.galleryRef.current) {
             refData.galleryRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToShop = () => {
-        if (refData.shopRef && refData.shopRef.current) {
+        if (refData && refData.shopRef && refData.shopRef.current) {
             refData.shopRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
 
     const navigateToContacts = () => {
-        if (refData.contactsRef && refData.contactsRef.current) {
+        if (refData && refData.contactsRef && refData.contactsRef.current) {
             refData.contactsRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }

@@ -4,41 +4,7 @@ import {newsData} from "../../utils/news";
 import {Container, Stack} from "react-bootstrap";
 import NewsCard from "../../components/NewsCard";
 import CustomButton from "../../components/CustomButton";
-import OpenCup from "../../components/NewsCard/NewsItems/OpenCup";
-import KumiteMarathon from "../../components/NewsCard/NewsItems/KumiteMarathon";
-import SummerSchool31 from "../../components/NewsCard/NewsItems/SummerSchool31";
-import ChildTraining from "../../components/NewsCard/NewsItems/ChildTraining";
-import CoachDay from "../../components/NewsCard/NewsItems/CoachDay";
-import KarateDay from "../../components/NewsCard/NewsItems/KarateDay";
-import MeaningTerm from "../../components/NewsCard/NewsItems/MeaningTerm";
-import SummerSchool32 from "../../components/NewsCard/NewsItems/SummerSchool32";
-import Championship from "../../components/NewsCard/NewsItems/Championship";
 import s from "./NewsPage.module.scss"
-
-const getNewsItemComponent = (currentType) => {
-    switch (currentType) {
-        case "openCup":
-            return <OpenCup />;
-        case "kumiteMarathon":
-            return <KumiteMarathon />;
-        case "summerSchool31":
-            return <SummerSchool31 />;
-        case "childTraining":
-            return <ChildTraining />;
-        case "coachDay":
-            return <CoachDay />;
-        case "karateDay":
-            return <KarateDay />;
-        case "meaningTerm":
-            return <MeaningTerm />;
-        case "summerSchool32":
-            return <SummerSchool32 />;
-        case "championship":
-            return <Championship />;
-        default:
-            return null;
-    }
-};
 
 const NewsPage = () => {
     const { t } = useTranslation();
@@ -58,11 +24,8 @@ const NewsPage = () => {
                     <div className={s.content}>
                         {Object.values(newsData)
                             .slice(0, visibleItems)
-                            .map((newsItem) => (
-                                <NewsCard key={newsItem.title.en} newsItem={newsItem}>
-                                    {getNewsItemComponent(newsItem.type)}
-                                </NewsCard>
-                            ))}
+                            .map((newsItem) => (<NewsCard key={newsItem.title.en} newsItem={newsItem}/>))
+                        }
                     </div>
                     {visibleItems < Object.values(newsData).length && (
                         <Stack direction="horizontal" style={{ justifyContent: "center", marginTop: "70px" }}>

@@ -31,10 +31,6 @@ const NewsCard: FC<NewsCardTypes> = ({ newsItem}) => {
 
     const {type} = newsItem;
 
-
-
-
-
     return (
         <Link className={s.link} to={`news/${type}`}>
             <div className={s.card}>

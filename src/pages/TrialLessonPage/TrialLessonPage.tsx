@@ -36,12 +36,13 @@ const TrialLessonPage: FC = () => {
     }, []);
 
     const calculateParallax = (position: Position, strength: number): { transform: string } => ({
-        transform: `translate(${position.x / strength}px, ${position.y / strength}px)`,
+        transform: `translateX(${position.x / strength}px)`,
     });
 
     return (
         <div className={s.container}>
             <div className={s.block}>
+                {/*<Image className={s.girlImg} src={girl}/>*/}
                 <Image className={s.girlImg} src={girl} style={calculateParallax(mousePosition, 50)} />
                 <div className={s.centerItem}>
                     <h5 className={s.centerItemTitle}>
@@ -57,6 +58,7 @@ const TrialLessonPage: FC = () => {
                     <Image className={s.cloudRightTopImg} src={cloudRT} />
                     <Image className={s.cloudRightBottomImg} src={cloudRB} />
                 </div>
+                {/*<Image className={s.boyImg} src={boy}/>*/}
                 <Image className={s.boyImg} src={boy} style={calculateParallax(mousePosition, -50)} />
             </div>
         </div>

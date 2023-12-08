@@ -33,6 +33,7 @@
     width: 100%;
     border-radius: 0;
     padding-top: 40px;
+    max-height:unset;
   }
 }
 
@@ -47,6 +48,9 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 480px) {
+    max-height:unset;
+  }
 }
 
 .titleBlock {

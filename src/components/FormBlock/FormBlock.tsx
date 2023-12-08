@@ -24,6 +24,8 @@ const initialValues: TypeValue = {
     comment: ""
 };
 
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CustomTextarea = ({field, form, ...props}) => (
     <>
         <BootstrapForm.Control as="textarea" rows={3} {...field} {...props} />

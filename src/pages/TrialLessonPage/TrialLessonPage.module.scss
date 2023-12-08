@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   position:relative;
   margin: 50px auto  313px;
   padding-top: 100px;
@@ -8,6 +9,10 @@
   background-color: #EDEDED;
   border-radius: 46px;
   max-width: 1720px;
+  //overflow-x: hidden;
+  //overflow-y: hidden;
+  //height: auto;
+  //max-height: 1000px;
 
   @media (max-width: 1200px) {
     width: 100vw;
@@ -24,16 +29,27 @@
 
 .block {
   display: flex;
+  justify-content: center;
   width: 1340px;
+  //overflow-x: hidden;
+  //position: relative;
 
   @media (max-width: 1350px) {
     width: 100%;
   }
 
   @media (max-width: 992px) {
-    position: relative;
+    width: 100%;
+    //position: relative;
+    //flex-wrap: wrap;
   }
+  @media (max-width: 700px) {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
   @media (max-width: 480px) {
+    width: 100%;
     flex-wrap: wrap;
   }
 
@@ -42,26 +58,30 @@
 .girlImg {
   width: 33%;
   max-width: 451px;
-  flex-shrink: 1;
+  //flex-shrink: 1;
   @media (max-width: 992px) {
-    margin-top: 80px;
+    margin-top: 20px;
     align-self: flex-end;
-    position: sticky;
-    bottom:0;
-    left: 60px;
-    width: 60%;
+    //position: absolute;
+    //bottom:0;
+    //left: 60px;
+    width: 30%;
   }
 
   @media (max-width: 900px) {
-    left: 30px;
+    //left: 30px;
+    width: 30%;
   }
 
   @media (max-width: 700px) {
-    left: 10px;
-    width: 80%;
+    //position: unset;
+    //left: 10px;
+    width: 50%;
+    order:2;
   }
 
   @media (max-width: 480px) {
+    //position: unset;
     margin-top: 0;
     order:2;
     width: 50%;
@@ -79,18 +99,15 @@
   justify-content: center;
   @media (max-width: 992px) {
     align-self: flex-start;
-    width: 50%;
+    width: 30%;
   }
 
   @media (max-width: 700px) {
+    order:1;
     align-self: flex-start;
-    width: 60%;
+    width: 100%;
   }
 
-  @media (max-width: 600px) {
-    align-self: flex-start;
-    width: 40%;
-  }
 
   @media (max-width: 480px) {
     order:1;
@@ -133,26 +150,29 @@
 }
 
 .boyImg {
-  width: 33%;
+  width: 30%;
   max-width: 430px;
   //width: 430px;
   //height: 449px;
-  flex-shrink: 1;
+  //flex-shrink: 1;
   @media (max-width: 992px) {
-    margin-top: 80px;
+    margin-top: 20px;
     align-self: flex-end;
-    position: sticky;
-    bottom:0;
-    right: 60px;
-    width: 60%;
+    //position: absolute;
+    //bottom:0;
+    //right: 60px;
+    width: 30%;
   }
 
   @media (max-width: 700px) {
-    right: 10px;
-    width: 80%;
+    //position: unset;
+    //right: 10px;
+    width: 50%;
+    order:3;
   }
 
   @media (max-width: 480px) {
+    //position: unset;
     margin-top: 0;
     order:3;
     width: 50%;
@@ -186,6 +206,13 @@
   }
 
   @media (max-width: 700px) {
+    bottom:-550px;
+    left: -350px;
+    animation-name: welcome__cloud-bottom-left-s;
+  }
+
+  @media (max-width: 600px) {
+    bottom:-480px;
     left: -350px;
     animation-name: welcome__cloud-bottom-left-s;
   }
@@ -193,6 +220,7 @@
   @media (max-width: 480px) {
     width: 432px;
     height: 200px;
+    //bottom:-550px;
     bottom:-320px;
     left: -150px;
     animation-name: welcome__cloud-bottom-left-xs;
@@ -286,11 +314,18 @@
   }
 
   @media (max-width: 768px) {
+    bottom:-300px;
     right: -500px;
     animation-name: welcome__cloud-bottom-right-back-s;
   }
 
   @media (max-width: 700px) {
+    bottom:-550px;
+    right: -400px;
+    animation-name: welcome__cloud-bottom-right-back-s2;
+  }
+  @media (max-width: 600px) {
+    bottom:-530px;
     right: -400px;
     animation-name: welcome__cloud-bottom-right-back-s2;
   }
@@ -299,6 +334,7 @@
   @media (max-width: 480px) {
     width: 558px;
     height: 238px;
+    //bottom:-550px;
     bottom:-330px;
     right: -180px;
     animation-name: welcome__cloud-bottom-right-back-xs;
@@ -407,11 +443,19 @@
   }
 
   @media (max-width: 768px) {
+    bottom:-350px;
     right: -700px;
     animation-name: welcome__cloud-bottom-right-front-s;
   }
 
   @media (max-width: 700px) {
+    bottom:-550px;
+    right: -600px;
+    animation-name: welcome__cloud-bottom-right-front-s2;
+  }
+
+  @media (max-width: 600px) {
+    bottom:-550px;
     right: -600px;
     animation-name: welcome__cloud-bottom-right-front-s2;
   }
@@ -420,6 +464,7 @@
     width: 448px;
     height: 158px;
     right: -280px;
+    //bottom:-550px;
     bottom:-350px;
     animation-name: welcome__cloud-bottom-right-front-xs;
   }

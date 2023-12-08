@@ -1,9 +1,10 @@
-import { FC, ReactNode, MouseEvent } from 'react';
+import {FC, ReactNode, MouseEvent, CSSProperties} from 'react';
 import s from "./CustomButton.module.scss";
 
 type CustomButtonProps = {
     children:ReactNode;
     onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+    style?: CSSProperties;
 }
 
 const CustomButton: FC<CustomButtonProps> = ({ children, onClick, ...props}) => {

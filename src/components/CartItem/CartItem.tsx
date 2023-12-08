@@ -5,10 +5,10 @@ import i18n from "i18next";
 import {useAppDispatch} from "../../hooks";
 import {addToCart, calculateTotal, removeFromCartAllQuantity, removeFromCartOne} from "../../redux/slices/cartSlice";
 import s from "./CartItem.module.scss";
-import type {CartItem} from "../../redux/slices/cartSlice";
+import type {CartItem as CartItemP} from "../../redux/slices/cartSlice";
 
 interface CartItemProps {
-    cartProduct: CartItem
+    cartProduct: CartItemP
 }
 
 const CartItem: FC<CartItemProps> = ({cartProduct}) => {

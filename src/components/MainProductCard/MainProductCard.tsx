@@ -19,7 +19,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
 
     const [selectedSize, setSelectedSize] = useState(productItem.size[0] || "");
     const [selectedColor, setSelectedColor] = useState(productItem.color[0] || "");
-    const [activeKey, setActiveKey] = useState('1');
+    const [activeKey, setActiveKey] = useState<string | null>('1');
 
     const dispatch = useAppDispatch();
     const {t} = useTranslation();
@@ -27,7 +27,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
 
     const handlePrev = () => {
         const totalImages = productItem.images.length;
-        const currentIndex = parseInt(activeKey, 10);
+        const currentIndex = parseInt(activeKey!, 10);
 
         if (totalImages > 1) {
             const newIndex = currentIndex === 1 ? totalImages : currentIndex - 1;
@@ -37,7 +37,7 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
 
     const handleNext = () => {
         const totalImages = productItem.images.length;
-        const currentIndex = parseInt(activeKey, 10);
+        const currentIndex = parseInt(activeKey!, 10);
 
         if (totalImages > 1) {
             const newIndex = currentIndex === totalImages ? 1 : currentIndex + 1;
@@ -80,7 +80,8 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                     <div className={s.imageBlock}>
                         <span className={cn(s.arrow, s.arrowLeft)} onClick={handlePrev}>&lt;</span>
                         <span className={cn(s.arrow, s.arrowRight)} onClick={handleNext}>&gt;</span>
-                        <Tab.Container id="left-tabs-example" activeKey={activeKey} onSelect={(k: string | null) => setActiveKey(k)}>
+                        <Tab.Container id="left-tabs-example" activeKey={activeKey!}
+                                       onSelect={(k: string | null) => setActiveKey(k)}>
                             <Tab.Content>
                                 {productItem.images.length > 0 && productItem.images.map((itemImg, index) => {
                                     return (
@@ -171,10 +172,10 @@ const MainProductCard: FC<MainProductCardProps> = ({productItem, onClose}) => {
                             {t("buy")}
                         </button>
                         <p className={s.productDescription}>
-                            {productItem.description != "" && <>{t(`description.${currentLanguage}`, (productItem.description as any)[currentLanguage] as string)}</>}
+                            {productItem.description.ua != "" && <>{t(`description.${currentLanguage}`, (productItem.description as any)[currentLanguage] as string)}</>}
                         </p>
                         <p className={s.productComment}>
-                            {productItem.comment != "" && <>{t(`description.${currentLanguage}`, (productItem.comment as any)[currentLanguage] as string)}</>}
+                            {productItem.comment.ua != "" && <>{t(`description.${currentLanguage}`, (productItem.comment as any)[currentLanguage] as string)}</>}
                         </p>
                         <div className={s.additionalData}>
                             {(productItem.category !== "case" && productItem.category !== "support") &&

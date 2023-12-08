@@ -24,7 +24,7 @@ export type ProductItemType = {
     color: string[] | [];
     children: boolean;
     adult: boolean;
-    description?: {
+    description: {
         en: string,
         ru: string,
         ua: string
@@ -37,7 +37,7 @@ export type ProductItemType = {
     model?: string;
     producer?: string;
     length?: string;
-    comment?:{
+    comment:{
         en: string,
         ru: string,
         ua: string
@@ -71,7 +71,7 @@ const ProductCard:FC<ProductItemProps> = ({productItem }) => {
                     <Image className={s.productImg} src={productItem.images[0]}/>
                 </div>
                 <div className={s.textBlock}>
-                    <h6 className={s.productTitle}>{t(`title.${currentLanguage}`, productItem.title[currentLanguage])}</h6>
+                    <h6 className={s.productTitle}>{t(`title.${currentLanguage}`, (productItem.title as any)[currentLanguage] as string)}</h6>
                     <h6 className={s.productPrice}>{productItem.price} <span>{t("uah")}</span></h6>
                 </div>
 

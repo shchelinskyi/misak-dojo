@@ -1,4 +1,5 @@
 {
+  "homepage": "https://shchelinskyi.github.io/misak-dojo",
   "name": "misak-dojo",
   "private": true,
   "version": "0.0.0",
@@ -6,8 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "predeploy": "npm run build -- --no-verify",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write ./src"
@@ -40,6 +41,7 @@
     "yup": "^1.3.2"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-input-mask": "^3.0.5",

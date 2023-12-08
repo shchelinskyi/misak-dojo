@@ -8,7 +8,6 @@ const CustomNavbarToggle  = () => {
 
     const handleClick = () => {
         setIsOpen(!isOpen);
-        onClick && onClick();
     };
 
     return (
