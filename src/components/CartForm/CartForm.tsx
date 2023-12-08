@@ -343,7 +343,7 @@ const CartForm = () => {
                     <p className={s.checkboxLabel}>
                         <span className={s.footerLabel1}>{t("formFooter1")}</span>
                         <br/>
-                        <Link className={s.link2} to="contract-offer" onClick={() => dispatch(closeCartModal())}>
+                        <Link className={s.link2} to="privacy-policy" onClick={() => dispatch(closeCartModal())}>
                             <span className={s.footerLabel2}>{t("formFooter2")}</span>
                         </Link>
                     </p>
