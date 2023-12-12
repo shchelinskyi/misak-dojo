@@ -19,6 +19,18 @@ import Championship from "../components/NewsCard/NewsItems/Championship";
 import ContractOfferUA from "../pages/ContractOffer/ContractOfferUA";
 import ContractOfferEN from "../pages/ContractOffer/ContractOfferEN";
 import ContractOfferRU from "../pages/ContractOffer/ContractOfferRU";
+import CherkasyOblastCup from "../components/NewsCard/NewsItems/CherkasyOblastCup";
+import FighterCup from "../components/NewsCard/NewsItems/FighterCup";
+import CupIrpin from "../components/NewsCard/NewsItems/CupIrpin";
+import ShchoTakeZbory from "../components/NewsCard/NewsItems/ShchoTakeZbory";
+import KievOpenCup from "../components/NewsCard/NewsItems/KievOpenCup";
+import KarateBegins from "../components/NewsCard/NewsItems/KarateBegins";
+import CandyOrLife from "../components/NewsCard/NewsItems/CandyOrLife";
+import MeansTeam from "../components/NewsCard/NewsItems/MeansTeam";
+import KarateSea from "../components/NewsCard/NewsItems/KarateSea";
+import UsefulInfo from "../components/NewsCard/NewsItems/UsefulInfo";
+import OpenChampionship from "../components/NewsCard/NewsItems/OpenChampionship";
+import Enerkid from "../components/NewsCard/NewsItems/Enerkid";
 
 type RefData = {
     aboutRef: React.RefObject<HTMLDivElement> | null;
@@ -64,6 +76,18 @@ const AppRouter = () => {
                     <Route path="news/meaningTerm" element={<MeaningTerm />} />
                     <Route path="news/summerSchool32" element={<SummerSchool32 />} />
                     <Route path="news/championship" element={<Championship />} />
+                    <Route path="news/cherkasyOblastCup" element={<CherkasyOblastCup />} />
+                    <Route path="news/fighterCup" element={<FighterCup />} />
+                    <Route path="news/cupIrpin" element={<CupIrpin />} />
+                    <Route path="news/shchoTakeZbory" element={<ShchoTakeZbory />} />
+                    <Route path="news/kievOpenCup" element={<KievOpenCup />} />
+                    <Route path="news/karateBegins" element={<KarateBegins />} />
+                    <Route path="news/candyOrLife" element={<CandyOrLife />} />
+                    <Route path="news/meansTeam" element={<MeansTeam />} />
+                    <Route path="news/karateSea" element={<KarateSea />} />
+                    <Route path="news/usefulInfo" element={<UsefulInfo />} />
+                    <Route path="news/openChampionship" element={<OpenChampionship />} />
+                    <Route path="news/enerkid" element={<Enerkid />} />
                 </Route>
             </Routes>
         </div>

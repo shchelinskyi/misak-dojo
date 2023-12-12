@@ -34,8 +34,8 @@ const ContactsPage = () => {
                         underground={t("underground1")}
                         socialLinks={
                             {
-                                instagramLink: "https:/instagram.com/misakdojo",
-                                facebookLink: "https:/facebook.com/misakdojo",
+                                instagramLink: "https://instagram.com/misakdojo",
+                                facebookLink: "https://facebook.com/misakdojo",
                                 youtubeLink: "https://www.youtube.com/@misakdojo/featured",
                                 telegramLink: "https://t.me/misakarzum"
                             }
@@ -50,8 +50,8 @@ const ContactsPage = () => {
                         underground={t("underground2")}
                         socialLinks={
                             {
-                                instagramLink: "https:/instagram.com/misakdojo",
-                                facebookLink: "https:/facebook.com/misakdojo",
+                                instagramLink: "https://instagram.com/misakdojo/",
+                                facebookLink: "https://facebook.com/misakdojo/",
                                 youtubeLink: "https://www.youtube.com/@misakdojo/featured",
                                 telegramLink: "https://t.me/misakarzum"
                             }

@@ -7,10 +7,6 @@ i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
     supportedLngs:["en","ru","ua"],
     fallback:"ua",
     debug: false,
-    detector: {
-        order: ["queryString", "cookie"],
-        cache: ["cookie"]
-    },
     backend: {
         loadPath: "/misak-dojo/locales/{{lng}}/{{ns}}.json",
     },
@@ -20,3 +16,23 @@ i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
 })
 
 export default i18n;
+
+
+
+// i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
+//     supportedLngs:["en","ru","ua"],
+//     fallback:"ua",
+//     debug: false,
+//     detector: {
+//         order: ["queryString", "cookie"],
+//         cache: ["cookie"]
+//     },
+//     backend: {
+//         loadPath: "/misak-dojo/locales/{{lng}}/{{ns}}.json",
+//     },
+//     interpolation: {
+//         escapeValue: false
+//     }
+// })
+
+
