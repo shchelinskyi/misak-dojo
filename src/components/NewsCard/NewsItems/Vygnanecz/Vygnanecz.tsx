@@ -6,13 +6,13 @@ import {newsData} from "../../../../utils/news";
 import ShareLinks from "../../../ShareLinks/ShareLinks.tsx";
 import FollowLinks from "../../../FollowLinks";
 import arrow from "../../../../assets/images/news/arrow-back.svg";
-import s from "./Championship2018.module.scss";
+import s from "./Vygnanecz.module.scss";
 import {useEffect} from "react";
 
-const Championship2018 = () => {
+const Vygnanecz = () => {
     const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
-    const {championship2018: newsItem} = newsData;
+    const {vygnanecz: newsItem} = newsData;
 
     useEffect(() => {
         window.scrollTo({
@@ -36,22 +36,16 @@ const Championship2018 = () => {
                     <div className={s.publishedItem}>{t("published")}: <span>{newsItem.date}</span></div>
                 </div>
                 <h4 className={s.title}>{t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}</h4>
-                <Image src={newsItem.images[0]} className={s.img}/>
                 <p className={s.textItem}>
                     {t(`newsItem.text1.${currentLanguage}`, (newsItem.text1 as any)[currentLanguage] as string)}
                 </p>
-                <p className={s.textItem}>
-                    {t(`newsItem.text2.${currentLanguage}`, (newsItem.text2 as any)[currentLanguage] as string)}
-                </p>
-                <p className={s.textItem}>
-                    {t(`newsItem.text3.${currentLanguage}`, (newsItem.text3 as any)[currentLanguage] as string)}
-                    <a  className={s.link} href="https://kyokushinkarate.news/news_ukraine/4235-poedinki-sredi-muzhchin-75" target="_blank">
-                        https://kyokushinkarate.news/news_ukraine/4235-poedinki-sredi-muzhchin-75
-                    </a>
-                </p>
-                <p className={s.textItem}>
-                    {t(`newsItem.osu.${currentLanguage}`, (newsItem.osu as any)[currentLanguage] as string)}
-                </p>
+                <div className={s.videoWrapper}>
+                    <iframe width="760" height="427" src="https://www.youtube.com/embed/UyKTVUCQazg"
+                            title={t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen></iframe>
+                </div>
             </div>
             <div className={s.socialContent}>
                 <ShareLinks url={fullUrl}
@@ -62,4 +56,4 @@ const Championship2018 = () => {
     );
 };
 
-export default Championship2018;
+export default Vygnanecz;

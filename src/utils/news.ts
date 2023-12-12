@@ -1317,6 +1317,70 @@ export const newsData = {
             ru: "ОСУ!",
             ua: "ОСУ!"
         },
+    },
+    dojoSempai: {
+        type: "dojoSempai",
+        title: {
+            en: "In the dojo of Senpai Oleksandr Korolev",
+            ru: "У доджо у семпая Александра Королева",
+            ua: "У доджо в семпая Олександра Корольова",
+        },
+        date: "19.11.2017",
+        category: {
+            en: "Dojo events",
+            ru: "События доджо",
+            ua: "Події доджо",
+        },
+        images: [
+            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702403846/news/191117/Screenshot_9_jhy7nb.webp",
+        ],
+        text1: {
+            en: "18th November, <strong> the karatekas of the Sports Section Kyokushin Karate \"Misak Dojo\" visited the dojo of Senpai Alexander Korolov </strong> for the first time, stepping outside the confines of their own training hall.",
+            ru: "18 ноября <strong> каратисты Спортивной секции Киокушинкай карате \"Мисак Доджо\" посетили доджо семпая Александра Королева. </strong>Спортсмены впервые вышли за пределы своего зала.",
+            ua: "18 листопада <strong> каратисти Спортивної секції Кіокушинкай карате «Місак Доджо» відвідали доджо семпая Олександра Корольова.</strong> Спортсмени вперше вийшли за межі свого залу."
+        },
+        text2: {
+            en: "<strong>Bohdan Lukashchuk, Zhenya Vasylevskyi, Yaroslav Grinchenko, and Danylo Keibal stood in line with Oleksandr's students.</strong> The training took place in a friendly atmosphere. The set tasks were completed: the karate players completed the entire training, demonstrated their character and successfully performed kumite.",
+            ru: "<strong> Богдан Лукащук, Женя Василевський, Ярослав Грінченко, и Данило Кейбал встали в ряд с учениками Олександра.</strong> Тренировка прошла в дружественной атмосфере. Поставленные задачи были выполнены: каратисты отработали весь тренинг, продемонстрировали характер и успешно провели кумитэ.",
+            ua: "<strong>Богдан Лукащук, Женя Василевський, Ярослав Грінченко та Данило Кейбал стали в ряд з учнями Олександра.</strong> Тренування пройшло у дружній атмосфері. Поставлені задачі були виконані: каратисти відпрацювали все тренування, проявили характер і відстояли куміте.",
+        },
+        text3: {
+            en: "The training session concluded, and our team was graciously invited for a tea gathering. The parents of the karatekas from Alexander's dojo treated everyone to hot beverages and snacks. Casual conversations brought closer both the parents and athletes from both clubs: Alexander Korolev's and Misak Arzumanyan's.",
+            ru: "Тренировка завершилась, и нашу команду любезно пригласили на чаепитие. Родители каратистов из доджо Олександра угостили всех горячими напитками и угощениями. Общение в неформальной обстановке сблизило как родителей, так и спортсменов обоих клубов: Олександра Корольова и Мисака Арзуманяна.",
+            ua: "Тренування закінчилося і нашу команду люб’язно запросили на чаювання. Батьки каратистів із доджо Олександра пригостили всіх гарячими напоями та смаколиками. Спілкування в неформальній обстановці зблизили і батьків і спортсменів обох клубів: Олександра Корольова та Місака Арзуманяна.",
+        },
+        text4: {
+            en: "Thank you for the warm welcome.",
+            ru: "Спасибо за теплый прием.",
+            ua: "Дякуємо за теплий прийом.",
+        },
+        osu: {
+            en: "OSY!",
+            ru: "ОСУ!",
+            ua: "ОСУ!"
+        },
+    },
+    vygnanecz:{
+        type: "vygnanecz",
+        title: {
+            en: "The Exile is a short film",
+            ru: "Изгнанник — короткометражный фильм",
+            ua: "Вигнанець — короткометражний фільм",
+        },
+        date: "01.10.2017",
+        category: {
+            en: "Useful Information",
+            ru: "Полезная информация",
+            ua: "Корисна інформація",
+        },
+        images: [
+            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702405328/news/011017/screenshot_1_ikuyjn.avif",
+        ],
+        text1: {
+            en: "We recommend watching this short film.",
+            ru: "Советуем посмотреть этот короткометражный фильм.",
+            ua: "Радимо переглянути цей короткометражний фільм."
+        },
     }
 
 }

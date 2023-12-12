@@ -31,6 +31,9 @@ import KarateSea from "../components/NewsCard/NewsItems/KarateSea";
 import UsefulInfo from "../components/NewsCard/NewsItems/UsefulInfo";
 import OpenChampionship from "../components/NewsCard/NewsItems/OpenChampionship";
 import Enerkid from "../components/NewsCard/NewsItems/Enerkid";
+import Championship2018 from "../components/NewsCard/NewsItems/Championship2018";
+import DojoSempai from "../components/NewsCard/NewsItems/DojoSempai";
+import Vygnanecz from "../components/NewsCard/NewsItems/Vygnanecz/Vygnanecz.tsx";
 
 type RefData = {
     aboutRef: React.RefObject<HTMLDivElement> | null;
@@ -40,7 +43,6 @@ type RefData = {
     shopRef: React.RefObject<HTMLDivElement> | null;
     contactsRef: React.RefObject<HTMLDivElement> | null;
 };
-
 
 const AppRouter = () => {
     const currentLanguage = i18n.language || 'ua';
@@ -52,9 +54,6 @@ const AppRouter = () => {
     useEffect(() => {
         setLanguage(currentLanguage)
     }, [change]);
-
-
-
 
     return (
         <div>
@@ -88,6 +87,9 @@ const AppRouter = () => {
                     <Route path="news/usefulInfo" element={<UsefulInfo />} />
                     <Route path="news/openChampionship" element={<OpenChampionship />} />
                     <Route path="news/enerkid" element={<Enerkid />} />
+                    <Route path="news/championship2018" element={<Championship2018 />} />
+                    <Route path="news/dojoSempai" element={<DojoSempai />} />
+                    <Route path="news/vygnanecz" element={<Vygnanecz />} />
                 </Route>
             </Routes>
         </div>

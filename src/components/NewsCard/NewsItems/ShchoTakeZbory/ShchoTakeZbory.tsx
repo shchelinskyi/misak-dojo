@@ -76,13 +76,6 @@ const ShchoTakeZbory = () => {
         })
         : null;
 
-    const paragraphs3 = (newsItem.text3 as any)[currentLanguage] as string
-        ? ((newsItem.text3 as any)[currentLanguage] as string).split('\n').map((paragraph: string, index: number) => (
-            <div key={index} className={s.textItem}>
-                {paragraph}
-            </div>
-        ))
-        : null;
     return (
         <div>
             <div className={s.content}>

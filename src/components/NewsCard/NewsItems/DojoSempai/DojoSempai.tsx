@@ -7,13 +7,13 @@ import {newsData} from "../../../../utils/news";
 import ShareLinks from "../../../ShareLinks/ShareLinks.tsx";
 import FollowLinks from "../../../FollowLinks";
 import arrow from "../../../../assets/images/news/arrow-back.svg";
-import s from "./Enerkid.module.scss";
+import s from "./DojoSempai.module.scss";
 import {useEffect} from "react";
 
-const Enerkid = () => {
+const DojoSempai = () => {
     const {t} = useTranslation();
     const currentLanguage = i18n.language || 'ua';
-    const {enerkid: newsItem} = newsData;
+    const {dojoSempai: newsItem} = newsData;
 
     useEffect(() => {
         window.scrollTo({
@@ -28,6 +28,30 @@ const Enerkid = () => {
 
     const paragraphs1 = (newsItem.text1 as any)[currentLanguage] as string
         ? ((newsItem.text1 as any)[currentLanguage] as string).split('\n').map((paragraph: string, index: number) => {
+            const match = paragraph.match(/<strong>(.*?)<\/strong>/);
+
+            const formattedParagraph = match
+                ? (
+                    <div key={index} className={s.textItem}>
+                        {paragraph.split(match[0]).map((text, i) => (
+                            <React.Fragment key={i}>
+                                {i > 0 && <strong>{match[1]}</strong>}
+                                {text}
+                            </React.Fragment>
+                        ))}
+                    </div>
+                )
+                : (
+                    <div key={index} className={s.textItem}>
+                        {paragraph}
+                    </div>
+                );
+
+            return formattedParagraph;
+        })
+        : null;
+    const paragraphs2 = (newsItem.text2 as any)[currentLanguage] as string
+        ? ((newsItem.text2 as any)[currentLanguage] as string).split('\n').map((paragraph: string, index: number) => {
             const match = paragraph.match(/<strong>(.*?)<\/strong>/);
 
             const formattedParagraph = match
@@ -66,18 +90,21 @@ const Enerkid = () => {
                 <div className={s.block}>
                     {paragraphs1}
                 </div>
+                <div className={s.block}>
+                    {paragraphs2}
+                </div>
                 <div className={s.videoWrapper}>
-                    <iframe width="760" height="427" src="https://www.youtube.com/embed/F1kPn96MoyA"
+                    <iframe width="760" height="427" src="https://www.youtube.com/embed/j5sruidhvYs"
                             title={t(`newsItem.title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen></iframe>
                 </div>
                 <p className={s.textItem}>
-                    {t(`newsItem.text2.${currentLanguage}`, (newsItem.text2 as any)[currentLanguage] as string)}
+                    {t(`newsItem.text3.${currentLanguage}`, (newsItem.text3 as any)[currentLanguage] as string)}
                 </p>
                 <p className={s.textItem}>
-                    {t(`newsItem.text3.${currentLanguage}`, (newsItem.text3 as any)[currentLanguage] as string)}
+                    {t(`newsItem.text4.${currentLanguage}`, (newsItem.text4 as any)[currentLanguage] as string)}
                 </p>
                 <p className={s.textItem}>
                     {t(`newsItem.osu.${currentLanguage}`, (newsItem.osu as any)[currentLanguage] as string)}
@@ -92,4 +119,4 @@ const Enerkid = () => {
     );
 };
 
-export default Enerkid;
+export default DojoSempai;
