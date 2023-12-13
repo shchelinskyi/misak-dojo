@@ -36,7 +36,9 @@ const GalleryCard: FC<GalleryCardTypes> = ({galleryItem, styles}) => {
     return (
         <>
             <div className={s.card} onClick={handleOpen} style={styles}>
+                <div className={s.imgWrapper}>
                 <Image className={s.cardImg} src={galleryItem.images[0]}/>
+                </div>
                 <p className={s.cardDate}>{galleryItem.date}</p>
                 <h6 className={s.cardTitle}>{t(`title.${currentLanguage}`, (galleryItem.title as any)[currentLanguage] as string)}</h6>
             </div>

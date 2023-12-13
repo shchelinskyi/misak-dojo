@@ -34,7 +34,9 @@ const NewsCard: FC<NewsCardTypes> = ({ newsItem}) => {
     return (
         <Link className={s.link} to={`news/${type}`}>
             <div className={s.card}>
+                <div className={s.imgWrapper}>
                 <Image className={s.newsImg} src={newsItem.images[0]}/>
+                </div>
                 <p className={s.newsDate}>{newsItem.date}</p>
                 <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}</h6>
             </div>

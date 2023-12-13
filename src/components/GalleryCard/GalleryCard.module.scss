@@ -13,11 +13,31 @@
   }
 }
 
+.imgWrapper {
+  width: 370px;
+  height: 330px;
+  background-color: #f9d3d1;
+  border-radius: 46px;
+  @media (max-width: 1200px) {
+    width: 290px;
+    height: 260px;
+  }
+  @media (max-width: 992px) {
+    width: 324px;
+    height: 290px;
+  }
+  @media (max-width: 480px) {
+    width: 310px;
+    height: 278px;
+  }
+}
+
 .cardImg {
   width: 370px;
   height: 330px;
   object-fit: cover;
   border-radius: 46px;
+  transition: all 0.25s;
   @media (max-width: 1200px) {
     width: 290px;
     height: 260px;
