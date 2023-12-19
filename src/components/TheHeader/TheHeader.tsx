@@ -19,7 +19,7 @@ type RefData = {
     teamRef: React.RefObject<HTMLDivElement> | null;
     gymsRef: React.RefObject<HTMLDivElement> | null;
     galleryRef: React.RefObject<HTMLDivElement> | null;
-    shopRef: React.RefObject<HTMLDivElement> | null;
+    // shopRef: React.RefObject<HTMLDivElement> | null;
     contactsRef: React.RefObject<HTMLDivElement> | null;
 };
 
@@ -60,11 +60,11 @@ const TheHeader:FC<TheHeaderProps> = ({refData}) => {
         }
     }
 
-    const navigateToShop = () => {
-        if (refData && refData.shopRef && refData.shopRef.current) {
-            refData.shopRef.current.scrollIntoView({behavior: 'smooth'})
-        }
-    }
+    // const navigateToShop = () => {
+    //     if (refData && refData.shopRef && refData.shopRef.current) {
+    //         refData.shopRef.current.scrollIntoView({behavior: 'smooth'})
+    //     }
+    // }
 
     const navigateToContacts = () => {
         if (refData && refData.contactsRef && refData.contactsRef.current) {
@@ -129,7 +129,7 @@ const TheHeader:FC<TheHeaderProps> = ({refData}) => {
                         <Nav.Link className={s.link} onClick={navigateToTeam}>{t('team')}</Nav.Link>
                         <Nav.Link className={s.link} onClick={navigateToGyms}>{t('gym')}</Nav.Link>
                         <Nav.Link className={s.link} onClick={navigateToGallery}>{t('gallery')}</Nav.Link>
-                        <Nav.Link className={s.link} onClick={navigateToShop}>{t('shop')}</Nav.Link>
+                        {/*<Nav.Link className={s.link} onClick={navigateToShop}>{t('shop')}</Nav.Link>*/}
                         <Nav.Link className={s.link} onClick={navigateToContacts}>{t('contacts')}</Nav.Link>
                         <div className={s.langToggle}>
                             <span className={activeLang === 'ua' ? s.activeLang : s.notActiveLang}

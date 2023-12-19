@@ -104,7 +104,7 @@ const TeamPage = () => {
                     }
                     <SwiperSlide>
                         <div className={s.trainerCard}>
-                            <Image className={s.trainerImg12} src={trainer1}/>
+                            <Image className={s.trainerImgTwo} src={trainer1}/>
                             <div className={s.trainerBg}></div>
                             <div className={s.trainerLabel}>
                                 <TrainerLabel name= {t("trainer1")} rank={t("trainer1Rank")}/>
@@ -114,7 +114,7 @@ const TeamPage = () => {
                     <SwiperSlide>
                         <div className={s.trainerCard}>
                             <Image className={s.trainerBg} src={trainerBg}/>
-                            <Image className={s.trainerImg12} src={trainer2}/>
+                            <Image className={s.trainerImgTwo} src={trainer2}/>
                             <div className={s.trainerLabel}>
                                 <TrainerLabel name= {t("trainer2")} rank={t("trainer2Rank")}/>
                             </div>

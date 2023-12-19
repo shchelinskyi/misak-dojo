@@ -30,7 +30,7 @@ const CustomSelect = () => {
                 <option value="ru">RU</option>
                 <option value="en">ENG</option>
             </select>
-            <div className={s.iconContainer} style={{ right: selectedLanguage === "en" ? "-5px" : undefined }}>
+            <div className={s.iconContainer} style={{ right: selectedLanguage === "en" ? "7px" : "15px" }}>
                 <Image className={s.selectIcon} src={iconSelect}/>
             </div>
         </div>

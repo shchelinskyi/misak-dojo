@@ -11,7 +11,6 @@ import TrialLessonPage from "../TrialLessonPage";
 import GalleryPage from "../GalleryPage";
 import SupportUsPage from "../SupporUsPage";
 import Ticker from "../../components/Ticker";
-import ShopPage from "../ShopPage";
 import NewsPage from "../NewsPage";
 import ReadMore from "../../components/ReadMore";
 import ContactsPage from "../ContactsPage";
@@ -27,7 +26,7 @@ type RefData = {
     teamRef: React.RefObject<HTMLDivElement> | null;
     gymsRef: React.RefObject<HTMLDivElement> | null;
     galleryRef: React.RefObject<HTMLDivElement> | null;
-    shopRef: React.RefObject<HTMLDivElement> | null;
+    // shopRef: React.RefObject<HTMLDivElement> | null;
     contactsRef: React.RefObject<HTMLDivElement> | null;
 };
 
@@ -43,7 +42,7 @@ const Main: FC<MainProps> = ({setRefData}) => {
     const teamRef = useRef<HTMLDivElement>(null);
     const gymsRef = useRef<HTMLDivElement>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
-    const shopRef = useRef<HTMLDivElement>(null);
+    // const shopRef = useRef<HTMLDivElement>(null);
     const contactsRef = useRef<HTMLDivElement>(null);
 
     const [loading, setLoading] = useState(true);
@@ -60,10 +59,10 @@ const Main: FC<MainProps> = ({setRefData}) => {
     }, []);
 
     useEffect(() => {
-        const data = {aboutRef, teamRef, gymsRef, galleryRef, shopRef, contactsRef }
+        const data = {aboutRef, teamRef, gymsRef, galleryRef, contactsRef }
         setRefData({... data})
 
-    }, [aboutRef, teamRef, gymsRef, galleryRef, shopRef, contactsRef  ]);
+    }, [aboutRef, teamRef, gymsRef, galleryRef, contactsRef  ]);
 
 
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
@@ -108,9 +107,9 @@ const Main: FC<MainProps> = ({setRefData}) => {
             </div>
             <SupportUsPage/>
             <Ticker/>
-            <div ref={shopRef}>
-                <ShopPage/>
-            </div>
+            {/*<div ref={shopRef}>*/}
+            {/*    <ShopPage/>*/}
+            {/*</div>*/}
             <NewsPage />
             <ReadMore/>
             <div ref={contactsRef}>

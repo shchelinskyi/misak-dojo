@@ -40,7 +40,7 @@ type RefData = {
     teamRef: React.RefObject<HTMLDivElement> | null;
     gymsRef: React.RefObject<HTMLDivElement> | null;
     galleryRef: React.RefObject<HTMLDivElement> | null;
-    shopRef: React.RefObject<HTMLDivElement> | null;
+    // shopRef: React.RefObject<HTMLDivElement> | null;
     contactsRef: React.RefObject<HTMLDivElement> | null;
 };
 

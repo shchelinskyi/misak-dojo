@@ -1,9 +1,8 @@
 import {useEffect, useState} from "react";
 import {Container, Image} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
-import {useAppDispatch, useAppSelector} from "../../hooks";
+import {useAppDispatch} from "../../hooks";
 import {openForm} from "../../redux/slices/formTrialSessionSlice.ts";
-import {openCartModal} from "../../redux/slices/cartSlice.ts";
 import CustomButton from "../../components/CustomButton";
 import roundText from "../../assets/images/main/roundText.webp";
 import lightning from "../../assets/images/main/lightning.webp";
@@ -18,9 +17,10 @@ import boy2 from "../../assets/images/main/boy2.gif";
 import boy11 from "../../assets/images/main/boy1D.gif";
 import boy22 from "../../assets/images/main/boy2D.gif";
 import fingerDown from "../../assets/images/main/fingerDown.webp";
-import bucket from "../../assets/images/main/bucket.webp";
 import cn from "classnames";
 import s from "./MainPage.module.scss";
+// import bucket from "../../assets/images/main/bucket.webp";
+
 
 interface Position {
     x: number;
@@ -31,7 +31,7 @@ interface Position {
 const MainPage = () => {
     const dispatch = useAppDispatch();
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
-    const cartItems = useAppSelector(state => state.cart.cartItems);
+    // const cartItems = useAppSelector(state => state.cart.cartItems);
 
     const { t } = useTranslation();
 
@@ -94,10 +94,10 @@ const MainPage = () => {
                     <p className={s.fingerText}>{t('more')}</p>
                     <Image src={fingerDown} style={{width: "35px"}}/>
                 </div>
-                <div className={s.bucketWrapper} onClick={() => dispatch(openCartModal())}>
-                    <Image src={bucket} className={s.bucketIcon}/>
-                    <div className={s.badge}>{cartItems.length > 0 ? cartItems.length : null}</div>
-                </div>
+                {/*<div className={s.bucketWrapper} onClick={() => dispatch(openCartModal())}>*/}
+                {/*    <Image src={bucket} className={s.bucketIcon}/>*/}
+                {/*    <div className={s.badge}>{cartItems.length > 0 ? cartItems.length : null}</div>*/}
+                {/*</div>*/}
             </Container>
         </div>
     );

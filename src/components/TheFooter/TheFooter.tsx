@@ -14,7 +14,7 @@ const TheFooter = () => {
                 <div className={cn(s.footerContent, s.order2)}>
                     <div className={cn(s.column, s.links)}>
                         <p className={s.textContent}>{t("design")}: <span className={s.link}>Maria Oliynyk</span></p>
-                        <p className={s.textContent}>{t("development")}: <a href="https://www.linkedin.com/in/shchelinskyi/" className={s.link} target="_blank">Shchelinskyi</a></p>
+                        <p className={s.textContent}>{t("development")}: <a href="https://www.linkedin.com/in/shchelinskyi/" className={s.link} target="_blank">Artem Shchelinskyi</a></p>
                     </div>
                 </div>
                 <div className={cn(s.footerContent, s.order3)}>
