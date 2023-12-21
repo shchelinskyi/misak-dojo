@@ -20,6 +20,7 @@ import {closeInfoModal} from "../../redux/slices/formTrialSessionSlice.ts";
 import {closeAddToCartModal, closeOrderedModal, openCartModal} from "../../redux/slices/cartSlice.ts";
 import s from "./Main.module.scss";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 type RefData = {
     aboutRef: React.RefObject<HTMLDivElement> | null;
@@ -27,6 +28,7 @@ type RefData = {
     gymsRef: React.RefObject<HTMLDivElement> | null;
     galleryRef: React.RefObject<HTMLDivElement> | null;
     // shopRef: React.RefObject<HTMLDivElement> | null;
+    newsRef:React.RefObject<HTMLDivElement> | null;
     contactsRef: React.RefObject<HTMLDivElement> | null;
 };
 
@@ -42,27 +44,28 @@ const Main: FC<MainProps> = ({setRefData}) => {
     const teamRef = useRef<HTMLDivElement>(null);
     const gymsRef = useRef<HTMLDivElement>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
+    const newsRef = useRef<HTMLDivElement>(null);
     // const shopRef = useRef<HTMLDivElement>(null);
     const contactsRef = useRef<HTMLDivElement>(null);
 
     const [loading, setLoading] = useState(true);
-    const {t} = useTranslation();
+    const {t, i18n} = useTranslation();
     const dispatch = useAppDispatch();
 
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 1000);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [i18n.language]);
 
     useEffect(() => {
-        const data = {aboutRef, teamRef, gymsRef, galleryRef, contactsRef }
+        const data = {aboutRef, teamRef, gymsRef, galleryRef, newsRef, contactsRef }
         setRefData({... data})
 
-    }, [aboutRef, teamRef, gymsRef, galleryRef, contactsRef  ]);
+    }, [aboutRef, teamRef, gymsRef, galleryRef, newsRef, contactsRef  ]);
 
 
     const isFormOpen = useAppSelector(state => state.formTrial.isOpenedForm);
@@ -75,6 +78,27 @@ const Main: FC<MainProps> = ({setRefData}) => {
         dispatch(closeAddToCartModal())
         dispatch(openCartModal())
     }
+
+    const location = useLocation();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        const storedScrollPosition = sessionStorage.getItem("scrollPosition");
+        if (storedScrollPosition) {
+            window.scrollTo(0, parseInt(storedScrollPosition));
+        }
+    }, [location.pathname]);
 
 
     return (
@@ -110,7 +134,9 @@ const Main: FC<MainProps> = ({setRefData}) => {
             {/*<div ref={shopRef}>*/}
             {/*    <ShopPage/>*/}
             {/*</div>*/}
+            <div ref={newsRef}>
             <NewsPage />
+            </div>
             <ReadMore/>
             <div ref={contactsRef}>
                 <ContactsPage/>

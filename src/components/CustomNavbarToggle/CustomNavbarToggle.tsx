@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import styles from './CustomNavbarToggle.module.scss';
+import s from './CustomNavbarToggle.module.scss';
 
 
 const CustomNavbarToggle  = () => {
@@ -12,11 +12,11 @@ const CustomNavbarToggle  = () => {
 
     return (
         <Button variant="outline-light" onClick={handleClick}
-            className={`${styles.customToggle} ${isOpen ? styles.open : ''}`}
+            className={`${s.customToggle} ${isOpen ? s.open : ''}`}
         >
-            <span className={styles.line}></span>
-            <span className={styles.line}></span>
-            <span className={styles.line}></span>
+            <span className={s.line}></span>
+            <span className={s.line}></span>
+            <span className={s.line}></span>
         </Button>
     );
 };
