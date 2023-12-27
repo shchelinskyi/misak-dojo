@@ -13,9 +13,9 @@ export const newsData = {
             ua: "Змагання ",
         },
         images: [
-            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701279610/news/291121/news-1_zetxi8.avif",
-            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701279610/news/291121/IMG_1993_li2d4q.avif",
-            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701279610/news/291121/IMG_2265_ceig7w.avif"
+            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703676405/news/291021/news-1_zetxi8_dwtosb.webp",
+            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703676403/news/291021/IMG_1993_li2d4q_sm7pbp.webp",
+            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703676404/news/291021/IMG_2265_ceig7w_nzxhfa.webp"
         ],
         text1: {
             en: "On October 24, 2021, a traditional tournament took place - the 4th Cup of Kyokushinkai Karate in the \"KATA\" section.",
@@ -1374,7 +1374,7 @@ export const newsData = {
             ua: "Корисна інформація",
         },
         images: [
-            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702405328/news/011017/screenshot_1_ikuyjn.avif",
+            "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703676599/news/011017/screenshot_1_ikuyjn_cf6vhm.webp",
         ],
         text1: {
             en: "We recommend watching this short film.",
