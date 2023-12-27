@@ -13,6 +13,16 @@ const NewsPage = () => {
     const [visibleItems, setVisibleItems] = useState(itemsPerPage);
     const [showNewsCard, setShowNewsCard] = useState(false);
 
+
+    useEffect(() => {
+        const storedVisibleItems = window.sessionStorage.getItem('visibleItems');
+        if (storedVisibleItems) {
+            setVisibleItems(Number(storedVisibleItems));
+        }
+
+    }, []);
+
+
     useEffect(() => {
 
         const timer = setTimeout(() => {
@@ -27,7 +37,12 @@ const NewsPage = () => {
 
     const handleShowMore = () => {
         const totalItems = Object.values(newsData).length;
-        setVisibleItems((prev) => Math.min(prev + itemsPerPage, totalItems));
+        const newVisibleItems = Math.min(visibleItems + itemsPerPage, totalItems);
+
+
+        window.sessionStorage.setItem('visibleItems', newVisibleItems.toString());
+
+        setVisibleItems(newVisibleItems);
         setShowNewsCard(false);
     };
 
@@ -62,12 +77,6 @@ const NewsPage = () => {
                                         }
                                     </div>
                                 }
-
-
-
-
-
-
                             })
                         }
                     </div>
