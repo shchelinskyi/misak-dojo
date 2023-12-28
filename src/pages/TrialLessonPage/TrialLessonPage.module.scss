@@ -1,14 +1,22 @@
+.wrapper {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position:relative;
+  //position:relative;
   margin: 50px auto  313px;
   padding-top: 100px;
   padding-bottom: 242px;
   background-color: #EDEDED;
   border-radius: 46px;
   max-width: 1720px;
+  width: 100vw;
   //overflow-x: hidden;
   //overflow-y: hidden;
   //height: auto;

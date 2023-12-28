@@ -22,6 +22,7 @@ import s from "./Main.module.scss";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
+
 type RefData = {
     aboutRef: React.RefObject<HTMLDivElement> | null;
     teamRef: React.RefObject<HTMLDivElement> | null;
@@ -49,17 +50,17 @@ const Main: FC<MainProps> = ({setRefData}) => {
     const contactsRef = useRef<HTMLDivElement>(null);
 
     const [loading, setLoading] = useState(true);
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
     const dispatch = useAppDispatch();
 
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 3000);
 
         return () => clearTimeout(timer);
-    }, [i18n.language]);
+    }, []);
 
     useEffect(() => {
         const data = {aboutRef, teamRef, gymsRef, galleryRef, newsRef, contactsRef }
