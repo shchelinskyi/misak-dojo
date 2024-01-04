@@ -13,6 +13,7 @@ type GalleryItem = {
         ua: string;
     };
     date: string;
+    mainImg:string;
     images: string[]
 }
 

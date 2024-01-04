@@ -6,6 +6,7 @@ export const gallery = [
             ua: "Клубні змагання 2023",
         },
         date: "27.12.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704276305/gallery/271223/DSC05556-Enhanced-NR_jqfcrz.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704276305/gallery/271223/DSC05556-Enhanced-NR_jqfcrz.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704276212/gallery/271223/DSC06216-Enhanced-NR_qaso68.webp",
@@ -61,6 +62,7 @@ export const gallery = [
             ua: "Hicary Cup 2023",
         },
         date: "18.12.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704273166/gallery/181223/DSC02319_n2ycce.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704273166/gallery/181223/DSC02319_n2ycce.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704273164/gallery/181223/DSC02321_uhxzzx.webp",
@@ -122,6 +124,7 @@ export const gallery = [
             ua: "Monolit Cup 2023",
         },
         date: "12.12.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704279487/gallery/121223/DSC00798-Enhanced-NR_ihlbvj.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704279487/gallery/121223/DSC00798-Enhanced-NR_ihlbvj.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704279472/gallery/121223/DSC08525_dt5asa.webp",
@@ -162,6 +165,7 @@ export const gallery = [
             ua: "День народження Місака 2023",
         },
         date: "06.11.2023",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704269201/gallery/061123/DSC08055-Enhanced-NR_xpl5w2.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704269201/gallery/061123/DSC08055-Enhanced-NR_xpl5w2.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704269193/gallery/061123/DSC08169-Enhanced-NR_hon39r.webp",
@@ -223,6 +227,7 @@ export const gallery = [
             ua: "Чемпіонат з ката 2023",
         },
         date: "26.10.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704221054/gallery/261023/DSC06711_mp0vvb.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704221054/gallery/261023/DSC06711_mp0vvb.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704221044/gallery/261023/DSC07118_g0nusd.webp",
@@ -263,6 +268,7 @@ export const gallery = [
             ua: "Хвиля 2023, день 1",
         },
         date: "17.10.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704204864/gallery/171023/DSC02314_g2qh9h.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704204864/gallery/171023/DSC02314_g2qh9h.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704204872/gallery/171023/DSC02161_svrabb.webp",
@@ -323,6 +329,7 @@ export const gallery = [
             ua: "Хвиля 2023, день 2",
         },
         date: "18.10.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704209223/gallery/181023/DSC02419_efhjns.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704209223/gallery/181023/DSC02419_efhjns.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704209236/gallery/181023/DSC02371_zyr8by.webp",
@@ -383,6 +390,7 @@ export const gallery = [
             ua: "Хвиля 2023, день 3",
         },
         date: "19.10.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704214937/gallery/191023/DSC04184_y9dlrc.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704214937/gallery/191023/DSC04184_y9dlrc.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704214932/gallery/191023/DSC04217_l3dtq6.webp",
@@ -419,6 +427,7 @@ export const gallery = [
             ua: "Хвиля 2023, атестація ч.1",
         },
         date: "20.10.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704216681/gallery/201023/DSC04614_iisxcc.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704216681/gallery/201023/DSC04614_iisxcc.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704216742/gallery/201023/DSC04307_vp0cem.webp",
@@ -459,6 +468,7 @@ export const gallery = [
             ua: "Хвиля 2023, атестація ч.2",
         },
         date: "20.10.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704218402/gallery/211023/DSC05354_zlp12j.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704218402/gallery/211023/DSC05354_zlp12j.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704218514/gallery/211023/DSC04713_rvvqkq.webp",
@@ -499,6 +509,7 @@ export const gallery = [
             ua: "Бургер вечірка",
         },
         date: "03.10.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704186879/gallery/031023/DSC09971_bixow2.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704186879/gallery/031023/DSC09971_bixow2.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704186875/gallery/031023/DSC09853_w43bel.webp",
@@ -557,6 +568,7 @@ export const gallery = [
             ua: "Змагання СК «Моноліт» 2023",
         },
         date: "29.09.2023",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704200977/gallery/290923/DSC09653_nawdup.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704200977/gallery/290923/DSC09653_nawdup.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1704200984/gallery/290923/DSC08619_jvydhd.webp",
@@ -617,6 +629,7 @@ export const gallery = [
             ua: "Misak dojo – новорічні клубні змагання 2022",
         },
         date: "21.12.2022",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703673377/gallery/22122022/img_0001-scaled_sjxoas_kh9smj.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703673377/gallery/22122022/img_0001-scaled_sjxoas_kh9smj.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703673378/gallery/22122022/img_9978-scaled_aipwoo_bwngdu.webp",
@@ -685,6 +698,7 @@ export const gallery = [
             ua: "Змагання кубок СК «Моноліт»"
         },
         date: "11.12.2022",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703674638/gallery/121222/img_3356-scaled_cqlchb_txeqqv.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703674638/gallery/121222/img_3356-scaled_cqlchb_txeqqv.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703674718/gallery/121222/img_3048-scaled_q8ihlm_y8njkw.webp",
@@ -740,6 +754,7 @@ export const gallery = [
             ua: "2й закритий кубок клубу «Сібумі»"
         },
         date: "04.12.2022",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703675678/gallery/051222/img_0039-scaled_sul1jt_uqpn8e.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703675678/gallery/051222/img_0039-scaled_sul1jt_uqpn8e.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1703675702/gallery/051222/img_0153-scaled_typqnv_wzskl1.webp",
@@ -793,6 +808,7 @@ export const gallery = [
             ua: "Благодійні змагання — збір коштів для ЗСУ. Бровари"
         },
         date: "25.06.2022",
+        mainImg:   "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701254887/gallery/260622/IMG_4461_f00d8k.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701254887/gallery/260622/IMG_4461_f00d8k.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701255309/gallery/260622/IMG_4768_tjzvsm.webp",
@@ -838,6 +854,7 @@ export const gallery = [
             ua: "Куміте в «Тайфу доджо». В гостях у Георгія Долініна. Бровари",
         },
         date: "19.06.2022",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701259114/gallery/190622/IMG_3573_vzrndm.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701259114/gallery/190622/IMG_3573_vzrndm.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701259138/gallery/190622/IMG_3385_av7rtu.webp",
@@ -872,6 +889,7 @@ export const gallery = [
             ua: "Атестація",
         },
         date: "18.06.2022",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701252658/gallery/180622/AnyConv.com__IMG_3320_v8mqob.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701252658/gallery/180622/AnyConv.com__IMG_3320_v8mqob.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701252654/gallery/180622/AnyConv.com__IMG_3320-1_mndibt.webp",
@@ -933,6 +951,7 @@ export const gallery = [
             ua: "4-й кубок Києва з кіокушинкай карате у розділі ката",
         },
         date: "24.10.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701260591/gallery/241021/IMG_1952_kwhsn9.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701260591/gallery/241021/IMG_1952_kwhsn9.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701260603/gallery/241021/IMG_2265_2_xzo8xk.webp",
@@ -971,6 +990,7 @@ export const gallery = [
             ua: "Куміте марафон",
         },
         date: "17.10.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701261814/gallery/171021/_-321-min_gmxnn3.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701261814/gallery/171021/_-321-min_gmxnn3.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701261853/gallery/171021/_-84-min_wuruvi.webp",
@@ -1031,6 +1051,7 @@ export const gallery = [
             ua: "31-ша Літня школа «Вінница-2021»",
         },
         date: "22.07-25.07.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701262720/gallery/220721/IMG_9879_nc5zry.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701262720/gallery/220721/IMG_9879_nc5zry.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1701262727/gallery/220721/IMG_9910_xeuzcj.webp",
@@ -1091,6 +1112,7 @@ export const gallery = [
             ua: "Кубок «Мамука доджо 2021». Санаторій Хвиля",
         },
         date: "25.04.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702407365/gallery/250421/img_5947_trbjrl.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702407365/gallery/250421/img_5947_trbjrl.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702407371/gallery/250421/img_5965_ijlfy0.webp",
@@ -1151,6 +1173,7 @@ export const gallery = [
             ua: "4 щорічні навчально-тренувальні збори «Місак доджо» — Хвиля 2021",
         },
         date: "22-25.04.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702409148/gallery/220421/img_5666_gpqkjt.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702409148/gallery/220421/img_5666_gpqkjt.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702408927/gallery/220421/img_4744_bl0e6u.webp",
@@ -1212,6 +1235,7 @@ export const gallery = [
             ua: "Чемпіонат з ката",
         },
         date: "14.03.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702410718/gallery/140321/img_1347_csouyf.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702410718/gallery/140321/img_1347_csouyf.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702410728/gallery/140321/img_1349_pzcvbs.webp",
@@ -1249,6 +1273,7 @@ export const gallery = [
             ua: "Чемпіонат «Шлях воїна»",
         },
         date: "28.02.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702457266/gallery/280221/img_0006-min_ogqht6.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702457266/gallery/280221/img_0006-min_ogqht6.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702457245/gallery/280221/img_9655-min_er90at.webp",
@@ -1308,6 +1333,7 @@ export const gallery = [
             ua: "Перший клубний турнір «Місак доджо» з куміте",
         },
         date: "12.02.2021",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702458438/gallery/120221/1-min_vmhivx.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702458438/gallery/120221/1-min_vmhivx.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702458437/gallery/120221/36-min_rrpzri.webp",
@@ -1368,6 +1394,7 @@ export const gallery = [
             ua: "III щорічні збори СККК «Місак доджо» – Хвиля 2020",
         },
         date: "22-25.10.2020",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702461093/gallery/251021/img_4334-min_beewo6.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702461093/gallery/251021/img_4334-min_beewo6.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702461102/gallery/251021/img_5118-min_jqqj6e.webp",
@@ -1399,6 +1426,7 @@ export const gallery = [
             ua: "Відкритий чемпіонат Києва",
         },
         date: "20.09.2020",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702461896/gallery/200921/1_kqjvef.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702461896/gallery/200921/1_kqjvef.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702461899/gallery/200921/2020_-16_ytni2t.webp",
@@ -1451,6 +1479,7 @@ export const gallery = [
             ua: "Тренування у парку «Наталка»",
         },
         date: "01.08.2020",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702462734/gallery/010820/img_8905_pzmdgn.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702462734/gallery/010820/img_8905_pzmdgn.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702462715/gallery/010820/img_8810_xxme7r.webp",
@@ -1488,6 +1517,7 @@ export const gallery = [
             ua: "Святкування Хелловіну 2019",
         },
         date: "30.10.2019",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702463902/gallery/301019/dsc0002_ncvkbh.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702463902/gallery/301019/dsc0002_ncvkbh.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702463903/gallery/301019/dsc0009_pommsv.webp",
@@ -1516,6 +1546,7 @@ export const gallery = [
             ua: "Літня школа у Вінниці",
         },
         date: "12.08.2019",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702464661/gallery/120819/dsc0005_lrffo9.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702464661/gallery/120819/dsc0005_lrffo9.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702464652/gallery/120819/dsc0008_klw5xa.webp",
@@ -1560,6 +1591,7 @@ export const gallery = [
             ua: "Кубок Черкаської області",
         },
         date: "17.05.2019",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702465563/gallery/170519/misakdojo_uman170320-2_ggksde.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702465563/gallery/170519/misakdojo_uman170320-2_ggksde.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702465560/gallery/170519/misakdojo_uman170320-1_nf713g.webp",
@@ -1604,6 +1636,7 @@ export const gallery = [
             ua: "«Кубок Княгині Ольги» у м.Ірпінь",
         },
         date: "03.05.2019",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702466267/gallery/030519/dsc1132_golsxc.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702466267/gallery/030519/dsc1132_golsxc.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702466323/gallery/030519/img_20190303_104450__l0dh6a.webp",
@@ -1638,6 +1671,7 @@ export const gallery = [
             ua: "Кубок СК Файтер 2019",
         },
         date: "10.03.2019",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702472909/gallery/100319/dsc1142_wdiqjt.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702472909/gallery/100319/dsc1142_wdiqjt.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702472903/gallery/100319/dsc1521_hrzzd8.webp",
@@ -1677,6 +1711,7 @@ export const gallery = [
             ua: "Фотосесія команди «MisakDojo»",
         },
         date: "17.02.2019",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702473401/gallery/170219/03-misakdojo_team_06_khgnmf.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702473401/gallery/170219/03-misakdojo_team_06_khgnmf.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702473411/gallery/170219/12-misakdojo_team_39_febmgu.webp",
@@ -1703,6 +1738,7 @@ export const gallery = [
             ua: "В гостях у доджо О.Корольова",
         },
         date: "10.11.2018",
+        mainImg: "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702474085/gallery/101118/img_0378-min_kdbpn4.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702474085/gallery/101118/img_0378-min_kdbpn4.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702474089/gallery/101118/img_0400-min_kzug7s.webp",
@@ -1733,6 +1769,7 @@ export const gallery = [
             ua: "Святкування Хелловіну 2018",
         },
         date: "30.10.2018",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702474733/gallery/301018/hallowen_2018_misakd_kae5kx.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702474733/gallery/301018/hallowen_2018_misakd_kae5kx.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702474739/gallery/301018/hallowen_2018_misakd-4_p76i84.webp",
@@ -1777,6 +1814,7 @@ export const gallery = [
             ua: "Поїздка у м.Сколе",
         },
         date: "01.05.2018",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702475425/gallery/010518/dsc0676_oc3kp9.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702475425/gallery/010518/dsc0676_oc3kp9.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702475428/gallery/010518/dsc0704_gjvevw.webp",
@@ -1810,6 +1848,7 @@ export const gallery = [
             ua: "Змагання Enerkid 2018",
         },
         date: "21.04.2018",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702475988/gallery/210418/dsc0377-min_pl7rh8.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702475988/gallery/210418/dsc0377-min_pl7rh8.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702476000/gallery/210418/dsc0407-min_zkn5f8.webp",
@@ -1840,6 +1879,7 @@ export const gallery = [
             ua: "Змагання «Kyiv Open Cup 2018»",
         },
         date: "26.03.2018",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702476534/gallery/260318/dsc0008-min_wwr0j9.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702476534/gallery/260318/dsc0008-min_wwr0j9.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702476540/gallery/260318/dsc0102-min-scaled_oavdhj.webp",
@@ -1870,6 +1910,7 @@ export const gallery = [
             ua: "Кубок СК Файтер 2018",
         },
         date: "03.03.2018",
+        mainImg:  "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702476891/gallery/030318/dsc0448_mgppnw.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702476891/gallery/030318/dsc0448_mgppnw.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702476893/gallery/030318/dsc0451_uyfvgv.webp",
@@ -1887,6 +1928,7 @@ export const gallery = [
             ua: "Тренування команди",
         },
         date: "10.11.2017",
+        mainImg:   "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702477295/gallery/101117/dsc0787_mqi1ms.webp",
         images: [
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702477295/gallery/101117/dsc0787_mqi1ms.webp",
             "https://res.cloudinary.com/dxdwrjw7w/image/upload/v1702477316/gallery/101117/dsc0865_ilugkm.webp",
