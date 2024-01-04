@@ -126,7 +126,8 @@ const AboutPage = () => {
                 </Container>
             </Container>
             <div className={s.video}>
-                <video preload="auto" loop autoPlay={true} muted={true}  src={karate} className={s.videoItem}/>
+                <video preload="auto" loop autoPlay={false} muted={true}  src={karate} className={s.videoItem} controls={true}/>
+                {/*<video preload="metadata" loop autoPlay={true} muted={true}  src="https://res.cloudinary.com/dxdwrjw7w/video/upload/v1704288564/video/karate_cxyg2m.mp4" className={s.videoItem}/>*/}
                 <div className={s.titleTeamWrapper}>
                     {language === "ua" &&   <Image className={s.titleTeamImage} src={titleTeamUA}/>}
                     {language === "ru" &&   <Image className={s.titleTeamImage} src={titleTeamRU}/>}

@@ -1,5 +1,4 @@
 import {FC} from 'react';
-import {Image} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import s from "./NewsCard.module.scss";
@@ -35,7 +34,7 @@ const NewsCard: FC<NewsCardTypes> = ({ newsItem}) => {
         <Link className={s.link} to={`news/${type}`}>
             <div className={s.card}>
                 <div className={s.imgWrapper}>
-                <Image className={s.newsImg} src={newsItem.images[0]}/>
+                <img className={s.newsImg} src={newsItem.images[0]} loading="lazy" alt="news"/>
                 </div>
                 <p className={s.newsDate}>{newsItem.date}</p>
                 <h6 className={s.newsTitle}>{t(`title.${currentLanguage}`, (newsItem.title as any)[currentLanguage] as string)}</h6>

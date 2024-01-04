@@ -1,6 +1,6 @@
-import {useEffect, useState} from "react";
+import React, {useLayoutEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
-import {Container, Stack, Placeholder, Card} from "react-bootstrap";
+import {Container, Stack} from "react-bootstrap";
 import CustomButton from "../../components/CustomButton";
 import GalleryCard from "../../components/GalleryCard";
 import {gallery} from "../../utils/gallery";
@@ -21,65 +21,44 @@ const GalleryPage = () => {
     const {t} = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [galleryArray, setGalleryArray] = useState<GalleryItem[] | []>([]);
-    const [showGalleryCard, setShowGalleryCard] = useState(false);
+    const MemoizedGalleryCard = React.memo(GalleryCard);
 
-    useEffect(() => {
-        if (gallery.length > 0 && gallery.length > galleryArray.length) {
-            const someArr = gallery.slice(0, currentIndex + 3);
-            setGalleryArray([...someArr]);
+
+    useLayoutEffect(() => {
+        if (gallery.length > galleryArray.length) {
+            let itemsPerRow = 3;
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 480) {
+                itemsPerRow = 3;
+            } else if (screenWidth <= 992 && screenWidth > 480) {
+                itemsPerRow = 2;
+            }
+            const someArr = gallery.slice(currentIndex, currentIndex + itemsPerRow);
+            setGalleryArray((prevGallery) => [...prevGallery, ...someArr])
         }
     }, [currentIndex])
 
-    useEffect(() => {
-
-        const timer = setTimeout(() => {
-            setShowGalleryCard(true);
-        }, 1000);
-
-        return () => {
-            clearInterval(timer)
-        };
-
-    }, [currentIndex]);
 
 
     const handleShowMore = () => {
-        const newIndex = currentIndex + 3;
-        setCurrentIndex(newIndex >= gallery.length ? 0 : newIndex);
-        setShowGalleryCard(false);
+        let itemsPerRow = 3;
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 480) {
+            itemsPerRow = 3;
+        } else if (screenWidth <= 992 && screenWidth > 480) {
+            itemsPerRow = 2;
+        }
+        const newIndex = currentIndex + itemsPerRow;
+        setCurrentIndex(newIndex);
     };
 
 
     return (
-        <>
             <Container className={s.wrapper}>
                 <div className={s.container}>
                     <h3 className={s.title}>{t("gallery")}</h3>
                     <div className={s.content}>
-                        {gallery.length > 0 && galleryArray.map((galleryItem, index: number) => {
-
-                            if (index < currentIndex) {
-                                return <GalleryCard key={galleryItem.title.en} galleryItem={galleryItem}/>
-                            } else {
-                                return <div key={galleryItem.title.en}>
-                                    {!showGalleryCard &&
-                                        <div className={s.placeholderContainer}>
-                                            <Placeholder as={Card.Text} animation="glow">
-                                                <Placeholder className={s.placeholderImg} bg="primary"/>
-                                            </Placeholder>
-                                            <div>
-                                                <Placeholder as={Card.Text} animation="glow">
-                                                    <Placeholder className={s.placeholderDate} bg="primary"/>
-                                                    <Placeholder className={s.placeholderTitle} bg="primary"/>
-                                                </Placeholder>
-                                            </div>
-                                        </div>
-                                    }
-                                    {showGalleryCard &&
-                                        <GalleryCard key={galleryItem.title.en} galleryItem={galleryItem}/>}
-                                </div>
-                            }
-                        })}
+                        {gallery.length > 0 && galleryArray.map((galleryItem) =>  <MemoizedGalleryCard key={galleryItem.title.en} galleryItem={galleryItem}/>)}
                     </div>
                     {
                         (galleryArray.length !== gallery.length) &&
@@ -89,7 +68,6 @@ const GalleryPage = () => {
                     }
                 </div>
             </Container>
-        </>
     );
 };
 

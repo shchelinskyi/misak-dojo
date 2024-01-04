@@ -9,7 +9,7 @@ import s from "./NewsPage.module.scss"
 
 const NewsPage = () => {
     const { t } = useTranslation();
-    const itemsPerPage = 3;
+    const itemsPerPage = (window.innerWidth > 480 && window.innerWidth <= 992) ? 2 : 3;
     const [visibleItems, setVisibleItems] = useState(itemsPerPage);
     const [showNewsCard, setShowNewsCard] = useState(false);
 
@@ -27,15 +27,16 @@ const NewsPage = () => {
 
         const timer = setTimeout(() => {
             setShowNewsCard(true);
-        }, 1000);
+        }, 1500);
 
         return () => {
-            clearInterval(timer)
+            clearTimeout(timer)
         };
 
     }, [visibleItems]);
 
     const handleShowMore = () => {
+        // const itemsPerPage = window.innerWidth > 992 ? 3 : 2;
         const totalItems = Object.values(newsData).length;
         const newVisibleItems = Math.min(visibleItems + itemsPerPage, totalItems);
 
@@ -55,7 +56,7 @@ const NewsPage = () => {
                         {Object.values(newsData)
                             .slice(0, visibleItems)
                             .map((newsItem, index) => {
-                                if (index < visibleItems-3) {
+                                if (index < visibleItems-itemsPerPage) {
                                     return  <NewsCard key={newsItem.title.en} newsItem={newsItem}/>
                                 } else {
                                     return <div key={newsItem.title.en}>

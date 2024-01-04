@@ -1,7 +1,7 @@
 import {CSSProperties, FC, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
-import {Image} from "react-bootstrap";
+// import {Image} from "react-bootstrap";
 import GalleryCardModal from "./GalleryCardModal";
 import s from "./GalleryCard.module.scss";
 
@@ -37,7 +37,7 @@ const GalleryCard: FC<GalleryCardTypes> = ({galleryItem, styles}) => {
         <>
             <div className={s.card} onClick={handleOpen} style={styles}>
                 <div className={s.imgWrapper}>
-                <Image className={s.cardImg} src={galleryItem.images[0]}/>
+                <img className={s.cardImg} src={galleryItem.images[0]} loading="lazy" alt="event"/>
                 </div>
                 <p className={s.cardDate}>{galleryItem.date}</p>
                 <h6 className={s.cardTitle}>{t(`title.${currentLanguage}`, (galleryItem.title as any)[currentLanguage] as string)}</h6>
