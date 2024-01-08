@@ -51,7 +51,7 @@ const TeamPage = () => {
 
 
     return (
-        <Container className="position-relative" style={{marginTop: "245px", paddingTop: "100px"}}>
+        <Container className={s.wrapper}>
             <h3 className={s.title}>{t("team")}</h3>
             <div className={s.trainerDescription}>
                 <Image className={s.mainTrainerImage} src={trainerM}/>

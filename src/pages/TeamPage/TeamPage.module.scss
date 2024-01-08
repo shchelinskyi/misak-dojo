@@ -1,3 +1,17 @@
+
+.wrapper {
+  position: relative;
+  margin-top: 70px;
+  padding-top: 100px;
+
+  @media (max-width: 992px) {
+    margin-top: 0;
+  }
+  @media (max-width: 480px) {
+    margin-top: 0;
+  }
+}
+
 .title {
   font-family: Gagalin, sans-serif;
   font-size: 96px;

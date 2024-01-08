@@ -128,7 +128,7 @@ const TheHeader: FC<TheHeaderProps> = ({refData}) => {
                     <div className={s.btnWrapper}>
                         <CustomButton onClick={handleClick}>{t('signUp')}</CustomButton>
                     </div>
-                    <Navbar.Toggle style={{border: "none"}}>
+                    <Navbar.Toggle style={{border: "none"}} as="div">
                         <CustomNavbarToggle isOpen={isMenuOpen} setIsOpen={setIsMenuOpen}/>
                     </Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav" className={s.collapse}>

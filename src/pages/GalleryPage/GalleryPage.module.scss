@@ -5,6 +5,19 @@
   margin-bottom: 170px;
   border-radius: 46px;
   padding-top: 100px;
+
+  @media (max-width: 1200px) {
+    margin-bottom: 130px;
+  }
+
+  @media (max-width: 992px) {
+
+    margin-bottom: 120px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 80px;
+  }
 }
 
 .container {

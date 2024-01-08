@@ -62,7 +62,7 @@ const MainPage = () => {
 
             <Container className={s.contentContainer}>
 
-                <div className="position-relative" style={{ marginTop:"100px", width: "900px"}}>
+                <div className={s.content}>
                     <div className={s.titleWrapper}>
                         <h3 className={s.mainTitle}>{t('mainTitle1')}</h3>
                         <h3 className={cn(s.mainTitle, s.secondLine)}>{t('mainTitle2')}</h3>

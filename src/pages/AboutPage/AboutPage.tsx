@@ -78,7 +78,7 @@ const AboutPage = () => {
                     </div>
                 </div>
 
-                <Container style={{marginTop: "18px", marginBottom: "170px"}}>
+                <Container className={s.dataWrapper}>
                     <div className={s.totalContainer}>
 
                         <div className={s.totalItem}>
